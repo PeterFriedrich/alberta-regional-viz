@@ -142,10 +142,10 @@ join is ecological inference that must be flagged on the output itself.
 5. **Shared code with the Edmonton repo.** Nothing is shared yet, by the 3+
    call-sites rule: when Track B starts, copy `fetch_fir_*.py` in and let it
    diverge; extract a library only if a third consumer appears.
-6. **Framing: fiscal comparison or core-vs-ring timeline narrative?** The
+6. **DECIDED 2026-09-26: the timeline is the main scope** (`DECISIONS.md`). Was: *fiscal comparison or core-vs-ring timeline narrative?* The
    2026-09-26 brief (above) makes the annexation history the spine. That brings
    a map app, Calgary and a voting overlay, each a scope expansion.
-7. **Is Calgary in scope?** It is the brief's headline peer; this repo's scope
+7. **DECIDED 2026-09-26: yes, as a split-screen snapshot comparison of the two regions; a Calgary timeline is optional later.** Was: *is Calgary in scope?* It is the brief's headline peer; this repo's scope
    says capital-region first.
 8. **What counts as the "Edmonton region"?** StatCan CMA (2021), the former
    13-member EMRB (frozen since 2025-04-01), or a custom list. This replaces
@@ -156,6 +156,6 @@ join is ecological inference that must be flagged on the output itself.
 10. **Normalization:** per capita vs per assessment dollar, and how to handle
     linear and M&E assessment in industrial counties (Strathcona, Sturgeon,
     Parkland, Leduc).
-11. **Voting overlay in or out.** It carries the ecological-inference risk.
+11. **DECIDED 2026-09-26: deferred to a later phase (a historical voting map is a candidate).** Was: *voting overlay in or out?* It carries the ecological-inference risk.
     The brief's own threshold: if more than 15–20% of the precinct→census join
     is areally ambiguous, drop the causal claims.

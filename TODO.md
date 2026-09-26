@@ -15,7 +15,10 @@ symptom and re-measure the stated cause before acting on it.
   municipality set; output form; Edmonton's own numbers reused or recomputed;
   no shared code yet), plus 6–11 from the 2026-09-26 timeline brief (framing;
   Calgary; region definition; transfers basis; normalization; voting overlay).
-  Decision 6 sets the scope of the rest. Gates everything below. Done when
+  **6, 7 and 11 were decided 2026-09-26** (timeline is the main scope; Calgary as
+  a split-screen snapshot; voting deferred). 8–10 are out for research: the prompt
+  is `/home/opc/research/alberta-regional-viz/region_transfers_normalization_prompt.md`.
+  Gates everything below. Done when
   `docs/DECISIONS.md` carries a row per decision.
 
 - [ ] **Write `docs/SPEC_phase1.md`** once scope is decided (`CONTRIBUTING.md`:
