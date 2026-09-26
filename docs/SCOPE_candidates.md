@@ -61,6 +61,72 @@ non-residential assessment share (76% → 72% over 15 years; 72% in 2008-09 →
 **Blocked on:** nothing in the data. The blocker is the output decision — all
 Track B outputs are charts/tables, not maps.
 
+## Research brief (2026-09-26) — a third framing: the core-vs-ring timeline
+
+Distilled from `alberta_region_timeline_update.md`, which consolidates three
+earlier reports (2026-09-18/19) plus working discussion. All four live
+**outside** the repo in `/home/opc/research/alberta-regional-viz/`, not
+committed by design. The earlier three carry **no URLs** — citations are by
+name only. Spot-checks 2026-09-26 are marked ✔/✘; everything else is unverified.
+
+**Thesis it proposes.** Edmonton's weak share of regional tax base is
+path-dependent: the 1979 bid to annex St. Albert and Strathcona County
+(Refinery Row) was approved by LAB Order 14000 and nullified by the Lougheed
+cabinet ✔; the 1982 annexation (O.C. 538/81) took mostly undeveloped land,
+331.1 → 700.6 km² ✔; the Regional Planning Commission dissolved in 1995; the
+2019 Leduc County annexation left North Nisku industrial land with the county
+✔; the EMRB was dissolved 2025-04-01. The claimed original contribution is
+fusing the annexation-fiscal literature with the urban-rural voting literature
+into a "lost tax base + lost votes → ring-vs-core coalition" story. The brief
+itself says the coalition claim is a **hypothesis**, and any precinct↔census
+join is ecological inference that must be flagged on the output itself.
+
+**Errors found in the brief:**
+- ✘ "2017 Leduc annexation, ~9,500 ha". The Leduc annexation took effect
+  **2019-01-01**: 8,260 ha from Leduc County plus 7 ha of 50 Street road
+  allowance from Beaumont (MGB Order 050/18 of 2018-10-03; O.C. 359/2018).
+  The application was filed in 2017. Any boundary snapshot is dated 2019.
+- The 72% → 60% non-residential share is cited as settled. This doc (Track B)
+  already records that two published series don't reconcile; rebuild it from
+  primary data before citing it (the brief's own Stage 4 step 9 does this).
+- Internal inconsistency on the deck.gl overlay switch: one report says
+  "MapLibre v6", the consolidated brief says "past v5". Verify when it matters.
+- Verified: the MapLibre 4.7.1 / deck.gl 9.0.38 pins and the ~16 MB of web
+  data in `edmonton-tax-viz` (`web/data` is 17 MB).
+
+**What it adds beyond Tracks A/B:**
+1. **Calgary as the headline comparison.** The architecture assumes an
+   Edmonton ⇄ Calgary map app: toggle by default, side-by-side or swipe
+   compare, and camera sync by scale only (the cities are ~280 km apart).
+   This repo's current scope is capital-region peers.
+2. **A browser map app** built by "refactoring the existing app into a city-view
+   module" (MapLibre + deck.gl, vendored, GitHub Pages). That app is
+   `edmonton-tax-viz`'s. This repo must not restructure it (CLAUDE.md), so the
+   code would be copied here, not refactored in place.
+3. **Timeline mode.** A per-year non-residential share series from FIR (Track B
+   data), boundary snapshots at annexation events (pre-1982, 1982, 2019, now;
+   the 1982 and 2019 lines may need hand-digitizing from Board Order PDFs), a
+   playhead-linked map and chart, and a curated events table.
+4. **A Tier-2 "mandate register".** A hand-curated, cited CSV of fiscal-gap
+   figures that exist only in PDFs: Calgary EC2026-0284 ($1.05 B downloaded
+   2016–2026); Edmonton FCS02218's five categories, which deliberately give no
+   total; and LGFF/MSI allocations, with the 2023→2024 MSI→LGFF program break
+   annotated. Edmonton's eScribe portal blocks bots, so documents are
+   downloaded by hand.
+5. **More sources:**
+   - Police Funding Model XLSX (per municipality, 2020-21 → 2024-25)
+   - Alberta Regional Dashboard
+   - StatCan 2021 CSD profiles and commuting flows (98-10-0459/0460/0462-01)
+   - StatCan and AltaLIS boundaries
+   - GTFS feeds
+   - Socrata precinct results (Edmonton `32te-6grv`, Calgary `tty8-276j`)
+   - Homeward Trust PiT counts, which are **not** OGL: check the terms first
+   - No official Alberta-municipal-code ↔ CSD crosswalk exists, so one has to
+     be hand-built.
+6. **A recommendation for scheduled (cron) refresh of the Tier-1 data.** This
+   conflicts with Track B's "manual, reviewed input until there is a reason".
+   Changing it changes CI, so it needs a proposal first.
+
 ## Decisions that are Peter's
 
 1. **Which track leads.** B is unblocked and province-wide; A is the richer
@@ -76,3 +142,20 @@ Track B outputs are charts/tables, not maps.
 5. **Shared code with the Edmonton repo.** Nothing is shared yet, by the 3+
    call-sites rule: when Track B starts, copy `fetch_fir_*.py` in and let it
    diverge; extract a library only if a third consumer appears.
+6. **Framing: fiscal comparison or core-vs-ring timeline narrative?** The
+   2026-09-26 brief (above) makes the annexation history the spine. That brings
+   a map app, Calgary and a voting overlay, each a scope expansion.
+7. **Is Calgary in scope?** It is the brief's headline peer; this repo's scope
+   says capital-region first.
+8. **What counts as the "Edmonton region"?** StatCan CMA (2021), the former
+   13-member EMRB (frozen since 2025-04-01), or a custom list. This replaces
+   decision 2 if the timeline framing leads.
+9. **Transfers basis** (only if transfers are in scope): FIR transfer lines as
+   the reproducible spine and LGFF/MSI PDFs as a cross-check. Conditional vs
+   unconditional and capital vs operating: split or combined?
+10. **Normalization:** per capita vs per assessment dollar, and how to handle
+    linear and M&E assessment in industrial counties (Strathcona, Sturgeon,
+    Parkland, Leduc).
+11. **Voting overlay in or out.** It carries the ecological-inference risk.
+    The brief's own threshold: if more than 15–20% of the precinct→census join
+    is areally ambiguous, drop the causal claims.
