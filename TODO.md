@@ -16,8 +16,9 @@ symptom and re-measure the stated cause before acting on it.
   no shared code yet), plus 6–11 from the 2026-09-26 timeline brief (framing;
   Calgary; region definition; transfers basis; normalization; voting overlay).
   **6, 7 and 11 were decided 2026-09-26** (timeline is the main scope; Calgary as
-  a split-screen snapshot; voting deferred). 8–10 are out for research: the prompt
-  is `/home/opc/research/alberta-regional-viz/region_transfers_normalization_prompt.md`.
+  a split-screen snapshot; voting deferred). 8–10 went out for research: the prompt
+  is `/home/opc/research/alberta-regional-viz/region_transfers_normalization_prompt.md`;
+  the reply is in and its recommendations are in `docs/SCOPE_candidates.md`, waiting on Peter's yes.
   Gates everything below. Done when
   `docs/DECISIONS.md` carries a row per decision.
 
@@ -35,11 +36,20 @@ symptom and re-measure the stated cause before acting on it.
   sources before any of it reaches an output.** The research reports cite by
   name, with no URLs. Checked 2026-09-26 against Wikipedia only: 1979 LAB bid,
   Order 14000, O.C. 538/81, 331.1 → 700.6 km², Nisku retained. Found wrong: the
-  Leduc annexation is 2019 / 8,260 ha, not 2017 / ~9,500 ha. Still unchecked:
-  the 1981 10-year tax-base-loss reimbursement, the 1995 RPC dissolution,
-  Petigara's 72→60%, the CSKA $397/capita, and the Police Funding Model
-  figures. Primary sources: the Board Orders (open.alberta.ca has MGB 050/18)
-  and the Orders in Council.
+  Leduc annexation is 2019 / 8,260 ha, not 2017 / ~9,500 ha. 72→60% is now
+  sourced (UPE01548, 13 EMRB members). Still unchecked: LAB 14000 and O.C.
+  538/81 in primary documents, the 1981 10-year tax-base-loss reimbursement,
+  the **1995 RPC dissolution** (no primary source; one source conflicts), the
+  CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
+  Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
+
+- [ ] **First acceptance check once decisions 8–10 lock: reproduce UPE01548's
+  2022 60%.** Use Edmonton's share of equalized non-residential assessment
+  across the 13 EMRB members, excluding linear and M&E, from the open
+  equalized-assessment XLSX. If it lands near 60%, the unstated method is
+  pinned and the check becomes the pipeline's first test. If it doesn't, try
+  including linear/M&E, then raw FIR, and record which variant matches.
+  `docs/SCOPE_candidates.md` §"Research reply".
 
 - [ ] **Track A gate — St. Albert licensing.** Ask the City whether the
   LandScape ArcGIS service is reusable like its catalogued `data.stalbert.ca`

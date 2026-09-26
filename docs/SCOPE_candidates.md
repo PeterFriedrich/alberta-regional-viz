@@ -39,9 +39,11 @@ Source of truth: `edmonton-tax-viz/docs/SPEC_industrial.md` §"Track B"
 workbooks cover **every Alberta municipality, 2003–2025** (older zips to 1994),
 one file per year; `2026_Tax_Rates.xlsx` carries every municipality's rates in
 one file; the **equalized assessment report** (XLSX, 2024–2026) is the valid
-instrument for cross-municipality *level* comparison — raw FIR values are not
-revaluation-adjusted, so raw-FIR levels across municipalities are invalid and
-only within-year shares are usable with care.
+instrument for cross-municipality *level* comparison. Raw FIR levels across
+municipalities are invalid, and only within-year shares are usable with care.
+The reason is that municipal assessment levels and bases differ, not that
+revaluation is missing: Alberta reassesses every year (corrected 2026-09-26,
+see §"Research reply").
 
 The fetch idiom exists in the Edmonton repo (`scripts/fetch_fir_debt.py`,
 `scripts/fetch_fir_tax_base.py`: manual, reviewed input; anchor cross-checks;
@@ -127,6 +129,93 @@ join is ecological inference that must be flagged on the output itself.
    conflicts with Track B's "manual, reviewed input until there is a reason".
    Changing it changes CI, so it needs a proposal first.
 
+## Research reply (2026-09-26): region, transfers, normalization
+
+Distilled from `edmonton_calgary_core_ring_timeline.md` (out-of-repo, same
+folder). It answers the prompt `region_transfers_normalization_prompt.md` for
+decisions 8–10. Unlike the earlier reports it has **48 URLs** and marks what it
+could not verify. Local checks 2026-09-26 are marked ✔/✘.
+
+**Corrections to what this repo said:**
+- **"Raw FIR assessment is not revaluation-adjusted" is the wrong reason.**
+  Alberta reassesses at market value every year. The actual problem is that
+  municipal assessment *levels* and valuation bases differ, and equalized
+  assessment ("taxable assessment ÷ the municipality's assessment level")
+  corrects for that. The conclusion is unchanged: compare levels across
+  municipalities only on equalized assessment.
+- **The 72% → 60% figure is sourced now.** City of Edmonton UPE01548
+  (Executive Committee, 2024-06-19, p. 5) gives Edmonton's share of *taxable
+  non-residential* assessment within the 13 EMRB municipalities: 72% in 2008,
+  60% in 2022. The 76% → 72% figure is CR_3019 (2016), covering about 15 years
+  to around 2015 on a region that is not stated; it is a **different series,
+  not the same one continued**. Neither report publishes its method (raw vs
+  equalized; linear/M&E treatment).
+
+**Recommendations (decisions 8–10, pending Peter):**
+- **Region (8).** Use a fixed membership applied to every year: the 13 EMRB
+  members for Edmonton (Edmonton, Beaumont, Fort Saskatchewan, Leduc,
+  St. Albert, Spruce Grove, Strathcona County, Leduc County, Parkland County,
+  Sturgeon County, Devon, Morinville, Stony Plain), and the 8 CMRB members for
+  Calgary (Calgary, Airdrie, Chestermere, Cochrane, Foothills County,
+  High River, Okotoks, Rocky View County) ✔. Carry a stable ID through status
+  changes, merge dissolved municipalities back into the ones that absorbed
+  them, and publish a CMA-based variant alongside.
+  - The two regions behave differently. In Edmonton, the EMRB and the CMA
+    carry almost the same fiscal weight. In Calgary, the CMA leaves out
+    Foothills County, Okotoks and High River, so the board-vs-CMA gap is large.
+  - ✘ The report missed a detail: **the CMRB's original membership was
+    larger**, including Wheatland County and Strathmore
+    ([Western Wheel](https://www.westernwheel.ca/local-news/calgary-region-planning-board-votes-to-cease-operations-10202384)).
+    "Fixed = 2025 membership" is a choice that has to be stated, not the
+    board's historical footprint.
+  - Both boards are gone: the EMRB on 2025-04-01 and the CMRB on 2025-04-30.
+    Calgary's successor is a voluntary "Regional Table".
+- **Transfers (9).** Use FIR lines **1912** (provincial operating) and
+  **1922** (provincial capital) ✔. These are in the 2024 FIR Manual, p. 11;
+  whether the line codes drift across 2003–2025 is unverified.
+  - Show 5-year rolling averages per capita, with break markers at 2014 (BMTG
+    merged into MSI), 2021–23 (MSI stretched) and 2024 (LGFF).
+  - Show grantor allocations as a separate panel labelled "formula intent".
+  - Key caveat: **Edmonton and Calgary receive no MSI/LGFF operating grants by
+    design**, and have their own charter-city LGFF formula, so part of the
+    core-vs-ring transfer gap is legislated.
+  - Conditional vs unconditional is not a split the FIR makes; it would have
+    to be rebuilt program by program.
+  - The Police Funding Model is a cost to municipalities, not a transfer, and
+    falls on the ring's rural municipalities.
+- **Normalization (10).** The headline measure is **equalized non-residential
+  assessment excluding linear and M&E**, with linear and M&E stacked
+  separately.
+  - Edmonton levies no M&E tax, and linear and M&E move with provincial policy
+    (shallow gas 2019–23, new-well exemption 2022–24, the 2025 modifier
+    change, the 2026 MRRIA regulation). The UDI/EMRB State of Growth report
+    also excludes them.
+  - Population comes from StatCan census counts, interpolated between census
+    years. The Municipal Affairs Population List (gap 2020–22) is used only
+    where the chart needs what grant formulas saw.
+
+**A first data test this makes possible:** for 2022, rebuild the UPE01548 figure
+from the open equalized-assessment files, using the 13 EMRB members and
+excluding linear and M&E. Landing near 60% would pin the method both reports
+left unstated, and it would also be the pipeline's first acceptance check.
+
+**Still unverified (per the report):**
+- LAB Order 14000 and O.C. 538/81 against primary documents (Wikipedia only)
+- **The 1995 RPC dissolution date.** No primary source was found, and one weak
+  source implies the commission was still operating in 1997–98.
+- CMA member lists (Wikipedia; confirm against StatCan)
+- CR_3019's method
+- The FIR-vs-allocation reconciliation gap
+
+**Boundaries.**
+- 2019 onward: AltaLIS municipal boundary snapshots (OGL-Alberta; archived
+  years 2014, 2015, 2017–19 at the U of Lethbridge).
+- 1982 and earlier: build polygons from the Alberta Township System legal
+  descriptions in the Board Orders rather than tracing PDF maps. StatCan's
+  historical CSD files (1981 onward) serve as an independent check.
+- No official crosswalk exists between Alberta municipal codes and CSD codes.
+  Build one by name plus polygon overlay.
+
 ## Decisions that are Peter's
 
 1. **Which track leads.** B is unblocked and province-wide; A is the richer
@@ -147,13 +236,13 @@ join is ecological inference that must be flagged on the output itself.
    a map app, Calgary and a voting overlay, each a scope expansion.
 7. **DECIDED 2026-09-26: yes, as a split-screen snapshot comparison of the two regions; a Calgary timeline is optional later.** Was: *is Calgary in scope?* It is the brief's headline peer; this repo's scope
    says capital-region first.
-8. **What counts as the "Edmonton region"?** StatCan CMA (2021), the former
+8. **What counts as the "Edmonton region"?** *(Recommended 2026-09-26: fixed 13 EMRB / 8 CMRB membership; see the §"Research reply" above.)* StatCan CMA (2021), the former
    13-member EMRB (frozen since 2025-04-01), or a custom list. This replaces
    decision 2 if the timeline framing leads.
-9. **Transfers basis** (only if transfers are in scope): FIR transfer lines as
+9. **Transfers basis** *(Recommended: FIR lines 1912/1922, 5-year average per capita, break markers.)* (only if transfers are in scope): FIR transfer lines as
    the reproducible spine and LGFF/MSI PDFs as a cross-check. Conditional vs
    unconditional and capital vs operating: split or combined?
-10. **Normalization:** per capita vs per assessment dollar, and how to handle
+10. **Normalization:** *(Recommended: equalized non-residential excluding linear and M&E, with those two stacked separately; StatCan population.)* per capita vs per assessment dollar, and how to handle
     linear and M&E assessment in industrial counties (Strathcona, Sturgeon,
     Parkland, Leduc).
 11. **DECIDED 2026-09-26: deferred to a later phase (a historical voting map is a candidate).** Was: *voting overlay in or out?* It carries the ecological-inference risk.
