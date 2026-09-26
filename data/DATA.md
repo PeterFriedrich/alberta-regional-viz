@@ -39,6 +39,19 @@ while the guard stays green.
 - **CRS:** point geometry, lat/lon — every vintage checked. No polygons; lot area is an attribute.
 - **Quirks:** residential-improved only — the county's heavy-industrial base is absent. ⚠️ **Whole-building value repeated on every unit record** for some complexes (6101 Eton Blvd: 259 rows × $70.7 M) but not others; naive sum $116.8 B, strict dedup $21.3 B; dedup rule unsolved. Mill rates: municipal res 4.5822 / non-res 10.9933 per $1000 (2026 bylaw); history table at `strathcona.ca/.../tax-rates/` is server-rendered, plain scrape works.
 
+### Alberta Municipal Affairs — equalized assessment report (PDF series)
+- **Publisher / URL:** open.alberta.ca publication `2368-657x` (list the resources via CKAN `package_show?id=2368-657x`). One PDF per report year, 2009–2026.
+- **Licence:** OGL-Alberta.
+- **Verified:** 2026-09-26 (spike: `docs/SCOPE_candidates.md` §"Spike").
+- **Columns:** Municipality Type, Municipality, Residential, Farmland, Non Residential (Non regulated), NR Linear Property, NR Railway (present through the 2019 report, absent from 2020), NR Co-generating M&E, Machinery and Equipment, Grand Total. Type subtotal rows are unlabelled.
+- **Quirks:**
+  - **2009 and 2010 are scanned images with no text layer.** 2011+ extract with `pypdf`.
+  - Names are mixed case up to about 2019 and upper case after. Old names differ: "Foothills No. 31, M.D. Of" (→ FOOTHILLS COUNTY); Rocky View is "Rocky View County" as early as 2011.
+  - 2012–2016 layouts defeated a single-line regex for Beaumont and Devon.
+  - The report is dated Oct/Nov of the prior year. The report year ≠ the assessment year, and the mapping is **unconfirmed**.
+  - Each row's classes sum to its Grand Total. Use that as the parse check.
+  - Dissolutions are noted in the page header (e.g., Hythe → County of Grande Prairie, 2022).
+
 ### Alberta Municipal Affairs — FIR workbooks, tax rates, equalized assessment
 - **Publisher / URL:** `open.alberta.ca/opendata/municipal-financial-and-statistical-data` (FIR/SIR yearly workbooks 2003–2025, zips to 1994; `2026_Tax_Rates.xlsx`), `open.alberta.ca/dataset/equalized-assessment-report` (XLSX 2024–2026).
 - **Licence:** OGL-Alberta.

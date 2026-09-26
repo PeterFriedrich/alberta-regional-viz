@@ -216,6 +216,37 @@ left unstated, and it would also be the pipeline's first acceptance check.
 - No official crosswalk exists between Alberta municipal codes and CSD codes.
   Build one by name plus polygon overlay.
 
+## Spike (2026-09-26): the equalized-assessment PDFs reproduce the City's share
+
+A throwaway parse of the provincial equalized assessment reports (open.alberta.ca
+publication `2368-657x`), computing Edmonton's share across the 13 EMRB members.
+Code was scratch only; nothing was committed.
+
+- **Availability.** One PDF per report year, 2009–2026. **2009 and 2010 are image-only**
+  (no text layer). 2011 onward extract cleanly with `pypdf`.
+- **Columns.** Residential, farmland, non-residential (non-regulated), linear, railway
+  (≤ 2019 only), co-generating M&E, M&E, and grand total. Every parsed row's classes sum
+  exactly to its grand total.
+- **Results** (by report year; the mapping to assessment year is not yet confirmed):
+
+  | Report | NR only | NR + linear (+ railway) | All NR incl. M&E |
+  |---|---|---|---|
+  | 2011 | 76.2% | 71.1% | 60.4% |
+  | 2017 | 69.1% | 65.0% | 55.3% |
+  | 2022 | 64.5% | 60.5% | 48.9% |
+  | 2023 | 63.3% | 59.6% | 48.2% |
+  | 2026 | 60.9% | 57.5% | 45.1% |
+
+- **Reading.** The City's UPE01548 "72% (2008) → 60% (2022)" fits **NR + linear,
+  excluding M&E**. The 2016 "76%" fits **NR only**. The two published series are
+  probably different class definitions, not a contradiction. This is an inference from
+  the fit: the City's method is still unpublished.
+- **Tension with decision 10.** Our headline (NR excluding linear and M&E) is *not* the
+  City's basis. The pipeline must publish both, and the chart must say which one it
+  shows.
+- **Parser gap.** 2012–2016 dropped Beaumont and Devon: the text layout differs. The
+  no-silent-drop guard is what caught it.
+
 ## Decisions that are Peter's
 
 1. **Which track leads.** B is unblocked and province-wide; A is the richer
