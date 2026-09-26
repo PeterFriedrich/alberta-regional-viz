@@ -236,13 +236,13 @@ left unstated, and it would also be the pipeline's first acceptance check.
    a map app, Calgary and a voting overlay, each a scope expansion.
 7. **DECIDED 2026-09-26: yes, as a split-screen snapshot comparison of the two regions; a Calgary timeline is optional later.** Was: *is Calgary in scope?* It is the brief's headline peer; this repo's scope
    says capital-region first.
-8. **What counts as the "Edmonton region"?** *(Recommended 2026-09-26: fixed 13 EMRB / 8 CMRB membership; see the §"Research reply" above.)* StatCan CMA (2021), the former
+8. **What counts as the "Edmonton region"?** *(DECIDED 2026-09-26, see `DECISIONS.md`. fixed 13 EMRB / 8 CMRB membership; see the §"Research reply" above.)* StatCan CMA (2021), the former
    13-member EMRB (frozen since 2025-04-01), or a custom list. This replaces
    decision 2 if the timeline framing leads.
-9. **Transfers basis** *(Recommended: FIR lines 1912/1922, 5-year average per capita, break markers.)* (only if transfers are in scope): FIR transfer lines as
+9. **Transfers basis** *(DECIDED 2026-09-26, see `DECISIONS.md`. FIR lines 1912/1922, 5-year average per capita, break markers.)* (only if transfers are in scope): FIR transfer lines as
    the reproducible spine and LGFF/MSI PDFs as a cross-check. Conditional vs
    unconditional and capital vs operating: split or combined?
-10. **Normalization:** *(Recommended: equalized non-residential excluding linear and M&E, with those two stacked separately; StatCan population.)* per capita vs per assessment dollar, and how to handle
+10. **Normalization:** *(DECIDED 2026-09-26, see `DECISIONS.md`. equalized non-residential excluding linear and M&E, with those two stacked separately; StatCan population.)* per capita vs per assessment dollar, and how to handle
     linear and M&E assessment in industrial counties (Strathcona, Sturgeon,
     Parkland, Leduc).
 11. **DECIDED 2026-09-26: deferred to a later phase (a historical voting map is a candidate).** Was: *voting overlay in or out?* It carries the ecological-inference risk.

@@ -18,7 +18,10 @@ symptom and re-measure the stated cause before acting on it.
   **6, 7 and 11 were decided 2026-09-26** (timeline is the main scope; Calgary as
   a split-screen snapshot; voting deferred). 8–10 went out for research: the prompt
   is `/home/opc/research/alberta-regional-viz/region_transfers_normalization_prompt.md`;
-  the reply is in and its recommendations are in `docs/SCOPE_candidates.md`, waiting on Peter's yes.
+  **8–10 were decided 2026-09-26** as the reply recommended. Still open: 1–5,
+  most of which 6–10 now answer (track: B's FIR/equalized data is the spine; municipality
+  set = decision 8; output form = map + timeline + split screen). Confirm those,
+  plus 4 (Edmonton recomputed from the provincial source, like every peer?) and 5.
   Gates everything below. Done when
   `docs/DECISIONS.md` carries a row per decision.
 
@@ -43,7 +46,7 @@ symptom and re-measure the stated cause before acting on it.
   CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
   Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
 
-- [ ] **First acceptance check once decisions 8–10 lock: reproduce UPE01548's
+- [ ] **First acceptance check (decisions 8–10 locked): reproduce UPE01548's
   2022 60%.** Use Edmonton's share of equalized non-residential assessment
   across the 13 EMRB members, excluding linear and M&E, from the open
   equalized-assessment XLSX. If it lands near 60%, the unstated method is
