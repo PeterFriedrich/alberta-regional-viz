@@ -167,5 +167,5 @@ A share with no basis is a wrong number that looks right.
 
 ## Dependencies
 
-`requirements.txt` gains `pdfplumber` and `pandas` (pinned). `requirements-ci.txt`
+`requirements.txt` gains `pdfplumber` (pinned; pandas turned out unnecessary). `requirements-ci.txt`
 gains only what the synthetic tests import.
