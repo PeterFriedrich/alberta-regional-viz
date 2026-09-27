@@ -48,6 +48,38 @@ Core = Edmonton / Calgary. Ring = the other members of the region's fixed set
    Dissolved municipalities merged into a member (decision 8) are added as
    extra alias rows pointing at the absorbing `muni_id`.
 
+## Year semantics (resolved 2026-09-27)
+
+The Municipal Affairs *Guide to Equalized Assessment in Alberta* §5 says the
+2010 equalized assessment reflects the 2009 assessment roll: assessments
+prepared in 2008 for taxation in 2009. So:
+
+**`taxation_year = report_year − 1`**
+
+Assessments are prepared in the year before that. Every output carries both
+`report_year` and `taxation_year`. Charts are labelled by `taxation_year`,
+which is the year a municipality's own reports (e.g. UPE01548) use.
+
+## Parser approach (decided 2026-09-27)
+
+**Read positioned words (`pdfplumber`), not text lines.** In the 2012–2016
+layouts a zero is printed as a *blank cell*. Beaumont's 2014 row has 6
+numbers for 8 columns, so a line-based parser cannot know which columns are
+empty. Values are right-aligned, and each column's right edges agree to
+within about 1 pt (measured on the 2014 report). The parser:
+
+1. finds the header words on each page and derives an ordered column list
+   with each column's right-edge x from the numbers beneath it;
+2. assigns every numeric token on a municipality row to the column whose
+   right edge it matches (within 3 pt). A token matching no column fails the
+   page;
+3. treats a column with no token on that row as 0, and records that it was
+   blank rather than an explicit 0.
+
+A row whose value lands in the wrong column **still sums to its total**, so
+reconciliation alone cannot catch a placement error. The alignment check in
+step 2 is the guard for placement.
+
 ## Modules (`src/`, each independently runnable)
 
 1. **`fetch_equalized.py`**: downloads every report PDF into
@@ -58,9 +90,10 @@ Core = Edmonton / Calgary. Ring = the other members of the region's fixed set
    (a year vanished).
 2. **`parse_equalized.py`**: turns the PDFs into
    `data/processed/equalized_long.csv` with columns `report_year,
-   muni_type, muni_name_raw, class, value, source_file, page`. It detects the
+   taxation_year, muni_type, muni_name_raw, class, value, was_blank,
+   source_file, page`. It detects the
    column set from the header on each page (7 or 8 value columns) rather than
-   assuming it. Image-only years (2009, 2010) are **listed in the output log as
+   assuming it. Image-only years (reports 2009, 2010) are **listed in the output log as
    skipped, with the reason**, and never silently absent.
 3. **`build_share_series.py`**: joins the long table to `regions.csv` through
    `eq_aliases` and writes `data/processed/core_ring_share.csv`, one row per
@@ -92,13 +125,11 @@ paths from arguments with repo defaults.
    report years are recorded as skipped (image-only).
 2. **Reproduction check** (the pipeline's first data test,
    `test_reproduces_upe01548`): Edmonton `nr_linear` is within ±1.0 percentage
-   point of 60% for the report year that corresponds to assessment year 2022.
-   The spike gave 60.5% (report 2022) and 59.6% (report 2023). Only one of
-   those two is the right year to compare, and the test pins which one.
-3. **Year semantics resolved:** the mapping from report year to assessment
-   year and condition date is confirmed from the report text or Municipal
-   Affairs documentation. It is recorded in `data/DATA.md` and carried as an
-   `assessment_year` column. Acceptance 2 cannot pass without it.
+   point of 60% for taxation year 2022 (report 2023). The spike gave 59.6%.
+   Taxation year 2010 (report 2011; the spike gave 71.1%) must be ≤ 72%,
+   consistent with the City's decline from its 2008 anchor.
+3. **Year semantics** are carried as the `taxation_year` column (see §"Year
+   semantics").
 4. Unit tests run on synthetic fixtures only, offline (CI installs nothing
    beyond `requirements-ci.txt` plus whatever a test genuinely needs):
    alias join, both column layouts (7 and 8), reconciliation failure,
@@ -123,14 +154,18 @@ A share with no basis is a wrong number that looks right.
 
 ## Out of scope for Phase 1
 
-- OCR of 2009–2010. Revisit only if the timeline needs 2008–09. The City's 72%
-  anchor is a 2008 figure, so the series will start one or two years later
-  than the City's, and the chart says so.
-- The pre-2009 FIR raw-assessment fallback.
+- **Phase 1b (next): the 1998–2007 reports** (publication `1844032`; text
+  layer present). These use a different class set: residential including
+  farmland, non-residential, M&E, linear, with no railway or co-generating
+  column. `nr_linear` and `nr_all` map cleanly; whether `nr` includes railway
+  there needs checking. This extends the timeline back to taxation year 1997.
+- OCR of reports 2008–2010 (taxation years 2007–2009): all three are scanned
+  images. The City's 72% anchor (taxation year 2008) is in this gap, and the
+  chart says so until OCR fills it.
 - The CMA variant (decision 8). It goes in Phase 2 alongside the StatCan work.
 - Any web output.
 
 ## Dependencies
 
-`requirements.txt` gains `pypdf` and `pandas` (pinned). `requirements-ci.txt`
+`requirements.txt` gains `pdfplumber` and `pandas` (pinned). `requirements-ci.txt`
 gains only what the synthetic tests import.

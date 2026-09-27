@@ -48,7 +48,9 @@ while the guard stays green.
   - **2009 and 2010 are scanned images with no text layer.** 2011+ extract with `pypdf`.
   - Names are mixed case up to about 2019 and upper case after. Old names differ: "Foothills No. 31, M.D. Of" (→ FOOTHILLS COUNTY); Rocky View is "Rocky View County" as early as 2011.
   - 2012–2016 layouts defeated a single-line regex for Beaumont and Devon.
-  - The report is dated Oct/Nov of the prior year. The report year ≠ the assessment year, and the mapping is **unconfirmed**.
+  - **Year mapping: taxation year = report year − 1** (Municipal Affairs, *Guide to Equalized Assessment in Alberta* §5, `municipalaffairs.alberta.ca/documents/as/guide_to_equalized_assessment.pdf`, checked 2026-09-27). Reports are dated Oct/Nov of the prior year.
+  - **2012–2016 print zero as a blank cell.** Rows have fewer numbers than columns, so place values by x-position (numbers are right-aligned per column), never by order.
+  - **Older series:** publication `1844032` covers reports 1998–2008. 1998–2007 have a text layer, with classes residential (incl. farmland) / non-residential / M&E / linear. **2008 is image-only.**
   - Each row's classes sum to its Grand Total. Use that as the parse check.
   - Dissolutions are noted in the page header (e.g., Hythe → County of Grande Prairie, 2022).
 
