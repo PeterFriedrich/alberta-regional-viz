@@ -99,7 +99,9 @@ step 2 is the guard for placement.
    `eq_aliases` and writes `data/processed/core_ring_share.csv`, one row per
    `(region, report_year, basis)`, with columns `core_value, ring_value,
    core_share, n_members_found, n_members_expected`. It also writes a
-   per-municipality file for the later stacked layer.
+   per-municipality file for the later stacked layer. `core_ring_share.csv` is committed
+   (the one tracked file in `data/processed/`) so CI runs the reproduction test
+   against it; a rebuild that moves a share shows up as a diff.
 
 Every module writes structured (JSON-lines) logs, not prints, and takes its
 paths from arguments with repo defaults.

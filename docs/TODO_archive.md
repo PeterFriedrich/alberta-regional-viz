@@ -8,6 +8,12 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **The reproduction test never runs on the merge gate.** — DONE 2026-09-27: `core_ring_share.csv` committed, skip removed. `data/processed/` is
+  gitignored, so `test_reproduces_upe01548` skips in CI. Option: commit
+  `core_ring_share.csv` (96 rows, derived from OGL-Alberta data) so CI checks it.
+  This changes the output contract, so propose it before doing it.
+
+
 - [x] **Phase 1 build (`docs/SPEC_phase1.md`).** Done 2026-09-27: fetch → parse →
   build for 2011–2026, 21 members found in every year, `test_reproduces_upe01548`
   passes (Edmonton NR+linear 59.6% for taxation year 2022, against the City's 60%).

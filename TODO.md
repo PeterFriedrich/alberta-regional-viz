@@ -31,11 +31,6 @@ symptom and re-measure the stated cause before acting on it.
   (residential incl. farmland / NR / M&E / linear), so check whether NR includes
   railway there. Spec §"Out of scope".
 
-- [ ] **The reproduction test never runs on the merge gate.** `data/processed/` is
-  gitignored, so `test_reproduces_upe01548` skips in CI. Option: commit
-  `core_ring_share.csv` (96 rows, derived from OGL-Alberta data) so CI checks it.
-  This changes the output contract, so propose it before doing it.
-
 - [ ] **Send the two `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
   (which would close the gap holding the City's 2008 anchor). Status stays NOT
@@ -64,6 +59,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **The reproduction test never runs on the merge gate.** — DONE 2026-09-27 · `docs/TODO_archive.md`
 
 - [x] **Phase 1 build (`docs/SPEC_phase1.md`).** — DONE 2026-09-27 · `docs/TODO_archive.md`
 

@@ -17,6 +17,8 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+# Committed so the merge gate runs test_reproduces_upe01548 (DECISIONS.md 2026-09-27)
+!data/processed/core_ring_share.csv
 output/*
 !output/.gitkeep
 

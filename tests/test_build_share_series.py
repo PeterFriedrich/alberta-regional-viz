@@ -76,7 +76,6 @@ def test_fetch_duplicate_year_and_vanished_year():
 SERIES = REPO / "data/processed/core_ring_share.csv"
 
 
-@pytest.mark.skipif(not SERIES.exists(), reason="run the Phase 1 pipeline to produce core_ring_share.csv")
 def test_reproduces_upe01548():
     """City of Edmonton UPE01548 (2024-06-19, p. 5): Edmonton's share of the
     region's non-residential assessment fell from 72% (2008) to 60% (2022),
