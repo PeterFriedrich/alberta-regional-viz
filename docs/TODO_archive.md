@@ -8,6 +8,11 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 1 build (`docs/SPEC_phase1.md`).** Done 2026-09-27: fetch → parse →
+  build for 2011–2026, 21 members found in every year, `test_reproduces_upe01548`
+  passes (Edmonton NR+linear 59.6% for taxation year 2022, against the City's 60%).
+
+
 - [x] **PETER'S CALL — scope.** (All 11 decided 2026-09-26; see `docs/DECISIONS.md`.) The eleven decisions in `docs/SCOPE_candidates.md`
   §"Decisions that are Peter's": 1–5 as of 2026-09-18 (which track leads;
   municipality set; output form; Edmonton's own numbers reused or recomputed;
