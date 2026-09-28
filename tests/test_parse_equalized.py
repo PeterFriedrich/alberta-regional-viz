@@ -18,7 +18,8 @@ def w(text, x1, top, width=None):
 
 
 def header(top, rail=True):
-    words = [w("Municipality", 160, top), w("Residential", 242, top), w("Equipment", 668, top)]
+    words = [w("Municipality", 160, top), w("Residential", 242, top), w("Equipment", 668, top),
+             w("Linear", 470, top - 10), w("Co-generating", 600, top - 10)]
     if rail:
         words.append(w("Railway", 528, top - 10))
     return words
@@ -155,3 +156,65 @@ def test_numbers_inside_names_are_not_values():
 def test_image_only_document_is_an_error_not_an_empty_result():
     with pytest.raises(pe.ParseError, match="image-only"):
         pe.parse_pages([[], []], 2009)
+
+
+# 1998–2004 layout: 4 classes + total, M&E printed LEFT of linear.
+EDGES_OLD = [267, 347, 421, 496, 576]
+
+
+def old_header(top):
+    return [w("Municipality", 140, top), w("Residential", 259, top), w("Non", 298, top),
+            w("Residential", 348, top), w("Machinery", 409, top - 6), w("Linear", 480, top),
+            w("Grand", 545, top), w("Total", 569, top), w("Equipment", 413, top + 6)]
+
+
+def old_row(name, vals, top):
+    """vals: 5 ints (4 classes + total); None prints "-" left of the edge."""
+    words = data_row(name, {}, top, EDGES_OLD, name_x0=32)
+    for e, v in zip(EDGES_OLD, vals):
+        words.append(w("-", e - 10, top, width=3) if v is None else w(f"{v:,}", e, top))
+    return words
+
+
+def test_old_layout_classes_headings_dashes_and_loose_rows():
+    # Special Areas sits outside every section (1998); only the grand total covers it.
+    sa = [5, 3, 2, 1, 11]
+    ed = [100, 60, 20, 10, 190]
+    ai = [10, 5, None, 1, 16]
+    ei = [1, 1, 0, 1, 3]
+    words = old_header(100)
+    words += old_row("Special Areas", sa, 130)
+    words += data_row("CITIES", {}, 150, EDGES_OLD, name_x0=32)              # a heading
+    words += old_row("City of Edmonton", ed, 170)
+    words += old_row("City of Airdrie", ai, 180)
+    words += data_row("Improvement District No. 13 - Elk", {}, 189, EDGES_OLD, name_x0=32)
+    words += old_row("Island", ei, 199)                                        # values on the LAST line
+    cities = [e + (a or 0) + i for e, a, i in zip(ed, ai, ei)]
+    words += old_row("Total Cities", cities, 220)
+    grand = [s + c for s, c in zip(sa, cities)]
+    words += old_row("2003 GRAND TOTAL EQUALIZED", grand, 240)
+    rows, stats = pe.parse_pages([words], 2003)
+    got = {(r["muni_name_raw"], r["class"]): r["value"] for r in rows}
+    assert stats["layout"] == "1998-2004" and stats["rows"] == 4
+    assert got[("City of Edmonton", "me")] == 20 and got[("City of Edmonton", "nr_linear")] == 10
+    assert got[("City of Edmonton", "nr_incl_railway")] == 60
+    assert got[("City of Airdrie", "me")] == 0
+    assert ("Improvement District No. 13 - Elk Island", "me") in got
+    types = {r["muni_name_raw"]: r["muni_type"] for r in rows}
+    assert types["City of Edmonton"] == "CITIES" and types["Special Areas"] is None
+
+
+def test_old_layout_row_outside_every_total_fails():
+    words = old_header(100) + old_row("Stray", [1, 1, 1, 1, 4], 130)
+    words += old_row("City of Edmonton", [1, 1, 1, 1, 4], 150)
+    words += old_row("Total Cities", [1, 1, 1, 1, 4], 170)
+    with pytest.raises(pe.ParseError, match="never reconciled"):
+        pe.parse_pages([words], 2003)
+
+
+def test_number_split_into_two_words_is_rejoined():
+    # 1999: "7" + "32,059,142" printed as two words with no gap.
+    row = [{"text": "7", "x0": 507.0, "x1": 512.0, "top": 1}, {"text": "32,059,142", "x0": 512.2, "x1": 553.0, "top": 1}]
+    assert [x["text"] for x in pe._join_split_numbers(row)] == ["732,059,142"]
+    apart = [{"text": "7", "x0": 490.0, "x1": 495.0, "top": 1}, row[1]]
+    assert len(pe._join_split_numbers(apart)) == 2
