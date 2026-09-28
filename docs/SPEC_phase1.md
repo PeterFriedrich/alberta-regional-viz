@@ -32,7 +32,8 @@ Core = Edmonton / Calgary. Ring = the other members of the region's fixed set
 ## Inputs
 
 1. **The equalized assessment report PDFs**: the resource list comes from CKAN
-   `package_show?id=2368-657x` on open.alberta.ca (OGL-Alberta). The quirks are
+   `package_show?id=2368-657x` on open.alberta.ca (OGL-Alberta), plus
+   `1844032` for reports 1998–2008 (Phase 1b). The quirks are
    listed in `data/DATA.md` §"equalized assessment report (PDF series)".
 2. **`data/regions.csv`**: hand-maintained and committed. It is the single
    source of region membership. Columns:
@@ -154,13 +155,42 @@ and every later chart label states:
 
 A share with no basis is a wrong number that looks right.
 
+## Phase 1b (built 2026-09-28)
+
+The 1998–2007 reports (publication `1844032`) extend the series back to
+taxation year 1997. The gap for taxation years 2007–2009 stays, because
+reports 2008–2010 are image-only.
+
+- **Fetch:** `fetch_equalized.py` reads both CKAN packages, each with its own
+  resource-name pattern. A report year listed by both fails.
+- **Layouts:**
+  - Reports 2005–2007 use the 2011+ layout unchanged.
+  - Reports 1998–2004 print 4 classes plus the total. Their class set is
+    residential including farmland, NR, M&E and linear, and M&E prints left
+    of linear.
+  - Old-layout columns are named from the header's x-positions, never assumed,
+    and are stored under two new classes: `residential_incl_farmland` and
+    `nr_incl_railway`.
+- **Railway is inside the old NR column.** The evidence is Jasper National Park:
+  - I.D. No. 12 in the 2005 report: NR 7.2M, railway 5.6M, linear 10.9M.
+  - The same I.D. in the 2004 report: NR 17.4M, linear 10.8M, and no railway
+    column.
+  - Linear matches across the two years, so the 5.6M of railway can only sit
+    inside the 2004 NR figure. Beaver County agrees.
+- **Bases for 1998–2004 reports** (`build_share_series.OLD_BASES`):
+  - `nr_linear` and `nr_all` map exactly.
+  - `nr` is NR including railway, and its `basis_note` says so.
+  - Railway was 0.03–0.6% of NR in the 2007–2019 reports, so it moves a core
+    share by about 0.1 pp at most.
+- **Split rows:** the 1998 report prints "City of Calgary (Part II)" as a second
+  Calgary row. A `+`-prefixed alias in `regions.csv` sums it into Calgary. It is
+  logged, and a non-`+` duplicate still fails.
+- **Guard:** the parser rewrite left the 2009–2026 rows of
+  `equalized_long.csv` byte-identical, which was checked against a pre-change
+  copy. The committed `core_ring_share.csv` only gained rows.
+
 ## Out of scope for Phase 1
 
-- **Phase 1b (next): the 1998–2007 reports** (publication `1844032`; text
-  layer present). These use a different class set: residential including
-  farmland, non-residential, M&E, linear, with no railway or co-generating
-  column. `nr_linear` and `nr_all` map cleanly; whether `nr` includes railway
-  there needs checking. This extends the timeline back to taxation year 1997.
 - OCR of reports 2008–2010 (taxation years 2007–2009): all three are scanned
   images. The City's 72% anchor (taxation year 2008) is in this gap, and the
   chart says so until OCR fills it.

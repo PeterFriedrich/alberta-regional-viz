@@ -26,15 +26,19 @@ symptom and re-measure the stated cause before acting on it.
   CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
   Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
 
-- [ ] **Phase 1b — the 1998–2007 reports** (publication `1844032`, text layer). This
-  extends the series back to taxation year 1997. It is a different layout and class set
-  (residential incl. farmland / NR / M&E / linear), so check whether NR includes
-  railway there. Spec §"Out of scope".
-
-- [ ] **Send the two `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
+- [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
-  (which would close the gap holding the City's 2008 anchor). Status stays NOT
-  SENT until one is actually sent.
+  (which would close the gap holding the City's 2008 anchor). Mention the 1999
+  subtotal rounding and the 2006 row totals (rows added 2026-09-28) in the same
+  message; they aren't worth a message of their own. Status stays NOT SENT until
+  one is actually sent.
+
+- [ ] **Caption the NR+linear rise across the 2007–2009 gap.** Edmonton's `nr_linear`
+  share is 67.2% for taxation year 2006 and 71.1% for 2010, while `nr` barely moves
+  (75.3% → 76.2%). Market NR more than doubled in those years, while regulated linear
+  grew about 25%, and linear is a larger share of the ring's base. It is a
+  composition effect, not a data break, but a chart spanning the gap reads as a jump.
+  This belongs to the Phase 4 chart text.
 
 - [ ] **Track A gate — St. Albert licensing.** *(Track A is not in the plan, per
   decision 1 on 2026-09-26: the ask is still worth sending, but nothing waits on it.)* Ask the City whether the
@@ -59,6 +63,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Phase 1b — the 1998–2007 reports** — DONE 2026-09-28 · `docs/TODO_archive.md`
 
 - [x] **The reproduction test never runs on the merge gate.** — DONE 2026-09-27 · `docs/TODO_archive.md`
 

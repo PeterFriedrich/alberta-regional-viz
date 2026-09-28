@@ -8,6 +8,14 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 1b — the 1998–2007 reports** — DONE 2026-09-28: the series now covers taxation
+  years 1997–2006 and 2010–2025; railway sits inside the old NR (the `nr` basis is flagged);
+  2009–2026 output is byte-identical. Spec §"Phase 1b (built 2026-09-28)". (Publication
+  `1844032`, text layer.) This extends the series back to taxation year 1997. It is a different layout and class set
+  (residential incl. farmland / NR / M&E / linear), so check whether NR includes
+  railway there. Spec §"Out of scope".
+
+
 - [x] **The reproduction test never runs on the merge gate.** — DONE 2026-09-27: `core_ring_share.csv` committed, skip removed. `data/processed/` is
   gitignored, so `test_reproduces_upe01548` skips in CI. Option: commit
   `core_ring_share.csv` (96 rows, derived from OGL-Alberta data) so CI checks it.

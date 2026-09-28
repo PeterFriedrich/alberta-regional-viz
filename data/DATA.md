@@ -50,7 +50,22 @@ while the guard stays green.
   - 2012–2016 layouts defeated a single-line regex for Beaumont and Devon.
   - **Year mapping: taxation year = report year − 1** (Municipal Affairs, *Guide to Equalized Assessment in Alberta* §5, `municipalaffairs.alberta.ca/documents/as/guide_to_equalized_assessment.pdf`, checked 2026-09-27). Reports are dated Oct/Nov of the prior year.
   - **2012–2016 print zero as a blank cell.** Rows have fewer numbers than columns, so place values by x-position (numbers are right-aligned per column), never by order.
-  - **Older series:** publication `1844032` covers reports 1998–2008. 1998–2007 have a text layer, with classes residential (incl. farmland) / non-residential / M&E / linear. **2008 is image-only.**
+  - **Older series:** publication `1844032` covers reports 1998–2008. Its resources are named "YYYY equalized assessment report", without the "Provincial" prefix. Reports 1998–2007 have a text layer; **2008 is image-only.** Parsed 2026-09-28 (`docs/SPEC_phase1.md` §"Phase 1b (built 2026-09-28)").
+    - **Reports 2005–2007** use the 2011+ 8-column layout.
+    - **Reports 1998–2004 layout:** 4 classes plus Grand Total: Residential (incl. farmland) / Non Residential / Machinery & Equipment / Linear. M&E prints *left* of Linear.
+    - **Railway sits inside Non Residential in 1998–2004.** The evidence is I.D. No. 12 Jasper Park in 2004 vs 2005. **Co-generating M&E** has no column in these years.
+    - **Section headings in the name column:** 1998–2004 print headings ("CITIES", 2001's "Rural Municipalities") where names go. 1999 and 2000 wrap long names *above* their values ("Regional Municipality of Wood" / "Buffalo 941,…"), and wrap subtotal labels around them ("TOTAL SPECIALIZED" / values / "MUNICIPALITIES").
+    - **Uncovered rows:** Special Areas and Redwood Meadows sit outside every subtotal (first in 1998, last in 2002–2004). Only the grand total covers them.
+    - **One-off quirks:**
+      - 1998–1999 print zero as `-`, which sits about 10 pt left of the column's right edge.
+      - 1999 splits the total's first digit into its own word (`7` + `32,059,142`).
+      - 2004 prints Strathcona County's row without thousands separators.
+      - One page of the 2000 report is shifted about 7 pt, and two 1998 rows by 3 pt; the parser anchors each row on its own total.
+      - Some reports have a by-type summary page (1999 p11, 2000 p10) that is skipped.
+    - **Names:** 1998 uses "City of Edmonton", "M.D. of Rocky View No. 44" and similar. 2001–2004 print "Airdire", and 2001 prints "Foothills No. 32" for No. 31. The 1998 report has a second Calgary row, "City of Calgary (Part II)", with no explanation in the report.
+    - **Publisher rounding** (`docs/DATA_ISSUES.md`):
+      - In 1999, six subtotals are off by 1–5 in the residential and grand-total columns.
+      - In 2006, two row totals are off by 1 (Bassano, Swan Hills).
   - Each row's classes sum to its Grand Total. Use that as the parse check.
   - Dissolutions are noted in the page header (e.g., Hythe → County of Grande Prairie, 2022).
 

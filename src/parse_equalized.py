@@ -3,7 +3,7 @@
 Two layout families. Reports 2005 on carry 7 classes (+ total); reports
 1998–2004 carry 4 in a different order (M&E prints left of linear), so
 those columns are named from the header's x-positions, never assumed
-(docs/SPEC_phase1.md §"Phase 1b").
+(docs/SPEC_phase1.md §"Phase 1b (built 2026-09-28)").
 
 Values are placed by x-position, never by order: the 2012–2016 layouts print
 zero as a blank cell, so a row can have fewer numbers than columns
@@ -46,8 +46,8 @@ CLASSES_RAIL = ["residential", "farmland", "nr", "nr_linear", "nr_railway",
                 "nr_cogen_me", "me", "grand_total"]
 CLASSES_NO_RAIL = [c for c in CLASSES_RAIL if c != "nr_railway"]
 # Reports 1998–2004: residential includes farmland, and NR includes railway
-# (docs/SPEC_phase1.md §"Phase 1b"). Header keyword -> class; order comes
-# from where each keyword prints.
+# (docs/SPEC_phase1.md §"Phase 1b (built 2026-09-28)"). Header keyword ->
+# class; order comes from where each keyword prints.
 OLD_HEADER = [("RESIDENTIAL", "residential_incl_farmland"), ("NON", "nr_incl_railway"),
               ("MACHINERY", "me"), ("LINEAR", "nr_linear"), ("TOTAL", "grand_total")]
 # Section headings of the 1998–2004 reports print in the NAME column

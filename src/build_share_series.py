@@ -28,8 +28,9 @@ BASES = {
     "nr_linear": ["nr", "nr_linear", "nr_railway"],
     "nr_all": ["nr", "nr_linear", "nr_railway", "nr_cogen_me", "me"],
 }
-# Reports 1998–2004 print NR with railway in it (docs/SPEC_phase1.md §"Phase 1b"):
-# nr_linear and nr_all map exactly; nr carries railway (0.03–0.6% of NR in 2007–2019).
+# Reports 1998–2004 print NR with railway in it, so nr_linear and nr_all map
+# exactly and nr carries railway (0.03–0.6% of NR in 2007–2019).
+# docs/SPEC_phase1.md §"Phase 1b (built 2026-09-28)".
 OLD_BASES = {
     "nr": ["nr_incl_railway"],
     "nr_linear": ["nr_incl_railway", "nr_linear"],
