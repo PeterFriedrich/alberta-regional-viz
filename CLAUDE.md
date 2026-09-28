@@ -4,13 +4,16 @@
 Alberta regional fiscal lens: how Edmonton's assessment base and tax levy compare
 with other Alberta municipalities (capital-region peers first). Sibling of
 `edmonton-tax-viz` — a separate repo with its own data and outputs; nothing
-here restructures that project. Python-only, no GIS software. **No output form
-is decided yet** — `docs/SCOPE_candidates.md` holds the two data tracks and the
-open decisions; write `docs/SPEC_phase1.md` before any pipeline code.
+here restructures that project. Python-only, no GIS software. Scope is locked
+(`docs/DECISIONS.md`): a core-vs-ring timeline of equalized non-residential
+assessment, 1997–2025, from Municipal Affairs PDFs, ending in a static map app.
+The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
+`build_share_series.py`) is built. Use `.venv/bin/python` — system `python` is 3.8.
 
 ## Key Files
 - `TODO.md` — living backlog and **the source of truth for progress**. Read it first to know what to work on; update it in place as items open/close. Session summaries narrate *what happened*; TODO.md owns *what's left*. Never redo a closed item without asking — its `## Done` section lists every closed item in one line each. Conversely, an *open* item can be stale — reproduce the symptom and re-measure the stated cause before acting on it. **When an item closes, move its body to `docs/TODO_archive.md` and leave a `## Done` line** (`python tools/todo_archive.py` does it in bulk) — this file is read every session, so it must hold live work, not history.
-- `docs/SCOPE_candidates.md` — the two candidate data tracks (per-parcel peers via ArcGIS; province-wide aggregates via Alberta Municipal Affairs), what each was verified to support, what blocks each, and the decisions that are Peter's; also distils the 2026-09-26 core-vs-ring timeline brief (Calgary, map app, timeline mode, mandate register). **Read before proposing scope or touching a source.** The research reports themselves live outside the repo in `/home/opc/research/alberta-regional-viz/`.
+- `docs/SPEC_phase1.md` — the pipeline's spec: bases, year semantics (`taxation_year = report_year − 1`), parser approach, Phase 1b. **Read before touching `src/`.**
+- `docs/SCOPE_candidates.md` — the two data tracks (Track A per-parcel peers, dropped by decision 1; Track B province-wide aggregates) and the reasoning behind the locked decisions; also distils the 2026-09-26 core-vs-ring timeline brief (Calgary, map app, timeline mode, mandate register). **Read before proposing scope or touching a source.** The research reports themselves live outside the repo in `/home/opc/research/alberta-regional-viz/`.
 - `docs/SPIKE_regional_lens.md` — the 2026-07-17 feasibility spike on St. Albert and Strathcona County (copied from the Edmonton repo; facts are as of that date).
 - `docs/DECISIONS.md` — append-only index of locked decisions: one row + pointer to the doc holding the full reasoning. **Add a row whenever a decision locks.** Check it before re-opening anything that feels "already settled".
 - `docs/TOKEN_EFFICIENCY.md` — context/token hygiene (what NOT to read raw, session-summary archiving). **Read before bulk-reading data or summaries.**
