@@ -122,3 +122,14 @@ def test_reproduces_upe01548():
              for r in csv.DictReader(f)}
     assert abs(s[("edmonton", 2022, "nr_linear")] - 0.60) <= 0.01
     assert s[("edmonton", 2010, "nr_linear")] <= 0.72
+
+
+def test_suspect_printed_values_are_kept_until_verified():
+    """Airdrie NR = 0 (taxation 2016) and Sturgeon NR 648M (2000) stay as printed
+    until FIR corroborates or refutes them (docs/DECISIONS.md, 2026-09-28). A
+    correction is 1.9 / 2.4 pp; it must arrive with a DECISIONS row, not silently."""
+    with SERIES.open() as f:
+        s = {(r["region"], int(r["taxation_year"]), r["basis"]): float(r["core_share"])
+             for r in csv.DictReader(f)}
+    assert abs(s[("calgary", 2016, "nr")] - 0.9375) <= 0.0005
+    assert abs(s[("edmonton", 2000, "nr")] - 0.7380) <= 0.0005

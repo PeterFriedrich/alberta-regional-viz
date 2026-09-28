@@ -30,12 +30,6 @@ symptom and re-measure the stated cause before acting on it.
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
 
-- [ ] **Decide how to treat the four publisher-printed one-year anomalies** (Peter).
-  They are Airdrie NR = 0 (2016), Sturgeon NR (2000), Devon NR (1998) and Calgary
-  linear (2002); see `docs/DATA_ISSUES.md`. Airdrie moves Calgary's share by 1.9 pp
-  and Sturgeon moves Edmonton's by 2.4 pp. The options are: keep as printed and
-  annotate, replace with a flagged correction, or check against FIR first (Phase 2).
-
 - [ ] **Proposed: a build-time continuity warning** in `build_share_series.py`. It
   would log any member whose basis value jumps and reverts, or drops to zero.
   `test_reproduces_upe01548` can't see a zeroed small member. The thresholds need
@@ -76,6 +70,11 @@ symptom and re-measure the stated cause before acting on it.
   `fetch_fir_debt.py`'s `MUNICIPALITIES` idiom from the Edmonton repo, extend
   to the chosen municipality set and the equalized-assessment workbooks.
   Manual, reviewed input (not a scheduled refresh) until there is a reason.
+  **Then verify the four printed anomalies against FIR taxable assessment**, per
+  the DECISIONS row of 2026-09-28: Airdrie NR 2016, Sturgeon NR 2000, Devon 1998
+  and Calgary linear 2002. The Sturgeon and Devon checks need the pre-2003 FIR zip
+  files, whose contents are unverified. A confirmed error gets a flagged correction,
+  and the guard test is updated in the same commit.
 
 - [ ] **Merge gate deps.** `requirements-ci.txt` is pytest-only. Add
   `openpyxl`/`pandas` etc. only when a test needs them; keep it offline.
