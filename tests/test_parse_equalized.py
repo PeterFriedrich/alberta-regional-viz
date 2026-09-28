@@ -218,3 +218,16 @@ def test_number_split_into_two_words_is_rejoined():
     assert [x["text"] for x in pe._join_split_numbers(row)] == ["732,059,142"]
     apart = [{"text": "7", "x0": 490.0, "x1": 495.0, "top": 1}, row[1]]
     assert len(pe._join_split_numbers(apart)) == 2
+
+
+def test_old_column_order_is_read_from_the_header_not_assumed():
+    # Swap where Linear and Machinery print: the classes must follow.
+    hdr = old_header(100)
+    for x in hdr:
+        if x["text"] == "Linear":
+            x["x0"], x["x1"] = 363, 390
+        elif x["text"] in ("Machinery", "Equipment"):
+            x["x0"], x["x1"] = 451, 490
+    rows = pe._rows(hdr)
+    assert pe._old_classes(rows, pe._header_bottom(rows)) == [
+        "residential_incl_farmland", "nr_incl_railway", "nr_linear", "me", "grand_total"]

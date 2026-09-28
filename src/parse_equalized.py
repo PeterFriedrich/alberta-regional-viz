@@ -1,8 +1,8 @@
 """Parse the provincial equalized assessment report PDFs into a long table.
 
 Two layout families. Reports 2005 on carry 7 classes (+ total); reports
-1998–2004 carry 4, and their column ORDER varies (M&E prints left of linear),
-so those columns are named from the header's x-positions
+1998–2004 carry 4 in a different order (M&E prints left of linear), so
+those columns are named from the header's x-positions, never assumed
 (docs/SPEC_phase1.md §"Phase 1b").
 
 Values are placed by x-position, never by order: the 2012–2016 layouts print
