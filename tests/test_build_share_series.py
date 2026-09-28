@@ -42,6 +42,37 @@ def test_shares_per_basis_and_old_alias(tmp_path):
     assert s == {"nr": 0.6, "nr_linear": round(70 / 120, 6), "nr_all": round(70 / 220, 6)}
 
 
+def test_old_class_set_uses_old_bases(tmp_path):
+    reg = regions(tmp_path, REGION)
+    rows = (long(2003, "Core City", nr_incl_railway=60, nr_linear=10, me=0, residential_incl_farmland=5)
+            + long(2003, "Ring County", nr_incl_railway=40, nr_linear=10, me=100, residential_incl_farmland=5))
+    found, years = bss.member_values(rows, reg)
+    out = {r["basis"]: r for r in bss.shares(found, years, reg)}
+    assert out["nr"]["core_share"] == 0.6 and "railway" in out["nr"]["basis_note"]
+    assert out["nr_all"]["core_share"] == round(70 / 220, 6)
+    assert "railway" not in out["nr_linear"]["basis_note"]
+
+
+def test_mixed_class_sets_in_one_year_fail(tmp_path):
+    reg = regions(tmp_path, REGION)
+    rows = long(2003, "Core City", nr_incl_railway=1) + long(2003, "Ring County", nr=1)
+    found, years = bss.member_values(rows, reg)
+    with pytest.raises(bss.BuildError, match="mix"):
+        bss.shares(found, years, reg)
+
+
+def test_part_alias_is_summed_and_a_plain_duplicate_still_fails(tmp_path):
+    reg = regions(tmp_path, [("core", "r", "core", "CORE CITY|+CORE CITY (PART II)"),
+                             ("ring", "r", "ring", "RING COUNTY")])
+    rows = (long(1998, "Core City", nr_incl_railway=60) + long(1998, "Core City (Part II)", nr_incl_railway=5)
+            + long(1998, "Ring County", nr_incl_railway=35))
+    found, _ = bss.member_values(rows, reg)
+    assert found[(1998, "core")]["nr_incl_railway"] == 65
+    twice = rows + [{**r, "page": "2"} for r in long(1998, "Core City (Part II)", nr_incl_railway=5)]
+    with pytest.raises(bss.BuildError, match="matched twice"):
+        bss.member_values(twice, reg)
+
+
 def test_missing_member_fails(tmp_path):
     reg = regions(tmp_path, REGION)
     rows = long(2014, "Core City", nr=1) + long(2015, "Core City", nr=1) + long(2015, "Ring County", nr=1)

@@ -1,22 +1,22 @@
 muni_id,name,region,role,eq_aliases,member_basis,notes
-edmonton,City of Edmonton,edmonton,core,EDMONTON,EMRB 2025,
-beaumont,City of Beaumont,edmonton,ring,BEAUMONT,EMRB 2025,Town until 2019-01-01 (became a city)
-fort_saskatchewan,City of Fort Saskatchewan,edmonton,ring,FORT SASKATCHEWAN,EMRB 2025,
-leduc_city,City of Leduc,edmonton,ring,LEDUC,EMRB 2025,
-st_albert,City of St. Albert,edmonton,ring,ST. ALBERT,EMRB 2025,
-spruce_grove,City of Spruce Grove,edmonton,ring,SPRUCE GROVE,EMRB 2025,
-strathcona,Strathcona County,edmonton,ring,STRATHCONA COUNTY,EMRB 2025,Specialized municipality
-leduc_county,Leduc County,edmonton,ring,LEDUC COUNTY,EMRB 2025,
-parkland,Parkland County,edmonton,ring,PARKLAND COUNTY,EMRB 2025,
-sturgeon,Sturgeon County,edmonton,ring,STURGEON COUNTY,EMRB 2025,
-devon,Town of Devon,edmonton,ring,DEVON,EMRB 2025,
-morinville,Town of Morinville,edmonton,ring,MORINVILLE,EMRB 2025,
-stony_plain,Town of Stony Plain,edmonton,ring,STONY PLAIN,EMRB 2025,
-calgary,City of Calgary,calgary,core,CALGARY,CMRB 2025,
-airdrie,City of Airdrie,calgary,ring,AIRDRIE,CMRB 2025,
-chestermere,City of Chestermere,calgary,ring,CHESTERMERE,CMRB 2025,
-cochrane,Town of Cochrane,calgary,ring,COCHRANE,CMRB 2025,
-foothills,Foothills County,calgary,ring,FOOTHILLS COUNTY|FOOTHILLS NO. 31 M.D. OF,CMRB 2025,Renamed from M.D. of Foothills No. 31
-high_river,Town of High River,calgary,ring,HIGH RIVER,CMRB 2025,
-okotoks,Town of Okotoks,calgary,ring,OKOTOKS,CMRB 2025,
-rocky_view,Rocky View County,calgary,ring,ROCKY VIEW COUNTY,CMRB 2025,
+edmonton,City of Edmonton,edmonton,core,EDMONTON|CITY OF EDMONTON,EMRB 2025,
+beaumont,City of Beaumont,edmonton,ring,BEAUMONT|TOWN OF BEAUMONT,EMRB 2025,Town until 2019-01-01 (became a city)
+fort_saskatchewan,City of Fort Saskatchewan,edmonton,ring,FORT SASKATCHEWAN|CITY OF FORT SASKATCHEWAN|FT. SASKATCHEWAN,EMRB 2025,
+leduc_city,City of Leduc,edmonton,ring,LEDUC|CITY OF LEDUC,EMRB 2025,
+st_albert,City of St. Albert,edmonton,ring,ST. ALBERT|CITY OF ST. ALBERT,EMRB 2025,
+spruce_grove,City of Spruce Grove,edmonton,ring,SPRUCE GROVE|CITY OF SPRUCE GROVE,EMRB 2025,
+strathcona,Strathcona County,edmonton,ring,STRATHCONA COUNTY|STRATHCONA COUNTY NO. 20,EMRB 2025,Specialized municipality
+leduc_county,Leduc County,edmonton,ring,LEDUC COUNTY|COUNTY OF LEDUC NO. 25|LEDUC NO. 25 COUNTY OF,EMRB 2025,
+parkland,Parkland County,edmonton,ring,PARKLAND COUNTY|PARKLAND COUNTY NO. 31,EMRB 2025,
+sturgeon,Sturgeon County,edmonton,ring,STURGEON COUNTY|M.D. OF STURGEON NO. 90,EMRB 2025,
+devon,Town of Devon,edmonton,ring,DEVON|TOWN OF DEVON,EMRB 2025,
+morinville,Town of Morinville,edmonton,ring,MORINVILLE|TOWN OF MORINVILLE,EMRB 2025,
+stony_plain,Town of Stony Plain,edmonton,ring,STONY PLAIN|TOWN OF STONY PLAIN,EMRB 2025,
+calgary,City of Calgary,calgary,core,CALGARY|CITY OF CALGARY|+CITY OF CALGARY (PART II),CMRB 2025,"1998 report prints a second row ""City of Calgary (Part II)"", summed in"
+airdrie,City of Airdrie,calgary,ring,AIRDRIE|CITY OF AIRDRIE|AIRDIRE,CMRB 2025,"""Airdire"" is a 2001-2004 report typo"
+chestermere,City of Chestermere,calgary,ring,CHESTERMERE|TOWN OF CHESTERMERE,CMRB 2025,
+cochrane,Town of Cochrane,calgary,ring,COCHRANE|TOWN OF COCHRANE,CMRB 2025,
+foothills,Foothills County,calgary,ring,FOOTHILLS COUNTY|FOOTHILLS NO. 31 M.D. OF|M.D. OF FOOTHILLS NO. 31|FOOTHILLS NO. 32 M.D. OF,CMRB 2025,"Renamed from M.D. of Foothills No. 31; ""No. 32"" is a 2001 report typo"
+high_river,Town of High River,calgary,ring,HIGH RIVER|TOWN OF HIGH RIVER,CMRB 2025,
+okotoks,Town of Okotoks,calgary,ring,OKOTOKS|TOWN OF OKOTOKS,CMRB 2025,
+rocky_view,Rocky View County,calgary,ring,ROCKY VIEW COUNTY|ROCKY VIEW NO. 44 M.D. OF|M.D. OF ROCKY VIEW NO. 44,CMRB 2025,
