@@ -16,6 +16,10 @@ top-down, fundamental decisions first.
 
 | Date | Target / scope | Instrument | Output | Verdict (one line) | Outstanding |
 |------|----------------|------------|--------|--------------------|-------------|
+| 2026-09-28 | #4 parsed values: external + continuity | 1999 p11 / 2000 p10 by-type tables; spike-and-revert scan of `member_assessment.csv` | `docs/FINDINGS_quick_audits_2026-09-28.md` §#4 | WARN: parser faithful (2 reports tie to the dollar); 4 publisher-printed one-year anomalies, Airdrie NR=0 (2016) −1.9 pp Calgary, Sturgeon NR (2000) −2.4 pp Edmonton; "capped" pre-2000 method change found | Treatment of anomalies (Peter); continuity warning (proposed); capping → #2 |
+| 2026-09-28 | #6 known-defect confinement | Code read + mutation of the `is_sub` guard | `docs/FINDINGS_quick_audits_2026-09-28.md` §#6 | PASS; `is_sub` guard was untested (mutant green), test added | — |
+| 2026-09-28 | #3 `test_reproduces_upe01548` strength | Alternative bases/years/zeroed members against the ±1 pp band | `docs/FINDINGS_quick_audits_2026-09-28.md` §#3 | WARN: pins basis (≥3.7 pp margin), not year convention (2021–2024 all pass) nor a zeroed small member | Second external anchor at another year |
+| 2026-09-28 | #7 `CLAUDE.md` currency | Every claim and path checked against DECISIONS/SPEC/tree | `docs/FINDINGS_quick_audits_2026-09-28.md` §#7 | FAIL → fixed: "no output form decided" contradicted decision 3; SPEC missing from Key Files; `.venv` note added | Trimming Track A rules is Peter's scope call |
 
 ## Queued — briefed, not yet run
 
@@ -41,7 +45,9 @@ data under it, then the project's shape. Each entry is a question, not a finding
      composition effect; check that no rule change is also in it.
    - Evidence: the report prefaces (the 1998, 2002 and 2003 intros describe
      the method) and the MA Guide.
-3. **How much does `test_reproduces_upe01548` actually pin?**
+   - **Found 2026-09-28:** the 2000 report marks the 1997–1999 totals "capped" and
+     2000 "uncapped" (+18.25%). Nothing in the repo covers it; start here.
+3. *(Run 2026-09-28, see Executed.)* **How much does `test_reproduces_upe01548` actually pin?**
    - It is the only external anchor, and the City's basis is decoded "by fit",
      not stated.
    - Its tolerance is ±1 pp, against a year-to-year movement of about 1 pp.
@@ -50,7 +56,7 @@ data under it, then the project's shape. Each entry is a question, not a finding
 
 **B. The data under it**
 
-4. **The 1998–2007 values have only internal checks** (row sums, subtotals,
+4. *(Run 2026-09-28, see Executed.)* **The 1998–2007 values have only internal checks** (row sums, subtotals,
    alignment). Two external checks are available:
    - The 1999 report's p12 prints Total Equalized for 1990–1999. Compare it
      with the parsed 1998/1999 grand totals.
@@ -62,13 +68,13 @@ data under it, then the project's shape. Each entry is a question, not a finding
      but nothing has checked whether any dissolution into a member happened
      in 1997–2025.
    - Confirm what "City of Calgary (Part II)" (1998) actually is.
-6. **The known-defect tables now hold 15 corrections** (13 subtotal cells in `KNOWN_DEFECTS`, 2 row totals in `KNOWN_TOTAL_DEFECTS`). Each correction is justified by a
+6. *(Run 2026-09-28, see Executed.)* **The known-defect tables now hold 15 corrections** (13 subtotal cells in `KNOWN_DEFECTS`, 2 row totals in `KNOWN_TOTAL_DEFECTS`). Each correction is justified by a
    sum. Is "corrected by name" still the right tool at that size, and is every
    correction confined to cells that are never output?
 
 **C. The project's shape**
 
-7. **`CLAUDE.md` is stale, and it is read every session.**
+7. *(Run 2026-09-28, see Executed.)* **`CLAUDE.md` is stale, and it is read every session.**
    - It says "no output form is decided" and "write the spec before any
      pipeline code".
    - It still carries the Track A rules (St. Albert per-parcel, EPSG:3400) and

@@ -26,9 +26,25 @@ symptom and re-measure the stated cause before acting on it.
   CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
   Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
 
-- [ ] **Next session: pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited
-  (candidates, roughly ranked)" (13 candidates listed 2026-09-28, top-down). Run it
-  with the `project-audit` skill and add a ledger row.
+- [ ] **Next session: pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
+  Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
+  #2 now has a concrete lead: the pre-2000 reports are "capped".
+
+- [ ] **Decide how to treat the four publisher-printed one-year anomalies** (Peter).
+  They are Airdrie NR = 0 (2016), Sturgeon NR (2000), Devon NR (1998) and Calgary
+  linear (2002); see `docs/DATA_ISSUES.md`. Airdrie moves Calgary's share by 1.9 pp
+  and Sturgeon moves Edmonton's by 2.4 pp. The options are: keep as printed and
+  annotate, replace with a flagged correction, or check against FIR first (Phase 2).
+
+- [ ] **Proposed: a build-time continuity warning** in `build_share_series.py`. It
+  would log any member whose basis value jumps and reverts, or drops to zero.
+  `test_reproduces_upe01548` can't see a zeroed small member. The thresholds need
+  sizing against the year-on-year distribution first. This is a new behaviour, so it
+  needs Peter's OK before it is built.
+
+- [ ] **Find a second external anchor at another year** for the share series. The
+  UPE01548 test passes for any of taxation years 2021–2024, so it doesn't pin
+  `taxation_year = report_year − 1`.
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports

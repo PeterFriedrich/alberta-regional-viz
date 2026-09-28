@@ -62,6 +62,8 @@ while the guard stays green.
       - 2004 prints Strathcona County's row without thousands separators.
       - One page of the 2000 report is shifted about 7 pt, and two 1998 rows by 3 pt; the parser anchors each row on its own total.
       - Some reports have a by-type summary page (1999 p11, 2000 p10) that is skipped.
+        These pages tie to the parsed rows by class, to the dollar (audited 2026-09-28).
+      - **"Capped" before 2000:** the 2000 report's history table marks the 1997–1999 totals "capped" and 2000 "uncapped" (+18.25%), and its preface says "the 2000 equalized assessment is not capped". Taxation years 1997–1998 may be on a different footing. Not yet investigated (`docs/AUDIT_LEDGER.md` #2).
     - **Names:** 1998 uses "City of Edmonton", "M.D. of Rocky View No. 44" and similar. 2001–2004 print "Airdire", and 2001 prints "Foothills No. 32" for No. 31. The 1998 report has a second Calgary row, "City of Calgary (Part II)", with no explanation in the report.
     - **Publisher rounding** (`docs/DATA_ISSUES.md`):
       - In 1999, six subtotals are off by 1–5 in the residential and grand-total columns.
