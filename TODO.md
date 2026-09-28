@@ -26,6 +26,10 @@ symptom and re-measure the stated cause before acting on it.
   CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
   Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
 
+- [ ] **Next session: pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited
+  (candidates, roughly ranked)" (13 candidates listed 2026-09-28, top-down). Run it
+  with the `project-audit` skill and add a ledger row.
+
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
   (which would close the gap holding the City's 2008 anchor). Mention the 1999
