@@ -126,6 +126,12 @@ def test_known_defect_is_corrected_only_in_a_subtotal(monkeypatch):
     monkeypatch.setitem(pe.KNOWN_DEFECTS, (2014, "nr_linear", 99), 2)
     rows, _ = pe.parse_pages([words], 2014)
     assert {r["value"] for r in rows if r["class"] == "nr_linear"} == {2}
+    # A data row that genuinely prints the typo'd value is left alone.
+    b = full({0: 10, 1: 1, 2: 4, 3: 99, 4: 1, 5: 1, 6: 3}, 7)
+    words = (header(100) + data_row("Edmonton", a, 130, EDGES_RAIL)
+             + data_row("Leduc", b, 140, EDGES_RAIL) + subtotal_row([a, b], 160, EDGES_RAIL))
+    rows, _ = pe.parse_pages([words], 2014)
+    assert sorted(r["value"] for r in rows if r["class"] == "nr_linear") == [2, 99]
 
 
 def test_wrapped_names_join_below_and_above():
