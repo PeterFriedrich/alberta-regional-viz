@@ -66,9 +66,15 @@ def test_fetch_duplicate_year_and_vanished_year():
     pkg = {"resources": [{"name": "Provincial 2020 equalized assessment report "},
                          {"name": "Something else"},
                          {"name": "Provincial 2021 Equalized Assessment Report"}]}
-    assert sorted(fe.report_resources(pkg)) == [2020, 2021]
+    new = fe.PACKAGES["2368-657x"]
+    assert sorted(fe.report_resources(pkg, new)) == [2020, 2021]
+    old = {"resources": [{"name": "2008 equalized assessment report"}]}
+    assert sorted(fe.report_resources(old, fe.PACKAGES["1844032"])) == [2008]
+    with pytest.raises(fe.FetchError, match="2021"):
+        fe.report_resources({"resources": [{"name": "2021 equalized assessment report"}]},
+                            fe.PACKAGES["1844032"], fe.report_resources(pkg, new))
     with pytest.raises(fe.FetchError, match="two resources"):
-        fe.report_resources({"resources": pkg["resources"] * 2})
+        fe.report_resources({"resources": pkg["resources"] * 2}, new)
     with pytest.raises(fe.FetchError, match="no longer listed"):
         fe.check_no_year_vanished({2021: {}}, {"files": [{"report_year": 2020}, {"report_year": 2021}]})
 
