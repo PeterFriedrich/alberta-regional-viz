@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# One-time setup after `gh repo create --template`. Idempotent.
+# One-time setup after `copier copy` (docs/COPIER.md). Idempotent.
 set -euo pipefail
 cd "$(dirname "$0")"
 

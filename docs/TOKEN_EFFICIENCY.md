@@ -45,6 +45,12 @@ prints it) before optimizing anything else.
    whole accumulated context uncached. Run slow things together, or in the
    background while doing reads.
 
+8. **Idle wakeups cost as much as real turns.** A scheduled check-in re-sends
+   the whole conversation, and wakes an hour apart mostly miss the cache. A
+   PR that waited overnight for the owner cost about 8 turns that did nothing.
+   Follow PRs by subscribing to their events, never on a timer:
+   `.claude/skills/steward/SKILL.md`.
+
 ## Files to watch
 
 - `session-summary/` — grows every `/handoff`; the archive policy keeps it bounded.
