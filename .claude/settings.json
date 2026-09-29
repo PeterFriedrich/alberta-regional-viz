@@ -16,7 +16,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null || exit 0; { [ -x .venv/bin/python ] && .venv/bin/python scripts/handoff_gap.py --session-start || python3 scripts/handoff_gap.py --session-start; } 2>/dev/null || true"
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null || exit 0; { [ -x .venv/bin/python ] && .venv/bin/python scripts/handoff_gap.py --session-start || { command -v python3.12 >/dev/null && python3.12 scripts/handoff_gap.py --session-start || python3 scripts/handoff_gap.py --session-start; }; } 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null || exit 0; { [ -x .venv/bin/python ] && .venv/bin/python scripts/template_drift.py --session-start || { command -v python3.12 >/dev/null && python3.12 scripts/template_drift.py --session-start || python3 scripts/template_drift.py --session-start; }; } 2>/dev/null || true"
           }
         ]
       }
@@ -26,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null || exit 0; { [ -x .venv/bin/python ] && .venv/bin/python scripts/handoff_gap.py --session-end || python3 scripts/handoff_gap.py --session-end; } || true"
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null || exit 0; { [ -x .venv/bin/python ] && .venv/bin/python scripts/handoff_gap.py --session-end || { command -v python3.12 >/dev/null && python3.12 scripts/handoff_gap.py --session-end || python3 scripts/handoff_gap.py --session-end; }; } || true"
           }
         ]
       }
