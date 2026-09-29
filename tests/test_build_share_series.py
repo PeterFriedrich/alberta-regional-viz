@@ -175,6 +175,10 @@ def test_continuity_passes_steady_growth_and_small_members(tmp_path, monkeypatch
     found, years = bss.member_values(cont_rows([100, 100, 100, 100], other_nr=1), reg)
     found[(2012, "other")]["nr"] = 3
     bss.check_continuity(found, years, reg)
+    # The core is never flagged: its movement is what the share measures.
+    found, years = bss.member_values(cont_rows([100, 100, 100, 100]), reg)
+    found[(2012, "core")]["nr"] = 2000
+    bss.check_continuity(found, years, reg)
 
 
 def test_continuity_fails_on_a_known_anomaly_that_no_longer_fires(tmp_path, monkeypatch):
