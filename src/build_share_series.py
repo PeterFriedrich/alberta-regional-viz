@@ -36,6 +36,20 @@ OLD_BASES = {
     "nr_linear": ["nr_incl_railway", "nr_linear"],
     "nr_all": ["nr_incl_railway", "nr_linear", "me"],
 }
+# Continuity check on ring members (docs/FINDINGS_quick_audits_2026-09-28.md §#4).
+# Year-on-year deviation from the neighbours' midpoint: median 3%, p95 12%, p99 86%.
+# Each flag must also move the core share by >= 0.25 pp. The core is excluded:
+# its own movement is what the share measures.
+SPIKE_DEV = 0.4
+REVERT_TOL = 0.3
+MIN_SHARE_PP = 0.25
+# Printed values checked and kept as printed (docs/DECISIONS.md 2026-09-28,
+# docs/DATA_ISSUES.md). A key here must still fire, or the build fails.
+KNOWN_ANOMALIES = {
+    (1999, "devon"),       # NR 99.8M between 43M and 39M
+    (2001, "sturgeon"),    # NR 647.6M between 289M and 287M
+    (2017, "airdrie"),     # NR printed as 0
+}
 BASIS_NOTE = "equalized assessment; 2025 board membership applied to all years"
 OLD_NR_NOTE = "; NR includes railway (1998-2004 reports print them together)"
 
@@ -97,6 +111,55 @@ def member_values(long_rows, regions):
     return found, years
 
 
+def basis_values(found, y, mids, basis):
+    classes = (OLD_BASES if "nr_incl_railway" in found[(y, mids[0])] else BASES)[basis]
+    return {m: sum(found[(y, m)].get(c, 0) for c in classes) for m in mids}
+
+
+def check_continuity(found, years, regions):
+    """Fail on a ring member whose value spikes and reverts, drops to zero, or (in
+    the newest year, which has no next year) jumps, unless it is in KNOWN_ANOMALIES.
+    The parser's sum checks cannot see these: the publisher's row adds up."""
+    flagged = {}
+    for region in sorted({r["region"] for r in regions}):
+        mids = [r["muni_id"] for r in regions if r["region"] == region]
+        core = next(r["muni_id"] for r in regions if r["region"] == region and r["role"] == "core")
+        for basis in BASES:
+            v = {y: basis_values(found, y, mids, basis) for y in years}
+            for y in years:
+                share = v[y][core] / sum(v[y].values())
+                for m in mids:
+                    if m == core:
+                        continue
+                    x, prev, nxt = v[y][m], v.get(y - 1, {}).get(m), v.get(y + 1, {}).get(m)
+
+                    def moves(replacement):
+                        w = dict(v[y], **{m: replacement})
+                        return 100 * abs(v[y][core] / sum(w.values()) - share) >= MIN_SHARE_PP
+
+                    why = None
+                    if prev and x == 0:
+                        why = "dropped to zero"
+                    elif prev and nxt is not None:
+                        mid = (prev + nxt) / 2
+                        if (abs(x / mid - 1) >= SPIKE_DEV and abs(nxt / prev - 1) < REVERT_TOL
+                                and moves(mid)):
+                            why = "spiked and reverted"
+                    elif prev and y == years[-1] and abs(x / prev - 1) >= SPIKE_DEV and moves(prev):
+                        why = "jumped in the newest year"
+                    if why:
+                        flagged.setdefault((y, m), []).append(f"{basis} {why} ({prev:,} -> {x:,})")
+    for key in sorted(flagged.keys() & KNOWN_ANOMALIES):
+        event(log, "known anomaly kept as printed", level=30, report_year=key[0],
+              muni_id=key[1], detail=flagged[key])
+    new = {k: flagged[k] for k in sorted(flagged.keys() - KNOWN_ANOMALIES)}
+    stale = sorted(KNOWN_ANOMALIES - flagged.keys())
+    if new or stale:
+        raise BuildError(f"continuity: new anomalies {new}; known anomalies that no longer "
+                         f"fire {stale}. Inspect the PDF row, then log it in "
+                         f"docs/DATA_ISSUES.md and KNOWN_ANOMALIES")
+
+
 def shares(found, years, regions):
     out = []
     for region in sorted({r["region"] for r in regions}):
@@ -132,6 +195,7 @@ def main(argv=None):
     with args.long.open() as f:
         long_rows = list(csv.DictReader(f))
     found, years = member_values(long_rows, regions)
+    check_continuity(found, years, regions)
     series = shares(found, years, regions)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)

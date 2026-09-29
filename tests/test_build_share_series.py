@@ -133,3 +133,53 @@ def test_suspect_printed_values_are_kept_until_verified():
              for r in csv.DictReader(f)}
     assert abs(s[("calgary", 2016, "nr")] - 0.9375) <= 0.0005
     assert abs(s[("edmonton", 2000, "nr")] - 0.7380) <= 0.0005
+
+
+CONT = [("core", "r", "core", "CORE CITY"), ("ring", "r", "ring", "RING COUNTY"),
+        ("other", "r", "ring", "OTHER TOWN")]
+
+
+def cont_rows(ring_nr, other_nr=100):
+    """One report year per ring value; core 1000, zero linear/railway/M&E."""
+    rows = []
+    for i, v in enumerate(ring_nr):
+        y = 2011 + i
+        for name, nr in (("Core City", 1000), ("Ring County", v), ("Other Town", other_nr)):
+            rows += long(y, name, nr=nr, nr_linear=0, nr_railway=0, nr_cogen_me=0, me=0)
+    return rows
+
+
+@pytest.mark.parametrize("ring_nr, year, why", [
+    ([100, 250, 105, 110], 2012, "spiked and reverted"),
+    ([100, 0, 105, 110], 2012, "dropped to zero"),
+    ([100, 105, 110, 250], 2014, "jumped in the newest year"),
+])
+def test_continuity_flags_an_anomaly(tmp_path, monkeypatch, ring_nr, year, why):
+    reg = regions(tmp_path, CONT)
+    found, years = bss.member_values(cont_rows(ring_nr), reg)
+    monkeypatch.setattr(bss, "KNOWN_ANOMALIES", set())
+    with pytest.raises(bss.BuildError, match=f"\\({year}, 'ring'\\).*{why}"):
+        bss.check_continuity(found, years, reg)
+    monkeypatch.setattr(bss, "KNOWN_ANOMALIES", {(year, "ring")})
+    bss.check_continuity(found, years, reg)   # known: logged, not raised
+
+
+def test_continuity_passes_steady_growth_and_small_members(tmp_path, monkeypatch):
+    reg = regions(tmp_path, CONT)
+    monkeypatch.setattr(bss, "KNOWN_ANOMALIES", set())
+    # +30% a year stays under SPIKE_DEV; a step up that holds is not a revert.
+    for ring in ([100, 130, 169, 220], [100, 100, 250, 260]):
+        found, years = bss.member_values(cont_rows(ring), reg)
+        bss.check_continuity(found, years, reg)
+    # A 1-unit member tripling moves the share far less than MIN_SHARE_PP.
+    found, years = bss.member_values(cont_rows([100, 100, 100, 100], other_nr=1), reg)
+    found[(2012, "other")]["nr"] = 3
+    bss.check_continuity(found, years, reg)
+
+
+def test_continuity_fails_on_a_known_anomaly_that_no_longer_fires(tmp_path, monkeypatch):
+    reg = regions(tmp_path, CONT)
+    found, years = bss.member_values(cont_rows([100, 105, 110, 115]), reg)
+    monkeypatch.setattr(bss, "KNOWN_ANOMALIES", {(2012, "ring")})
+    with pytest.raises(bss.BuildError, match="no longer fire.*2012, 'ring'"):
+        bss.check_continuity(found, years, reg)
