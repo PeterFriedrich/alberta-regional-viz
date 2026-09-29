@@ -103,6 +103,13 @@ step 2 is the guard for placement.
    per-municipality file for the later stacked layer. `core_ring_share.csv` is committed
    (the one tracked file in `data/processed/`) so CI runs the reproduction test
    against it; a rebuild that moves a share shows up as a diff.
+   Before writing, `check_continuity` fails the build on a ring member whose
+   basis value spikes and reverts (at least 40% off its neighbours' midpoint, with
+   the neighbours agreeing within 30%), drops to zero, or jumps at least 40% in the
+   newest report year. Each flag must also move the core share by at least
+   0.25 pp. The core is not checked. Printed values that have been inspected are
+   listed in `KNOWN_ANOMALIES` and logged as warnings. An entry that stops firing
+   also fails. Sizing: `docs/FINDINGS_quick_audits_2026-09-28.md` §#4.
 
 Every module writes structured (JSON-lines) logs, not prints, and takes its
 paths from arguments with repo defaults.

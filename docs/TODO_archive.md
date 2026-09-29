@@ -8,6 +8,14 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Proposed: a build-time continuity warning** in `build_share_series.py`. It
+  would log any member whose basis value jumps and reverts, or drops to zero.
+  `test_reproduces_upe01548` can't see a zeroed small member. The thresholds need
+  sizing against the year-on-year distribution first. This is a new behaviour, so it
+  needs Peter's OK before it is built.
+  **Done 2026-09-29:** built as a failing check with `KNOWN_ANOMALIES` (`check_continuity`; DECISIONS 2026-09-29).
+
+
 - [x] **Phase 1b — the 1998–2007 reports** — DONE 2026-09-28: the series now covers taxation
   years 1997–2006 and 2010–2025; railway sits inside the old NR (the `nr` basis is flagged);
   2009–2026 output is byte-identical. Spec §"Phase 1b (built 2026-09-28)". (Publication

@@ -30,12 +30,6 @@ symptom and re-measure the stated cause before acting on it.
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
 
-- [ ] **Proposed: a build-time continuity warning** in `build_share_series.py`. It
-  would log any member whose basis value jumps and reverts, or drops to zero.
-  `test_reproduces_upe01548` can't see a zeroed small member. The thresholds need
-  sizing against the year-on-year distribution first. This is a new behaviour, so it
-  needs Peter's OK before it is built.
-
 - [ ] **Find a second external anchor at another year** for the share series. The
   UPE01548 test passes for any of taxation years 2021–2024, so it doesn't pin
   `taxation_year = report_year − 1`.
@@ -82,6 +76,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Proposed: a build-time continuity warning** — DONE 2026-09-29 · `docs/TODO_archive.md`
 
 - [x] **Phase 1b — the 1998–2007 reports** — DONE 2026-09-28 · `docs/TODO_archive.md`
 
