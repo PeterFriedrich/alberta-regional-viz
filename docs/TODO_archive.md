@@ -8,6 +8,13 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Strip the SYNC TEST marker before or with the next real commit.** The last
+  bullet of `docs/SCOPE.md` (the "SYNC TEST 2026-09-30" one, padded to about 8 KB
+  so the claude.ai Project's file size visibly changes). Delete it, run
+  `.venv/bin/python scripts/make_brief.py --write`, and commit `docs/BRIEF.md` with it.
+  Then close this item.
+
+
 - [x] **Proposed: a build-time continuity warning** in `build_share_series.py`. It
   would log any member whose basis value jumps and reverts, or drops to zero.
   `test_reproduces_upe01548` can't see a zeroed small member. The thresholds need

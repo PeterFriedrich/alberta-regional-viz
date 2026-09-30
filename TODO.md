@@ -10,12 +10,6 @@ symptom and re-measure the stated cause before acting on it.
 
 ## Open work
 
-- [ ] **Strip the SYNC TEST marker before or with the next real commit.** The last
-  bullet of `docs/SCOPE.md` (the "SYNC TEST 2026-09-30" one, padded to about 8 KB
-  so the claude.ai Project's file size visibly changes). Delete it, run
-  `.venv/bin/python scripts/make_brief.py --write`, and commit `docs/BRIEF.md` with it.
-  Then close this item.
-
 - [ ] **Re-verify every live figure in `docs/SPIKE_regional_lens.md` and
   `docs/SCOPE_candidates.md` before building on it.** Both are dated 2026-07;
   the St. Albert service names embed the year and will have rolled; Strathcona
@@ -76,12 +70,25 @@ symptom and re-measure the stated cause before acting on it.
   files, whose contents are unverified. A confirmed error gets a flagged correction,
   and the guard test is updated in the same commit.
 
+- [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
+  2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
+  Family and Community Support + Public Housing Operations, from the Phase 2
+  fetch. Needs its own short spec first: gross vs net of own revenue, and the
+  per-year line-code dictionary (only the 2024 workbook has been checked).
+
+- [ ] **CSD crosswalk before Phase 2 population.** `data/regions.csv` has no
+  StatCan CSD key and no official Alberta-code ↔ CSD concordance exists
+  (`docs/SCOPE_candidates.md`). Hand-build it, one CSD code per `muni_id`, and
+  flag dissolved/renamed members explicitly.
+
 - [ ] **Merge gate deps.** `requirements-ci.txt` is pytest-only. Add
   `openpyxl`/`pandas` etc. only when a test needs them; keep it offline.
 
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Strip the SYNC TEST marker before or with the next real commit.** — 2026-09-30 · `docs/TODO_archive.md`
 
 - [x] **Proposed: a build-time continuity warning** — DONE 2026-09-29 · `docs/TODO_archive.md`
 

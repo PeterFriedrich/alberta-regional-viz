@@ -1,12 +1,14 @@
 # Claude Instructions
 
 ## Project
-Alberta regional fiscal lens: how Edmonton's assessment base and tax levy compare
-with other Alberta municipalities (capital-region peers first). Sibling of
+Alberta regional fiscal lens: how the regional tax base splits between the core
+city and its ring over time, and what each side carries — Edmonton's region
+first, Calgary's as a split-screen comparison (decision 7). Sibling of
 `edmonton-tax-viz` — a separate repo with its own data and outputs; nothing
 here restructures that project. Python-only, no GIS software. Scope is locked
 (`docs/DECISIONS.md`): a core-vs-ring timeline of equalized non-residential
-assessment, 1997–2025, from Municipal Affairs PDFs, ending in a static map app.
+assessment, 1997–2025, from Municipal Affairs PDFs, then FIR transfers and
+per-capita police/transit/social spending (Phases 2–2b), ending in a static map app.
 The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 `build_share_series.py`) is built. Use `.venv/bin/python` — system `python` is 3.8.
 

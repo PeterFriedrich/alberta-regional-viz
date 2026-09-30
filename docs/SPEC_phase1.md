@@ -11,8 +11,35 @@ they get their own specs.
 |---|---|---|
 | **1** | Region membership table plus a yearly core-vs-ring non-residential assessment share for Edmonton and Calgary, from the equalized assessment reports | This is the backbone metric of the timeline, and it is checkable against the City's own figure |
 | 2 | FIR provincial transfers (codes 1912/1922) and StatCan population, per capita | Decision 9. Needs the FIR fetch copied from the Edmonton repo (decision 5) |
+| 2b | FIR spending by function, per capita, core vs ring: Police, Public Transit, Family and Community Support + Public Housing Operations | The "what each side carries" half of the backbone. Same FIR fetch and population as Phase 2 |
 | 3 | Boundary snapshots (AltaLIS 2014+; the 1982 boundary from ATS legal descriptions) and a curated events table | The map layer of the timeline. The history must be verified first (TODO) |
 | 4 | The static map app: timeline with playhead, plus the Edmonton ⇄ Calgary split-screen snapshot | Decision 3. Needs its own architecture pass |
+
+### The backbone (locked 2026-09-30)
+
+One question: **how does the regional tax base split between core and ring over
+time, and what does each side carry?** Phase 1 is the base, Phase 2 the money in
+(transfers), Phase 2b the costs carried (spending by function), Phases 3–4 put
+them on the timeline and map.
+
+- **Phase 2b source.** FIR Schedules C (revenue) and E (expenses) break out, per
+  municipality, the functions *Police*, *Other Protective Services*, *Public
+  Transit*, *Family and Community Support* and *Public Housing Operations*
+  (checked in the 2024 workbook only, 2026-09-30). Their line codes across
+  2003–2025 are unverified: build the per-year code dictionary `data/DATA.md`
+  already requires before concatenating. Net-of-own-revenue vs gross spending is
+  a Phase 2b spec decision.
+- **Shelter** has no FIR line. FCSS + public housing is the nearest proxy, and
+  a chart must say so.
+- **Parked** (not in Phases 1–4; revisit after Phase 2b ships):
+  - the mandate register (fiscal-gap figures that exist only in PDFs, hand-curated);
+  - homeless/shelter counts (Homeward Trust PiT is not OGL);
+  - the Police Funding Model as a series (2020-21 → 2024-25 only; already ruled
+    out as a transfer).
+- **Research topic only:** the "lost tax base + lost votes → ring-vs-core
+  coalition" idea. It came from the 2026-09-26 research brief, is unverified, and
+  no output asserts it (`docs/SCOPE.md`). Annexation events on the timeline are
+  factual annotations.
 
 ## Phase 1 goal
 
