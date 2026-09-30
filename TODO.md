@@ -10,6 +10,12 @@ symptom and re-measure the stated cause before acting on it.
 
 ## Open work
 
+- [ ] **Strip the SYNC TEST marker before or with the next real commit.** The last
+  bullet of `docs/SCOPE.md` (the "SYNC TEST 2026-09-30" one, padded to about 8 KB
+  so the claude.ai Project's file size visibly changes). Delete it, run
+  `.venv/bin/python scripts/make_brief.py --write`, and commit `docs/BRIEF.md` with it.
+  Then close this item.
+
 - [ ] **Re-verify every live figure in `docs/SPIKE_regional_lens.md` and
   `docs/SCOPE_candidates.md` before building on it.** Both are dated 2026-07;
   the St. Albert service names embed the year and will have rolled; Strathcona
