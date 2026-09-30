@@ -15,13 +15,41 @@ reply format whose tables map onto `TODO.md` / `DECISIONS.md` rows.
    From then on `tests/test_brief.py` fails the merge gate whenever
    `docs/BRIEF.md` no longer matches its sources; the fix is to re-run
    `--write` in the same PR.
-2. In claude.ai, create a **private** Project (the GitHub integration is not
-   offered on a shared one) and add the repo from GitHub. Select
-   `docs/BRIEF.md`. Add `CLAUDE.md` or `TODO.md` in full only if the project's
-   capacity allows — the brief already summarises both.
+2. In claude.ai, use a **private** Project (the GitHub integration is not
+   offered on a shared one) and add the repo from GitHub. Select the
+   **synced set** below. Add `CLAUDE.md` or `TODO.md` in full only if the
+   project's capacity allows — the brief already summarises both.
 3. ⚠️ **The sync is manual.** claude.ai fetches the files when you press
-   **Sync now**, not on push. A green merge gate means the *repo's* brief is
+   **Sync now**, not on push. A green merge gate means the *repo's* files are
    current, not the Project's copy. Press Sync before each research chat.
+
+### The synced set
+
+The brief is a generated summary; it does not carry the spec itself. The spec
+docs sync as they are — they are the real thing, not a summary:
+
+- `docs/BRIEF.md` — generated, always
+- `docs/SPEC_*.md` — each one, once written
+- `docs/ARCHITECTURE.md` — once written
+- `docs/SCOPE_candidates.md` — the full reasoning behind the locked decisions (the brief keeps only each row's headline, not what it rejected)
+- `data/DATA.md` — source details and known quirks
+
+In git pathspec form (the handoff skill uses this exact list):
+`docs/BRIEF.md 'docs/SPEC_*.md' docs/ARCHITECTURE.md docs/SCOPE_candidates.md data/DATA.md`. A project that syncs
+another file adds it in three places together: here, the handoff skill's
+command (`.claude/skills/handoff/SKILL.md` §"Claude web sync check"), and the
+claude.ai Project.
+
+### Knowing when to press Sync
+
+Claude web has no hooks, so the reminder comes from the Claude Code side, at
+the two points the owner already reads:
+
+- **A PR that changes a synced file opens its description with**
+  "**After merge: press Sync in the claude.ai Project.**" claude.ai reads
+  master, so merge is the moment it goes stale.
+- **`/handoff` checks** whether a synced file changed on master since the
+  previous handoff, and if so makes that the first Next Step.
 
 The integration reads file contents only — no history, PRs or issues. A
 research chat that needs one of those gets it pasted.

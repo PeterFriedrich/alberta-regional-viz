@@ -36,6 +36,20 @@ How to fill it in, in order of reliability:
 - If work spanned models, note **which parts** each did. That is the whole
   point of the section.
 
+# Claude web sync check
+Only if `docs/BRIEF.md` exists (the project syncs into a claude.ai Project —
+`docs/CLAUDE_WEB.md`). The Project's copy refreshes only when the owner presses
+Sync, and nothing on the web side can notice it is stale. Run:
+
+```bash
+last=$(git log -1 --format=%H -- session-summary/)
+git fetch -q origin && git log --oneline ${last:+$last..}origin/master -- docs/BRIEF.md 'docs/SPEC_*.md' docs/ARCHITECTURE.md docs/SCOPE_candidates.md data/DATA.md
+```
+
+Any output → Next Steps item 1 is "**Press Sync in the claude.ai Project**
+(changed on master: <files>)". Also if this session's still-open PR changes
+one: "after merging #N". No output → say nothing about it.
+
 # Output Format
 
 ## 0. Session Metadata
