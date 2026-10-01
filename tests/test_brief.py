@@ -32,7 +32,8 @@ def _fixture(root: Path) -> Path:
     (root / "docs").mkdir()
     (root / "CLAUDE.md").write_text(
         "# Claude Instructions\n\n## Project\nToy fiscal analysis.\n\n"
-        "## Key Files\n- `TODO.md` — the backlog. Read it first.\n\n## Other\nx\n")
+        "## Key Files\n- `TODO.md` — the backlog. Read it first.\n"
+        "- `docs/SPIKE.md` — the spike on St. Albert parcels. Details.\n\n## Other\nx\n")
     (root / "TODO.md").write_text(
         "# TODO\n\n## Open work\n\n### Group one\n\n"
         "- [ ] **Open item.** First line\n  continues here.\n"
@@ -71,6 +72,20 @@ def test_decision_keeps_its_rejected_sentence_and_survives_st(tmp_path):
     clauses were lost, and the sentence split cut "St. Albert" to "St."."""
     brief = make_brief.build(_fixture(tmp_path))
     assert "**Parked on St. Albert licensing.** … Rejected: scraping it anyway." in brief
+
+
+def test_doc_map_survives_st_and_clipped_decision_has_one_ellipsis(tmp_path):
+    """Reported by alberta-regional-viz (2026-10-01): the doc map split on its
+    own regex, cutting "St. Albert" to "St", and a clipped first sentence plus
+    a rejected sentence rendered "… … Rejected"."""
+    root = _fixture(tmp_path)
+    decisions = root / "docs" / "DECISIONS.md"
+    decisions.write_text(decisions.read_text() + "| 2026-09-05 | **"
+                         + "word " * 60 + "end.** Rejected: the short one. | `docs/X.md` |\n")
+    brief = make_brief.build(root)
+    assert "- `docs/SPIKE.md` — the spike on St. Albert parcels" in brief
+    assert "… …" not in brief
+    assert "word … Rejected: the short one." in brief
 
 
 def test_empty_data_issues_is_not_reported_as_none(tmp_path):
