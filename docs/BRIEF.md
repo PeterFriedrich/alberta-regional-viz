@@ -26,6 +26,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **Refactoring `edmonton-tax-viz`'s map app into a shared city-view module** (the 2026-09-26 brief's plan). This repo never restructures its sibling; map code is copied in and left to diverge. `CLAUDE.md` §Project; `docs/SCOPE_candidates.md` §"Research brief (2026-09-26)" item 2.
 - **Counting the Police Funding Model as a provincial transfer.** It is a cost billed to municipalities (mostly the ring's rural ones), not money received. `docs/SCOPE_candidates.md` §"Research reply (2026-09-26)", Transfers.
 - **Asserting a ring-vs-core political coalition** ("lost tax base + lost votes"). Heard in the 2026-09-26 research brief, never checked: a research topic to investigate later, not a finding. No output claims it; annexation events are factual annotations, and the voting overlay is deferred (decision 11). `docs/SCOPE_candidates.md` §"Research brief (2026-09-26)".
+- **Automated watchers: scheduled fetch-and-fingerprint jobs that open issues, a claims register with executable PDF assertions, a data-health page, literature/vendor watchers, and a Playwright smoke test before any web code exists.** These come from the retired claude.ai spec. Inputs are manual and reviewed, and the merge gate is offline (DECISIONS 2026-09-27); `fetch_equalized.py` already keeps a sha256 manifest. Reopen only if Peter asks.
 
 ## Stack
 
@@ -62,6 +63,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **Phase 2 — FIR fetch.** Per decision 5: copy `fetch_fir_tax_base.py` + `fetch_fir_debt.py`'s `MUNICIPALITIES` idiom from the Edmonton repo, extend to the chosen municipality set and the equalized-assessment workbooks. Manual, reviewed input (not a scheduled refresh) until there …
 - **Phase 2b — FIR spending by function, core vs ring, per capita** (decision 2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit, Family and Community Support + Public Housing Operations, from the Phase 2 fetch. Needs its own short spec first: gross vs net …
 - **CSD crosswalk before Phase 2 population.** `data/regions.csv` has no StatCan CSD key and no official Alberta-code ↔ CSD concordance exists (`docs/SCOPE_candidates.md`). Hand-build it, one CSD code per `muni_id`, and flag dissolved/renamed members explicitly.
+- **Phase 4 architecture pass: propose "no runtime third-party dependency"** as a DECISIONS row — every file the browser needs is static in the repo (no third-party APIs or tile CDNs), guarded by a test that scans built pages for external URLs. Include the attribution line …
 - **Merge gate deps.** `requirements-ci.txt` is pytest-only. Add `openpyxl`/`pandas` etc. only when a test needs them; keep it offline.
 
 ## Known upstream data defects

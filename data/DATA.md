@@ -78,3 +78,20 @@ while the guard stays green.
 - **Rows / columns:** one row per municipality-year; Schedule MR: `MR(1)` municipal levy, `MR(2)` taxable assessment by class, `MR(3)` mill rates; 51 sheets per workbook.
 - **Quirks:** cross-municipality assessment *levels* need the equalized report. Raw FIR assessment is annual market value, but municipal assessment levels and bases differ, and equalized = taxable ÷ assessment level (corrected 2026-09-26: the old wording blamed missing revaluation, which is wrong). Within-year shares only with care.
 - **Transfers** (per the 2024 FIR Manual, p. 11, checked 2026-09-26): line 1902 federal capital, **1912 provincial operating**, **1922 provincial capital**, 1931/1932 local government operating/capital. Revenue is recognized under PS 3410, not as cash allocated. Line-code stability across 2003–2025 is unverified, so build a code dictionary from each year's manual before concatenating. Class buckets are not 1:1 with municipal tax classes (an "Other" bucket). Manual, reviewed input: re-fetch annually, eyeball the diff, commit.
+
+### Candidate sources — UNVERIFIED, not yet used
+Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
+or checked here; verify licence, URL and coverage before adding a full entry above.
+- **FIR/SIR CKAN dataset id** `cde4c4fd-a0b2-4816-af43-13de7a3fd3e3`: check that it
+  is the same dataset as the open.alberta.ca slug cited above.
+- **StatCan:** 2021 CSD profiles, commuting tables 98-10-0459 / 0460 / 0462, 2021
+  boundary files (StatCan Open Licence). Needed for Phase 2 population, through the
+  CSD crosswalk (TODO).
+- **AltaLIS municipal boundaries** (annual snapshot): Phase 3.
+- **Police Funding Model** municipal tables, one XLSX, 2020-21 → 2024-25 (parked,
+  decision 2026-09-30).
+- **Alberta Regional Dashboard** CKAN exports; **ETS / Calgary Transit GTFS**;
+  **Socrata** elections (Edmonton `32te-6grv`, Calgary `tty8-276j`), permits,
+  assessment. None is needed by Phases 1–4 as scoped.
+- **Homeward Trust PiT counts:** not OGL, so confirm the reuse terms first (parked).
+
