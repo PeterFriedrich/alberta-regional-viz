@@ -35,19 +35,19 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 
 ## Locked decisions
 
-- **2026-09-26** — **The core-vs-ring historical timeline is the project's main scope** (decision 6).
+- **2026-09-26** — **The core-vs-ring historical timeline is the project's main scope** (decision 6). … Rejected: a straight fiscal-comparison table.
 - **2026-09-26** — **Calgary is in scope as a same-metric snapshot comparison in split screen** (decision 7).
 - **2026-09-26** — **The voting overlay is deferred, not dropped** (decision 11).
-- **2026-09-26** — **Region = fixed membership for all years** (decision 8): the 13 EMRB members for Edmonton and the 8 CMRB members for Calgary, each as of their 2025 dissolution.
-- **2026-09-26** — **Transfers = FIR lines 1912 (provincial operating) and 1922 (provincial capital)** (decision 9), as 5-year rolling averages per capita, with program-break markers at 2014, 2021–23 and 2024.
-- **2026-09-26** — **Normalization = equalized non-residential assessment excluding linear and M&E as the headline, with linear and M&E stacked separately** (decision 10).
+- **2026-09-26** — **Region = fixed membership for all years** (decision 8): the 13 EMRB members for Edmonton and the 8 CMRB members for Calgary, each as of their 2025 dissolution. … Rejected: as-of-year membership, which introduces membership jumps (CRB 25→24→13; CMRB lost Wheatland and Strathmore) unrelated to the argument being tested.
+- **2026-09-26** — **Transfers = FIR lines 1912 (provincial operating) and 1922 (provincial capital)** (decision 9), as 5-year rolling averages per capita, with program-break markers at 2014, 2021–23 and 2024. … Rejected: splicing MSI and LGFF allocations into a single series.
+- **2026-09-26** — **Normalization = equalized non-residential assessment excluding linear and M&E as the headline, with linear and M&E stacked separately** (decision 10). … Rejected: raw FIR levels across municipalities, and an all-non-residential share (Edmonton levies no M&E tax, and linear/M&E move with provincial policy).
 - **2026-09-26** — **Scope decisions 1–5 locked.**
-- **2026-09-27** — **`data/processed/core_ring_share.csv` is committed** (the only tracked processed output) so the merge gate runs `test_reproduces_upe01548`, and its `skipif` is removed: a missing file now fails …
-- **2026-09-28** — **For the 1998–2004 reports, the headline `nr` basis is NR *including railway*, flagged in `basis_note`** (Peter, 2026-09-28).
+- **2026-09-27** — **`data/processed/core_ring_share.csv` is committed** (the only tracked processed output) so the merge gate runs `test_reproduces_upe01548`, and its `skipif` is removed: a missing file now fails … … Rejected: fetching the PDFs in CI, since the gate is deliberately offline.
+- **2026-09-28** — **For the 1998–2004 reports, the headline `nr` basis is NR *including railway*, flagged in `basis_note`** (Peter, 2026-09-28). … Rejected: leaving `nr` empty before taxation year 2004, which would start the headline 7 years later for a sub-0.1 pp purity gain.
 - **2026-09-28** — **The 1998 "City of Calgary (Part II)" row is summed into Calgary**, through an explicit `+` alias in `regions.csv` rather than by loosening the matched-twice guard.
-- **2026-09-28** — **Four one-year anomalies the publisher printed are kept as printed until FIR verifies them** (Peter, 2026-09-28): Airdrie NR = 0 (taxation 2016), Sturgeon NR 648M (2000), Devon NR (1998) and Calgary …
-- **2026-09-29** — **The build fails on a new ring-member continuity anomaly** unless it is listed in `KNOWN_ANOMALIES` (Peter, 2026-09-29).
-- **2026-09-30** — **The backbone is one question: how the regional tax base splits between core and ring over time, and what each side carries** (Peter, 2026-09-30).
+- **2026-09-28** — **Four one-year anomalies the publisher printed are kept as printed until FIR verifies them** (Peter, 2026-09-28): Airdrie NR = 0 (taxation 2016), Sturgeon NR 648M (2000), Devon NR (1998) and Calgary … … Rejected: correcting now, since a midpoint is an invented number and Sturgeon/Devon may be real; and annotating only without checking, which leaves a 1.9–2.4 pp swing in the headline that we suspect …
+- **2026-09-29** — **The build fails on a new ring-member continuity anomaly** unless it is listed in `KNOWN_ANOMALIES` (Peter, 2026-09-29). … Rejected: a log-only warning (a guard nobody reads), and checking the core (its movement is the metric; a flat pp threshold flagged Edmonton's normal 5–10% moves).
+- **2026-09-30** — **The backbone is one question: how the regional tax base splits between core and ring over time, and what each side carries** (Peter, 2026-09-30). … Rejected: a separate data track per theme (policing/shelter/transit), since FIR already carries three of them per municipality per year.
 - **2026-09-30** — **The ring-vs-core political coalition idea is a research topic only, not a finding** (Peter, 2026-09-30).
 
 ## Open work
