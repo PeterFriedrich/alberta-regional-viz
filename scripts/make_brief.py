@@ -133,7 +133,7 @@ def doc_map(root: Path) -> list[str]:
     for line in _section(_read(root, "CLAUDE.md"), "Key Files").splitlines():
         m = re.match(r"^- (`[^`]+`)\s+—\s+(.*)", line)
         if m:
-            first = re.split(r"(?<=[.!?])\s|\s—\s", m.group(2), maxsplit=1)[0]
+            first = re.split(rf"{SENTENCE_END.pattern}|\s—\s", m.group(2), maxsplit=1)[0]
             out.append(f"- {m.group(1)} — {first.rstrip('.')}")
     return out
 
@@ -168,7 +168,8 @@ def decisions(root: Path) -> list[str]:
         line = f"- **{cells[0]}** — {_clip(sentences[0], DECISION_CHARS)}"
         rejected = next((s for s in sentences[1:] if REJECTED.search(s)), None)
         if rejected:
-            line += f" … {_clip(rejected, REJECTED_CHARS)}"
+            # A clipped first sentence already ends in "…".
+            line += (" " if line.endswith("…") else " … ") + _clip(rejected, REJECTED_CHARS)
         out.append(line)
     return out
 
