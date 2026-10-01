@@ -8,6 +8,17 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.**
+  DECIDED 2026-10-01: total provincial transfers (DECISIONS row 2026-10-01).
+  For 1994–2022 the provincial transfer lines are 01910 *Unconditional* / 01920
+  *Conditional*, which is a different cut from operating/capital
+  (`data/DATA.md` §"Fetched into this repo";
+  `tests/test_fir_schema.py::test_provincial_transfer_codes_change_meaning_in_2023`).
+  Options: the conditional/unconditional pair through 2022 with a 2023 break
+  marker; total provincial transfers (01910+01920 → 01912+01922) as one series;
+  or 2023+ only. Peter's call, and it comes before the transfer parse.
+
+
 - [x] **Strip the SYNC TEST marker before or with the next real commit.** The last
   bullet of `docs/SCOPE.md` (the "SYNC TEST 2026-09-30" one, padded to about 8 KB
   so the claude.ai Project's file size visibly changes). Delete it, run

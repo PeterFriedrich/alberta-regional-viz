@@ -10,7 +10,7 @@ they get their own specs.
 | Phase | Builds | Why in this order |
 |---|---|---|
 | **1** | Region membership table plus a yearly core-vs-ring non-residential assessment share for Edmonton and Calgary, from the equalized assessment reports | This is the backbone metric of the timeline, and it is checkable against the City's own figure |
-| 2 | FIR provincial transfers (codes 1912/1922) and StatCan population, per capita | Decision 9. Needs the FIR fetch copied from the Edmonton repo (decision 5) |
+| 2 | FIR total provincial transfers and StatCan population, per capita | Decision 9, as amended 2026-10-01. Needs the FIR fetch copied from the Edmonton repo (decision 5) |
 | 2b | FIR spending by function, per capita, core vs ring: Police, Public Transit, Family and Community Support + Public Housing Operations | The "what each side carries" half of the backbone. Same FIR fetch and population as Phase 2 |
 | 3 | Boundary snapshots (AltaLIS 2014+; the 1982 boundary from ATS legal descriptions) and a curated events table | The map layer of the timeline. The history must be verified first (TODO) |
 | 4 | The static map app: timeline with playhead, plus the Edmonton ⇄ Calgary split-screen snapshot | Decision 3. Needs its own architecture pass |
@@ -40,6 +40,36 @@ them on the timeline and map.
   coalition" idea. It came from the 2026-09-26 research brief, is unverified, and
   no output asserts it (`docs/SCOPE.md`). Annexation events on the timeline are
   factual annotations.
+
+### Transfers basis (decided 2026-10-01)
+
+Decision 9 named FIR lines 1912 (provincial operating) and 1922 (provincial
+capital). The fetch showed those lines exist only from financial year 2023
+(`data/DATA.md` §"Fetched into this repo"). From 1994 to 2022 the provincial
+transfer lines are 01910 *Unconditional* and 01920 *Conditional*. That is a
+different cut, not a renaming.
+
+| $M (FIR D(1)) | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|
+| Edmonton, uncond./cond. → oper./capital | 0 / 386 | 0 / 453 | 87 / 431 | 106 / 411 | 92 / 457 |
+| Edmonton, total | 386 | 453 | 518 | 517 | 549 |
+| Calgary, uncond./cond. → oper./capital | 55 / 344 | 47 / 373 | 170 / 300 | 170 / 463 | 176 / 488 |
+| Calgary, total | 399 | 420 | 469 | 633 | 664 |
+
+- **Headline: the total.** It is 01910+01920 through 2022 and 01912+01922 from
+  2023. It is the only basis that means the same thing in every year, and it
+  shows no step at the reclassification in these two cores. A continuity test
+  over every member lands with `parse_fir.py`.
+- **Detail panel:** operating vs capital, 2023 onward only.
+- **Unchanged from decision 9:** per capita, 5-year rolling averages,
+  program-break markers at 2014, 2021–23 and 2024, and the separate
+  "formula intent" panel for grantor allocations. **Added:** a 2023
+  "FIR reclassification" marker.
+- **Rejected:**
+  - Plotting unconditional/conditional before 2023 next to operating/capital
+    after it. Edmonton's unconditional line is 0 in every year checked
+    (2019–2022), so the old split carries no information for the core.
+  - Operating/capital from 2023 only. Three years is not a timeline.
 
 ## Phase 1 goal
 
