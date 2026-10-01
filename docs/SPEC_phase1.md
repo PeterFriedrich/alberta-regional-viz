@@ -70,6 +70,10 @@ Core = Edmonton / Calgary. Ring = the other members of the region's fixed set
    - `role`: `core` | `ring`
    - `eq_aliases`: `|`-separated names as they appear in the reports (e.g.
      `Foothills No. 31, M.D. Of|FOOTHILLS COUNTY`)
+   - `fir_code`: the province's 4-digit municipal code in the FIR workbooks
+     (Phase 2; added 2026-10-01). FIR rows are matched on it, not on the name.
+     Each member's code is constant across every FIR equalized-assessment
+     schedule, 1997–2025.
    - `member_basis`: e.g. `EMRB 2025`
    - `notes`: status changes, with dates
 

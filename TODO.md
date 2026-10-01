@@ -68,20 +68,29 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Phase 2 — FIR fetch.** Per decision 5: copy `fetch_fir_tax_base.py` +
-  `fetch_fir_debt.py`'s `MUNICIPALITIES` idiom from the Edmonton repo, extend
-  to the chosen municipality set and the equalized-assessment workbooks.
-  Manual, reviewed input (not a scheduled refresh) until there is a reason.
-  **Then verify the four printed anomalies against FIR taxable assessment**, per
-  the DECISIONS row of 2026-09-28: Airdrie NR 2016, Sturgeon NR 2000, Devon 1998
-  and Calgary linear 2002. The Sturgeon and Devon checks need the pre-2003 FIR zip
-  files, whose contents are unverified. A confirmed error gets a flagged correction,
-  and the guard test is updated in the same commit.
-  **Pin the schema on the first real download:** commit a fingerprint (sheet
-  names, header strings, municipality count, presence of lines 1912/1922 per
-  year) and an offline test against it, so a drifting year fails loudly. Confirm
-  the actual year coverage too (sources say 2003–2024, 2003–2025, or zips to
-  1994), and record every `data/DATA.md` assumption the real files disprove.
+- [ ] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.**
+  For 1994–2022 the provincial transfer lines are 01910 *Unconditional* / 01920
+  *Conditional*, which is a different cut from operating/capital
+  (`data/DATA.md` §"Fetched into this repo";
+  `tests/test_fir_schema.py::test_provincial_transfer_codes_change_meaning_in_2023`).
+  Options: the conditional/unconditional pair through 2022 with a 2023 break
+  marker; total provincial transfers (01910+01920 → 01912+01922) as one series;
+  or 2023+ only. Peter's call, and it comes before the transfer parse.
+
+- [ ] **Phase 2 — FIR parse** (the fetch and the schema pin are done,
+  2026-10-01: `src/fetch_fir.py`, `src/fingerprint_fir.py`,
+  `data/fir_schema.json`). The next module, `src/parse_fir.py`, reads by
+  `regions.csv` → `fir_code` and the row's own YEAR, not the folder name.
+  **Then verify the four printed anomalies** (DECISIONS row of 2026-09-28):
+  Airdrie NR 2016, Sturgeon NR 2000, Devon 1998 and Calgary linear 2002. The
+  plan was to check against FIR *taxable* assessment, but `MR(2)` exists only
+  from 2023. Use FIR's `EA` schedule instead: the same equalized metric, a
+  second publication, covering 1997–2025. A disagreement is evidence of a print
+  or parse slip. Agreement means the publisher printed the same number twice,
+  which does not show it is right. A confirmed error gets a flagged correction,
+  and the guard test is updated in the same commit. Then check year alignment
+  (FIR financial year Y vs equalized taxation year) on non-anomalous years
+  before trusting it.
 
 - [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
   2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,

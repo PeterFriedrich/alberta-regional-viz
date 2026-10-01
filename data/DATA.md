@@ -16,8 +16,9 @@ the publisher's own last-updated stamp. A guard must measure the DATA (row
 counts, max date in the file), never a metadata string that can go stale
 while the guard stays green.
 
-⚠️ Everything below was verified in the Edmonton repo on the dates shown and
-**has not been re-fetched since**. Nothing has been downloaded into this repo.
+⚠️ Unless a section says it was fetched into this repo (the equalized PDFs, the
+FIR workbooks), it was verified in the Edmonton repo on the dates shown and
+**has not been re-fetched since**.
 
 ## Sources
 
@@ -74,16 +75,59 @@ while the guard stays green.
 ### Alberta Municipal Affairs — FIR workbooks, tax rates, equalized assessment
 - **Publisher / URL:** `open.alberta.ca/opendata/municipal-financial-and-statistical-data` (FIR/SIR yearly workbooks 2003–2025, zips to 1994; `2026_Tax_Rates.xlsx`), `open.alberta.ca/dataset/equalized-assessment-report` (XLSX 2024–2026).
 - **Licence:** OGL-Alberta.
-- **Verified:** 2026-07-18 — **not since**; the Edmonton repo pulls these workbooks routinely (`fetch_fir_debt.py`, `fetch_fir_tax_base.py`), so the fetch idiom is proven.
+- **Verified:** FIR workbooks fetched and fingerprinted here 2026-10-01 (below); tax-rates and equalized XLSX not since 2026-07-18.
 - **Rows / columns:** one row per municipality-year; Schedule MR: `MR(1)` municipal levy, `MR(2)` taxable assessment by class, `MR(3)` mill rates; 51 sheets per workbook.
 - **Quirks:** cross-municipality assessment *levels* need the equalized report. Raw FIR assessment is annual market value, but municipal assessment levels and bases differ, and equalized = taxable ÷ assessment level (corrected 2026-09-26: the old wording blamed missing revaluation, which is wrong). Within-year shares only with care.
-- **Transfers** (per the 2024 FIR Manual, p. 11, checked 2026-09-26): line 1902 federal capital, **1912 provincial operating**, **1922 provincial capital**, 1931/1932 local government operating/capital. Revenue is recognized under PS 3410, not as cash allocated. Line-code stability across 2003–2025 is unverified, so build a code dictionary from each year's manual before concatenating. Class buckets are not 1:1 with municipal tax classes (an "Other" bucket). Manual, reviewed input: re-fetch annually, eyeball the diff, commit.
+- **Transfers** (per the 2024 FIR Manual, p. 11, checked 2026-09-26): line 1902 federal capital, **1912 provincial operating**, **1922 provincial capital**, 1931/1932 local government operating/capital. Revenue is recognized under PS 3410, not as cash allocated. Class buckets are not 1:1 with municipal tax classes (an "Other" bucket). Manual, reviewed input: re-fetch annually, eyeball the diff, commit.
+
+#### Fetched into this repo (2026-10-01): `src/fetch_fir.py` → `src/fingerprint_fir.py`
+- **Package:** CKAN `package_show?id=municipal-financial-and-statistical-data`.
+  The slug and the id `cde4c4fd-a0b2-4816-af43-13de7a3fd3e3` resolve to the same
+  package. It has 13 resources: workbooks for 2017–2025, a `2026_Tax_Rates.xlsx`,
+  and three era zips (2009–2016, 2003–2008, 1994–2002). **Coverage is financial
+  years 1994–2025**, with no gap. The publisher re-stamped the 2022–2025
+  workbooks in July–September 2026, so expect restatements.
+- **Raw files** go to `data/raw/fir/` (not committed), with a `manifest.json`
+  (sha256, retrieval time, publisher `last_modified`). **The committed
+  fingerprint is `data/fir_schema.json`.** It records every sheet of every file:
+  title, header row, item-code row, municipality-row count, and the YEAR values
+  in the rows. `tests/test_fir_schema.py` pins the facts below against it.
+- **Four layouts:**
+  - **2009+:** one workbook per year, one sheet per schedule (`D(1)-Total`,
+    `EA(1)-Assessment`, `POPL(1)-Population`, …).
+  - **1994–2000 and 2004–2008:** one `.xlsx` per schedule, `YYYY/YYYY-<schedule>.xlsx`.
+  - **2001:** legacy `_colN.XLS` files with **no item-code row**.
+  - **2002 and 2003:** legacy `.xls` in sub-folders. `2003-EA-MR/` ships in
+    *both* era zips, byte-identical (checked).
+- **Every sheet:** row 2 (the YEAR row) is the header, and the next row holds
+  5-digit item codes (`01920`). Municipality rows carry a 4-digit `CODE`
+  (Edmonton `0098`, Calgary `0046`). The codes are in `data/regions.csv` → `fir_code`.
+- ⚠️ **Lines 1912/1922 exist only from 2023.** From 1994 to 2022 the provincial
+  transfer lines are **01910 "Unconditional" / 01920 "Conditional"**, which is a
+  different cut from operating/capital. The two can't be spliced. Decision 9
+  needs revisiting (TODO).
+- ⚠️ **MR(2) taxable assessment by class exists only from 2023** (sheet
+  `MR(2)-Assessment`). 2009–2022 have no MR(2). 1998–2008 have per-class `MR-*`
+  files. Their columns 08200–08240 look like assessment, but this is unverified.
+- **EA (equalized assessment) is published in FIR for 1997–2025**, with
+  columns for Linear, M&E, Non-Residential, Railway and Co-gen M&E subtotals.
+  This is the same metric as the Phase 1 PDFs, published a second time. It is
+  not an independent valuation, but it can catch parse slips and print typos.
+  2001's `EQASSMT 2001.XLS` has no railway column, and its title says "figures
+  downloaded as of November 2002 and can change".
+- **The `2001/` folder holds some 2002 data.** `EQASSMT 2002.XLS` and both
+  `Mr_col*.XLS` files carry YEAR 2002 in their rows. A parser must use the
+  row's YEAR, not the folder name.
+- **FIR has no "City of Calgary (Part II)" row.** Code 0046 is "CALGARY" in
+  every year. Compare this with the PDF alias in `regions.csv`.
+- **Unreadable files:** `sir Form.xls` (2003) and the root-level
+  `Statistical_Return.xls` are encrypted. Together with `Financial_*.xls`, they
+  look like blank return forms, not data. They are recorded in the fingerprint
+  as `unreadable`.
 
 ### Candidate sources — UNVERIFIED, not yet used
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
 or checked here; verify licence, URL and coverage before adding a full entry above.
-- **FIR/SIR CKAN dataset id** `cde4c4fd-a0b2-4816-af43-13de7a3fd3e3`: check that it
-  is the same dataset as the open.alberta.ca slug cited above.
 - **StatCan:** 2021 CSD profiles, commuting tables 98-10-0459 / 0460 / 0462, 2021
   boundary files (StatCan Open Licence). Needed for Phase 2 population, through the
   CSD crosswalk (TODO).
