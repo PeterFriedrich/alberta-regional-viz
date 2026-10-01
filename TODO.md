@@ -68,15 +68,6 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.**
-  For 1994–2022 the provincial transfer lines are 01910 *Unconditional* / 01920
-  *Conditional*, which is a different cut from operating/capital
-  (`data/DATA.md` §"Fetched into this repo";
-  `tests/test_fir_schema.py::test_provincial_transfer_codes_change_meaning_in_2023`).
-  Options: the conditional/unconditional pair through 2022 with a 2023 break
-  marker; total provincial transfers (01910+01920 → 01912+01922) as one series;
-  or 2023+ only. Peter's call, and it comes before the transfer parse.
-
 - [ ] **Phase 2 — FIR parse** (the fetch and the schema pin are done,
   2026-10-01: `src/fetch_fir.py`, `src/fingerprint_fir.py`,
   `data/fir_schema.json`). The next module, `src/parse_fir.py`, reads by
@@ -91,6 +82,10 @@ symptom and re-measure the stated cause before acting on it.
   and the guard test is updated in the same commit. Then check year alignment
   (FIR financial year Y vs equalized taxation year) on non-anomalous years
   before trusting it.
+  **Transfers** (decision as amended 2026-10-01): sum 01910+01920 through 2022
+  and 01912+01922 from 2023, and add a test that no member's total steps at
+  2022→2023 beyond its normal year-to-year variation. The DECISIONS row cites it
+  as owed.
 
 - [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
   2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
@@ -115,6 +110,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.** — DECIDED 2026-10-01 · `docs/TODO_archive.md`
 
 - [x] **Strip the SYNC TEST marker before or with the next real commit.** — 2026-09-30 · `docs/TODO_archive.md`
 

@@ -105,7 +105,7 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - ⚠️ **Lines 1912/1922 exist only from 2023.** From 1994 to 2022 the provincial
   transfer lines are **01910 "Unconditional" / 01920 "Conditional"**, which is a
   different cut from operating/capital. The two can't be spliced. Decision 9
-  needs revisiting (TODO).
+  is amended (2026-10-01): the headline is the total of the two lines.
 - ⚠️ **MR(2) taxable assessment by class exists only from 2023** (sheet
   `MR(2)-Assessment`). 2009–2022 have no MR(2). 1998–2008 have per-class `MR-*`
   files. Their columns 08200–08240 look like assessment, but this is unverified.

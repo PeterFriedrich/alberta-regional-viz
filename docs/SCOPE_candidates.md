@@ -170,7 +170,9 @@ could not verify. Local checks 2026-09-26 are marked ✔/✘.
     board's historical footprint.
   - Both boards are gone: the EMRB on 2025-04-01 and the CMRB on 2025-04-30.
     Calgary's successor is a voluntary "Regional Table".
-- **Transfers (9).** Use FIR lines **1912** (provincial operating) and
+- **Transfers (9).** *(Amended 2026-10-01: 1912/1922 exist only from 2023, so the
+  headline is total provincial transfers; `SPEC_phase1.md` §"Transfers basis
+  (decided 2026-10-01)".)* Use FIR lines **1912** (provincial operating) and
   **1922** (provincial capital) ✔. These are in the 2024 FIR Manual, p. 11;
   whether the line codes drift across 2003–2025 is unverified.
   - Show 5-year rolling averages per capita, with break markers at 2014 (BMTG
@@ -270,7 +272,7 @@ Code was scratch only; nothing was committed.
 8. **What counts as the "Edmonton region"?** *(DECIDED 2026-09-26, see `DECISIONS.md`. fixed 13 EMRB / 8 CMRB membership; see the §"Research reply" above.)* StatCan CMA (2021), the former
    13-member EMRB (frozen since 2025-04-01), or a custom list. This replaces
    decision 2 if the timeline framing leads.
-9. **Transfers basis** *(DECIDED 2026-09-26, see `DECISIONS.md`. FIR codes 1912 and 1922, 5-year average per capita, break markers.)* (only if transfers are in scope): FIR transfer lines as
+9. **Transfers basis** *(DECIDED 2026-09-26, see `DECISIONS.md`. FIR codes 1912 and 1922, 5-year average per capita, break markers. Amended 2026-10-01 to total provincial transfers.)* (only if transfers are in scope): FIR transfer lines as
    the reproducible spine and LGFF/MSI PDFs as a cross-check. Conditional vs
    unconditional and capital vs operating: split or combined?
 10. **Normalization:** *(DECIDED 2026-09-26, see `DECISIONS.md`. equalized non-residential excluding linear and M&E, with those two stacked separately; StatCan population.)* per capita vs per assessment dollar, and how to handle
