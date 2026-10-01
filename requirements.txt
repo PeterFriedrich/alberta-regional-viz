@@ -2,3 +2,7 @@
 # installs; keep the two in lockstep.
 pytest==9.0.3
 pdfplumber==0.11.10
+# FIR fetch/fingerprint only (src/fingerprint_fir.py); tests read the committed
+# data/fir_schema.json, so CI does not need these.
+openpyxl==3.1.5
+xlrd==2.0.2
