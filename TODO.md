@@ -25,6 +25,14 @@ symptom and re-measure the stated cause before acting on it.
   the **1995 RPC dissolution** (no primary source; one source conflicts), the
   CSKA $397/capita, and the Police Funding Model figures. Primary sources: the
   Board Orders (open.alberta.ca has MGB 050/18) and the Orders in Council.
+  **Fiscal figures from the same reports, also unchecked** (carried over from the
+  retired claude.ai spec, 2026-10-01). Check any of these before a chart or
+  caption quotes it: the police municipal cost share (one report: 10% → 30% from
+  2020, effectively 19% on 2018 costs, reset to 22% for 2026-27; another: "rose to
+  30% in 2024"); the LGFF opening envelope ($722M vs $724.2M) and the 2026
+  ($800M) / 2027 ($895.3M) envelopes; Calgary's $1.05B downloaded costs and
+  $145M 2027 gap (EC2026-0284); the Paquette ledger (about $718M, mostly not
+  reconciling to FCS02218; only the 32% non-resident road-use share corroborated).
 
 - [ ] **Next session: pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
@@ -69,6 +77,11 @@ symptom and re-measure the stated cause before acting on it.
   and Calgary linear 2002. The Sturgeon and Devon checks need the pre-2003 FIR zip
   files, whose contents are unverified. A confirmed error gets a flagged correction,
   and the guard test is updated in the same commit.
+  **Pin the schema on the first real download:** commit a fingerprint (sheet
+  names, header strings, municipality count, presence of lines 1912/1922 per
+  year) and an offline test against it, so a drifting year fails loudly. Confirm
+  the actual year coverage too (sources say 2003–2024, 2003–2025, or zips to
+  1994), and record every `data/DATA.md` assumption the real files disprove.
 
 - [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
   2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
@@ -80,6 +93,12 @@ symptom and re-measure the stated cause before acting on it.
   StatCan CSD key and no official Alberta-code ↔ CSD concordance exists
   (`docs/SCOPE_candidates.md`). Hand-build it, one CSD code per `muni_id`, and
   flag dissolved/renamed members explicitly.
+
+- [ ] **Phase 4 architecture pass: propose "no runtime third-party dependency"**
+  as a DECISIONS row — every file the browser needs is static in the repo (no
+  third-party APIs or tile CDNs), guarded by a test that scans built pages for
+  external URLs. Include the attribution line (OGL-Alberta, StatCan Open
+  Licence, and OSM if any OSM-derived layer is used). From the retired claude.ai spec.
 
 - [ ] **Merge gate deps.** `requirements-ci.txt` is pytest-only. Add
   `openpyxl`/`pandas` etc. only when a test needs them; keep it offline.
