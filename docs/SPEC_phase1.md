@@ -114,6 +114,56 @@ that have it.
   estimate-to-census ratio would avoid the step, but the result is a series
   StatCan does not publish, built to imitate one it does.
 
+### Phase 2b basis (decided 2026-10-02)
+
+Spending by function from FIR Schedule C, per capita (StatCan 17-10-0155),
+core vs ring, 2001–2025. Functions (decision 2026-09-30): Police, Public
+Transit, Family and Community Support (FCSS), and Public Housing Operations.
+Expense codes 01210, 01310, 01400 and 01480 mean the same in every year with a
+code row. 2001 is mapped by name.
+
+**The 2009 accrual switch.** Before 2009, Schedule C comes as separate
+Operating, Capital and Total files (cash expenditure). From 2009 there is one
+accrual REVENUE/EXPENSE sheet: expense includes amortization and excludes
+capital purchases. Schedule E reports amortization by function from 2009.
+
+| $M | 2008 operating | 2009 expense − amortization |
+|---|---|---|
+| Edmonton police | 243.4 | 249.9 |
+| Edmonton transit | 209.8 | 235.2 |
+| Calgary police | 282.3 | 316.7 |
+| Calgary transit | 279.8 | 295.7 |
+
+- **Headline: gross operating cost per capita.** That is the Operating
+  schedule's expenditure through 2008, and Schedule C expense minus Schedule E
+  amortization from 2009. A 2009 marker goes on the chart, and the module's
+  test checks that there is no common step at 2009, as the transfers test
+  does at 2023.
+- **Second series: net of user charges.** Gross minus Schedule E sales and user
+  charges for the same function (fares, fees), which is consistent for
+  1994–2025. It is the cost not paid by the service's users. Grants stay in,
+  because they are in the Phase 2 transfers series.
+- **Rejected: net of all function revenue.** From 2009, function revenue
+  includes capital grants while expense carries only amortization, so the
+  two do not match. Calgary's transit revenue goes from 137.6 (2008
+  operating) to 225.9 (2009).
+- **Police excludes the rural counties.** Parkland, Rocky View and Sturgeon
+  report $0 police in every year checked (2017–2023), and Foothills does until
+  2021. Rural areas get provincial RCMP service. The Police Funding Model
+  payments these counties have made since 2020 are not in the police line, and
+  no other protective-services line shows a matching step. Police per capita
+  therefore covers the cores and the ring members that report police spending,
+  with those members' population, and the chart names who is excluded. Also
+  check suspicious single-year zeros before use: Cochrane 2022, Devon 2021.
+- **Caveats the charts carry:**
+  - Public housing depends on how each city is organized. Calgary Housing
+    Company is in Calgary's books ($102–128M in 2008–09). Edmonton's housing
+    agency is largely separate ($19–34M).
+  - FCSS is 80% provincially funded.
+  - Shelter has no FIR line. FCSS + public housing is the nearest proxy
+    (decision 2026-09-30).
+- **Dollars:** nominal, as for transfers (TODO: a deflator at the chart stage).
+
 ## Phase 1 goal
 
 For every report year that has a text layer (2011–2026), produce each region's

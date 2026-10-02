@@ -78,12 +78,17 @@ symptom and re-measure the stated cause before acting on it.
   Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
   must be on the same basis as the series around it, or the chart says so.
 
-- [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
-  2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
-  Family and Community Support + Public Housing Operations, from the Phase 2
-  fetch. Needs its own short spec first: gross vs net of own revenue, and the
-  per-year line-code dictionary (only the 2024 workbook has been checked;
-  every year's code rows are now in `data/fir_schema.json`, so derive it from there).
+- [ ] **Phase 2b module (proposal first: a new module).** Spec locked 2026-10-02
+  (`docs/SPEC_phase1.md` §"Phase 2b basis"). Parse Schedule C (Operating ≤2008; accrual
+  2009+), Schedule E amortization (2009+) and Schedule E sales and user charges for the
+  four functions, absorbed villages included. Build gross and net-of-user-charges per
+  capita for members and core/ring. Tests: an independent recompute, and no common step at 2009.
+
+- [ ] **Where do rural counties record Police Funding Model payments?** Parkland, Rocky View
+  and Sturgeon report $0 police in every year 2017–2023, including after the model started
+  in 2020, and no protective-services line shows a matching step. Ask Municipal Affairs, or
+  check a county's audited statements. Also check the single-year zeros: Cochrane 2022,
+  Devon 2021.
 
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
