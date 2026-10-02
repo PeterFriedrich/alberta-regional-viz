@@ -8,6 +8,12 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 1 omits four dissolved villages that decision 8 merges into members.**
+  Fixed 2026-10-02: `+part` aliases in `regions.csv`, with `member_values` able to sum several
+  parts per member per year. Guarded by `test_every_vanished_municipality_is_classified`.
+  Edmonton `nr` −0.22 pp (1998) to −0.01 pp (2021).
+
+
 - [x] **CSD crosswalk before Phase 2 population.** Built as
   `data/csd_crosswalk.csv` (one row per member per census year, plus rows for the
   four absorbed villages), pinned by `tests/test_csd_crosswalk.py`; sources in

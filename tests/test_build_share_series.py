@@ -1,6 +1,7 @@
 """build_share_series and fetch_equalized on synthetic inputs, plus the
 UPE01548 reproduction check on the real processed file when it exists."""
 import csv
+import re
 import sys
 from pathlib import Path
 
@@ -73,6 +74,17 @@ def test_part_alias_is_summed_and_a_plain_duplicate_still_fails(tmp_path):
         bss.member_values(twice, reg)
 
 
+def test_two_parts_in_one_year_are_summed_but_two_spellings_of_one_part_fail(tmp_path):
+    reg = regions(tmp_path, [("core", "r", "core", "CORE CITY"),
+                             ("ring", "r", "ring", "RING COUNTY|+VILLAGE OF A|+A|+VILLAGE OF B")])
+    rows = (long(1998, "Core City", nr_incl_railway=60) + long(1998, "Ring County", nr_incl_railway=30)
+            + long(1998, "Village of A", nr_incl_railway=4) + long(1998, "Village of B", nr_incl_railway=6))
+    found, _ = bss.member_values(rows, reg)
+    assert found[(1998, "ring")]["nr_incl_railway"] == 40
+    with pytest.raises(bss.BuildError, match="matched twice"):
+        bss.member_values(rows + long(1998, "A", nr_incl_railway=4), reg)
+
+
 def test_missing_member_fails(tmp_path):
     reg = regions(tmp_path, REGION)
     rows = long(2014, "Core City", nr=1) + long(2015, "Core City", nr=1) + long(2015, "Ring County", nr=1)
@@ -132,7 +144,8 @@ def test_fir_corrections_are_in_the_committed_series():
     with SERIES.open() as f:
         rows = {(r["region"], int(r["taxation_year"]), r["basis"]): r for r in csv.DictReader(f)}
     assert abs(float(rows[("calgary", 2016, "nr")]["core_share"]) - 0.9187) <= 0.0005
-    assert abs(float(rows[("edmonton", 2000, "nr")]["core_share"]) - 0.7619) <= 0.0005
+    # 0.7619 until 2026-10-02, when Entwistle and Wabamun were summed into Parkland.
+    assert abs(float(rows[("edmonton", 2000, "nr")]["core_share"]) - 0.7601) <= 0.0005
     assert "airdrie nr (printed 0)" in rows[("calgary", 2016, "nr")]["basis_note"]
     assert "sturgeon nr_incl_railway (printed 647,603,090)" in rows[("edmonton", 2000, "nr")]["basis_note"]
     assert "corrected" not in rows[("edmonton", 2001, "nr")]["basis_note"]
@@ -216,3 +229,66 @@ def test_continuity_fails_on_a_known_anomaly_that_no_longer_fires(tmp_path, monk
     monkeypatch.setattr(bss, "KNOWN_ANOMALIES", {(2012, "ring")})
     with pytest.raises(bss.BuildError, match="no longer fire.*2012, 'ring'"):
         bss.check_continuity(found, years, reg)
+
+
+LONG = REPO / "data/processed/equalized_long.csv"
+# Absorbed: dissolved into a member, summed in as a part (decision 8).
+# NOT_MEMBER: every other municipality that stops appearing before the newest
+# report, as vanished_names() normalizes it (dissolved into, or renamed to, a
+# non-member).
+ABSORBED = {"BLACKIE": "foothills", "ENTWISTLE": "parkland", "WABAMUN": "parkland",
+            "NEW SAREPTA": "leduc_county"}
+NOT_MEMBER = {
+    "BADLANDS", "BARON", "BIRCH HILL", "BLACK DIAMOND", "BOTHA", "BURDETT", "CAROLINE",
+    "CEREAL", "CROWSNEST PAS", "DERWENT", "DEWBERRY", "EAST PEACE", "EDMONTON BEACH",
+    "EVANSBURG", "FERINTOSH", "GADSBY", "GALAHAD", "GLEICHEN", "GRANDE CACHE", "GRANUM",
+    "HALKIRK", "HILLSPRING", "HYTHE", "JASPER MUNCIPALITY", "JASPER PARK", "JASPER TOWNSITE",
+    "KINUSO", "LAKELAND", "LAVOY", "MIRROR", "NAKAMUM PARK", "NEW NORWAY", "NEW RAINBOW LAKE",
+    "NOT REDWOOD MEADOWS INCORPORATED TOWNSITE REDWOOD MEADOWS ADMIN SOC", "PLAMOND",
+    "PLAMONDON", "REDWOOD MEADOWS", "REG MUN WOOD BUFFALO", "SANGUDO", "STROME", "TILLEY",
+    "TORRINGTON", "TOWNSITE REDWOOD MEADOWS", "TURNER VALLEY", "WAKATENAU", "WANHAM",
+    "WARSPITE", "WHITE GULL", "WILLINGDON", "YOUNGSTON",
+    "",  # Improvement District No. 349 (dissolved into the M.D. of Bonnyville, 2021)
+}
+
+
+def vanished_names(rows, regions):
+    """Names last printed before the newest report, minus rows a member's
+    alias or part already matches. Type words are stripped so "Village of X" and "X" are one name."""
+    def key(s):
+        s = re.sub(r"\b(CITY|TOWN|VILLAGE|SUMMER VILLAGE|S V|SV|COUNTY|MUNICIPAL DISTRICT|M D|MD|"
+                   r"SPECIAL AREAS?|IMPROVEMENT DISTRICT|I D|OF|NO|THE|REG MUN|"
+                   r"REGIONAL MUNICIPALITY|MUNICIPALITY|AND)\b", " ", s.upper().replace(".", " "))
+        return " ".join(re.sub(r"[^A-Z ]", " ", s).split())
+    aliases = {a for r in regions for a in r["aliases"]}
+    last = {}
+    for r in rows:
+        if bss.norm(r["muni_name_raw"]) in aliases:
+            continue
+        k = key(r["muni_name_raw"])
+        last[k] = max(last.get(k, 0), int(r["report_year"]))
+    newest = max(last.values())
+    return {k for k, y in last.items() if y < newest}
+
+
+def test_every_vanished_municipality_is_classified():
+    """A municipality that dissolves into a member must be summed into it
+    (decision 8). Phase 1 missed four until 2026-10-02 (Edmonton nr -0.22 pp in
+    1998). A new report year that drops a municipality fails here until it is
+    classified."""
+    if not LONG.exists():
+        # Gitignored (4 MB); it is rebuilt only locally, which is where this can fire.
+        pytest.skip("no data/processed/equalized_long.csv (run src/parse_equalized.py)")
+    regions = bss.load_regions(REPO / "data/regions.csv")
+    rows = list(csv.DictReader(LONG.open()))
+    assert vanished_names(rows, regions) == NOT_MEMBER
+
+
+def test_absorbed_villages_are_parts_of_their_member_and_in_the_crosswalk():
+    regions = bss.load_regions(REPO / "data/regions.csv")
+    by_id = {r["muni_id"]: r for r in regions}
+    for village, mid in ABSORBED.items():
+        assert any(village in p for p in by_id[mid]["parts"]), (village, mid)
+    xw = {(r["muni_id"], r["csd_name"].upper()) for r in csv.DictReader((REPO / "data/csd_crosswalk.csv").open())
+          if r["relation"] == "absorbed"}
+    assert xw == {(m, v) for v, m in ABSORBED.items()}

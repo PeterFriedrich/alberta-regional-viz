@@ -107,8 +107,13 @@ Core = Edmonton / Calgary. Ring = the other members of the region's fixed set
    - `member_basis`: e.g. `EMRB 2025`
    - `notes`: status changes, with dates
 
-   Dissolved municipalities merged into a member (decision 8) are added as
-   extra alias rows pointing at the absorbing `muni_id`.
+   Dissolved municipalities merged into a member (decision 8) are `+NAME`
+   part aliases on the absorbing member, summed into it while the report
+   prints them separately: Blackie (Foothills), Entwistle and Wabamun
+   (Parkland), New Sarepta (Leduc County). Their StatCan CSDs are the
+   `absorbed` rows of `data/csd_crosswalk.csv`. A municipality that stops
+   appearing in the reports fails `test_every_vanished_municipality_is_classified`
+   until it is assigned to a member or listed as a non-member.
 
 ## Year semantics (resolved 2026-09-27)
 

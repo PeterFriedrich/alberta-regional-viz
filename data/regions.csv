@@ -6,8 +6,8 @@ leduc_city,City of Leduc,edmonton,ring,LEDUC|CITY OF LEDUC,0200,EMRB 2025,
 st_albert,City of St. Albert,edmonton,ring,ST. ALBERT|CITY OF ST. ALBERT,0292,EMRB 2025,
 spruce_grove,City of Spruce Grove,edmonton,ring,SPRUCE GROVE|CITY OF SPRUCE GROVE,0291,EMRB 2025,
 strathcona,Strathcona County,edmonton,ring,STRATHCONA COUNTY|STRATHCONA COUNTY NO. 20,0302,EMRB 2025,Specialized municipality
-leduc_county,Leduc County,edmonton,ring,LEDUC COUNTY|COUNTY OF LEDUC NO. 25|LEDUC NO. 25 COUNTY OF,0201,EMRB 2025,
-parkland,Parkland County,edmonton,ring,PARKLAND COUNTY|PARKLAND COUNTY NO. 31,0245,EMRB 2025,
+leduc_county,Leduc County,edmonton,ring,LEDUC COUNTY|COUNTY OF LEDUC NO. 25|LEDUC NO. 25 COUNTY OF|+NEW SAREPTA|+VILLAGE OF NEW SAREPTA,0201,EMRB 2025,New Sarepta (village) dissolved into it before 2011; summed in
+parkland,Parkland County,edmonton,ring,PARKLAND COUNTY|PARKLAND COUNTY NO. 31|+ENTWISTLE|+VILLAGE OF ENTWISTLE|+WABAMUN|+VILLAGE OF WABAMUN,0245,EMRB 2025,Entwistle (village) dissolved into it before 2001 and Wabamun (village) on 2021-01-01; both summed in
 sturgeon,Sturgeon County,edmonton,ring,STURGEON COUNTY|M.D. OF STURGEON NO. 90,0305,EMRB 2025,
 devon,Town of Devon,edmonton,ring,DEVON|TOWN OF DEVON,0086,EMRB 2025,
 morinville,Town of Morinville,edmonton,ring,MORINVILLE|TOWN OF MORINVILLE,0224,EMRB 2025,
@@ -16,7 +16,7 @@ calgary,City of Calgary,calgary,core,CALGARY|CITY OF CALGARY|+CITY OF CALGARY (P
 airdrie,City of Airdrie,calgary,ring,AIRDRIE|CITY OF AIRDRIE|AIRDIRE,0003,CMRB 2025,"""Airdire"" is a 2001-2004 report typo"
 chestermere,City of Chestermere,calgary,ring,CHESTERMERE|TOWN OF CHESTERMERE,0356,CMRB 2025,
 cochrane,Town of Cochrane,calgary,ring,COCHRANE|TOWN OF COCHRANE,0070,CMRB 2025,
-foothills,Foothills County,calgary,ring,FOOTHILLS COUNTY|FOOTHILLS NO. 31 M.D. OF|M.D. OF FOOTHILLS NO. 31|FOOTHILLS NO. 32 M.D. OF,0111,CMRB 2025,"Renamed from M.D. of Foothills No. 31; ""No. 32"" is a 2001 report typo"
+foothills,Foothills County,calgary,ring,FOOTHILLS COUNTY|FOOTHILLS NO. 31 M.D. OF|M.D. OF FOOTHILLS NO. 31|FOOTHILLS NO. 32 M.D. OF|+VILLAGE OF BLACKIE,0111,CMRB 2025,"Renamed from M.D. of Foothills No. 31; ""No. 32"" is a 2001 report typo; Blackie (village) dissolved into it before 2001; summed in"
 high_river,Town of High River,calgary,ring,HIGH RIVER|TOWN OF HIGH RIVER,0148,CMRB 2025,
 okotoks,Town of Okotoks,calgary,ring,OKOTOKS|TOWN OF OKOTOKS,0238,CMRB 2025,
 rocky_view,Rocky View County,calgary,ring,ROCKY VIEW COUNTY|ROCKY VIEW NO. 44 M.D. OF|M.D. OF ROCKY VIEW NO. 44,0269,CMRB 2025,

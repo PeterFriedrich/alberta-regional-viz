@@ -93,9 +93,12 @@ def member_values(long_rows, regions):
         key = (year, mid)
         where = (row["muni_name_raw"], row["page"])
         is_part = name in parts
-        if source.setdefault((key, row["class"], is_part), where) != where:
-            raise BuildError(f"{mid} matched twice in report {year}: "
-                             f"{source[(key, row['class'], is_part)]} and {where}")
+        # Keyed by the part's name without its type prefix: a member can sum
+        # several parts in one year (Parkland 1998-2001: Entwistle and Wabamun),
+        # but two spellings of one part still collide.
+        skey = (key, row["class"], re.sub(r"^(CITY|TOWN|VILLAGE) OF ", "", name) if is_part else None)
+        if source.setdefault(skey, where) != where:
+            raise BuildError(f"{mid} matched twice in report {year}: {source[skey]} and {where}")
         if is_part and (key, name) not in summed:
             summed.add((key, name))
             event(log, "part summed into member", report_year=year, muni_id=mid,
