@@ -136,9 +136,8 @@ capital purchases. Schedule E reports amortization by function from 2009.
 
 - **Headline: gross operating cost per capita.** That is the Operating
   schedule's expenditure through 2008, and Schedule C expense minus Schedule E
-  amortization from 2009. A 2009 marker goes on the chart, and the module's
-  test checks that there is no common step at 2009, as the transfers test
-  does at 2023.
+  amortization from 2009. A 2009 marker goes on the chart. The step at 2009 is
+  measured on restated 2008 figures, not tested statistically (next section).
 - **Second series: net of user charges.** Gross minus Schedule E sales and user
   charges for the same function (fares, fees), which is consistent for
   1994–2025. It is the cost not paid by the service's users. Grants stay in,
@@ -163,6 +162,39 @@ capital purchases. Schedule E reports amortization by function from 2009.
   - Shelter has no FIR line. FCSS + public housing is the nearest proxy
     (decision 2026-09-30).
 - **Dollars:** nominal, as for transfers (TODO: a deflator at the chart stage).
+
+### The 2009 accrual switch, measured (2026-10-02)
+
+Edmonton's and Calgary's 2009 annual reports restate 2008 on the accrual basis,
+so 2008 exists on both bases. Where a statement line matches our 2009 gross
+within 1% (the same scope), its restated 2008 against our 2008 cash Operating
+figure is the size of the step. Figures in $K; sources and pages in
+`/home/opc/research/alberta-regional-viz/accrual_switch_overlap_2026-10-02.md`.
+
+| City, function | 2009 statement vs our gross | 2008 cash vs restated | Step |
+|---|---|---|---|
+| Edmonton police | 249,897 = 249,897 | 243,442 vs 237,495 | cash 2.5% above |
+| Calgary police | 316,025 vs 316,684 | 282,318 vs 285,936 | cash 1.3% below |
+| Calgary transit | 295,252 vs 295,633 | 279,795 vs 283,688 | cash 1.4% below |
+| Calgary FCSS | 49,535 vs 49,669 | 50,856 vs 50,641 | cash 0.4% above |
+| Edmonton public housing | 33,160 = 33,160 | 18,749 vs 27,100 | cash 31% below (accrual +45%) |
+| Calgary social housing | 105,528 vs 123,627 | — | scope differs |
+
+Edmonton's statement includes amortization in each function. Its 2008 figures
+are net of the 2009 FIR amortization, as an estimate (2010's is within 0.5%).
+Edmonton's transit and community lines are a different scope from the FIR
+function and can't be used.
+
+- **Police, transit and FCSS run through 2009.** The step is at most 3%, and
+  its sign differs between the cities.
+- **Public housing starts in 2009.** The restatement changed what the line
+  covers, so there are no housing rows before 2009.
+- **No statistical step test for police.** A year-on-year test was tried
+  first. 2009 sits in the 2007–09 boom (median member police growth 16% in
+  2008, 3% in 2010), so the transfers-style test fails police, FCSS and housing
+  on real data. A trend-adjusted version still flags police (all-member total
+  3.8% under trend against a 3.0% bar) and has no power for housing. It is kept
+  as a backstop for transit (catches ±10%) and FCSS (±5%) only.
 
 ## Phase 1 goal
 

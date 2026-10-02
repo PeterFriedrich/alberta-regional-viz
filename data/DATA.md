@@ -169,6 +169,35 @@ per_capita, per_capita_5yr, basis_note`. Nominal dollars.
   before. It is kept as printed and named in `basis_note` (member and ring rows).
 - **No blank transfer values** in any member-year.
 
+#### Spending per capita (built 2026-10-02): `src/build_spending.py` → `data/processed/spending_per_capita.csv`
+Committed, 2,300 rows: 21 members plus core and ring for each region, × police,
+transit and FCSS for 2001–2025, and housing for 2009–2025. Columns: `region, level,
+unit, role, function, year, gross, user_charges, net, population, gross_per_capita,
+net_per_capita, excluded, basis_note`. Nominal dollars. Basis: `docs/SPEC_phase1.md`
+§"Phase 2b basis" and §"The 2009 accrual switch, measured".
+- **`fir_long.csv` schedules added:** `C_OP` (Schedule C Operating expenditure,
+  1994–2008), `C` (Schedule C REVENUE/EXPENSE – TOTAL, 2009–2025), `E_AMORT`
+  (Schedule E Annual Amortization Expense, 2009–2025) and `E_UC` (Schedule E Sales
+  and User Charges, 1994–2025), for the four functions. Schedule E's sheets share
+  function codes (02250 police, 02350 transit, 02440 FCSS, 02520 housing), so a
+  row is identified by schedule *and* line code. 2001 is mapped by function name.
+- **Pre-2009 Operating carries no amortization.** Schedule D Operating has an
+  amortization line (02110), and every member reports $0 in it for 2003–2008.
+- **Blank cells count as 0** here: C 6, E_AMORT 10, E_UC 58 member-lines
+  (e.g. Foothills 2009 police, transit and housing).
+- **Negative gross:** 12 member-function-years, all small, where 2009+
+  amortization exceeds Schedule C expense (Morinville transit −$11,730 a year
+  2020–24). Kept as printed and named in `basis_note`.
+- **Police zeros:** Foothills to 2020; Parkland 2012–25 except 2018; Rocky View
+  2012–25; Sturgeon 2001–25 except 2011; Cochrane 2022; Devon 2021.
+- **Calgary FCSS swings as printed:** Schedule C 01400 is $233M in 2022, $185M
+  (2023), $136M (2024) and $245M (2025). Not investigated.
+- **Annual reports used for the 2009 overlap** (Wayback copies, in
+  `/home/opc/research/alberta-regional-viz/`): Edmonton 2009 Financial and
+  Operational Annual Report (Consolidated Statement of Operations, p.37) and
+  Calgary 2009 Annual Report (Consolidated Statement of Operations). edmonton.ca
+  serves its reports from 2010 only. From this box it needs the certifi CA bundle.
+
 ### StatCan — CSD crosswalk (hand-built 2026-10-02): `data/csd_crosswalk.csv`
 One row per member per census year (1996, 2001, 2006, 2011, 2016, 2021):
 `muni_id, census_year, csd_uid, csd_name, relation, note`. Pinned by
