@@ -44,12 +44,9 @@ SPIKE_DEV = 0.4
 REVERT_TOL = 0.3
 MIN_SHARE_PP = 0.25
 # Printed values checked and kept as printed (docs/DECISIONS.md 2026-09-28,
-# docs/DATA_ISSUES.md). A key here must still fire, or the build fails.
-KNOWN_ANOMALIES = {
-    (1999, "devon"),       # NR 99.8M between 43M and 39M
-    (2001, "sturgeon"),    # NR 647.6M between 289M and 287M
-    (2017, "airdrie"),     # NR printed as 0
-}
+# docs/DATA_ISSUES.md). A key here must still fire, or the build fails. Empty
+# since 2026-10-02: the three it held are corrected from FIR (data/corrections.csv).
+KNOWN_ANOMALIES: set = set()
 BASIS_NOTE = "equalized assessment; 2025 board membership applied to all years"
 OLD_NR_NOTE = "; NR includes railway (1998-2004 reports print them together)"
 
@@ -111,6 +108,25 @@ def member_values(long_rows, regions):
     return found, years
 
 
+def apply_corrections(found, corrections):
+    """Replace printed values with the committed corrections (data/corrections.csv;
+    DECISIONS 2026-09-28: a flagged correction, the printed value kept alongside).
+    Fails if the printed value is not what the report still prints. Returns
+    {(report_year, muni_id, class): printed_value}."""
+    printed = {}
+    for c in corrections:
+        key, cls = (int(c["report_year"]), c["muni_id"]), c["class"]
+        got = found.get(key, {}).get(cls)
+        if got != int(c["printed_value"]):
+            raise BuildError(f"correction {key} {cls}: expects printed {int(c['printed_value']):,}, "
+                             f"the report now gives {got!r}")
+        found[key][cls] = int(c["corrected_value"])
+        printed[(*key, cls)] = got
+        event(log, "printed value corrected", level=30, report_year=key[0], muni_id=key[1],
+              cls=cls, printed=got, corrected=found[key][cls])
+    return printed
+
+
 def basis_values(found, y, mids, basis):
     classes = (OLD_BASES if "nr_incl_railway" in found[(y, mids[0])] else BASES)[basis]
     return {m: sum(found[(y, m)].get(c, 0) for c in classes) for m in mids}
@@ -160,7 +176,8 @@ def check_continuity(found, years, regions):
                          f"docs/DATA_ISSUES.md and KNOWN_ANOMALIES")
 
 
-def shares(found, years, regions):
+def shares(found, years, regions, printed=None):
+    printed = printed or {}
     out = []
     for region in sorted({r["region"] for r in regions}):
         members = [r for r in regions if r["region"] == region]
@@ -175,12 +192,16 @@ def shares(found, years, regions):
                 val = {r["muni_id"]: sum(found[(y, r["muni_id"])].get(c, 0) for c in classes)
                        for r in members}
                 core_v = val[core[0]]
+                fixed = sorted(f"{m} {c} (printed {printed[(y, m, c)]:,})"
+                               for (yy, m, c) in printed if yy == y and c in classes
+                               and m in val)
                 ring_v = sum(v for m, v in val.items() if m != core[0])
                 out.append({"region": region, "report_year": y, "taxation_year": y - 1,
                             "basis": basis, "core_value": core_v, "ring_value": ring_v,
                             "core_share": round(core_v / (core_v + ring_v), 6),
                             "n_members_found": len(val), "n_members_expected": len(members),
-                            "basis_note": BASIS_NOTE + (OLD_NR_NOTE if old[0] and basis == "nr" else "")})
+                            "basis_note": BASIS_NOTE + (OLD_NR_NOTE if old[0] and basis == "nr" else "")
+                            + (f"; corrected from FIR EA: {', '.join(fixed)}" if fixed else "")})
     return out
 
 
@@ -188,6 +209,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--long", type=Path, default=REPO / "data/processed/equalized_long.csv")
     ap.add_argument("--regions", type=Path, default=REPO / "data/regions.csv")
+    ap.add_argument("--corrections", type=Path, default=REPO / "data/corrections.csv")
     ap.add_argument("--out-dir", type=Path, default=REPO / "data/processed")
     args = ap.parse_args(argv)
 
@@ -195,8 +217,10 @@ def main(argv=None):
     with args.long.open() as f:
         long_rows = list(csv.DictReader(f))
     found, years = member_values(long_rows, regions)
+    with args.corrections.open() as f:
+        printed = apply_corrections(found, list(csv.DictReader(f)))
     check_continuity(found, years, regions)
-    series = shares(found, years, regions)
+    series = shares(found, years, regions, printed)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     with (args.out_dir / "core_ring_share.csv").open("w", newline="") as f:
@@ -206,11 +230,12 @@ def main(argv=None):
     region_of = {r["muni_id"]: r for r in regions}
     with (args.out_dir / "member_assessment.csv").open("w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["region", "muni_id", "role", "report_year", "taxation_year", "class", "value"])
+        w.writerow(["region", "muni_id", "role", "report_year", "taxation_year", "class", "value",
+                    "printed_value"])
         for (y, mid), vals in sorted(found.items()):
             r = region_of[mid]
             for c, v in sorted(vals.items()):
-                w.writerow([r["region"], mid, r["role"], y, y - 1, c, v])
+                w.writerow([r["region"], mid, r["role"], y, y - 1, c, v, printed.get((y, mid, c), "")])
     event(log, "wrote series", rows=len(series), years=years)
     return 0
 

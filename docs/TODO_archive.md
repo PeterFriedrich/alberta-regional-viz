@@ -8,6 +8,17 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Apply FIR's values to the four kept-as-printed anomalies** DONE 2026-10-02: six cells in `data/corrections.csv` (DECISIONS row 2026-10-02). (the DECISIONS
+  row of 2026-09-28 pre-decides "a flagged correction, with the printed value
+  kept alongside"; FIR now supports all four). This changes
+  `core_ring_share.csv`, so **propose the mechanism first**: where corrections
+  live (a committed corrections table read by `build_share_series.py`?), how
+  the printed value is kept, and how `KNOWN_ANOMALIES` /
+  `test_suspect_printed_values_are_kept_until_verified` change in the same
+  commit. Open question for Peter: replace only the flagged cell, or the whole
+  row? Devon 1999 differs in NR, linear and M&E alike.
+
+
 - [x] **Phase 2 — FIR parse** DONE 2026-10-02: `src/parse_fir.py` → `data/processed/fir_long.csv`; year mapping, full EA cross-check, the four anomalies and the transfers continuity are in `tests/test_parse_fir.py`; findings in `data/DATA.md` §"Parsed (2026-10-02)".
  (the fetch and the schema pin are done,
   2026-10-01: `src/fetch_fir.py`, `src/fingerprint_fir.py`,

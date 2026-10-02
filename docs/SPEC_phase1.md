@@ -170,7 +170,11 @@ step 2 is the guard for placement.
    newest report year. Each flag must also move the core share by at least
    0.25 pp. The core is not checked. Printed values that have been inspected are
    listed in `KNOWN_ANOMALIES` and logged as warnings. An entry that stops firing
-   also fails. Sizing: `docs/FINDINGS_quick_audits_2026-09-28.md` §#4.
+   also fails. Before the check, `apply_corrections` replaces the printed values
+   listed in the committed `data/corrections.csv` (FIR-verified; DECISIONS
+   2026-10-02). It fails if a listed printed value is no longer what the report
+   gives. `member_assessment.csv` keeps the printed value in `printed_value`, and
+   `core_ring_share.csv` names each corrected cell in `basis_note`. Sizing: `docs/FINDINGS_quick_audits_2026-09-28.md` §#4.
 
 Phase 2 (FIR):
 

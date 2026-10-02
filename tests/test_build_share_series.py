@@ -124,15 +124,44 @@ def test_reproduces_upe01548():
     assert s[("edmonton", 2010, "nr_linear")] <= 0.72
 
 
-def test_suspect_printed_values_are_kept_until_verified():
-    """Airdrie NR = 0 (taxation 2016) and Sturgeon NR 648M (2000) stay as printed
-    until FIR corroborates or refutes them (docs/DECISIONS.md, 2026-09-28). A
-    correction is 1.9 / 2.4 pp; it must arrive with a DECISIONS row, not silently."""
+def test_fir_corrections_are_in_the_committed_series():
+    """The four kept-as-printed anomalies are corrected from FIR's EA schedule
+    (DECISIONS 2026-10-02, superseding 2026-09-28's "kept as printed"): Airdrie
+    NR (taxation 2016) moves Calgary nr by -1.9 pp, Sturgeon NR (2000) moves
+    Edmonton nr by +2.4 pp. Each corrected row names what was printed."""
     with SERIES.open() as f:
-        s = {(r["region"], int(r["taxation_year"]), r["basis"]): float(r["core_share"])
-             for r in csv.DictReader(f)}
-    assert abs(s[("calgary", 2016, "nr")] - 0.9375) <= 0.0005
-    assert abs(s[("edmonton", 2000, "nr")] - 0.7380) <= 0.0005
+        rows = {(r["region"], int(r["taxation_year"]), r["basis"]): r for r in csv.DictReader(f)}
+    assert abs(float(rows[("calgary", 2016, "nr")]["core_share"]) - 0.9187) <= 0.0005
+    assert abs(float(rows[("edmonton", 2000, "nr")]["core_share"]) - 0.7619) <= 0.0005
+    assert "airdrie nr (printed 0)" in rows[("calgary", 2016, "nr")]["basis_note"]
+    assert "sturgeon nr_incl_railway (printed 647,603,090)" in rows[("edmonton", 2000, "nr")]["basis_note"]
+    assert "corrected" not in rows[("edmonton", 2001, "nr")]["basis_note"]
+
+
+def test_corrections_table_carries_firs_values():
+    """data/corrections.csv holds FIR's value for each class, from the committed
+    fir_long.csv, and keeps a different printed value alongside."""
+    fir = {}
+    for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
+        fir[(int(r["fir_year"]), r["muni_id"], r["line_code"])] = int(float(r["value"] or 0))
+    rows = list(csv.DictReader(open(REPO / "data/corrections.csv", newline="")))
+    assert len(rows) == 6
+    for c in rows:
+        y = int(c["report_year"])
+        assert int(c["corrected_value"]) == sum(fir[(y, c["muni_id"], line)]
+                                                for line in c["fir_lines"].split("+"))
+        assert int(c["corrected_value"]) != int(c["printed_value"]) and c["evidence"]
+
+
+def test_apply_corrections_replaces_and_refuses_a_stale_printed_value(tmp_path):
+    reg = regions(tmp_path, REGION)
+    found, _ = bss.member_values(long(2014, "Core City", nr=60) + long(2014, "Ring County", nr=0), reg)
+    fix = [{"report_year": "2014", "muni_id": "ring", "class": "nr",
+            "printed_value": "0", "corrected_value": "40"}]
+    assert bss.apply_corrections(found, fix) == {(2014, "ring", "nr"): 0}
+    assert found[(2014, "ring")]["nr"] == 40
+    with pytest.raises(bss.BuildError, match="expects printed"):
+        bss.apply_corrections(found, fix)  # the value is now 40, not the printed 0
 
 
 CONT = [("core", "r", "core", "CORE CITY"), ("ring", "r", "ring", "RING COUNTY"),

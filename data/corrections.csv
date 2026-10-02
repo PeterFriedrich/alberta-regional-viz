@@ -1,0 +1,7 @@
+report_year,muni_id,class,printed_value,corrected_value,fir_lines,fir_source,evidence
+1999,devon,nr_incl_railway,99815242,44354450,08275+08290,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02))
+1999,devon,nr_linear,17430343,8370160,08265,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02))
+1999,devon,me,4682174,10876420,08270,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02))
+2001,sturgeon,nr_incl_railway,647603090,290717620,08275,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02)); FIR 2001's NR column includes railway
+2003,calgary,nr_linear,1860234990,1071678140,08265,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02))
+2017,airdrie,nr,0,1548067390,08275,fir_year_2017.xlsx#EA(1)-Assessment,FIR EA row adds up and sits within 25% of its neighbours' midpoint; printed value >=40% off it (DATA.md §Parsed (2026-10-02)); the PDF total omits NR
