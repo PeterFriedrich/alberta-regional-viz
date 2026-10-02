@@ -8,6 +8,31 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 2 — FIR parse** DONE 2026-10-02: `src/parse_fir.py` → `data/processed/fir_long.csv`; year mapping, full EA cross-check, the four anomalies and the transfers continuity are in `tests/test_parse_fir.py`; findings in `data/DATA.md` §"Parsed (2026-10-02)".
+ (the fetch and the schema pin are done,
+  2026-10-01: `src/fetch_fir.py`, `src/fingerprint_fir.py`,
+  `data/fir_schema.json`). The next module, `src/parse_fir.py`, reads by
+  `regions.csv` → `fir_code` and the row's own YEAR, not the folder name.
+  **Then verify the four printed anomalies** (DECISIONS row of 2026-09-28):
+  Airdrie NR 2016, Sturgeon NR 2000, Devon 1998 and Calgary linear 2002. The
+  plan was to check against FIR *taxable* assessment, but `MR(2)` exists only
+  from 2023. Use FIR's `EA` schedule instead: the same equalized metric, a
+  second publication, covering 1997–2025. A disagreement is evidence of a print
+  or parse slip. Agreement means the publisher printed the same number twice,
+  which does not show it is right. **Extend the check from the four anomalies to
+  every member-year, 1997–2025** (CW reply 2026-10-02): a full FIR-EA vs PDF
+  diff is cheap once both are parsed, and it catches parse slips anywhere.
+  Settle the year mapping first (does FIR financial year Y carry report year
+  Y or Y+1?). A confirmed error gets a flagged correction,
+  and the guard test is updated in the same commit. Then check year alignment
+  (FIR financial year Y vs equalized taxation year) on non-anomalous years
+  before trusting it.
+  **Transfers** (decision as amended 2026-10-01): sum 01910+01920 through 2022
+  and 01912+01922 from 2023, and add a test that no member's total steps at
+  2022→2023 beyond its normal year-to-year variation. The DECISIONS row cites it
+  as owed.
+
+
 - [x] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.**
   DECIDED 2026-10-01: total provincial transfers (DECISIONS row 2026-10-01).
   For 1994–2022 the provincial transfer lines are 01910 *Unconditional* / 01920
