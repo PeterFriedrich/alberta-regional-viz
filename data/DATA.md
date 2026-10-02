@@ -190,8 +190,14 @@ census's boundaries, so a member's population is the sum of its rows that year.
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
 or checked here; verify licence, URL and coverage before adding a full entry above.
 - **StatCan:** 2021 CSD profiles, commuting tables 98-10-0459 / 0460 / 0462, 2021
-  boundary files (StatCan Open Licence). Needed for Phase 2 population, through the
-  CSD crosswalk (TODO).
+  boundary files (StatCan Open Licence).
+- **StatCan 17-10-0155**, population estimates, July 1, by CSD, 2021 boundaries,
+  2001–2025 (release 2026-01-14). **Chosen for Phase 2 population** (decision
+  2026-10-02), not yet fetched. Checked 2026-10-02 from the full-table CSV
+  (`www150.statcan.gc.ca/n1/tbl/csv/17100155-eng.zip`): all 21 members are present
+  every year. Join on the last 7 digits of `DGUID` (`2021A0005` + CSD code). The
+  estimates run 2–5.5% above the 2021 census counts (98-10-0002) because they
+  correct for undercoverage. Replaces the inactive 17-10-0142 (2016 boundaries).
 - **AltaLIS municipal boundaries** (annual snapshot): Phase 3.
 - **Police Funding Model** municipal tables, one XLSX, 2020-21 → 2024-25 (parked,
   decision 2026-09-30).
