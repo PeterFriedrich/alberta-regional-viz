@@ -8,6 +8,12 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **CSD crosswalk before Phase 2 population.** Built as
+  `data/csd_crosswalk.csv` (one row per member per census year, plus rows for the
+  four absorbed villages), pinned by `tests/test_csd_crosswalk.py`; sources in
+  `data/DATA.md`.
+
+
 - [x] **Apply FIR's values to the four kept-as-printed anomalies** DONE 2026-10-02: six cells in `data/corrections.csv` (DECISIONS row 2026-10-02). (the DECISIONS
   row of 2026-09-28 pre-decides "a flagged correction, with the printed value
   kept alongside"; FIR now supports all four). This changes

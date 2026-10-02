@@ -85,10 +85,23 @@ symptom and re-measure the stated cause before acting on it.
   per-year line-code dictionary (only the 2024 workbook has been checked;
   every year's code rows are now in `data/fir_schema.json`, so derive it from there).
 
-- [ ] **CSD crosswalk before Phase 2 population.** `data/regions.csv` has no
-  StatCan CSD key and no official Alberta-code ↔ CSD concordance exists
-  (`docs/SCOPE_candidates.md`). Hand-build it, one CSD code per `muni_id`, and
-  flag dissolved/renamed members explicitly.
+- [ ] **Phase 1 omits four dissolved villages that decision 8 merges into members**
+  (found 2026-10-02 while building the CSD crosswalk). Blackie → Foothills (report
+  1998), Entwistle → Parkland (1998–2001), New Sarepta → Leduc County (1998–2011),
+  and Wabamun → Parkland (1998–2021; NR up to $104M, from the power plant) are in
+  `equalized_long.csv` but in no member's `eq_aliases`. Folding them in moves
+  Edmonton's core share by `nr` −0.22 pp in 1998, falling to −0.01 pp by 2021, and
+  by `nr_linear` up to −0.58 pp. Calgary moves at most 0.04 pp. The direction is
+  the same in every year: the current series overstates the early core share.
+  The `+NAME` part alias already does the summing, but `member_values` allows only
+  one part per member per year (Parkland has two in 1998–2001), so the fix needs
+  a small code change plus a test. Measured with a patched scratch copy. Phase 2
+  needs the same: the villages' FIR codes for transfers.
+
+- [ ] **Population source for 2022–2025.** The last census is 2021 (2026 results
+  come out in 2027). Decision 10 says census counts interpolated, which does not
+  cover years after the last census. Choose extrapolation or StatCan's annual
+  CSD population estimates. Either way, the crosswalk's codes apply.
 
 - [ ] **Phase 4 architecture pass: propose "no runtime third-party dependency"**
   as a DECISIONS row — every file the browser needs is static in the repo (no
@@ -102,6 +115,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **CSD crosswalk before Phase 2 population.** · `docs/TODO_archive.md`
 
 - [x] **Apply FIR's values to the four kept-as-printed anomalies** — DONE 2026-10-02 · `docs/TODO_archive.md`
 
