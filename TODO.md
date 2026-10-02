@@ -78,7 +78,11 @@ symptom and re-measure the stated cause before acting on it.
   from 2023. Use FIR's `EA` schedule instead: the same equalized metric, a
   second publication, covering 1997–2025. A disagreement is evidence of a print
   or parse slip. Agreement means the publisher printed the same number twice,
-  which does not show it is right. A confirmed error gets a flagged correction,
+  which does not show it is right. **Extend the check from the four anomalies to
+  every member-year, 1997–2025** (CW reply 2026-10-02): a full FIR-EA vs PDF
+  diff is cheap once both are parsed, and it catches parse slips anywhere.
+  Settle the year mapping first (does FIR financial year Y carry report year
+  Y or Y+1?). A confirmed error gets a flagged correction,
   and the guard test is updated in the same commit. Then check year alignment
   (FIR financial year Y vs equalized taxation year) on non-anomalous years
   before trusting it.
@@ -91,7 +95,8 @@ symptom and re-measure the stated cause before acting on it.
   2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
   Family and Community Support + Public Housing Operations, from the Phase 2
   fetch. Needs its own short spec first: gross vs net of own revenue, and the
-  per-year line-code dictionary (only the 2024 workbook has been checked).
+  per-year line-code dictionary (only the 2024 workbook has been checked;
+  every year's code rows are now in `data/fir_schema.json`, so derive it from there).
 
 - [ ] **CSD crosswalk before Phase 2 population.** `data/regions.csv` has no
   StatCan CSD key and no official Alberta-code ↔ CSD concordance exists
