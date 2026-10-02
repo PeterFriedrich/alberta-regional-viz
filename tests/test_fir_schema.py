@@ -3,6 +3,7 @@
 of these turns this file red before any parser reads the new layout blind."""
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -123,3 +124,26 @@ def test_fingerprint_without_a_code_row_does_not_take_a_footer_as_codes():
             ("Total", None, None, None, 1.0)]
     fp = fingerprint_fir.fingerprint_sheet(rows)
     assert fp["codes"] == [] and fp["muni_rows"] == 1 and fp["row_years"] == ["2001"]
+
+
+def test_phase2b_function_codes_are_constant_and_2009_switches_to_accrual():
+    """Phase 2b basis (decided 2026-10-02): Schedule C's expense codes for the
+    four functions mean the same in every year that has a code row. Before 2009
+    there is an Operating schedule; from 2009 one accrual REVENUE/EXPENSE sheet,
+    with amortization by function in Schedule E. Gross operating cost is the
+    Operating schedule before 2009 and expense minus amortization from 2009."""
+    names = {"01210": "Police", "01310": "Public Transit",
+             "01400": "Family and Community Support", "01480": "Public Housing Operations"}
+    for y in YEARS:
+        if y == 2001:
+            assert not headers_with_code(y, "01210")
+            continue
+        for code, name in names.items():
+            assert headers_with_code(y, code) == {name}, (y, code)
+        titles = {str(s.get("title")) for _, _, s, lay in sheets(y) if "01210" in lay.get("codes", [])}
+        amort = {str(s.get("title")) for _, _, s, lay in sheets(y)
+                 if "02250" in lay.get("codes", []) and "Amortization" in str(s.get("title"))}
+        if y >= 2009:
+            assert any("REVENUE/EXPENSE - TOTAL" in t for t in titles) and amort, y
+        else:
+            assert any(re.search(r"Operating'?\]?$", t) for t in titles) and not amort, y
