@@ -155,6 +155,37 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - **Blank ≠ 0:** 640 member-line values are empty cells (mostly co-gen M&E and
   railway). They are written empty, not as 0.
 
+### StatCan — CSD crosswalk (hand-built 2026-10-02): `data/csd_crosswalk.csv`
+One row per member per census year (1996, 2001, 2006, 2011, 2016, 2021):
+`muni_id, census_year, csd_uid, csd_name, relation, note`. Pinned by
+`tests/test_csd_crosswalk.py`. Census population is published per CSD on that
+census's boundaries, so a member's population is the sum of its rows that year.
+- **Sources (StatCan Open Licence):**
+  - SGC structure lists 2011, 2016, 2021 (`statcan.gc.ca/en/subjects/standard/sgc/<year>/index`).
+    Every 2011–2021 code and name in the file was matched against them, with no mismatches.
+  - SGC concordances 1996→2001 (`sgc/2006/sgc01sgc96`), 2001→2006 (`sgc/2006/2001-2006`),
+    2006→2011 (`sgc/2011/concordances-2006-2011-1`), 2011→2016 (`sgc/2016/concordance-2011-2016`).
+    They list only changed CSDs, so a code absent from them is unchanged.
+  - Interim List of Changes to Municipal Boundaries, Status and Names (92F0009X),
+    2019–2024 issues, for 2016→2021. StatCan's 2016→2021 concordance page returned 500.
+- **Every member's code is constant 1996–2021.** Only names and types change; renames
+  are in `note`.
+- **`relation = absorbed`**: four dissolved villages, merged into a member by
+  decision 8, listed until their last census as their own CSD:
+  Blackie → Foothills (gone by SGC 2001), Entwistle → Parkland County (gone by
+  SGC 2001), New Sarepta → Leduc County (gone by SGC 2011), Wabamun → Parkland
+  County (2021-01-01, 92F0009X 2021). They were found by listing every
+  municipality that stops appearing in `equalized_long.csv`, then checked
+  against the concordances. Edmonton Beach (1998–99 reports) was renamed
+  Spring Lake, which is not a member.
+- **Not included:** First Nations reserves inside or next to members (e.g.
+  Wabamun 133A/B, Stony Plain 135, Tsuu T'ina 145). They are separate CSDs, are not
+  municipalities, and have no FIR or equalized rows.
+- **Boundaries are as of each census.** Annexations between members, or from
+  non-members, are not adjusted. This is the same basis as the equalized assessment.
+- **No CSD type column:** the SGC structure lists carry no type. Type changes
+  (Beaumont, Chestermere to city; Leduc and Parkland County CM to MD) are in `note`.
+
 ### Candidate sources — UNVERIFIED, not yet used
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
 or checked here; verify licence, URL and coverage before adding a full entry above.
