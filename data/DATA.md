@@ -141,6 +141,9 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
   is ≥ 40% off. Airdrie 2017 is the clearest: the PDF total omits NR, while
   FIR's total includes 1,548M. Devon 1999 differs in NR, linear *and* M&E, but
   its residential matches. See `test_fir_resolves_the_four_kept_as_printed_anomalies`.
+  **Corrected 2026-10-02**, six cells, in `data/corrections.csv`. FIR 2001's NR
+  column includes railway: it matches the PDF's NR-incl-railway exactly for 14 of 21
+  members.
 - **FIR's own error: Calgary 2001 NR = 1,622.9M** in the legacy `EQASSMT 2001.XLS`
   (PDF: 16,560M). FIR's components fall 14.6B short of its own grand total. It
   is the only EA row in FIR that doesn't add up (`test_fir_ea_rows_add_up_except_calgary_2001`).

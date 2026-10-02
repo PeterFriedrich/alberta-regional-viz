@@ -68,16 +68,6 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Apply FIR's values to the four kept-as-printed anomalies** (the DECISIONS
-  row of 2026-09-28 pre-decides "a flagged correction, with the printed value
-  kept alongside"; FIR now supports all four). This changes
-  `core_ring_share.csv`, so **propose the mechanism first**: where corrections
-  live (a committed corrections table read by `build_share_series.py`?), how
-  the printed value is kept, and how `KNOWN_ANOMALIES` /
-  `test_suspect_printed_values_are_kept_until_verified` change in the same
-  commit. Open question for Peter: replace only the flagged cell, or the whole
-  row? Devon 1999 differs in NR, linear and M&E alike.
-
 - [ ] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.**
   The same report year matches exactly on 68% of member values, but where the
   two differ FIR is usually 0.1–5% *lower* (402 lower vs 82 higher). Find out
@@ -112,6 +102,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Apply FIR's values to the four kept-as-printed anomalies** — DONE 2026-10-02 · `docs/TODO_archive.md`
 
 - [x] **Phase 2 — FIR parse** — DONE 2026-10-02 · `docs/TODO_archive.md`
 
