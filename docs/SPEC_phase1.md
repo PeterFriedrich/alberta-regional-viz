@@ -236,6 +236,11 @@ Phase 2 (FIR):
    (1997+) and POPL, with the file and sheet each came from. **FIR year Y
    carries equalized REPORT year Y** (taxation year Y−1); see
    `data/DATA.md` §"Parsed (2026-10-02)".
+7. **`fetch_population.py`** → `data/raw/population/` + manifest, and
+   `data/processed/population.csv` (committed, so CI runs
+   `tests/test_population.py`): StatCan 17-10-0155, one row per member per
+   year 2001–2025, with the estimate status and release date
+   (§"Population basis").
 
 Every module writes structured (JSON-lines) logs, not prints, and takes its
 paths from arguments with repo defaults.

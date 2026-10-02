@@ -90,13 +90,6 @@ symptom and re-measure the stated cause before acting on it.
   `fir_long.csv` holds member codes only; look up the villages' FIR codes in
   `data/fir_schema.json`.
 
-- [ ] **Population module (proposal first: a new module).** Fetch StatCan table 17-10-0155
-  (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members
-  through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population
-  file that records the release date. Its test should pin the table ID, the 2001 start, and
-  one member per region against values checked by hand. That test replaces the decision row's
-  `[unverifiable]`.
-
 - [ ] **Population 1997–2000.** 17-10-0155 starts in 2001. Look for an older StatCan CSD
   estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by
   each member's 2001 estimate-to-census ratio. Until then, per-capita series start in 2001.
@@ -113,6 +106,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Population module (proposal first: a new module).** — BUILT 2026-10-02 · `docs/TODO_archive.md`
 
 - [x] **Phase 1 omits four dissolved villages that decision 8 merges into members.** — 2026-10-02 · `docs/TODO_archive.md`
 

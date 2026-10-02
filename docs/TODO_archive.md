@@ -8,6 +8,14 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Population module (proposal first: a new module).** Built 2026-10-02: `src/fetch_population.py`, `tests/test_population.py`. Fetch StatCan table 17-10-0155
+  (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members
+  through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population
+  file that records the release date. Its test should pin the table ID, the 2001 start, and
+  one member per region against values checked by hand. That test replaces the decision row's
+  `[unverifiable]`.
+
+
 - [x] **Phase 1 omits four dissolved villages that decision 8 merges into members.**
   Fixed 2026-10-02: `+part` aliases in `regions.csv`, with `member_values` able to sum several
   parts per member per year. Guarded by `test_every_vanished_municipality_is_classified`.
