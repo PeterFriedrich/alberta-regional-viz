@@ -2,7 +2,11 @@
 
 Lines: Schedule D provincial transfers (01910/01920 through 2022, 01912/01922
 from 2023 — decision 9 as amended 2026-10-01), Schedule EA equalized
-assessment subtotals (1997 onward), and Schedule POPL population.
+assessment subtotals (1997 onward), Schedule POPL population, and the Phase
+2b spending lines (SPEC_phase1.md §"Phase 2b basis") for police, transit, FCSS
+and public housing: Schedule C operating expenditure through 2008 (C_OP),
+Schedule C accrual expense from 2009 (C), Schedule E amortization from 2009
+(E_AMORT), and Schedule E sales and user charges (E_UC).
 
 Columns are found by FIR item code, never by position; 2001's files have no
 code row, so their headers are mapped by name (NAME_TO_CODE). Rows are matched
@@ -40,12 +44,29 @@ POPL = "POPL"
 # The 2020–2022 workbooks have no POPL sheet (data/fir_schema.json). Population
 # is a cross-check here — decision 10's denominator is StatCan.
 POPL_ABSENT = {2020, 2021, 2022}
+ACCRUAL = 2009  # Schedule C: cash Operating/Capital/Total files before, one accrual sheet from then
+# Police, Public Transit, Family and Community Support, Public Housing Operations:
+# the same functions under their Schedule C and Schedule E codes.
+EXPENSE = {"01210", "01310", "01400", "01480"}
+FUNCTION_E = {"02250", "02350", "02440", "02520"}
+# 2001 only: Schedule C and E print the function names with no code row.
+FUNCTION_NAMES = {"Police": ("01210", "02250"), "Public Transit": ("01310", "02350"),
+                  "Family and Community Support": ("01400", "02440"),
+                  "Public Housing Operations": ("01480", "02520")}
 
 # Schedule picked by the sheet's title rows (fingerprint_fir records them).
 SCHEDULES = {
     "D": re.compile(r"Schedule D \| Financial Activities by Type/Object - Total$", re.I),
     "EA": re.compile(r"Equalized Assessment"),
     "POPL": re.compile(r"(Population of Alberta - Population of Alberta|^Population of Alberta)$"),
+    # 1994–2008 "- Operating", 2002–03 "- EXPENDITURE - Operating", 2001 "- Operating - Expenditure"
+    "C_OP": re.compile(r"Schedule C \| Financial Activities by Function - "
+                       r"(EXPENDITURE - Operating|Operating|Operating - Expenditure)$", re.I),
+    "C": re.compile(r"Schedule C \| Financial Activities by Function REVENUE/EXPENSE - TOTAL$", re.I),
+    "E_AMORT": re.compile(r"Schedule E \| Revenue And Expense Supplementary Detail - "
+                          r"Annual Amortization Expense$", re.I),
+    "E_UC": re.compile(r"Schedule E \| (Operating Fund|Revenue And Expense) Supplementary Detail - "
+                       r"(Operating Revenue - )?Sales and User Charges$", re.I),
 }
 # The electric (-E) and gas (-G) function supplements reuse Schedule D's title
 # in the per-schedule eras; they are a utility's slice, not the municipality.
@@ -79,6 +100,14 @@ def wanted(schedule: str, year: int) -> set[str]:
         return TRANSFERS_NEW if year >= 2023 else TRANSFERS_OLD
     if schedule == "EA":
         return EA_LINES if year >= EA_FIRST else set()
+    if schedule == "C_OP":
+        return EXPENSE if year < ACCRUAL else set()
+    if schedule == "C":
+        return EXPENSE if year >= ACCRUAL else set()
+    if schedule == "E_AMORT":
+        return FUNCTION_E if year >= ACCRUAL else set()
+    if schedule == "E_UC":
+        return FUNCTION_E
     return {POPL}
 
 
@@ -101,7 +130,8 @@ def read_sheet(rows, year: int, schedule: str):
             continue
         cols = {}
         for i, h in enumerate(header[4:], start=4):
-            code = (codes[i] if i < len(codes) and codes[i] else NAME_TO_CODE.get(h))
+            code = (codes[i] if i < len(codes) and codes[i] else NAME_TO_CODE.get(h)
+                    or FUNCTION_NAMES.get(h, (None, None))[schedule.startswith("E_")])
             if code in wanted(schedule, year):
                 v = cells[i] if i < len(cells) else None
                 cols[code] = (h, None if v in (None, "") else float(v))
@@ -141,7 +171,7 @@ def parse(raw: Path, regions: list[dict]):
                     raise ParseError(f"{year} {source}: code {code} is {fir_name!r}, "
                                      f"not an alias of {by_code[code]['muni_id']}")
                 for line, (line_name, value) in cols.items():
-                    key = (year, code, line)
+                    key = (year, code, schedule, line)
                     rec = {"fir_year": year, "muni_id": by_code[code]["muni_id"], "fir_code": code,
                            "fir_name": fir_name.strip(), "schedule": schedule, "line_code": line,
                            "line_name": line_name, "value": value, "source": f"{source}#{sheet}"}
@@ -190,19 +220,16 @@ def _title(rows):
 
 
 def check_complete(out: dict, regions: list[dict]):
-    """Every member has every line in every year. An absorbed municipality has
+    """`out` is keyed (year, fir_code, schedule, line). Every member has every line in every year. An absorbed municipality has
     every line of a schedule in every year up to the last year it reports that
     schedule with a non-zero value. Its EA rows run past its D rows (FIR year Y
     carries report year Y), and EA keeps all-zero placeholder rows for some
     years after dissolution (Blackie, Entwistle to 2004)."""
-    line_schedule = {line: sch for sch in ("D", "EA", "POPL") for y in (1994, 2023)
-                     for line in wanted(sch, max(y, EA_FIRST) if sch == "EA" else y)}
-    spans = [(r["muni_id"], r["fir_code"], {s: LAST for s in ("D", "EA", "POPL")}) for r in regions]
+    spans = [(r["muni_id"], r["fir_code"], dict.fromkeys(SCHEDULES, LAST)) for r in regions]
     for code, r in absorbed(regions).items():
         last = {}
-        for (y, c, line), rec in out.items():
+        for (y, c, sch, line), rec in out.items():
             if c == code and float(rec["value"] or 0):
-                sch = line_schedule[line]
                 last[sch] = max(last.get(sch, 0), y)
         if not last:
             raise ParseError(f"absorbed code {code} ({r['muni_id']}) has no rows")
@@ -216,7 +243,7 @@ def check_complete(out: dict, regions: list[dict]):
                         continue  # 2001's EQASSMT has no farmland/railway/co-gen column
                     if line == POPL and year in POPL_ABSENT:
                         continue
-                    if (year, code, line) not in out:
+                    if (year, code, schedule, line) not in out:
                         missing.append((year, muni, line))
     if missing:
         raise ParseError(f"{len(missing)} member-year lines missing, e.g. {missing[:8]}")

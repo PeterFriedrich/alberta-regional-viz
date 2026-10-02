@@ -68,7 +68,8 @@ def test_fir_name_variants_match_aliases():
 
 def test_every_member_has_every_required_line():
     rows = csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline=""))
-    pf.check_complete({(int(r["fir_year"]), r["fir_code"], r["line_code"]): r for r in rows}, REGIONS)
+    pf.check_complete({(int(r["fir_year"]), r["fir_code"], r["schedule"], r["line_code"]): r
+                       for r in rows}, REGIONS)
 
 
 def test_fir_year_is_the_equalized_report_year():
@@ -170,12 +171,12 @@ def test_an_absorbed_municipality_with_a_gap_fails():
     regions = [{"muni_id": "m", "fir_code": "0001", "absorbed_fir_codes": "0002"}]
     out = {}
     for y in range(pf.FIRST, pf.LAST + 1):
-        for sch in ("D", "EA", "POPL"):
+        for sch in pf.SCHEDULES:
             for line in pf.wanted(sch, y):
-                out[(y, "0001", line)] = {"value": 1.0}
+                out[(y, "0001", sch, line)] = {"value": 1.0}
                 if y <= 2000:
-                    out[(y, "0002", line)] = {"value": 1.0}
+                    out[(y, "0002", sch, line)] = {"value": 1.0}
     pf.check_complete(out, regions)
-    del out[(1996, "0002", "01910")]
+    del out[(1996, "0002", "D", "01910")]
     with pytest.raises(pf.ParseError, match=r"m<0002>"):
         pf.check_complete(out, regions)

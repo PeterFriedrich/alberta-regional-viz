@@ -8,6 +8,16 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 2b module (proposal first: a new module).** Spec locked 2026-10-02
+  (`docs/SPEC_phase1.md` §"Phase 2b basis"). Parse Schedule C (Operating ≤2008; accrual
+  2009+), Schedule E amortization (2009+) and Schedule E sales and user charges for the
+  four functions, absorbed villages included. Build gross and net-of-user-charges per
+  capita for members and core/ring. Tests: an independent recompute, and no common step at 2009.
+  **Done 2026-10-02 (S8):** `parse_fir` schedules C_OP/C/E_AMORT/E_UC, `src/build_spending.py`
+  → `spending_per_capita.csv`. The 2009 step is measured on the cities' restated 2008
+  (≤3% for police, transit and FCSS), and housing starts in 2009 (DECISIONS 2026-10-02).
+
+
 - [x] **Phase 2 transfers: include the four absorbed villages' FIR rows** Done 2026-10-02: `absorbed_fir_codes` in `regions.csv`; `src/build_transfers.py`. (Blackie,
   Entwistle, New Sarepta, Wabamun) in their members' totals, as Phase 1 now does.
   `fir_long.csv` holds member codes only; look up the villages' FIR codes in

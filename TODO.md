@@ -78,11 +78,9 @@ symptom and re-measure the stated cause before acting on it.
   Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
   must be on the same basis as the series around it, or the chart says so.
 
-- [ ] **Phase 2b module (proposal first: a new module).** Spec locked 2026-10-02
-  (`docs/SPEC_phase1.md` §"Phase 2b basis"). Parse Schedule C (Operating ≤2008; accrual
-  2009+), Schedule E amortization (2009+) and Schedule E sales and user charges for the
-  four functions, absorbed villages included. Build gross and net-of-user-charges per
-  capita for members and core/ring. Tests: an independent recompute, and no common step at 2009.
+- [ ] **Calgary FCSS swings year to year.** Schedule C 01400 is $233M (2022), $185M (2023),
+  $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
+  the FCSS chart ships: a reclassification would be a basis break, not spending.
 
 - [ ] **Where do rural counties record Police Funding Model payments?** Parkland, Rocky View
   and Sturgeon report $0 police in every year 2017–2023, including after the model started
@@ -112,6 +110,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Phase 2b module (proposal first: a new module).** — LOCKED 2026-10-02 · `docs/TODO_archive.md`
 
 - [x] **Phase 2 transfers: include the four absorbed villages' FIR rows** — DONE 2026-10-02 · `docs/TODO_archive.md`
 
