@@ -276,9 +276,16 @@ def test_every_vanished_municipality_is_classified():
     (decision 8). Phase 1 missed four until 2026-10-02 (Edmonton nr -0.22 pp in
     1998). A new report year that drops a municipality fails here until it is
     classified."""
+    if not LONG.exists():
+        # Gitignored (4 MB); it is rebuilt only locally, which is where this can fire.
+        pytest.skip("no data/processed/equalized_long.csv (run src/parse_equalized.py)")
     regions = bss.load_regions(REPO / "data/regions.csv")
     rows = list(csv.DictReader(LONG.open()))
     assert vanished_names(rows, regions) == NOT_MEMBER
+
+
+def test_absorbed_villages_are_parts_of_their_member_and_in_the_crosswalk():
+    regions = bss.load_regions(REPO / "data/regions.csv")
     by_id = {r["muni_id"]: r for r in regions}
     for village, mid in ABSORBED.items():
         assert any(village in p for p in by_id[mid]["parts"]), (village, mid)
