@@ -155,6 +155,20 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - **Blank ≠ 0:** 640 member-line values are empty cells (mostly co-gen M&E and
   railway). They are written empty, not as 0.
 
+#### Transfers per capita (built 2026-10-02): `src/build_transfers.py` → `data/processed/transfers_per_capita.csv`
+Committed, 625 rows: 21 members plus core and ring for each region, × 2001–2025.
+Columns: `region, level (member|side), unit, role, year, transfers, population,
+per_capita, per_capita_5yr, basis_note`. Nominal dollars.
+- **Absorbed villages:** `fir_long.csv` files Blackie (0032), Entwistle (0104),
+  New Sarepta (0234) and Wabamun (0364) under the absorbing member's `muni_id`,
+  with their own `fir_code`. Their Schedule D rows end in 1997, 2000, 2009 and
+  2020. EA keeps all-zero placeholder rows for Blackie and Entwistle until 2004.
+  New Sarepta and Wabamun print their names in capitals in some eras.
+- **Negative line:** Spruce Grove 2015 conditional transfers are −$1,760,210, after
+  $20.1M in 2014. This looks like a reversal of grant revenue recognised the year
+  before. It is kept as printed and named in `basis_note` (member and ring rows).
+- **No blank transfer values** in any member-year.
+
 ### StatCan — CSD crosswalk (hand-built 2026-10-02): `data/csd_crosswalk.csv`
 One row per member per census year (1996, 2001, 2006, 2011, 2016, 2021):
 `muni_id, census_year, csd_uid, csd_name, relation, note`. Pinned by
@@ -186,18 +200,32 @@ census's boundaries, so a member's population is the sum of its rows that year.
 - **No CSD type column:** the SGC structure lists carry no type. Type changes
   (Beaumont, Chestermere to city; Leduc and Parkland County CM to MD) are in `note`.
 
+### StatCan — population estimates, table 17-10-0155 (fetched 2026-10-02): `src/fetch_population.py` → `data/processed/population.csv`
+July 1 estimates by CSD on **2021 boundaries**, 2001–2025, release 2026-01-14
+(StatCan Open Licence). Decision 2026-10-02. The output is committed, 525 rows:
+`muni_id, region, role, year, population, estimate_status, csd_uid, release`.
+- **Source:** the full-table CSV `www150.statcan.gc.ca/n1/tbl/csv/17100155-eng.zip`.
+  `releaseTime` and the footnotes come from WDS `getCubeMetadata`. The raw zip and
+  `manifest.json` (sha256) are in `data/raw/population/` (gitignored).
+- **Join:** the last 7 digits of `DGUID` (`2021A0005` + CSD code) against the
+  2021 member rows of `data/csd_crosswalk.csv`. Absorbed villages need no rows here:
+  on 2021 boundaries they are already inside their member.
+- **Estimate status** is parsed from the table footnote: final intercensal
+  2001–2020, final postcensal 2021, updated postcensal 2022–2024, preliminary
+  2025. A release that rewords the footnote fails the fetch.
+- **The estimates are 0–6% above the 2021 census counts** (98-10-0002), because they
+  correct for undercoverage. Edmonton +4.0%, Fort Saskatchewan +5.5%,
+  Parkland +2.9%. Never mix them with census counts in one series.
+- **Annexations are back-cast** to 2021 boundaries, unlike the equalized
+  assessment, which uses each year's boundaries.
+- Replaces the inactive 17-10-0142 (2016 boundaries).
+
 ### Candidate sources — UNVERIFIED, not yet used
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
 or checked here; verify licence, URL and coverage before adding a full entry above.
 - **StatCan:** 2021 CSD profiles, commuting tables 98-10-0459 / 0460 / 0462, 2021
   boundary files (StatCan Open Licence).
-- **StatCan 17-10-0155**, population estimates, July 1, by CSD, 2021 boundaries,
-  2001–2025 (release 2026-01-14). **Chosen for Phase 2 population** (decision
-  2026-10-02), not yet fetched. Checked 2026-10-02 from the full-table CSV
-  (`www150.statcan.gc.ca/n1/tbl/csv/17100155-eng.zip`): all 21 members are present
-  every year. Join on the last 7 digits of `DGUID` (`2021A0005` + CSD code). The
-  estimates run 2–5.5% above the 2021 census counts (98-10-0002) because they
-  correct for undercoverage. Replaces the inactive 17-10-0142 (2016 boundaries).
+
 - **AltaLIS municipal boundaries** (annual snapshot): Phase 3.
 - **Police Funding Model** municipal tables, one XLSX, 2020-21 → 2024-25 (parked,
   decision 2026-09-30).

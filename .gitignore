@@ -21,6 +21,10 @@ data/processed/*
 !data/processed/core_ring_share.csv
 # Committed so the merge gate runs the FIR cross-checks in tests/test_parse_fir.py
 !data/processed/fir_long.csv
+# Committed so the merge gate runs tests/test_population.py
+!data/processed/population.csv
+# Committed so the merge gate runs tests/test_build_transfers.py
+!data/processed/transfers_per_capita.csv
 output/*
 !output/.gitkeep
 

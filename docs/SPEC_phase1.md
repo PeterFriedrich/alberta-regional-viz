@@ -236,6 +236,18 @@ Phase 2 (FIR):
    (1997+) and POPL, with the file and sheet each came from. **FIR year Y
    carries equalized REPORT year Y** (taxation year Y−1); see
    `data/DATA.md` §"Parsed (2026-10-02)".
+7. **`fetch_population.py`** → `data/raw/population/` + manifest, and
+   `data/processed/population.csv` (committed, so CI runs
+   `tests/test_population.py`): StatCan 17-10-0155, one row per member per
+   year 2001–2025, with the estimate status and release date
+   (§"Population basis").
+8. **`build_transfers.py`** → `data/processed/transfers_per_capita.csv`
+   (committed; `tests/test_build_transfers.py` recomputes every row): total
+   provincial transfers per member and per region core/ring, 2001 onward,
+   nominal dollars. `per_capita` = transfers ÷ population; the ring's value is
+   its totals' ratio. `per_capita_5yr` = five years' transfers ÷ five years'
+   population (from 2005). Absorbed villages' FIR rows count toward their
+   member (`regions.csv` `absorbed_fir_codes`).
 
 Every module writes structured (JSON-lines) logs, not prints, and takes its
 paths from arguments with repo defaults.

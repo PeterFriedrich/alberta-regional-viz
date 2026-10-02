@@ -85,19 +85,13 @@ symptom and re-measure the stated cause before acting on it.
   per-year line-code dictionary (only the 2024 workbook has been checked;
   every year's code rows are now in `data/fir_schema.json`, so derive it from there).
 
-- [ ] **Phase 2 transfers: include the four absorbed villages' FIR rows** (Blackie,
-  Entwistle, New Sarepta, Wabamun) in their members' totals, as Phase 1 now does.
-  `fir_long.csv` holds member codes only; look up the villages' FIR codes in
-  `data/fir_schema.json`.
+- [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
+  in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
+  the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?)
+  at the chart stage.
 
-- [ ] **Population module (proposal first: a new module).** Fetch StatCan table 17-10-0155
-  (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members
-  through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population
-  file that records the release date. Its test should pin the table ID, the 2001 start, and
-  one member per region against values checked by hand. That test replaces the decision row's
-  `[unverifiable]`.
-
-- [ ] **Population 1997–2000.** 17-10-0155 starts in 2001. Look for an older StatCan CSD
+- [ ] **Population 1997–2000.** 17-10-0155 starts in 2001, so `per_capita_5yr` starts in 2005,
+  although FIR transfers go back to 1994. Look for an older StatCan CSD
   estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by
   each member's 2001 estimate-to-census ratio. Until then, per-capita series start in 2001.
 
@@ -113,6 +107,10 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Phase 2 transfers: include the four absorbed villages' FIR rows** — DONE 2026-10-02 · `docs/TODO_archive.md`
+
+- [x] **Population module (proposal first: a new module).** — BUILT 2026-10-02 · `docs/TODO_archive.md`
 
 - [x] **Phase 1 omits four dissolved villages that decision 8 merges into members.** — 2026-10-02 · `docs/TODO_archive.md`
 

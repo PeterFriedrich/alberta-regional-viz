@@ -9,6 +9,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import pytest
+
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "src"))
 import parse_fir as pf  # noqa: E402
@@ -17,10 +19,13 @@ EA_PARTS = ("08265", "08270", "08275", "08280", "08285", "08290", "08295")
 
 
 def load_fir():
+    """{(year, muni_id, line): value}, an absorbed municipality's rows summed
+    into its member (decision 8)."""
     out = {}
     for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
         if r["value"]:
-            out[(int(r["fir_year"]), r["muni_id"], r["line_code"])] = float(r["value"])
+            k = (int(r["fir_year"]), r["muni_id"], r["line_code"])
+            out[k] = out.get(k, 0) + float(r["value"])
     return out
 
 
@@ -147,3 +152,30 @@ def test_transfers_total_shows_no_common_step_at_the_2023_reclassification():
     agg_p75 = sorted(s[1] for s in others)[int(0.75 * len(others))]
     med23, agg23 = steps(2023)
     assert med23 <= med_p75 and agg23 <= agg_p75
+
+
+def test_absorbed_municipalities_are_read_under_their_member():
+    """Decision 8: the four villages are summed into the member that absorbed
+    them. Their transfers (Schedule D) run to the last year they filed."""
+    last_d = defaultdict(int)
+    for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
+        if r["schedule"] == "D" and r["fir_code"] in pf.absorbed(REGIONS):
+            last_d[(r["fir_code"], r["muni_id"])] = max(last_d[(r["fir_code"], r["muni_id"])],
+                                                        int(r["fir_year"]))
+    assert dict(last_d) == {("0032", "foothills"): 1997, ("0104", "parkland"): 2000,
+                            ("0234", "leduc_county"): 2009, ("0364", "parkland"): 2020}
+
+
+def test_an_absorbed_municipality_with_a_gap_fails():
+    regions = [{"muni_id": "m", "fir_code": "0001", "absorbed_fir_codes": "0002"}]
+    out = {}
+    for y in range(pf.FIRST, pf.LAST + 1):
+        for sch in ("D", "EA", "POPL"):
+            for line in pf.wanted(sch, y):
+                out[(y, "0001", line)] = {"value": 1.0}
+                if y <= 2000:
+                    out[(y, "0002", line)] = {"value": 1.0}
+    pf.check_complete(out, regions)
+    del out[(1996, "0002", "01910")]
+    with pytest.raises(pf.ParseError, match=r"m<0002>"):
+        pf.check_complete(out, regions)
