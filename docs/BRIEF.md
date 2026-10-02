@@ -41,7 +41,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **2026-09-26** — **Calgary is in scope as a same-metric snapshot comparison in split screen** (decision 7).
 - **2026-09-26** — **The voting overlay is deferred, not dropped** (decision 11).
 - **2026-09-26** — **Region = fixed membership for all years** (decision 8): the 13 EMRB members for Edmonton and the 8 CMRB members for Calgary, each as of their 2025 dissolution. … Rejected: as-of-year membership, which introduces membership jumps (CRB 25→24→13; CMRB lost Wheatland and Strathmore) unrelated to the argument being tested.
-- **2026-09-26** — **Normalization = equalized non-residential assessment excluding linear and M&E as the headline, with linear and M&E stacked separately** (decision 10). … Rejected: raw FIR levels across municipalities, and an all-non-residential share (Edmonton levies no M&E tax, and linear/M&E move with provincial policy).
+- **2026-09-26** — AMENDED 2026-10-02 (population basis only; see that row). … Rejected: raw FIR levels across municipalities, and an all-non-residential share (Edmonton levies no M&E tax, and linear/M&E move with provincial policy).
 - **2026-09-26** — **Scope decisions 1–5 locked.**
 - **2026-09-27** — **`data/processed/core_ring_share.csv` is committed** (the only tracked processed output) so the merge gate runs `test_reproduces_upe01548`, and its `skipif` is removed: a missing file now fails … Rejected: fetching the PDFs in CI, since the gate is deliberately offline.
 - **2026-09-28** — **For the 1998–2004 reports, the headline `nr` basis is NR *including railway*, flagged in `basis_note`** (Peter, 2026-09-28). … Rejected: leaving `nr` empty before taxation year 2004, which would start the headline 7 years later for a sub-0.1 pp purity gain.
@@ -51,6 +51,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **2026-09-30** — **The ring-vs-core political coalition idea is a research topic only, not a finding** (Peter, 2026-09-30).
 - **2026-10-01** — **Transfers = total provincial transfers per capita, 1994–2025** (Peter, 2026-10-01; supersedes the 2026-09-26 row on decision 9). … Rejected: splicing the two splits as if they were one (they are different cuts: Edmonton's unconditional line is 0 every year), and operating/capital 2023+ only (three years is no timeline).
 - **2026-10-02** — **The four kept-as-printed anomalies are corrected from FIR's EA schedule** (Peter, 2026-10-02; supersedes the 2026-09-28 row). … Rejected: correcting only the flagged cell (leaves Devon's linear and M&E wrong in two bases), and correcting every FIR-vs-PDF difference (FIR is itself 0.1–5% lower on a quarter of values, …
+- **2026-10-02** — **Population = StatCan July 1 estimates by CSD (table 17-10-0155, 2021 boundaries), 2001–2025** (Peter, 2026-10-02; amends the population half of the 2026-09-26 normalization row, decision 10). … Rejected: census counts with extrapolation for 2022–2025 (Edmonton 2025 −13%, Calgary −15.5% against the estimate), and census counts followed by estimates (a 3–5.5% undercoverage step in 2022 that …
 
 ## Open work
 
@@ -66,7 +67,8 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **FIR could fill report years 2008–2010** (the scanned-PDF gap, which holds Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler must be on the same basis as the series around it, or the chart says so.
 - **Phase 2b — FIR spending by function, core vs ring, per capita** (decision 2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit, Family and Community Support + Public Housing Operations, from the Phase 2 fetch. Needs its own short spec first: gross vs net …
 - **Phase 2 transfers: include the four absorbed villages' FIR rows** (Blackie, Entwistle, New Sarepta, Wabamun) in their members' totals, as Phase 1 now does. `fir_long.csv` holds member codes only; look up the villages' FIR codes in `data/fir_schema.json`.
-- **Population source for 2022–2025.** The last census is 2021 (2026 results come out in 2027). Decision 10 says census counts interpolated, which does not cover years after the last census. Choose extrapolation or StatCan's annual CSD population estimates. Either way, the …
+- **Population module (proposal first: a new module).** Fetch StatCan table 17-10-0155 (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population file that records …
+- **Population 1997–2000.** 17-10-0155 starts in 2001. Look for an older StatCan CSD estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by each member's 2001 estimate-to-census ratio. Until then, per-capita series start in 2001.
 - **Phase 4 architecture pass: propose "no runtime third-party dependency"** as a DECISIONS row — every file the browser needs is static in the repo (no third-party APIs or tile CDNs), guarded by a test that scans built pages for external URLs. Include the attribution line …
 - **Merge gate deps.** `requirements-ci.txt` is pytest-only. Add `openpyxl`/`pandas` etc. only when a test needs them; keep it offline.
 

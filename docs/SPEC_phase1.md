@@ -71,6 +71,49 @@ different cut, not a renaming.
     (2019–2022), so the old split carries no information for the core.
   - Operating/capital from 2023 only. Three years is not a timeline.
 
+### Population basis (decided 2026-10-02)
+
+Decision 10 said "StatCan census counts, interpolated between census years".
+The last census is 2021 (2026 results come out in 2027), so 2022–2025 would
+have to be extrapolated, and the two ways of doing that both fail.
+
+| | Edmonton | Calgary |
+|---|---|---|
+| Census count 2021 (98-10-0002) | 1,010,899 | 1,306,784 |
+| July 1 estimate 2021 (17-10-0155) | 1,050,945 (+4.0%) | 1,356,293 (+3.8%) |
+| Estimate growth, 2021→2025 | +17.8% | +18.9% |
+| 2025 from extrapolating 2016–21 census growth | 1,077,794 (−13.0% vs estimate) | 1,363,477 (−15.5%) |
+
+- **Extrapolation** misses the post-2021 boom and would overstate per-capita
+  values by 13–16% in the newest years. The ring grew more slowly, so the
+  error does not cancel between core and ring.
+- **Census counts to 2021, then estimates** step up 3–5.5% in 2022 because
+  the estimates correct for undercoverage. The step differs by member (2021:
+  Fort Saskatchewan +5.5%, Parkland +2.9%, Edmonton +4.0%, Edmonton's ring
+  +3.5%) and would read as a per-capita drop that did not happen.
+
+**Decision:** population = StatCan July 1 estimates by CSD, table
+**17-10-0155** (2021 boundaries), for 2001–2025, joined through
+`data/csd_crosswalk.csv` (2021 rows). One source and one basis across the years
+that have it.
+
+- **Boundaries:** 17-10-0155 puts every year on 2021 boundaries. Wabamun is
+  already inside Parkland, which matches decision 8's fixed membership.
+  Annexations are back-cast, unlike the equalized assessment's as-of-year
+  boundaries. The 2019 Leduc County → Edmonton annexation moved 542 people.
+  Charts state "population: StatCan July 1 estimates, 2021 boundaries".
+- **Revisions:** 2001–2020 are final intercensal estimates. 2021 is final
+  postcensal, 2022–2024 updated postcensal, 2025 preliminary. The fetch
+  records the release date, and later releases will move recent years.
+- **1997–2000: open.** 17-10-0155 starts in 2001. Either find an older
+  StatCan CSD estimate series, or link the 1996 census count to the 2001
+  estimate by each member's 2001 estimate-to-census ratio. Until that is
+  settled, per-capita series start in 2001.
+- **Rejected:** extrapolation (−13% in 2025), and census counts followed by
+  estimates (a 3–5.5% step in 2022). Census counts scaled by the 2021
+  estimate-to-census ratio would avoid the step, but the result is a series
+  StatCan does not publish, built to imitate one it does.
+
 ## Phase 1 goal
 
 For every report year that has a text layer (2011–2026), produce each region's

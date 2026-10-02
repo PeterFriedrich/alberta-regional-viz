@@ -90,10 +90,16 @@ symptom and re-measure the stated cause before acting on it.
   `fir_long.csv` holds member codes only; look up the villages' FIR codes in
   `data/fir_schema.json`.
 
-- [ ] **Population source for 2022–2025.** The last census is 2021 (2026 results
-  come out in 2027). Decision 10 says census counts interpolated, which does not
-  cover years after the last census. Choose extrapolation or StatCan's annual
-  CSD population estimates. Either way, the crosswalk's codes apply.
+- [ ] **Population module (proposal first: a new module).** Fetch StatCan table 17-10-0155
+  (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members
+  through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population
+  file that records the release date. Its test should pin the table ID, the 2001 start, and
+  one member per region against values checked by hand. That test replaces the decision row's
+  `[unverifiable]`.
+
+- [ ] **Population 1997–2000.** 17-10-0155 starts in 2001. Look for an older StatCan CSD
+  estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by
+  each member's 2001 estimate-to-census ratio. Until then, per-capita series start in 2001.
 
 - [ ] **Phase 4 architecture pass: propose "no runtime third-party dependency"**
   as a DECISIONS row — every file the browser needs is static in the repo (no
