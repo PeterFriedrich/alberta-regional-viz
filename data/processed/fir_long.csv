@@ -5,6 +5,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1994,beaumont,0019,BEAUMONT,D,01910,Provincial Government Unconditional Transfers,316262,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,beaumont,0019,BEAUMONT,D,01920,Provincial Government Conditional Transfers,436822,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,beaumont,0019,BEAUMONT,POPL,POPL,Population,5685,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
+1994,foothills,0032,Blackie,D,01910,Provincial Government Unconditional Transfers,27366,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,foothills,0032,Blackie,D,01920,Provincial Government Conditional Transfers,65317,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,foothills,0032,Blackie,POPL,POPL,Population,303,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
 1994,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,30047000,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,55729000,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,calgary,0046,CALGARY,POPL,POPL,Population,738184,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -17,6 +20,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1994,edmonton,0098,EDMONTON,D,01910,Provincial Government Unconditional Transfers,29197000,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,edmonton,0098,EDMONTON,D,01920,Provincial Government Conditional Transfers,54755000,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,edmonton,0098,EDMONTON,POPL,POPL,Population,626999,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
+1994,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,33239,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,21466,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,parkland,0104,Entwistle,POPL,POPL,Population,460,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
 1994,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,700420,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,2002452,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",POPL,POPL,Population,12476,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -35,6 +41,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1994,morinville,0224,MORINVILLE,D,01910,Provincial Government Unconditional Transfers,331804,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,morinville,0224,MORINVILLE,D,01920,Provincial Government Conditional Transfers,1340087,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,morinville,0224,MORINVILLE,POPL,POPL,Population,6255,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
+1994,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,26788,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,12720,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,leduc_county,0234,New Sarepta,POPL,POPL,Population,404,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
 1994,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,501598,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,597428,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,okotoks,0238,OKOTOKS,POPL,POPL,Population,7789,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -62,12 +71,18 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1994,chestermere,0356,CHESTERMERE,D,01910,Provincial Government Unconditional Transfers,24048,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,chestermere,0356,CHESTERMERE,D,01920,Provincial Government Conditional Transfers,71877,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
 1994,chestermere,0356,CHESTERMERE,POPL,POPL,Population,1603,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
+1994,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,21914,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,316114,fir_zip_1994_2002.zip:1994/1994-D-Total.xlsx#Schedule D
+1994,parkland,0364,WABAMUN,POPL,POPL,Population,600,fir_zip_1994_2002.zip:1994/1994-POPL-Population of Alberta.xlsx#Schedule POPL
 1995,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,746031,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1173203,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,airdrie,0003,AIRDRIE,POPL,POPL,Population,14506,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
 1995,beaumont,0019,BEAUMONT,D,01910,Provincial Government Unconditional Transfers,338142,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,beaumont,0019,BEAUMONT,D,01920,Provincial Government Conditional Transfers,463416,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,beaumont,0019,BEAUMONT,POPL,POPL,Population,5747,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
+1995,foothills,0032,Blackie,D,01910,Provincial Government Unconditional Transfers,19546,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,foothills,0032,Blackie,D,01920,Provincial Government Conditional Transfers,2620,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,foothills,0032,Blackie,POPL,POPL,Population,303,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
 1995,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,21006000,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,73112000,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,calgary,0046,CALGARY,POPL,POPL,Population,749073,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -80,6 +95,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1995,edmonton,0098,EDMONTON,D,01910,Provincial Government Unconditional Transfers,20052000,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,edmonton,0098,EDMONTON,D,01920,Provincial Government Conditional Transfers,39889000,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,edmonton,0098,EDMONTON,POPL,POPL,Population,626999,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
+1995,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,28750,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,52389,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,parkland,0104,Entwistle,POPL,POPL,Population,460,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
 1995,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,516821,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,3154674,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",POPL,POPL,Population,12476,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -98,6 +116,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1995,morinville,0224,MORINVILLE,D,01910,Provincial Government Unconditional Transfers,228952,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,morinville,0224,MORINVILLE,D,01920,Provincial Government Conditional Transfers,667443,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,morinville,0224,MORINVILLE,POPL,POPL,Population,6255,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
+1995,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,17227,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,6488,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,leduc_county,0234,New Sarepta,POPL,POPL,Population,404,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
 1995,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,362895,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,550495,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,okotoks,0238,OKOTOKS,POPL,POPL,Population,7789,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -125,12 +146,18 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1995,chestermere,0356,CHESTERMERE,D,01910,Provincial Government Unconditional Transfers,16551,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,chestermere,0356,CHESTERMERE,D,01920,Provincial Government Conditional Transfers,36670,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
 1995,chestermere,0356,CHESTERMERE,POPL,POPL,Population,1603,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
+1995,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,14416,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,410808,fir_zip_1994_2002.zip:1995/1995-D-Total.xlsx#Schedule D
+1995,parkland,0364,WABAMUN,POPL,POPL,Population,600,fir_zip_1994_2002.zip:1995/1995-POPL-Population of Alberta.xlsx#Schedule POPL
 1996,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,430050,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,899460,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,airdrie,0003,AIRDRIE,POPL,POPL,Population,14506,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
 1996,beaumont,0019,BEAUMONT,D,01910,Provincial Government Unconditional Transfers,272940,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,beaumont,0019,BEAUMONT,D,01920,Provincial Government Conditional Transfers,355433,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,beaumont,0019,BEAUMONT,POPL,POPL,Population,5747,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
+1996,foothills,0032,Blackie,D,01910,Provincial Government Unconditional Transfers,16548,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,foothills,0032,Blackie,D,01920,Provincial Government Conditional Transfers,2570,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,foothills,0032,Blackie,POPL,POPL,Population,303,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
 1996,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,12482000,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,64058000,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,calgary,0046,CALGARY,POPL,POPL,Population,767059,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -143,6 +170,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1996,edmonton,0098,EDMONTON,D,01910,Provincial Government Unconditional Transfers,8792000,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,edmonton,0098,EDMONTON,D,01920,Provincial Government Conditional Transfers,48240000,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,edmonton,0098,EDMONTON,POPL,POPL,Population,626999,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
+1996,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,29418,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,7824,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,parkland,0104,Entwistle,POPL,POPL,Population,460,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
 1996,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,262489,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,2507722,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",POPL,POPL,Population,12476,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -161,6 +191,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1996,morinville,0224,MORINVILLE,D,01910,Provincial Government Unconditional Transfers,190578,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,morinville,0224,MORINVILLE,D,01920,Provincial Government Conditional Transfers,230551,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,morinville,0224,MORINVILLE,POPL,POPL,Population,6255,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
+1996,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,13793,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,30413,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,leduc_county,0234,New Sarepta,POPL,POPL,Population,404,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
 1996,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,316895,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,1152164,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,okotoks,0238,OKOTOKS,POPL,POPL,Population,7789,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
@@ -188,6 +221,9 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1996,chestermere,0356,CHESTERMERE,D,01910,Provincial Government Unconditional Transfers,13858,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,chestermere,0356,CHESTERMERE,D,01920,Provincial Government Conditional Transfers,636597,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
 1996,chestermere,0356,CHESTERMERE,POPL,POPL,Population,1603,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
+1996,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,11722,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,341068,fir_zip_1994_2002.zip:1996/1996-D-Total.xlsx#Schedule D
+1996,parkland,0364,WABAMUN,POPL,POPL,Population,600,fir_zip_1994_2002.zip:1996/1996-POPL-Population of Alberta.xlsx#Schedule POPL
 1997,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,337986,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1328214,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,657450516,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
@@ -210,6 +246,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1997,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,beaumont,0019,BEAUMONT,POPL,POPL,Population,5810,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
+1997,foothills,0032,Blackie,D,01910,Provincial Government Unconditional Transfers,7183,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,foothills,0032,Blackie,D,01920,Provincial Government Conditional Transfers,53624,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,foothills,0032,Blackie,EA,08260,GRAND TOTAL,12860069,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08265,Linear Subtotal,472538,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,1021995,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,5275479,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08280,Residential Subtotal,5958855,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08290,Non Residential Railway,131202,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,foothills,0032,Blackie,POPL,POPL,Population,301,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
 1997,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,12515000,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,52757000,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,44879275533,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
@@ -254,6 +301,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1997,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,64566383,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,4002025,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,edmonton,0098,EDMONTON,POPL,POPL,Population,616306,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
+1997,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,14795,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,132648,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,12020445,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08265,Linear Subtotal,1133350,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,2406733,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08280,Residential Subtotal,8450212,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08285,Farmland,4920,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08290,Non Residential Railway,25230,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0104,Entwistle,POPL,POPL,Population,453,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
 1997,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,392337,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,1433412,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,1380178751,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
@@ -320,6 +378,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1997,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,103667,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,morinville,0224,MORINVILLE,POPL,POPL,Population,6226,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
+1997,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,13757,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,100266,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,8224835,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,628790,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1262626,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,6154363,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08285,Farmland,144084,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,34972,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,leduc_county,0234,New Sarepta,POPL,POPL,Population,359,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
 1997,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,315267,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,747302,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
 1997,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,389387239,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
@@ -419,6 +488,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1997,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
 1997,chestermere,0356,CHESTERMERE,POPL,POPL,Population,1911,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
+1997,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,11722,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,79037,fir_zip_1994_2002.zip:1997/1997-D-Total.xlsx#Schedule D
+1997,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,121055221,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,84740645,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,175013,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,22977015,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,13117035,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,45513,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1997/1997-EA-Equalized Assessment.xlsx#Schedule EA
+1997,parkland,0364,WABAMUN,POPL,POPL,Population,645,fir_zip_1994_2002.zip:1997/1997-POPL-Population of Alberta.xlsx#Schedule POPL
 1998,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292329,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1404043,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,695815698,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
@@ -441,6 +521,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1998,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,beaumont,0019,BEAUMONT,POPL,POPL,Population,6295,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
+1998,foothills,0032,Blackie,EA,08260,GRAND TOTAL,13041344,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08265,Linear Subtotal,524223,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,897580,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,4733907,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08280,Residential Subtotal,6865454,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08290,Non Residential Railway,20180,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,12933000,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,66012000,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,46050375003,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
@@ -485,6 +573,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1998,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,89793893,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,3988335,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,edmonton,0098,EDMONTON,POPL,POPL,Population,616306,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
+1998,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,5017,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,53811,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,11279358,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08265,Linear Subtotal,1059320,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,2769632,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08280,Residential Subtotal,7255046,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08285,Farmland,1580,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08290,Non Residential Railway,193780,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0104,Entwistle,POPL,POPL,Population,453,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
 1998,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,37608,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,3598093,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,1426960066,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
@@ -551,6 +650,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1998,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,59220,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,morinville,0224,MORINVILLE,POPL,POPL,Population,6226,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
+1998,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,1290,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,24853,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,7959575,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,689412,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1009768,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,6097275,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08285,Farmland,134690,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,28430,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,leduc_county,0234,New Sarepta,POPL,POPL,Population,359,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
 1998,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,1652373,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
 1998,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,398243088,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
@@ -650,6 +760,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1998,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
 1998,chestermere,0356,CHESTERMERE,POPL,POPL,Population,1911,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
+1998,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,3735,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,471825,fir_zip_1994_2002.zip:1998/1998-D-Total.xlsx#Schedule D
+1998,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,117322988,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,81302403,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,177804,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,22749135,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,13047830,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,45816,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1998/1998-EA-Equalized Assessment.xlsx#Schedule EA
+1998,parkland,0364,WABAMUN,POPL,POPL,Population,645,fir_zip_1994_2002.zip:1998/1998-POPL-Population of Alberta.xlsx#Schedule POPL
 1999,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292329,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1836053,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,763826119,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
@@ -672,6 +793,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1999,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,beaumont,0019,BEAUMONT,POPL,POPL,Population,6518,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
+1999,foothills,0032,Blackie,EA,08260,GRAND TOTAL,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08265,Linear Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08280,Residential Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,13727000,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,97473000,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,50564405935,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
@@ -716,6 +845,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1999,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,24233633,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,4061061,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,edmonton,0098,EDMONTON,POPL,POPL,Population,648284,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
+1999,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,9384,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,13520,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,12675813,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08265,Linear Subtotal,1001330,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,3232336,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08280,Residential Subtotal,8243447,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08285,Farmland,4920,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08290,Non Residential Railway,193780,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0104,Entwistle,POPL,POPL,Population,453,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
 1999,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,87608,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,3083440,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,1571898933,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
@@ -782,6 +922,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1999,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,59220,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,morinville,0224,MORINVILLE,POPL,POPL,Population,6226,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
+1999,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,11290,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,30716,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,7911323,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,648790,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1006501,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,6106942,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08285,Farmland,120660,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,28430,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,leduc_county,0234,New Sarepta,POPL,POPL,Population,359,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
 1999,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,67810,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,1486318,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
 1999,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,454206910,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
@@ -881,6 +1032,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 1999,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
 1999,chestermere,0356,CHESTERMERE,POPL,POPL,Population,2552,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
+1999,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,116476,fir_zip_1994_2002.zip:1999/1999-D-Total.xlsx#Schedule D
+1999,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,104504036,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,70501830,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,42200,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,20129100,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,13227356,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,603550,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:1999/1999-EA-Equalized Assessment.xlsx#Schedule EA
+1999,parkland,0364,WABAMUN,POPL,POPL,Population,645,fir_zip_1994_2002.zip:1999/1999-POPL-Population of Alberta.xlsx#Schedule POPL
 2000,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292329,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1806881,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,951234593,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
@@ -903,6 +1065,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2000,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,beaumont,0019,BEAUMONT,POPL,POPL,Population,6518,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
+2000,foothills,0032,Blackie,EA,08260,GRAND TOTAL,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08265,Linear Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08280,Residential Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,11770000,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,134744000,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,63279737195,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
@@ -947,6 +1117,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2000,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,5784920,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,3308500,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,edmonton,0098,EDMONTON,POPL,POPL,Population,648284,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
+2000,parkland,0104,Entwistle,D,01910,Provincial Government Unconditional Transfers,1470,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,parkland,0104,Entwistle,D,01920,Provincial Government Conditional Transfers,107939,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,12227611,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08265,Linear Subtotal,776820,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,3187126,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08280,Residential Subtotal,8064965,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08285,Farmland,4920,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08290,Non Residential Railway,193780,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0104,Entwistle,POPL,POPL,Population,453,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
 2000,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,37608,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,2989537,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,1855008662,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1013,6 +1194,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2000,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,59220,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,morinville,0224,MORINVILLE,POPL,POPL,Population,6226,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
+2000,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,6813,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,25998,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,8946978,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,716600,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,2773004,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,5346954,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08285,Farmland,110420,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,leduc_county,0234,New Sarepta,POPL,POPL,Population,359,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
 2000,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,67810,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,1208085,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
 2000,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,563799299,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1112,6 +1304,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2000,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
 2000,chestermere,0356,CHESTERMERE,POPL,POPL,Population,3558,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
+2000,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,169366,fir_zip_1994_2002.zip:2000/2000-D-Total.xlsx#Schedule D
+2000,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,106260554,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,70728950,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,43990,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,20956290,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,13863334,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,667990,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2000/2000-EA-Equalized Assessment.xlsx#Schedule EA
+2000,parkland,0364,WABAMUN,POPL,POPL,Population,645,fir_zip_1994_2002.zip:2000/2000-POPL-Population of Alberta.xlsx#Schedule POPL
 2001,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292329,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
 2001,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,4933494,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
 2001,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,1117505155,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
@@ -1208,6 +1411,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2001,morinville,0224,MORINVILLE,EA,08275,Non Residential Subtotal,27297385,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
 2001,morinville,0224,MORINVILLE,EA,08280,Residential Subtotal,184518352,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
 2001,morinville,0224,MORINVILLE,POPL,POPL,POPULATION,6226,fir_zip_1994_2002.zip:2001/POP2001.XLS#POPULATION
+2001,leduc_county,0234,NEW SAREPTA,D,01910,Provincial Government Unconditional Transfers,17635,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
+2001,leduc_county,0234,NEW SAREPTA,D,01920,Provincial Government Conditional Transfers,33001,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
+2001,leduc_county,0234,NEW SAREPTA,EA,08260,GRAND TOTAL,9254668,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,leduc_county,0234,NEW SAREPTA,EA,08265,Linear Subtotal,704200,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,leduc_county,0234,NEW SAREPTA,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,leduc_county,0234,NEW SAREPTA,EA,08275,Non Residential Subtotal,1100910,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,leduc_county,0234,NEW SAREPTA,EA,08280,Residential Subtotal,7449558,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,leduc_county,0234,NEW SAREPTA,POPL,POPL,POPULATION,359,fir_zip_1994_2002.zip:2001/POP2001.XLS#POPULATION
 2001,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
 2001,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,2006022,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
 2001,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,629799158,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
@@ -1280,6 +1491,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2001,chestermere,0356,CHESTERMERE,EA,08275,Non Residential Subtotal,6881440,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
 2001,chestermere,0356,CHESTERMERE,EA,08280,Residential Subtotal,320692749,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
 2001,chestermere,0356,CHESTERMERE,POPL,POPL,POPULATION,3742,fir_zip_1994_2002.zip:2001/POP2001.XLS#POPULATION
+2001,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,56213,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
+2001,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,91442,fir_zip_1994_2002.zip:2001/D_col3.XLS#D_col3
+2001,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,106477322,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,70109790,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,81410,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,21861570,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,14424552,fir_zip_1994_2002.zip:2001/EQASSMT 2001.XLS#EQASSMT
+2001,parkland,0364,WABAMUN,POPL,POPL,POPULATION,645,fir_zip_1994_2002.zip:2001/POP2001.XLS#POPULATION
 2002,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292329,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1334053,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,1209669127,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
@@ -1302,6 +1521,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2002,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,beaumont,0019,BEAUMONT,POPL,POPL,Population,7128,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
+2002,foothills,0032,Blackie,EA,08260,GRAND TOTAL,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08265,Linear Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08280,Residential Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,10431000,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,129873000,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,72055416283,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
@@ -1346,6 +1573,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2002,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,8451750,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,1021000,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,edmonton,0098,EDMONTON,POPL,POPL,Population,666104,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
+2002,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08265,Linear Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08280,Residential Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08285,Farmland,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,37608,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,1660927,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,2237017085,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
@@ -1412,6 +1647,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2002,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,65130,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,morinville,0224,MORINVILLE,POPL,POPL,Population,6540,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
+2002,leduc_county,0234,NEW SAREPTA,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
+2002,leduc_county,0234,NEW SAREPTA,D,01920,Provincial Government Conditional Transfers,36363,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
+2002,leduc_county,0234,NEW SAREPTA,EA,08260,GRAND TOTAL,9719619,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08265,Linear Subtotal,901010,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08270,Mach & Equip Subtotal,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08275,Non Residential Subtotal,938555,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08280,Residential Subtotal,7777584,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08285,Farmland,102470,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,leduc_county,0234,NEW SAREPTA,POPL,POPL,Population,382,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
 2002,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,67810,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,2865336,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
 2002,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,697229595,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
@@ -1511,6 +1757,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2002,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
 2002,chestermere,0356,CHESTERMERE,POPL,POPL,Population,3742,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
+2002,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
+2002,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,25621,fir_zip_1994_2002.zip:2002/D/Total.xls#D Total
+2002,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,87366563,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,51260070,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,74490,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,21648987,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,13967196,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,415820,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_1994_2002.zip:2002/EA/Equalized Assessment.xls#EA Equalized Assessment
+2002,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_1994_2002.zip:2002/POPL/Population of Alberta.xls#POPL Population of Alberta
 2003,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,292330,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,3932837,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,1328790463,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
@@ -1533,6 +1790,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2003,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,beaumont,0019,BEAUMONT,POPL,POPL,Population,7407,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
+2003,foothills,0032,Blackie,EA,08260,GRAND TOTAL,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08265,Linear Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08280,Residential Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,9398000,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,151003000,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,76695770755,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
@@ -1577,6 +1842,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2003,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,9017988,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,1471760,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,edmonton,0098,EDMONTON,POPL,POPL,Population,666104,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
+2003,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08265,Linear Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08280,Residential Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,37608,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,1815831,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,2393329653,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
@@ -1643,6 +1916,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2003,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,63960,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,morinville,0224,MORINVILLE,POPL,POPL,Population,6540,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
+2003,leduc_county,0234,NEW SAREPTA,D,01910,Provincial Government Unconditional Transfers,1290,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
+2003,leduc_county,0234,NEW SAREPTA,D,01920,Provincial Government Conditional Transfers,10531,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
+2003,leduc_county,0234,NEW SAREPTA,EA,08260,GRAND TOTAL,10532457,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08265,Linear Subtotal,932990,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08275,Non Residential Subtotal,950362,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08280,Residential Subtotal,8546505,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08285,Farmland,102600,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,leduc_county,0234,NEW SAREPTA,POPL,POPL,Population,382,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
 2003,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,67810,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,1917298,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
 2003,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,768011796,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
@@ -1742,6 +2026,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2003,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
 2003,chestermere,0356,CHESTERMERE,POPL,POPL,Population,5712,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
+2003,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
+2003,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,330840,fir_zip_2003_2008.zip:2003-EA-MR/D Total.xls#D Total
+2003,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,102502267,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,65160010,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,75952,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,21761857,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,15092438,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,412010,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2003-EA-MR/EA Equalized Assessment.xls#EA Equalized Assessment
+2003,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2003-EA-MR/POPL Population of Alberta.xls#POPL Population of Alberta
 2004,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,195582,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,3953556,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,1525340823,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1764,6 +2059,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2004,beaumont,0019,BEAUMONT,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,beaumont,0019,BEAUMONT,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,beaumont,0019,BEAUMONT,POPL,POPL,Population,7807,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
+2004,foothills,0032,Blackie,EA,08260,GRAND TOTAL,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08265,Linear Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08275,Non Residential Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08280,Residential Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,foothills,0032,Blackie,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,calgary,0046,CALGARY,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,calgary,0046,CALGARY,D,01920,Provincial Government Conditional Transfers,161698000,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,calgary,0046,CALGARY,EA,08260,GRAND TOTAL,85658580122,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1808,6 +2111,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2004,edmonton,0098,EDMONTON,EA,08290,Non Residential Railway,8876901,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,edmonton,0098,EDMONTON,EA,08295,NR Res. Co-generating M&E,1496500,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,edmonton,0098,EDMONTON,POPL,POPL,Population,666104,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
+2004,parkland,0104,Entwistle,EA,08260,GRAND TOTAL,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08265,Linear Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08275,Non Residential Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08280,Residential Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0104,Entwistle,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01910,Provincial Government Unconditional Transfers,37608,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",D,01920,Provincial Government Conditional Transfers,2059792,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,foothills,0111,"FOOTHILLS NO. 31, M.D. OF",EA,08260,GRAND TOTAL,2597400157,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1874,6 +2185,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2004,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,63960,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,morinville,0224,MORINVILLE,POPL,POPL,Population,6540,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
+2004,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,12636,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
+2004,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,71380,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
+2004,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,11681030,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,888600,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1004464,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,9666716,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08285,Farmland,90540,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,30710,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,leduc_county,0234,New Sarepta,POPL,POPL,Population,382,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
 2004,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,2856448,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
 2004,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,909917552,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
@@ -1973,6 +2295,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2004,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
 2004,chestermere,0356,CHESTERMERE,POPL,POPL,Population,6861,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
+2004,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
+2004,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,99940,fir_zip_2003_2008.zip:2004/2004-D-Total.xlsx#Schedule D
+2004,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,91773446,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,49502490,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,77110,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,24362526,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,17418970,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08285,Farmland,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,412350,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,0,fir_zip_2003_2008.zip:2004/2004-EA-Equalized Assessment.xlsx#Schedule EA
+2004,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2004/2004-POPL-Population of Alberta.xlsx#Schedule POPL
 2005,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,195581,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
 2005,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,7232176,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
 2005,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,1789639579,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2105,6 +2438,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2005,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,64550,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
 2005,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
 2005,morinville,0224,MORINVILLE,POPL,POPL,Population,6540,fir_zip_2003_2008.zip:2005/2005-POPL-Population of Alberta.xlsx#Schedule POPL
+2005,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,44210,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
+2005,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,100720,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
+2005,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,13438981,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,921110,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1102280,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,11291521,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08285,Farmland,93080,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,30990,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,leduc_county,0234,New Sarepta,POPL,POPL,Population,401,fir_zip_2003_2008.zip:2005/2005-POPL-Population of Alberta.xlsx#Schedule POPL
 2005,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,23641,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
 2005,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,9405660,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
 2005,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,1105372439,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2204,6 +2548,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2005,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
 2005,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
 2005,chestermere,0356,CHESTERMERE,POPL,POPL,Population,7904,fir_zip_2003_2008.zip:2005/2005-POPL-Population of Alberta.xlsx#Schedule POPL
+2005,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
+2005,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,62829,fir_zip_2003_2008.zip:2005/2005-D-Total.xlsx#Schedule D
+2005,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,96505261,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,49979150,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,76890,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,25045149,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,20987902,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08285,Farmland,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,416170,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2005/2005-EA-Equalized Assessment.xlsx#Schedule EA
+2005,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2005/2005-POPL-Population of Alberta.xlsx#Schedule POPL
 2006,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,195581,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
 2006,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,8991454,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
 2006,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,2062239741,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2336,6 +2691,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2006,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,65130,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
 2006,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
 2006,morinville,0224,MORINVILLE,POPL,POPL,Population,6540,fir_zip_2003_2008.zip:2006/2006-POPL-Population of Alberta.xlsx#Schedule POPL
+2006,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,63042,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
+2006,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,122920,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
+2006,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,15368323,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,1007130,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1123939,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,13110284,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08285,Farmland,95690,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,31280,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,leduc_county,0234,New Sarepta,POPL,POPL,Population,401,fir_zip_2003_2008.zip:2006/2006-POPL-Population of Alberta.xlsx#Schedule POPL
 2006,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,23641,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
 2006,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,6963196,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
 2006,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,1303896722,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2435,6 +2801,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2006,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
 2006,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
 2006,chestermere,0356,CHESTERMERE,POPL,POPL,Population,9481,fir_zip_2003_2008.zip:2006/2006-POPL-Population of Alberta.xlsx#Schedule POPL
+2006,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
+2006,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,45364,fir_zip_2003_2008.zip:2006/2006-D-Total.xlsx#Schedule D
+2006,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,103130375,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,53680300,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,72220,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,25999130,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,22958735,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08285,Farmland,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,419990,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2006/2006-EA-Equalized Assessment.xlsx#Schedule EA
+2006,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2006/2006-POPL-Population of Alberta.xlsx#Schedule POPL
 2007,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,195581,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
 2007,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,7130805,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
 2007,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,2418874921,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2567,6 +2944,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2007,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,66320,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
 2007,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
 2007,morinville,0224,MORINVILLE,POPL,POPL,Population,6775,fir_zip_2003_2008.zip:2007/2007-POPL-Population of Alberta.xlsx#Schedule POPL
+2007,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,1290,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
+2007,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,239048,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
+2007,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,18870525,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,1143030,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1247303,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,16377602,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08285,Farmland,70740,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,31850,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,leduc_county,0234,New Sarepta,POPL,POPL,Population,432,fir_zip_2003_2008.zip:2007/2007-POPL-Population of Alberta.xlsx#Schedule POPL
 2007,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,23641,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
 2007,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,9021532,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
 2007,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,1596814844,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2666,6 +3054,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2007,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
 2007,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
 2007,chestermere,0356,CHESTERMERE,POPL,POPL,Population,11262,fir_zip_2003_2008.zip:2007/2007-POPL-Population of Alberta.xlsx#Schedule POPL
+2007,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
+2007,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,487050,fir_zip_2003_2008.zip:2007/2007-D-Total.xlsx#Schedule D
+2007,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,91369403,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,38324990,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,84710,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,27412547,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,25119536,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08285,Farmland,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,427620,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2007/2007-EA-Equalized Assessment.xlsx#Schedule EA
+2007,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2007/2007-POPL-Population of Alberta.xlsx#Schedule POPL
 2008,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,654100,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
 2008,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,17302774,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
 2008,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,3370088341,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2798,6 +3197,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2008,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,68690,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
 2008,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
 2008,morinville,0224,MORINVILLE,POPL,POPL,Population,7228,fir_zip_2003_2008.zip:2008/2008-POPL-Population of Alberta.xlsx#Schedule POPL
+2008,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,1290,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
+2008,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,236317,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
+2008,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,21985348,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,1238330,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1304504,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,19341434,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08285,Farmland,68100,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,32980,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,leduc_county,0234,New Sarepta,POPL,POPL,Population,432,fir_zip_2003_2008.zip:2008/2008-POPL-Population of Alberta.xlsx#Schedule POPL
 2008,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,23641,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
 2008,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,6941708,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
 2008,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,2267992244,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
@@ -2897,6 +3307,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2008,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
 2008,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
 2008,chestermere,0356,CHESTERMERE,POPL,POPL,Population,12589,fir_zip_2003_2008.zip:2008/2008-POPL-Population of Alberta.xlsx#Schedule POPL
+2008,parkland,0364,WABAMUN,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
+2008,parkland,0364,WABAMUN,D,01920,Provincial Government Conditional Transfers,396870,fir_zip_2003_2008.zip:2008/2008-D-Total.xlsx#Schedule D
+2008,parkland,0364,WABAMUN,EA,08260,GRAND TOTAL,98467546,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08265,Linear Subtotal,40498010,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08270,Mach & Equip Subtotal,88430,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08275,Non Residential Subtotal,29151948,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08280,Residential Subtotal,28286258,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08285,Farmland,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08290,Non Residential Railway,442900,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,EA,08295,NR Res. Co-generating M&E,,fir_zip_2003_2008.zip:2008/2008-EA-Equalized Assessment.xlsx#Schedule EA
+2008,parkland,0364,WABAMUN,POPL,POPL,Population,601,fir_zip_2003_2008.zip:2008/2008-POPL-Population of Alberta.xlsx#Schedule POPL
 2009,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,868915,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
 2009,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,17394653,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
 2009,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,5659687645,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
@@ -3029,6 +3450,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2009,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,72750,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
 2009,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
 2009,morinville,0224,MORINVILLE,POPL,POPL,Population,7636,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#POPL(1)-Population
+2009,leduc_county,0234,New Sarepta,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
+2009,leduc_county,0234,New Sarepta,D,01920,Provincial Government Conditional Transfers,25176,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
+2009,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,30350271,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,1085240,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1349381,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,27814580,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08285,Farmland,66120,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,34950,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,leduc_county,0234,New Sarepta,POPL,POPL,Population,530,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#POPL(1)-Population
 2009,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,23641,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
 2009,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,8407182,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
 2009,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,3512785413,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
@@ -3128,6 +3560,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2009,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
 2009,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
 2009,chestermere,0356,CHESTERMERE,POPL,POPL,Population,13760,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#POPL(1)-Population
+2009,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,1916,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
+2009,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,452677,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#D(1)-Total
+2009,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,117515929,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08265,Linear Subtotal,44966130,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,95490,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,20920269,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08280,Residential Subtotal,51064970,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08290,Non Residential Railway,469070,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#EA(1)-Assessment
+2009,parkland,0364,Wabamun,POPL,POPL,Population,662,fir_zip_2009_2016.zip:2009_Financial_Year.xlsx#POPL(1)-Population
 2010,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,16907823,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
 2010,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,1202037,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
 2010,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,5914264231,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
@@ -3260,6 +3703,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2010,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,80990,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
 2010,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
 2010,morinville,0224,MORINVILLE,POPL,POPL,Population,7636,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#POPL(1)-Population
+2010,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,37571482,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,1089250,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1457938,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,34928624,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08285,Farmland,66490,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,29180,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
 2010,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,1471651,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
 2010,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,10301149,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
 2010,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,3891882948,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
@@ -3359,6 +3810,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2010,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
 2010,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
 2010,chestermere,0356,CHESTERMERE,POPL,POPL,Population,14285,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#POPL(1)-Population
+2010,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
+2010,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,732320,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#D(1)-Total
+2010,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,131357551,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08265,Linear Subtotal,51281450,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,101320,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,21871314,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08280,Residential Subtotal,57581307,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08290,Non Residential Railway,522160,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#EA(1)-Assessment
+2010,parkland,0364,Wabamun,POPL,POPL,Population,662,fir_zip_2009_2016.zip:2010_Financial_Year.xlsx#POPL(1)-Population
 2011,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,541205,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
 2011,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,18985118,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
 2011,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,5819653852,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
@@ -3491,6 +3953,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2011,morinville,0224,MORINVILLE,EA,08290,Non Residential Railway,74800,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
 2011,morinville,0224,MORINVILLE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
 2011,morinville,0224,MORINVILLE,POPL,POPL,Population,8504,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#POPL(1)-Population
+2011,leduc_county,0234,New Sarepta,EA,08260,GRAND TOTAL,38017600,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08265,Linear Subtotal,996410,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08270,Mach & Equip Subtotal,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08275,Non Residential Subtotal,1518930,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08280,Residential Subtotal,35408810,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08285,Farmland,66490,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08290,Non Residential Railway,26960,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,leduc_county,0234,New Sarepta,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
 2011,okotoks,0238,OKOTOKS,D,01910,Provincial Government Unconditional Transfers,1606686,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
 2011,okotoks,0238,OKOTOKS,D,01920,Provincial Government Conditional Transfers,6331235,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
 2011,okotoks,0238,OKOTOKS,EA,08260,GRAND TOTAL,3526290387,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
@@ -3590,6 +4060,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2011,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
 2011,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
 2011,chestermere,0356,CHESTERMERE,POPL,POPL,Population,14682,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#POPL(1)-Population
+2011,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
+2011,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,117657,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#D(1)-Total
+2011,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,130675600,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08265,Linear Subtotal,49610260,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,95900,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,22814400,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08280,Residential Subtotal,57672700,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08290,Non Residential Railway,482340,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#EA(1)-Assessment
+2011,parkland,0364,Wabamun,POPL,POPL,Population,662,fir_zip_2009_2016.zip:2011_Financial_Year.xlsx#POPL(1)-Population
 2012,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,577782,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#D(1)-Total
 2012,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,15603871,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#D(1)-Total
 2012,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,6237407716,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
@@ -3821,6 +4302,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2012,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,954180,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
 2012,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
 2012,chestermere,0356,CHESTERMERE,POPL,POPL,Population,15352,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#POPL(1)-Population
+2012,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#D(1)-Total
+2012,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,723951,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#D(1)-Total
+2012,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,68124464,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9625210,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,92980,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9278900,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08280,Residential Subtotal,48667154,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08290,Non Residential Railway,460220,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#EA(1)-Assessment
+2012,parkland,0364,Wabamun,POPL,POPL,Population,661,fir_zip_2009_2016.zip:2012_Financial_Year.xlsx#POPL(1)-Population
 2013,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,597964,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#D(1)-Total
 2013,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,9212124,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#D(1)-Total
 2013,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,6736111949,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
@@ -4052,6 +4544,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2013,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
 2013,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
 2013,chestermere,0356,CHESTERMERE,POPL,POPL,Population,15762,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#POPL(1)-Population
+2013,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,26489,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#D(1)-Total
+2013,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,351785,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#D(1)-Total
+2013,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,75952732,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9917670,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,91640,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9167014,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08280,Residential Subtotal,56294068,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08290,Non Residential Railway,482340,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#EA(1)-Assessment
+2013,parkland,0364,Wabamun,POPL,POPL,Population,661,fir_zip_2009_2016.zip:2013_Financial_Year.xlsx#POPL(1)-Population
 2014,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,4658117,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#D(1)-Total
 2014,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,365391,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#D(1)-Total
 2014,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,7150823164,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
@@ -4283,6 +4786,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2014,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
 2014,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
 2014,chestermere,0356,CHESTERMERE,POPL,POPL,Population,17203,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#POPL(1)-Population
+2014,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#D(1)-Total
+2014,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,530614,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#D(1)-Total
+2014,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,80893856,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9825370,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,90940,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9552300,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08280,Residential Subtotal,60885376,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08290,Non Residential Railway,539870,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#EA(1)-Assessment
+2014,parkland,0364,Wabamun,POPL,POPL,Population,661,fir_zip_2009_2016.zip:2014_Financial_Year.xlsx#POPL(1)-Population
 2015,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,16558549,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#D(1)-Total
 2015,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,362466,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#D(1)-Total
 2015,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,8159221855,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
@@ -4514,6 +5028,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2015,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
 2015,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
 2015,chestermere,0356,CHESTERMERE,POPL,POPL,Population,18496,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#POPL(1)-Population
+2015,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#D(1)-Total
+2015,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,889418,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#D(1)-Total
+2015,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,82231272,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9511970,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,89820,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9429200,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08280,Residential Subtotal,62660412,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08290,Non Residential Railway,539870,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#EA(1)-Assessment
+2015,parkland,0364,Wabamun,POPL,POPL,Population,661,fir_zip_2009_2016.zip:2015_Financial_Year.xlsx#POPL(1)-Population
 2016,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,402305,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#D(1)-Total
 2016,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,11521363,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#D(1)-Total
 2016,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,9654658424,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
@@ -4745,6 +5270,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2016,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
 2016,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
 2016,chestermere,0356,CHESTERMERE,POPL,POPL,Population,19715,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#POPL(1)-Population
+2016,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#D(1)-Total
+2016,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,237805,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#D(1)-Total
+2016,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,80393446,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9202190,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,86290,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9110700,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08280,Residential Subtotal,61427846,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08285,Farmland,,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08290,Non Residential Railway,566420,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#EA(1)-Assessment
+2016,parkland,0364,Wabamun,POPL,POPL,Population,661,fir_zip_2009_2016.zip:2016_Financial_Year.xlsx#POPL(1)-Population
 2017,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,430083,fir_year_2017.xlsx#D(1)-Total
 2017,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,8832529,fir_year_2017.xlsx#D(1)-Total
 2017,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,10483046858,fir_year_2017.xlsx#EA(1)-Assessment
@@ -4976,6 +5512,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2017,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_year_2017.xlsx#EA(1)-Assessment
 2017,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_year_2017.xlsx#EA(1)-Assessment
 2017,chestermere,0356,CHESTERMERE,POPL,POPL,Population,20331,fir_year_2017.xlsx#POPL(1)-Population
+2017,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_year_2017.xlsx#D(1)-Total
+2017,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,720163,fir_year_2017.xlsx#D(1)-Total
+2017,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,87151786,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9325730,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,84650,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,9978883,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08280,Residential Subtotal,67160703,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08285,Farmland,,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08290,Non Residential Railway,601820,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_year_2017.xlsx#EA(1)-Assessment
+2017,parkland,0364,Wabamun,POPL,POPL,Population,682,fir_year_2017.xlsx#POPL(1)-Population
 2018,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,418567,fir_year_2018.xlsx#D(1)-Total
 2018,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,11568403,fir_year_2018.xlsx#D(1)-Total
 2018,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,10670591528,fir_year_2018.xlsx#EA(1)-Assessment
@@ -5207,6 +5754,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2018,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_year_2018.xlsx#EA(1)-Assessment
 2018,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_year_2018.xlsx#EA(1)-Assessment
 2018,chestermere,0356,CHESTERMERE,POPL,POPL,Population,20732,fir_year_2018.xlsx#POPL(1)-Population
+2018,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_year_2018.xlsx#D(1)-Total
+2018,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,412906,fir_year_2018.xlsx#D(1)-Total
+2018,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,88825488,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9105230,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,56200,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,10204317,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08280,Residential Subtotal,68866771,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08285,Farmland,,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08290,Non Residential Railway,592970,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_year_2018.xlsx#EA(1)-Assessment
+2018,parkland,0364,Wabamun,POPL,POPL,Population,682,fir_year_2018.xlsx#POPL(1)-Population
 2019,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,430963,fir_year_2019.xlsx#D(1)-Total
 2019,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,13969783,fir_year_2019.xlsx#D(1)-Total
 2019,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,11118778592,fir_year_2019.xlsx#EA(1)-Assessment
@@ -5438,6 +5996,17 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2019,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_year_2019.xlsx#EA(1)-Assessment
 2019,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_year_2019.xlsx#EA(1)-Assessment
 2019,chestermere,0356,CHESTERMERE,POPL,POPL,Population,20732,fir_year_2019.xlsx#POPL(1)-Population
+2019,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_year_2019.xlsx#D(1)-Total
+2019,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,609104,fir_year_2019.xlsx#D(1)-Total
+2019,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,87143139,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08265,Linear Subtotal,9572470,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,56320,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,10696326,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08280,Residential Subtotal,66211783,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08285,Farmland,,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08290,Non Residential Railway,606240,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_year_2019.xlsx#EA(1)-Assessment
+2019,parkland,0364,Wabamun,POPL,POPL,Population,682,fir_year_2019.xlsx#POPL(1)-Population
 2020,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,475258,fir_year_2020.xlsx#D(1)-Total
 2020,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,17317024,fir_year_2020.xlsx#D(1)-Total
 2020,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,11522969500,fir_year_2020.xlsx#EA(1)-Assessment
@@ -5648,6 +6217,16 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2020,chestermere,0356,CHESTERMERE,EA,08285,Farmland,1166150,fir_year_2020.xlsx#EA(1)-Assessment
 2020,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_year_2020.xlsx#EA(1)-Assessment
 2020,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,D,01910,Provincial Government Unconditional Transfers,0,fir_year_2020.xlsx#D(1)-Total
+2020,parkland,0364,Wabamun,D,01920,Provincial Government Conditional Transfers,928225,fir_year_2020.xlsx#D(1)-Total
+2020,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,86584484,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08265,Linear Subtotal,10175620,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,60540,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,10659107,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08280,Residential Subtotal,65689217,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08285,Farmland,,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08290,Non Residential Railway,,fir_year_2020.xlsx#EA(1)-Assessment
+2020,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_year_2020.xlsx#EA(1)-Assessment
 2021,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,489487,fir_year_2021.xlsx#D(1)-Total
 2021,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,25223254,fir_year_2021.xlsx#D(1)-Total
 2021,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,11398517895,fir_year_2021.xlsx#EA(1)-Assessment
@@ -5858,6 +6437,14 @@ fir_year,muni_id,fir_code,fir_name,schedule,line_code,line_name,value,source
 2021,chestermere,0356,CHESTERMERE,EA,08285,Farmland,1084250,fir_year_2021.xlsx#EA(1)-Assessment
 2021,chestermere,0356,CHESTERMERE,EA,08290,Non Residential Railway,,fir_year_2021.xlsx#EA(1)-Assessment
 2021,chestermere,0356,CHESTERMERE,EA,08295,NR Res. Co-generating M&E,,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08260,GRAND TOTAL,87666089,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08265,Linear Subtotal,10020060,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08270,Mach & Equip Subtotal,60370,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08275,Non Residential Subtotal,10110193,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08280,Residential Subtotal,67475466,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08285,Farmland,,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08290,Non Residential Railway,,fir_year_2021.xlsx#EA(1)-Assessment
+2021,parkland,0364,Wabamun,EA,08295,NR Res. Co-generating M&E,,fir_year_2021.xlsx#EA(1)-Assessment
 2022,airdrie,0003,AIRDRIE,D,01910,Provincial Government Unconditional Transfers,489487,fir_year_2022.xlsx#D(1)-Total
 2022,airdrie,0003,AIRDRIE,D,01920,Provincial Government Conditional Transfers,29954035,fir_year_2022.xlsx#D(1)-Total
 2022,airdrie,0003,AIRDRIE,EA,08260,GRAND TOTAL,11531771100,fir_year_2022.xlsx#EA(1)-Assessment

@@ -7,7 +7,9 @@ assessment subtotals (1997 onward), and Schedule POPL population.
 Columns are found by FIR item code, never by position; 2001's files have no
 code row, so their headers are mapped by name (NAME_TO_CODE). Rows are matched
 to members on regions.csv `fir_code`, and the FIR name must be one of the
-member's aliases. A row's own YEAR decides its year: rows whose YEAR differs
+member's aliases. A municipality that dissolved into a member (decision 8) is
+read under that member's `muni_id` from its own code in `absorbed_fir_codes`,
+for every year it reports; its name must be one of the member's `+` parts. A row's own YEAR decides its year: rows whose YEAR differs
 from their folder's (the 2002 files inside 2001/) are logged and not read.
 A member missing a line in a year fails the run.
 
@@ -106,10 +108,19 @@ def read_sheet(rows, year: int, schedule: str):
         yield text[0], text[2], text[3], cols
 
 
+def absorbed(regions: list[dict]) -> dict[str, dict]:
+    """{fir_code: absorbing member} for the dissolved municipalities."""
+    return {c: r for r in regions for c in (r.get("absorbed_fir_codes") or "").split("|") if c}
+
+
 def parse(raw: Path, regions: list[dict]):
     by_code = {r["fir_code"]: r for r in regions}
     aliases = {r["fir_code"]: {norm(a.lstrip("+")) for a in r["eq_aliases"].split("|")}
                for r in regions}
+    for code, r in absorbed(regions).items():
+        by_code[code] = r
+        aliases[code] = {re.sub(r"^(CITY|TOWN|VILLAGE) OF ", "", norm(a[1:]))
+                         for a in r["eq_aliases"].split("|") if a.startswith("+")}
     manifest = json.loads((raw / "manifest.json").read_text())
     out, stray = {}, set()
     for year, source, name, body in members(raw, manifest):
@@ -179,17 +190,34 @@ def _title(rows):
 
 
 def check_complete(out: dict, regions: list[dict]):
+    """Every member has every line in every year. An absorbed municipality has
+    every line of a schedule in every year up to the last year it reports that
+    schedule with a non-zero value. Its EA rows run past its D rows (FIR year Y
+    carries report year Y), and EA keeps all-zero placeholder rows for some
+    years after dissolution (Blackie, Entwistle to 2004)."""
+    line_schedule = {line: sch for sch in ("D", "EA", "POPL") for y in (1994, 2023)
+                     for line in wanted(sch, max(y, EA_FIRST) if sch == "EA" else y)}
+    spans = [(r["muni_id"], r["fir_code"], {s: LAST for s in ("D", "EA", "POPL")}) for r in regions]
+    for code, r in absorbed(regions).items():
+        last = {}
+        for (y, c, line), rec in out.items():
+            if c == code and float(rec["value"] or 0):
+                sch = line_schedule[line]
+                last[sch] = max(last.get(sch, 0), y)
+        if not last:
+            raise ParseError(f"absorbed code {code} ({r['muni_id']}) has no rows")
+        spans.append((f"{r['muni_id']}<{code}>", code, last))
     missing = []
-    for r in regions:
-        for year in range(FIRST, LAST + 1):
-            for schedule in ("D", "EA", "POPL"):
+    for muni, code, last in spans:
+        for schedule, last_year in last.items():
+            for year in range(FIRST, last_year + 1):
                 for line in wanted(schedule, year):
                     if year == 2001 and line in ("08285", "08290", "08295"):
                         continue  # 2001's EQASSMT has no farmland/railway/co-gen column
                     if line == POPL and year in POPL_ABSENT:
                         continue
-                    if (year, r["fir_code"], line) not in out:
-                        missing.append((year, r["muni_id"], line))
+                    if (year, code, line) not in out:
+                        missing.append((year, muni, line))
     if missing:
         raise ParseError(f"{len(missing)} member-year lines missing, e.g. {missing[:8]}")
 
