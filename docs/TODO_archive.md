@@ -8,6 +8,12 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Phase 2 transfers: include the four absorbed villages' FIR rows** Done 2026-10-02: `absorbed_fir_codes` in `regions.csv`; `src/build_transfers.py`. (Blackie,
+  Entwistle, New Sarepta, Wabamun) in their members' totals, as Phase 1 now does.
+  `fir_long.csv` holds member codes only; look up the villages' FIR codes in
+  `data/fir_schema.json`.
+
+
 - [x] **Population module (proposal first: a new module).** Built 2026-10-02: `src/fetch_population.py`, `tests/test_population.py`. Fetch StatCan table 17-10-0155
   (decision 2026-10-02; `docs/SPEC_phase1.md` §"Population basis"), keep the 21 members
   through `data/csd_crosswalk.csv` (2021 rows), and write a per-member, per-year population

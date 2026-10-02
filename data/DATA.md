@@ -155,6 +155,20 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - **Blank ≠ 0:** 640 member-line values are empty cells (mostly co-gen M&E and
   railway). They are written empty, not as 0.
 
+#### Transfers per capita (built 2026-10-02): `src/build_transfers.py` → `data/processed/transfers_per_capita.csv`
+Committed, 625 rows: 21 members plus core and ring for each region, × 2001–2025.
+Columns: `region, level (member|side), unit, role, year, transfers, population,
+per_capita, per_capita_5yr, basis_note`. Nominal dollars.
+- **Absorbed villages:** `fir_long.csv` files Blackie (0032), Entwistle (0104),
+  New Sarepta (0234) and Wabamun (0364) under the absorbing member's `muni_id`,
+  with their own `fir_code`. Their Schedule D rows end in 1997, 2000, 2009 and
+  2020. EA keeps all-zero placeholder rows for Blackie and Entwistle until 2004.
+  New Sarepta and Wabamun print their names in capitals in some eras.
+- **Negative line:** Spruce Grove 2015 conditional transfers are −$1,760,210, after
+  $20.1M in 2014. This looks like a reversal of grant revenue recognised the year
+  before. It is kept as printed and named in `basis_note` (member and ring rows).
+- **No blank transfer values** in any member-year.
+
 ### StatCan — CSD crosswalk (hand-built 2026-10-02): `data/csd_crosswalk.csv`
 One row per member per census year (1996, 2001, 2006, 2011, 2016, 2021):
 `muni_id, census_year, csd_uid, csd_name, relation, note`. Pinned by
