@@ -59,7 +59,13 @@ def _sheets(name: str, body: bytes):
         import xlrd  # noqa: PLC0415
         book = xlrd.open_workbook(file_contents=body)
         for sh in book.sheets():
-            yield sh.name, (sh.row_values(i) for i in range(sh.nrows))
+            yield sh.name, _xls_rows(sh)
+
+
+def _xls_rows(sh):
+    # A function, not an inline generator expression: that would bind `sh` late
+    # and read the last sheet for every sheet once they are collected first.
+    return (sh.row_values(i) for i in range(sh.nrows))
 
 
 def fingerprint_sheet(rows) -> dict:

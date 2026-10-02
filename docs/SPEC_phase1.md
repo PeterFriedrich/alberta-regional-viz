@@ -172,6 +172,19 @@ step 2 is the guard for placement.
    listed in `KNOWN_ANOMALIES` and logged as warnings. An entry that stops firing
    also fails. Sizing: `docs/FINDINGS_quick_audits_2026-09-28.md` §#4.
 
+Phase 2 (FIR):
+
+4. **`fetch_fir.py`** → `data/raw/fir/` + manifest (as `fetch_equalized.py`).
+5. **`fingerprint_fir.py`** → the committed `data/fir_schema.json`: every
+   sheet's header, code row, row count and row YEARs; pinned by
+   `tests/test_fir_schema.py`.
+6. **`parse_fir.py`** → `data/processed/fir_long.csv` (committed, so CI runs
+   the cross-checks in `tests/test_parse_fir.py`): one row per member, FIR year
+   and line, for the transfer lines (decision 9 as amended), the EA subtotals
+   (1997+) and POPL, with the file and sheet each came from. **FIR year Y
+   carries equalized REPORT year Y** (taxation year Y−1); see
+   `data/DATA.md` §"Parsed (2026-10-02)".
+
 Every module writes structured (JSON-lines) logs, not prints, and takes its
 paths from arguments with repo defaults.
 

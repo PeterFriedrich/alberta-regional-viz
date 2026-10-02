@@ -125,6 +125,33 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
   look like blank return forms, not data. They are recorded in the fingerprint
   as `unreadable`.
 
+#### Parsed (2026-10-02): `src/parse_fir.py` → `data/processed/fir_long.csv`
+- **Year mapping: FIR financial year Y = equalized REPORT year Y** (taxation
+  year Y−1). Member-level NR/linear/M&E match the parsed PDFs exactly on 1,048
+  of 1,532 values at that offset, and on ≤ 12 one year either side
+  (`test_fir_year_is_the_equalized_report_year`).
+- **FIR vs PDF, same report year:** 68% exact, 89% within 1%, 98% within 5%.
+  Where they differ, FIR is usually *lower* (402 lower vs 82 higher). The cause
+  is unknown (a later revision? a different inclusion rule?). It is TODO, and
+  it matters because FIR could fill the PDF gap (below).
+- **FIR covers report years 2008–2010**, which is the scanned-PDF gap that holds
+  Edmonton's 72% anchor year. This is not used yet (TODO).
+- **The four kept-as-printed anomalies:** in each case FIR's row adds up to its
+  own total and sits within 25% of its neighbours' midpoint. The printed value
+  is ≥ 40% off. Airdrie 2017 is the clearest: the PDF total omits NR, while
+  FIR's total includes 1,548M. Devon 1999 differs in NR, linear *and* M&E, but
+  its residential matches. See `test_fir_resolves_the_four_kept_as_printed_anomalies`.
+- **FIR's own error: Calgary 2001 NR = 1,622.9M** in the legacy `EQASSMT 2001.XLS`
+  (PDF: 16,560M). FIR's components fall 14.6B short of its own grand total. It
+  is the only EA row in FIR that doesn't add up (`test_fir_ea_rows_add_up_except_calgary_2001`).
+- **No POPL sheet in the 2020–2022 workbooks** (`parse_fir.POPL_ABSENT`).
+- **Electric (-E) and gas (-G) supplements** reuse Schedule D's title in the
+  per-schedule eras (1994–2000, 2004–08). They are excluded by file name.
+- **The 2002 copy in `2001/` is not read.** `2002/EA/` is the year's own file;
+  the `2001/` copy is an earlier download whose title says "can change".
+- **Blank ≠ 0:** 640 member-line values are empty cells (mostly co-gen M&E and
+  railway). They are written empty, not as 0.
+
 ### Candidate sources — UNVERIFIED, not yet used
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
 or checked here; verify licence, URL and coverage before adding a full entry above.

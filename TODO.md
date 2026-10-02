@@ -68,28 +68,25 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Phase 2 — FIR parse** (the fetch and the schema pin are done,
-  2026-10-01: `src/fetch_fir.py`, `src/fingerprint_fir.py`,
-  `data/fir_schema.json`). The next module, `src/parse_fir.py`, reads by
-  `regions.csv` → `fir_code` and the row's own YEAR, not the folder name.
-  **Then verify the four printed anomalies** (DECISIONS row of 2026-09-28):
-  Airdrie NR 2016, Sturgeon NR 2000, Devon 1998 and Calgary linear 2002. The
-  plan was to check against FIR *taxable* assessment, but `MR(2)` exists only
-  from 2023. Use FIR's `EA` schedule instead: the same equalized metric, a
-  second publication, covering 1997–2025. A disagreement is evidence of a print
-  or parse slip. Agreement means the publisher printed the same number twice,
-  which does not show it is right. **Extend the check from the four anomalies to
-  every member-year, 1997–2025** (CW reply 2026-10-02): a full FIR-EA vs PDF
-  diff is cheap once both are parsed, and it catches parse slips anywhere.
-  Settle the year mapping first (does FIR financial year Y carry report year
-  Y or Y+1?). A confirmed error gets a flagged correction,
-  and the guard test is updated in the same commit. Then check year alignment
-  (FIR financial year Y vs equalized taxation year) on non-anomalous years
-  before trusting it.
-  **Transfers** (decision as amended 2026-10-01): sum 01910+01920 through 2022
-  and 01912+01922 from 2023, and add a test that no member's total steps at
-  2022→2023 beyond its normal year-to-year variation. The DECISIONS row cites it
-  as owed.
+- [ ] **Apply FIR's values to the four kept-as-printed anomalies** (the DECISIONS
+  row of 2026-09-28 pre-decides "a flagged correction, with the printed value
+  kept alongside"; FIR now supports all four). This changes
+  `core_ring_share.csv`, so **propose the mechanism first**: where corrections
+  live (a committed corrections table read by `build_share_series.py`?), how
+  the printed value is kept, and how `KNOWN_ANOMALIES` /
+  `test_suspect_printed_values_are_kept_until_verified` change in the same
+  commit. Open question for Peter: replace only the flagged cell, or the whole
+  row? Devon 1999 differs in NR, linear and M&E alike.
+
+- [ ] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.**
+  The same report year matches exactly on 68% of member values, but where the
+  two differ FIR is usually 0.1–5% *lower* (402 lower vs 82 higher). Find out
+  why (a later revision? a different inclusion rule?) from the
+  EA manual or a publisher question. This blocks the next item.
+
+- [ ] **FIR could fill report years 2008–2010** (the scanned-PDF gap, which holds
+  Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
+  must be on the same basis as the series around it, or the chart says so.
 
 - [ ] **Phase 2b — FIR spending by function, core vs ring, per capita** (decision
   2026-09-30; `docs/SPEC_phase1.md` §"The backbone"). Police, Public Transit,
@@ -115,6 +112,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Phase 2 — FIR parse** — DONE 2026-10-02 · `docs/TODO_archive.md`
 
 - [x] **Decision 9 needs re-deciding: FIR lines 1912/1922 exist only from 2023.** — DECIDED 2026-10-01 · `docs/TODO_archive.md`
 
