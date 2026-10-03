@@ -1,5 +1,6 @@
 """Population (decision 2026-10-02): StatCan 17-10-0155 July 1 estimates,
-2021 boundaries, 2001-2025, one row per member per year. The real-data tests
+2021 boundaries, 2001-2025, one row per member per year; `population_asof`
+moves them onto each year's boundaries with data/annexations.csv (audit Q1). The real-data tests
 read the committed data/processed/population.csv (from src/fetch_population.py)."""
 import csv
 import sys
@@ -13,6 +14,7 @@ import fetch_population as fp  # noqa: E402
 
 POP = list(csv.DictReader((REPO / "data/processed/population.csv").open()))
 MEMBERS = {r["muni_id"] for r in csv.DictReader((REPO / "data/regions.csv").open())}
+EVENTS = list(csv.DictReader((REPO / "data/annexations.csv").open()))
 # 2021 Census counts, StatCan 98-10-0002 (checked 2026-10-02). The estimates
 # correct for census undercoverage, so each sits a little above its count.
 CENSUS_2021 = {
@@ -80,3 +82,60 @@ def test_extract_fails_on_a_missing_member_year_and_an_empty_value():
     assert len(fp.extract(rows + [_row("4800002", 2002, 6)], by_uid, status, "d")) == 4
     with pytest.raises(fp.FetchError, match="empty"):
         fp.extract(rows + [_row("4800002", 2002, "")], by_uid, status, "d")
+
+
+# Each census reprints the previous count on the new boundaries. Adjusted minus
+# original, per member, from the 2001-2021 census population tables (audit Q1,
+# docs/FINDINGS_per_capita_boundaries_2026-10-03.md). Census boundaries are those
+# of January 1 of the census year; each event's `change_list` names the 92F0009X
+# list, and so the census window, that carries it.
+CENSUS_ADJUSTMENT = {
+    "2001-2006": {"stony_plain": 35, "parkland": -35, "calgary": 137, "airdrie": 25,
+                  "chestermere": 442, "cochrane": 243, "foothills": -162, "high_river": 38,
+                  "okotoks": 25, "rocky_view": -763},
+    "2006-2011": {"st_albert": 45, "spruce_grove": 45, "leduc_county": -5, "parkland": -45,
+                  "sturgeon": -55, "devon": 5, "calgary": 619, "chestermere": 359,
+                  "foothills": -5, "okotoks": 5, "rocky_view": -998},
+    "2011-2016": {"leduc_city": 25, "leduc_county": -47, "devon": 5, "airdrie": 707,
+                  "foothills": -10, "high_river": 10, "rocky_view": -707},
+    "2016-2021": {"edmonton": 542, "beaumont": 61, "fort_saskatchewan": 20, "spruce_grove": 42,
+                  "strathcona": -20, "leduc_county": -603, "parkland": -42, "foothills": -150,
+                  "high_river": 10, "okotoks": 135},
+}
+# Census adjustments that are StatCan corrections, not legal changes (92F0009X
+# codes 8/9 and 10/11), so they are rightly absent from annexations.csv.
+CORRECTIONS = {"2001-2006": {"chestermere": 442, "rocky_view": -442},
+               "2011-2016": {"leduc_county": -17}}
+
+
+def test_annexations_reproduce_the_census_adjusted_counts():
+    for window, want in CENSUS_ADJUSTMENT.items():
+        got = dict(CORRECTIONS.get(window, {}))
+        for e in (e for e in EVENTS if e["change_list"] == window):
+            for m, s in ((e["gainer"], 1), (e["loser"], -1)):
+                if m in MEMBERS:
+                    got[m] = got.get(m, 0) + s * int(e["people"])
+        assert {m: v for m, v in got.items() if v} == want, window
+
+
+def test_asof_differs_only_by_the_annexations():
+    d = {(r["muni_id"], int(r["year"])): int(r["population_asof"]) - int(r["population"])
+         for r in POP}
+    assert d[("edmonton", 2018)] == -542 and d[("edmonton", 2019)] == 0
+    assert d[("leduc_county", 2016)] == 603 and d[("leduc_county", 2017)] == 542
+    assert d[("calgary", 2001)] == -756 and d[("calgary", 2007)] == 0
+    assert all(v == 0 for (m, y), v in d.items() if y == 2021)
+    assert d[("st_albert", 2022)] == 100 and d[("sturgeon", 2025)] == -100
+
+
+def test_add_asof_moves_people_to_where_they_lived():
+    rows = [{"muni_id": m, "year": y, "population": 1000}
+            for m in ("a", "b") for y in (2019, 2020, 2022)]
+    ev = [{"effective": "2020-07-01", "gainer": "a", "loser": "b", "people": "10"},
+          {"effective": "2022-01-01", "gainer": "b", "loser": "outside", "people": "5"}]
+    got = {(r["muni_id"], r["year"]): r["population_asof"] for r in fp.add_asof(rows, ev)}
+    assert got == {("a", 2019): 990, ("a", 2020): 1000, ("a", 2022): 1000,
+                   ("b", 2019): 1010, ("b", 2020): 1000, ("b", 2022): 1005}
+    with pytest.raises(fp.FetchError, match="no member"):
+        fp.add_asof(rows, [{"effective": "2010-01-01", "gainer": "x", "loser": "y",
+                            "people": "1"}])

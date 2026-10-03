@@ -14,7 +14,8 @@ housing line covers (2008 restated vs FIR cash: Edmonton +45%, Calgary social
 housing about -25%; SPEC_phase1.md §"The 2009 accrual switch, measured"), so
 there are no housing rows before 2009. Police, transit and FCSS move by at
 most 3% at the switch and run through it.
-Population = StatCan 17-10-0155. Absorbed municipalities' FIR rows are already
+Population = `population_asof`: StatCan 17-10-0155 on each year's boundaries
+(audit Q1), matching the FIR dollars. Absorbed municipalities' FIR rows are already
 filed under their member (decision 8). A side's per-capita value is its total
 over its total population, not a mean of members' rates.
 
@@ -54,8 +55,8 @@ FIRST_YEAR = {"housing": ACCRUAL}
 BASIS_NOTE = ("nominal dollars; gross operating cost = FIR Schedule C operating expenditure "
               "to 2008, Schedule C expense - Schedule E amortization from 2009 (accrual "
               "switch); net = gross - Schedule E sales and user charges; population StatCan "
-              "17-10-0155 July 1 estimates, 2021 boundaries; 2025 board membership applied "
-              "to all years")
+              "17-10-0155 July 1 estimates, moved onto each year's boundaries with StatCan "
+              "92F0009X annexation counts; 2025 board membership applied to all years")
 FIELDS = ["region", "level", "unit", "role", "function", "year", "gross", "user_charges", "net",
           "population", "gross_per_capita", "net_per_capita", "excluded", "basis_note"]
 
@@ -91,7 +92,7 @@ def police_excluded(year: int, muni: str) -> bool:
 
 def build(fir_rows, pop_rows) -> list[dict]:
     gross, charges = member_spending(fir_rows)
-    pop = {(int(r["year"]), r["muni_id"]): int(r["population"]) for r in pop_rows}
+    pop = {(int(r["year"]), r["muni_id"]): int(r["population_asof"]) for r in pop_rows}
     info = {r["muni_id"]: (r["region"], r["role"]) for r in pop_rows}
     missing = sorted((y, m) for y, m in pop if (y, m, "police") not in gross)
     if missing:

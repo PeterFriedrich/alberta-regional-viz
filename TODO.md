@@ -34,22 +34,6 @@ symptom and re-measure the stated cause before acting on it.
   $145M 2027 gap (EC2026-0284); the Paquette ledger (about $718M, mostly not
   reconciling to FCS02218; only the 32% non-resident road-use share corroborated).
 
-- [ ] **PETER'S CALL — per-capita population on each year's boundaries?** (audit Q1, 2026-10-03,
-  `docs/FINDINGS_per_capita_boundaries_2026-10-03.md` §"Remedy, sized"). On 2021 boundaries:
-  - 58 of 525 member-years are off by more than 1%. Worst: Chestermere −8.2%, Rocky View
-    +7.0%, and Leduc County +5.1% for 2001–18.
-  - Calgary's police ring is −2.6% in 2001 and −0.7% in 2011, because about 1,560 people
-    annexed out of the police-excluded counties already sit in the ring's denominator.
-  - Edmonton's core and ring are within 0.21%.
-
-  Options:
-  - **A (recommended):** commit the 29-row annexation table (StatCan 92F0009X) and derive
-    `population_asof` for both builds. This changes the `population.csv` contract, so
-    propose it first.
-  - **B:** keep 2021 boundaries, drop the 58 member-years from member charts, and note
-    the bias on charts.
-
-  Don't build either without a yes. The choice also governs the 1997–2000 item below.
 - [ ] **Pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
@@ -107,7 +91,7 @@ symptom and re-measure the stated cause before acting on it.
   although FIR transfers go back to 1994. Look for an older StatCan CSD
   estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by
   each member's 2001 estimate-to-census ratio. Until then, per-capita series start in 2001.
-  **Depends on the boundary call above** (audit Q1). The 2001 census adjusted six members'
+  **Use each year's own boundaries** (decided 2026-10-03, audit Q1). The 2001 census adjusted six members'
   1996 counts for boundary changes (Beaumont, Leduc, Leduc County, Parkland, Foothills,
   Okotoks), so any back-extension inherits that choice.
 
@@ -123,6 +107,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **PETER'S CALL — per-capita population on each year's boundaries?** — DECIDED 2026-10-03 · `docs/TODO_archive.md`
 
 - [x] **Next session: run audit Q1** — DONE 2026-10-03 · `docs/TODO_archive.md`
 
