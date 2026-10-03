@@ -102,6 +102,9 @@ that have it.
   Annexations are back-cast, unlike the equalized assessment's as-of-year
   boundaries. The 2019 Leduc County → Edmonton annexation moved 542 people.
   Charts state "population: StatCan July 1 estimates, 2021 boundaries".
+  **Audit Q1 (2026-10-03) found the mismatch beyond its bar in member rows and
+  Calgary's police ring** (`docs/FINDINGS_per_capita_boundaries_2026-10-03.md`).
+  The remedy is Peter's call (TODO).
 - **Revisions:** 2001–2020 are final intercensal estimates. 2021 is final
   postcensal, 2022–2024 updated postcensal, 2025 preliminary. The fetch
   records the release date, and later releases will move recent years.

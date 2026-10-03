@@ -259,6 +259,18 @@ July 1 estimates by CSD on **2021 boundaries**, 2001–2025, release 2026-01-14
   Parkland +2.9%. Never mix them with census counts in one series.
 - **Annexations are back-cast** to 2021 boundaries, unlike the equalized
   assessment, which uses each year's boundaries.
+  - Audit Q1 (2026-10-03) listed every annexation 2001–2025 that moved people and
+    involves a member: 29 events from StatCan 92F0009X, which match the census
+    adjusted counts. Event table and errors:
+    `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`.
+  - Against FIR's as-of-year dollars, the per-capita error reaches 8.2% in member rows
+    (Chestermere 2001) and 2.6% in Calgary's police ring (2001). Edmonton's core and
+    ring stay within 0.21%.
+  - 92F0009X change codes 8/9 and 10/11 are StatCan map or population corrections, not
+    annexations. Chestermere's +442 in 2001 is one.
+  - Comparing 17-10-0142 with 0155 isolates boundary moves only in census years:
+    intercensal years carry revisions between the two vintages, e.g. Calgary +667 in
+    2001 with no annexation.
 - Replaces the inactive 17-10-0142 (2016 boundaries).
 
 ### Candidate sources — UNVERIFIED, not yet used

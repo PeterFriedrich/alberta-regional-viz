@@ -16,6 +16,7 @@ top-down, fundamental decisions first.
 
 | Date | Target / scope | Instrument | Output | Verdict (one line) | Outstanding |
 |------|----------------|------------|--------|--------------------|-------------|
+| 2026-10-03 | Q1: per-capita numerators (FIR, each year's boundaries) vs denominators (17-10-0155, 2021 boundaries), every member, 2001–2025 | 92F0009X change lists 2001–2025 (29 annexations that moved people), reconciled to census adjusted counts in all four windows and to 17-10-0142 vs 0155 in 2011 | `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`; sources in `/home/opc/research/alberta-regional-viz/q1_boundary_audit_2026-10-03/` | FAIL vs the brief's bar: 58/525 member-years beyond 1% (Chestermere −8.2%, Rocky View +7.0%, Leduc County +5.1% for 18 years); Calgary police ring −2.6% (2001) via annexations out of the police-excluded counties; Calgary ring +0.75%; Edmonton core/ring ≤0.21% PASS | Peter's call on the remedy (A: as-of-year population from the event table, recommended; B: drop/caveat); 1997–2000 inherits the choice |
 | 2026-10-02 | Decision 8 membership completeness: every municipality that stops appearing in the equalized reports, 1998–2026 | Vanished-name scan of `equalized_long.csv`, each one checked against StatCan SGC concordances 1996–2021 and 92F0009X | `data/DATA.md` §"CSD crosswalk"; `tests/test_build_share_series.py::test_every_vanished_municipality_is_classified` | FAIL → fixed: four villages that dissolved into members (Blackie, Entwistle, New Sarepta, Wabamun) were never summed in; Edmonton `nr` −0.22 pp (1998) to −0.01 pp (2021) | Phase 2 FIR transfers need the same four villages |
 | 2026-10-02 | PDF equalized series vs FIR `EA` schedule, every member, report years 1997–2025 | `src/parse_fir.py` output joined to `member_assessment.csv`; row-sum check on both sources | `data/DATA.md` §"Parsed (2026-10-02)"; `tests/test_parse_fir.py` | WARN: 68% exact, 89% within 1%; FIR supports all four kept-as-printed anomalies as PDF errors; FIR's own Calgary 2001 NR is wrong; FIR systematically lower where they differ | Apply the four corrections (proposal); explain the systematic gap |
 | 2026-09-28 | #4 parsed values: external + continuity | 1999 p11 / 2000 p10 by-type tables; spike-and-revert scan of `member_assessment.csv` | `docs/FINDINGS_quick_audits_2026-09-28.md` §#4 | WARN: parser faithful (2 reports tie to the dollar); 4 publisher-printed one-year anomalies, Airdrie NR=0 (2016) −1.9 pp Calgary, Sturgeon NR (2000) −2.4 pp Edmonton; "capped" pre-2000 method change found | Anomalies → verify vs FIR (DECISIONS 2026-09-28); continuity check built 2026-09-29; capping → #2 |
@@ -25,7 +26,7 @@ top-down, fundamental decisions first.
 
 ## Queued — briefed, not yet run
 
-**Q1 (queued 2026-10-03, S8): do per-capita numerators and denominators cover the same people?**
+*(Run 2026-10-03, see Executed. The brief stays as the instrument.)* **Q1 (queued 2026-10-03, S8): do per-capita numerators and denominators cover the same people?**
 Every Phase 2/2b per-capita value divides FIR dollars by StatCan population.
 - **The mismatch:** FIR dollars are reported on each year's own boundaries, but
   17-10-0155 back-casts every year to 2021 boundaries. Before an annexation, the
