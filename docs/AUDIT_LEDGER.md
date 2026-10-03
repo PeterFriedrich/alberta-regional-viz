@@ -25,6 +25,35 @@ top-down, fundamental decisions first.
 
 ## Queued — briefed, not yet run
 
+**Q1 (queued 2026-10-03, S8): do per-capita numerators and denominators cover the same people?**
+Every Phase 2/2b per-capita value divides FIR dollars by StatCan population.
+- **The mismatch:** FIR dollars are reported on each year's own boundaries, but
+  17-10-0155 back-casts every year to 2021 boundaries. Before an annexation, the
+  absorbing member's population already counts the annexed residents while its
+  spending doesn't serve them, and the losing member's runs the other way.
+  Core/ring totals are hit only by annexations *between* core and ring
+  (Edmonton or Calgary absorbing ring land). Ring-to-ring moves cancel in the
+  ring total but bias member rows.
+- **Measured so far:** one annexation. Leduc County → Edmonton (2019) moved 542
+  people (`docs/SPEC_phase1.md` §"Population basis").
+- **Instrument:**
+  1. List every annexation 2001–2025 that involves a member, from Municipal
+     Affairs orders in council and StatCan SGC change notes (92F0009X), with
+     their dates.
+  2. Size each in people: compare 17-10-0142 (2016 boundaries) with 17-10-0155
+     (2021 boundaries) for the same years, and the census counts printed on
+     both the old and new boundaries (each census prints the previous count
+     adjusted).
+  3. Rank by effect on the core and ring per-capita series (memory
+     `audit-categories-by-members-not-names`: rank by numerator). Candidates to
+     check first: Calgary ← Rocky View (2007), Edmonton ← Leduc County (2019),
+     Beaumont ← Leduc County (2019), Airdrie ← Rocky View (2012).
+- **Verdict scale:** PASS if no member-year moves more than 1% and core/ring
+  less than 0.5%. Otherwise WARN or FAIL with the remedy sized, either a
+  boundary note on the chart or an as-of-year population.
+- **Why now:** it is a fundamental decision under every Phase 2 output (memory
+  `audit-decisions-top-down`), and it has never been measured beyond one case.
+
 ## Never audited (candidates, roughly ranked)
 
 Listed 2026-09-28, after Phase 1b, ranked top-down: the metric first, then the
