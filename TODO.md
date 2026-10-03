@@ -82,12 +82,6 @@ symptom and re-measure the stated cause before acting on it.
   $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
   the FCSS chart ships: a reclassification would be a basis break, not spending.
 
-- [ ] **Where do rural counties record Police Funding Model payments?** Parkland, Rocky View
-  and Sturgeon report $0 police in every year 2017–2023, including after the model started
-  in 2020, and no protective-services line shows a matching step. Ask Municipal Affairs, or
-  check a county's audited statements. Also check the single-year zeros: Cochrane 2022,
-  Devon 2021.
-
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
   the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?)
@@ -110,6 +104,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Where do rural counties record Police Funding Model payments?** — DONE 2026-10-03 · `docs/TODO_archive.md`
 
 - [x] **Phase 2b module (proposal first: a new module).** — LOCKED 2026-10-02 · `docs/TODO_archive.md`
 
