@@ -34,7 +34,11 @@ symptom and re-measure the stated cause before acting on it.
   $145M 2027 gap (EC2026-0284); the Paquette ledger (about $718M, mostly not
   reconciling to FCS02218; only the 32% non-resident road-use share corroborated).
 
-- [ ] **Next session: pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
+- [ ] **Next session: run audit Q1** (`docs/AUDIT_LEDGER.md` §"Queued"): whether the per-capita
+  numerators (FIR, each year's own boundaries) and denominators (StatCan, back-cast to 2021
+  boundaries) cover the same people, across every annexation 2001–2025 involving a member.
+  Queued 2026-10-03. Older candidates are below.
+- [ ] **Pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
 
