@@ -51,7 +51,7 @@ def test_values_pinned_against_the_spec_table():
 
 def test_every_row_matches_an_independent_recompute():
     v = recompute()
-    p = {(r["muni_id"], int(r["year"])): int(r["population"]) for r in POP}
+    p = {(r["muni_id"], int(r["year"])): int(r["population_asof"]) for r in POP}
     side = defaultdict(set)
     for r in POP:
         side[(r["region"], r["role"])].add(r["muni_id"])
@@ -163,7 +163,7 @@ def fir(y, m, sch, line, value):
 
 
 def test_unexplained_zero_police_fails():
-    pop = [{"year": "2005", "muni_id": "a", "region": "r", "role": "ring", "population": "10"}]
+    pop = [{"year": "2005", "muni_id": "a", "region": "r", "role": "ring", "population": "10", "population_asof": "10"}]
     rows = [fir(2005, "a", "C_OP", "01310", "5")]
     with pytest.raises(bs.BuildError, match="no police spending"):
         bs.build(rows, pop)
@@ -173,6 +173,6 @@ def test_unexplained_zero_police_fails():
 
 
 def test_population_without_spending_fails():
-    pop = [{"year": "2001", "muni_id": "a", "region": "r", "role": "core", "population": "10"}]
+    pop = [{"year": "2001", "muni_id": "a", "region": "r", "role": "core", "population": "10", "population_asof": "10"}]
     with pytest.raises(bs.BuildError, match="no spending"):
         bs.build([], pop)

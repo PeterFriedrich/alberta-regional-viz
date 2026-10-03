@@ -3,7 +3,8 @@ and ring, 2001 onward.
 
 Decision 9 as amended 2026-10-01: transfers = FIR 01910+01920 through 2022 and
 01912+01922 from 2023, summed into one total, in nominal dollars. Population =
-StatCan 17-10-0155 (decision 2026-10-02), which starts in 2001. Absorbed
+`population_asof`, StatCan 17-10-0155 on each year's boundaries (decision
+2026-10-02, audit Q1), which starts in 2001. Absorbed
 municipalities' FIR rows are already filed under their member (decision 8).
 The ring's per-capita value is its total transfers over its total population,
 not a mean of members' rates. The 5-year value is five years' transfers over
@@ -30,7 +31,8 @@ REPO = Path(__file__).resolve().parent.parent
 WINDOW = 5
 BASIS_NOTE = ("nominal dollars; total provincial transfers (FIR 01910+01920 to 2022, "
               "01912+01922 from 2023); population StatCan 17-10-0155 July 1 estimates, "
-              "2021 boundaries; 2025 board membership applied to all years")
+              "moved onto each year's boundaries with StatCan 92F0009X annexation counts; "
+              "2025 board membership applied to all years")
 FIELDS = ["region", "level", "unit", "role", "year", "transfers", "population", "per_capita",
           "per_capita_5yr", "basis_note"]
 
@@ -55,7 +57,7 @@ def member_transfers(fir_rows) -> tuple[dict, dict]:
 
 def build(fir_rows, pop_rows) -> list[dict]:
     transfers, negative = member_transfers(fir_rows)
-    pop = {(int(r["year"]), r["muni_id"]): int(r["population"]) for r in pop_rows}
+    pop = {(int(r["year"]), r["muni_id"]): int(r["population_asof"]) for r in pop_rows}
     info = {r["muni_id"]: (r["region"], r["role"]) for r in pop_rows}
     missing = sorted(k for k in pop if k not in transfers)
     if missing:

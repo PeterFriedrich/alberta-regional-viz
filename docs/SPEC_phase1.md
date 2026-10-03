@@ -101,10 +101,22 @@ that have it.
   already inside Parkland, which matches decision 8's fixed membership.
   Annexations are back-cast, unlike the equalized assessment's as-of-year
   boundaries. The 2019 Leduc County → Edmonton annexation moved 542 people.
-  Charts state "population: StatCan July 1 estimates, 2021 boundaries".
-  **Audit Q1 (2026-10-03) found the mismatch beyond its bar in member rows and
-  Calgary's police ring** (`docs/FINDINGS_per_capita_boundaries_2026-10-03.md`).
-  The remedy is Peter's call (TODO).
+- **Per-capita denominators are on each year's boundaries (decided 2026-10-03).**
+  FIR dollars cover each year's own boundaries. Audit Q1 found the 2021-boundary
+  population off by more than its bar: 58 of 525 member-years beyond 1%
+  (Chestermere −8.2%), and Calgary's police ring −2.6% in 2001
+  (`docs/FINDINGS_per_capita_boundaries_2026-10-03.md`).
+  - So `population_asof` = 17-10-0155 with each annexation's people moved back to
+    the losing municipality for the years before it took effect, and forward
+    for the years after 2021. Both builds divide by it.
+  - The events are in `data/annexations.csv`: 29 from StatCan 92F0009X, with the
+    effective date and the census count of the transferred area.
+  - An annexation counts from the first year whose July 1 falls on or after its
+    effective date.
+  - The area's population is held at its pre-change census count in every
+    earlier year.
+  - Charts state "population: StatCan July 1 estimates, on each year's
+    boundaries".
 - **Revisions:** 2001–2020 are final intercensal estimates. 2021 is final
   postcensal, 2022–2024 updated postcensal, 2025 preliminary. The fetch
   records the release date, and later releases will move recent years.
@@ -327,7 +339,8 @@ Phase 2 (FIR):
 7. **`fetch_population.py`** → `data/raw/population/` + manifest, and
    `data/processed/population.csv` (committed, so CI runs
    `tests/test_population.py`): StatCan 17-10-0155, one row per member per
-   year 2001–2025, with the estimate status and release date
+   year 2001–2025, with the estimate status and release date, and
+   `population_asof` on each year's boundaries from `data/annexations.csv`
    (§"Population basis").
 8. **`build_transfers.py`** → `data/processed/transfers_per_capita.csv`
    (committed; `tests/test_build_transfers.py` recomputes every row): total

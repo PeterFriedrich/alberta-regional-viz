@@ -6,8 +6,16 @@ joined through data/csd_crosswalk.csv (2021 rows); a member missing in any
 year fails the run. The estimate status per year is parsed from the table's own
 footnote, so a release that changes it fails until this parser is updated.
 
+`population_asof` moves each value onto that year's boundaries, because FIR
+dollars are reported on them (audit Q1,
+docs/FINDINGS_per_capita_boundaries_2026-10-03.md). The table back-casts every
+annexation to 2021 boundaries; data/annexations.csv (StatCan 92F0009X: date and
+people moved) undoes that. An annexation counts from the first year whose
+July 1, the estimate's reference date, falls on or after its effective date.
+
 Usage:
     python src/fetch_population.py [--raw data/raw/population] [--out data/processed/population.csv]
+                                   [--annexations data/annexations.csv]
 """
 import argparse
 import csv
@@ -18,7 +26,7 @@ import re
 import sys
 import urllib.request
 import zipfile
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -31,6 +39,7 @@ PID = "17100155"
 CSV_URL = f"https://www150.statcan.gc.ca/n1/tbl/csv/{PID}-eng.zip"
 META_URL = "https://www150.statcan.gc.ca/t1/wds/rest/getCubeMetadata"
 FIRST_YEAR = 2001
+BOUNDARY_DATE = date(2021, 1, 1)  # 2021 Census boundaries are those in effect on this date
 # 2021 CSD DGUIDs are "2021A0005" + the 7-digit SGC code.
 CSD_DGUID = re.compile(r"^2021A0005(\d{7})$")
 STATUS_NOTE = re.compile(
@@ -102,12 +111,45 @@ def extract(table_rows, by_uid: dict[str, dict], status: dict[int, str], release
     return sorted(out, key=lambda r: (r["region"], r["role"] != "core", r["muni_id"], r["year"]))
 
 
+def add_asof(rows: list[dict], events: list[dict]) -> list[dict]:
+    """Add `population_asof` to each row. Names in an event that aren't members are
+    neighbours outside the region; an event with no member fails."""
+    asof = {(r["muni_id"], r["year"]): r["population"] for r in rows}
+    munis = {r["muni_id"] for r in rows}
+    years = sorted({r["year"] for r in rows})
+    for e in events:
+        if not {e["gainer"], e["loser"]} & munis:
+            raise FetchError(f"annexation {e} involves no member")
+        d, n = date.fromisoformat(e["effective"]), int(e["people"])
+        for y in years:
+            in_effect = d <= date(y, 7, 1)
+            # The table counts annexed people where they live on 2021 boundaries.
+            if d <= BOUNDARY_DATE and not in_effect:
+                sign = -1
+            elif d > BOUNDARY_DATE and in_effect:
+                sign = 1
+            else:
+                continue
+            if e["gainer"] in munis:
+                asof[(e["gainer"], y)] += sign * n
+            if e["loser"] in munis:
+                asof[(e["loser"], y)] -= sign * n
+    out = []
+    for r in rows:
+        r = dict(r)
+        items = list(r.items())
+        i = [k for k, _ in items].index("population") + 1
+        out.append(dict(items[:i] + [("population_asof", asof[(r["muni_id"], r["year"])])] + items[i:]))
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--raw", type=Path, default=REPO / "data/raw/population")
     ap.add_argument("--out", type=Path, default=REPO / "data/processed/population.csv")
     ap.add_argument("--crosswalk", type=Path, default=REPO / "data/csd_crosswalk.csv")
     ap.add_argument("--regions", type=Path, default=REPO / "data/regions.csv")
+    ap.add_argument("--annexations", type=Path, default=REPO / "data/annexations.csv")
     args = ap.parse_args(argv)
     args.raw.mkdir(parents=True, exist_ok=True)
 
@@ -125,6 +167,7 @@ def main(argv=None):
     with zipfile.ZipFile(io.BytesIO(body)) as z, z.open(f"{PID}.csv") as f:
         rows = extract(csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")),
                        members(args.crosswalk, args.regions), status, release)
+    rows = add_asof(rows, list(csv.DictReader(args.annexations.open())))
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", newline="") as f:

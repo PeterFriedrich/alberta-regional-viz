@@ -140,6 +140,9 @@ Boundaries.
 
 ## Remedy, sized
 
+**Peter chose A on 2026-10-03, and it is built:** `population_asof` in
+`population.csv`, from `data/annexations.csv`. See the DECISIONS row of that date.
+
 The choice is Peter's, because it changes the `population.csv` contract. My
 recommendation is A.
 

@@ -8,6 +8,23 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **PETER'S CALL — per-capita population on each year's boundaries?** — DECIDED A and BUILT 2026-10-03: `population_asof`, `data/annexations.csv`, DECISIONS row. (audit Q1, 2026-10-03,
+  `docs/FINDINGS_per_capita_boundaries_2026-10-03.md` §"Remedy, sized"). On 2021 boundaries:
+  - 58 of 525 member-years are off by more than 1%. Worst: Chestermere −8.2%, Rocky View
+    +7.0%, and Leduc County +5.1% for 2001–18.
+  - Calgary's police ring is −2.6% in 2001 and −0.7% in 2011, because about 1,560 people
+    annexed out of the police-excluded counties already sit in the ring's denominator.
+  - Edmonton's core and ring are within 0.21%.
+
+  Options:
+  - **A (recommended):** commit the 29-row annexation table (StatCan 92F0009X) and derive
+    `population_asof` for both builds. This changes the `population.csv` contract, so
+    propose it first.
+  - **B:** keep 2021 boundaries, drop the 58 member-years from member charts, and note
+    the bias on charts.
+
+  Don't build either without a yes. The choice also governs the 1997–2000 item below.
+
 - [x] **Next session: run audit Q1** — DONE 2026-10-03 (S9). It FAILs the brief's bar:
   `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`; the remedy is the next item.
   (`docs/AUDIT_LEDGER.md` §"Queued"): whether the per-capita

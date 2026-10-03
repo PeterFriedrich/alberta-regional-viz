@@ -244,7 +244,9 @@ census's boundaries, so a member's population is the sum of its rows that year.
 ### StatCan — population estimates, table 17-10-0155 (fetched 2026-10-02): `src/fetch_population.py` → `data/processed/population.csv`
 July 1 estimates by CSD on **2021 boundaries**, 2001–2025, release 2026-01-14
 (StatCan Open Licence). Decision 2026-10-02. The output is committed, 525 rows:
-`muni_id, region, role, year, population, estimate_status, csd_uid, release`.
+`muni_id, region, role, year, population, population_asof, estimate_status, csd_uid, release`.
+`population` is the table's value, on 2021 boundaries. `population_asof` is the same
+value on that year's boundaries (below), and it is what the per-capita builds divide by.
 - **Source:** the full-table CSV `www150.statcan.gc.ca/n1/tbl/csv/17100155-eng.zip`.
   `releaseTime` and the footnotes come from WDS `getCubeMetadata`. The raw zip and
   `manifest.json` (sha256) are in `data/raw/population/` (gitignored).
@@ -259,13 +261,24 @@ July 1 estimates by CSD on **2021 boundaries**, 2001–2025, release 2026-01-14
   Parkland +2.9%. Never mix them with census counts in one series.
 - **Annexations are back-cast** to 2021 boundaries, unlike the equalized
   assessment, which uses each year's boundaries.
+  - **`population_asof` undoes this** (decided 2026-10-03), using
+    `data/annexations.csv`. That file has these columns:
+    `effective, gainer, loser, people, change_list`.
+    - `gainer`/`loser` are member `muni_id`s or lower-case names of non-member
+      neighbours.
+    - `people` is the census count of the transferred area at the census before
+      the change.
+    - `change_list` is the 92F0009X list that carries the event, which is also
+      its census window. It's needed because two changes effective 2006-01-01
+      fall in different windows.
+    - Guarded by `test_annexations_reproduce_the_census_adjusted_counts`.
   - Audit Q1 (2026-10-03) listed every annexation 2001–2025 that moved people and
     involves a member: 29 events from StatCan 92F0009X, which match the census
     adjusted counts. Event table and errors:
     `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`.
-  - Against FIR's as-of-year dollars, the per-capita error reaches 8.2% in member rows
+  - Before `population_asof`, against FIR's as-of-year dollars, the per-capita error reached 8.2% in member rows
     (Chestermere 2001) and 2.6% in Calgary's police ring (2001). Edmonton's core and
-    ring stay within 0.21%.
+    ring stayed within 0.21%.
   - 92F0009X change codes 8/9 and 10/11 are StatCan map or population corrections, not
     annexations. Chestermere's +442 in 2001 is one.
   - Comparing 17-10-0142 with 0155 isolates boundary moves only in census years:

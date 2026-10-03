@@ -26,14 +26,15 @@ def recompute():
         y = int(r["fir_year"])
         if r["line_code"] in lines(y):
             t[(r["muni_id"], y)] += float(r["value"])
-    p = {(r["muni_id"], int(r["year"])): int(r["population"]) for r in POP}
+    p = {(r["muni_id"], int(r["year"])): int(r["population_asof"]) for r in POP}
     return t, p
 
 
 def test_core_values_pinned():
-    assert ROW[("edmonton", "side", "core", 2010)]["per_capita"] == "516.79"
+    # 516.79 / 496.26 on 2021 boundaries; the 542 people annexed in 2019 come out (audit Q1).
+    assert ROW[("edmonton", "side", "core", 2010)]["per_capita"] == "517.12"
     assert ROW[("calgary", "side", "core", 2023)]["per_capita"] == "317.0"
-    assert ROW[("edmonton", "side", "core", 2010)]["per_capita_5yr"] == "496.26"
+    assert ROW[("edmonton", "side", "core", 2010)]["per_capita_5yr"] == "496.6"
 
 
 def test_every_row_matches_an_independent_recompute():
@@ -77,6 +78,6 @@ def test_negative_line_is_kept_and_named():
 
 
 def test_population_without_transfers_fails():
-    pop = [{"year": "2001", "muni_id": "a", "region": "r", "role": "core", "population": "10"}]
+    pop = [{"year": "2001", "muni_id": "a", "region": "r", "role": "core", "population": "10", "population_asof": "10"}]
     with pytest.raises(bt.BuildError, match="no transfers"):
         bt.build([], pop)
