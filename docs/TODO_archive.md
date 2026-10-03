@@ -8,6 +8,14 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Next session: run audit Q1** — DONE 2026-10-03 (S9). It FAILs the brief's bar:
+  `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`; the remedy is the next item.
+  (`docs/AUDIT_LEDGER.md` §"Queued"): whether the per-capita
+  numerators (FIR, each year's own boundaries) and denominators (StatCan, back-cast to 2021
+  boundaries) cover the same people, across every annexation 2001–2025 involving a member.
+  Queued 2026-10-03.
+
+
 - [x] **Where do rural counties record Police Funding Model payments?** Parkland, Rocky View
   and Sturgeon report $0 police in every year 2017–2023, including after the model started
   in 2020, and no protective-services line shows a matching step. Ask Municipal Affairs, or
