@@ -47,7 +47,8 @@ FUNCTIONS = {"police": ("01210", "02250"), "transit": ("01310", "02350"),
 # Parkland, Rocky View and Sturgeon report $0 police in every year 2017–2025, and
 # Foothills through 2020 (SPEC_phase1.md §"Phase 2b basis").
 POLICE_EXCLUDED = {"foothills", "parkland", "rocky_view", "sturgeon"}
-# Single-year zeros, not yet explained (TODO: rural Police Funding Model item).
+# Single-year reclassifications (data/DATA.md §"Spending per capita"): Cochrane 2022
+# booked police under bylaw enforcement, Devon 2021 all protective services as "other".
 POLICE_ZERO_YEARS = {(2022, "cochrane"), (2021, "devon")}
 FIRST_YEAR = {"housing": ACCRUAL}
 BASIS_NOTE = ("nominal dollars; gross operating cost = FIR Schedule C operating expenditure "

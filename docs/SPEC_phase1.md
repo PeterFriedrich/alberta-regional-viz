@@ -149,11 +149,14 @@ capital purchases. Schedule E reports amortization by function from 2009.
 - **Police excludes the rural counties.** Parkland, Rocky View and Sturgeon
   report $0 police in every year checked (2017–2023), and Foothills does until
   2021. Rural areas get provincial RCMP service. The Police Funding Model
-  payments these counties have made since 2020 are not in the police line, and
-  no other protective-services line shows a matching step. Police per capita
-  therefore covers the cores and the ring members that report police spending,
-  with those members' population, and the chart names who is excluded. Also
-  check suspicious single-year zeros before use: Cochrane 2022, Devon 2021.
+  payments these counties have made since 2020 are a provincial requisition,
+  collected on the tax bill like the education tax, so they are not a municipal
+  expense in any FIR function (Parkland County's property-tax page, checked
+  2026-10-03). Police per capita therefore covers the cores and the ring
+  members that report police spending, with those members' population, and the
+  chart names who is excluded. Two single-year zeros are reclassifications and
+  are excluded for that year: Cochrane 2022 booked police under bylaw
+  enforcement, and Devon 2021 booked all protective services as "other".
 - **Caveats the charts carry:**
   - Public housing depends on how each city is organized. Calgary Housing
     Company is in Calgary's books ($102–128M in 2008–09). Edmonton's housing

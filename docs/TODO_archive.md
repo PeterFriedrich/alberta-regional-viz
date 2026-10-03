@@ -8,6 +8,17 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Where do rural counties record Police Funding Model payments?** Parkland, Rocky View
+  and Sturgeon report $0 police in every year 2017–2023, including after the model started
+  in 2020, and no protective-services line shows a matching step. Ask Municipal Affairs, or
+  check a county's audited statements. Also check the single-year zeros: Cochrane 2022,
+  Devon 2021.
+  **Done 2026-10-03 (S8):** the Police Funding Model is a provincial requisition on the tax
+  bill, not a municipal expense (Parkland County). Cochrane 2022 booked police under bylaw;
+  Devon 2021 booked all protective services as "other". Exclusions unchanged
+  (`data/DATA.md` §"Spending per capita").
+
+
 - [x] **Phase 2b module (proposal first: a new module).** Spec locked 2026-10-02
   (`docs/SPEC_phase1.md` §"Phase 2b basis"). Parse Schedule C (Operating ≤2008; accrual
   2009+), Schedule E amortization (2009+) and Schedule E sales and user charges for the

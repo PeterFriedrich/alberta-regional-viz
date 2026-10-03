@@ -190,6 +190,18 @@ net_per_capita, excluded, basis_note`. Nominal dollars. Basis: `docs/SPEC_phase1
   2020–24). Kept as printed and named in `basis_note`.
 - **Police zeros:** Foothills to 2020; Parkland 2012–25 except 2018; Rocky View
   2012–25; Sturgeon 2001–25 except 2011; Cochrane 2022; Devon 2021.
+  - **Cochrane 2022** booked police under bylaw enforcement: police $0 and bylaw
+    $7.58M, against police $4.07M and bylaw $1.03M in 2021, and police $6.08M in 2023.
+  - **Devon 2021** booked all protective services as "other protective" ($2.46M):
+    police, fire and bylaw are all $0 that year (2020: $1.12M, $0.65M, $0.57M).
+  - **Rural counties:** the Police Funding Model (from 2020) is a provincial
+    requisition collected on the tax bill under "Requisitions & Other", like the
+    education tax, so it is not an expense in any FIR function (Parkland County,
+    https://www.parklandcounty.com/home-property-utilities/property-taxes/,
+    checked 2026-10-03). Rocky View's audited statements have no police line;
+    their segment note puts "fire, police and traffic enforcement" under Emergency
+    Services, and the FIR bylaw line equals their Bylaw enforcement expense
+    ($6,806,720 in 2021), so locally contracted policing likely sits there.
 - **Calgary FCSS swings as printed:** Schedule C 01400 is $233M in 2022, $185M
   (2023), $136M (2024) and $245M (2025). Not investigated.
 - **Annual reports used for the 2009 overlap** (Wayback copies, in
