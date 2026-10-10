@@ -8,6 +8,17 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Calgary FCSS swings year to year.** — CHECKED 2026-10-10: mostly FIR classification, see `docs/FINDINGS_spending_jumps_2026-10-10.md`. Schedule C 01400 is $233M (2022), $185M (2023),
+  $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
+  the FCSS chart ships: a reclassification would be a basis break, not spending.
+
+
+- [x] **Unexplained jumps in the spending series** — CHECKED 2026-10-10: Calgary housing = classification; Edmonton housing = real (AHIP, RHI, $70.0M Homeward transfer); Edmonton FCSS 2007 = likely classification. `docs/FINDINGS_spending_jumps_2026-10-10.md`. (seen in `notebooks/01_first_look`,
+  2026-10-10): Calgary-core housing dips in 2016 and 2022, Edmonton-core housing spikes
+  2021–2023, Edmonton-core FCSS more than doubles over 2005–2007. Same check as the
+  Calgary FCSS item before any of them is quoted.
+
+
 - [x] **PETER'S CALL — per-capita population on each year's boundaries?** — DECIDED A and BUILT 2026-10-03: `population_asof`, `data/annexations.csv`, DECISIONS row. (audit Q1, 2026-10-03,
   `docs/FINDINGS_per_capita_boundaries_2026-10-03.md` §"Remedy, sized"). On 2021 boundaries:
   - 58 of 525 member-years are off by more than 1%. Worst: Chestermere −8.2%, Rocky View
