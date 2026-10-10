@@ -158,11 +158,11 @@ fig.tight_layout()
 # - **Police ring excludes** members that report no police spending (rural RCMP costs
 #   aren't in that line): Parkland and Sturgeon (Edmonton), Foothills and Rocky View
 #   (Calgary), every year; plus the unexplained zeros Devon 2021 and Cochrane 2022.
-# - **Calgary FCSS is unchecked**: $233M → $185M → $136M → $245M over 2022–2025 as printed.
-#   Not to be quoted until checked against Calgary's annual reports (TODO).
-# - **Seen here, not yet explained**: Calgary-core housing dips in 2016 and 2022, the
-#   Edmonton-core housing spike in 2021–2023, and Edmonton-core FCSS more than doubling
-#   over 2005–2007. Each needs the same annual-report check before it is quoted.
+# - **Calgary-core FCSS and housing are not comparable year to year**: Calgary moves amounts
+#   between FIR function lines (2016, 2020, 2022, probably 2025). The 2022 housing dip and
+#   FCSS spike are one move, not spending. Edmonton-core FCSS before 2007 is probably on
+#   another basis. Edmonton-core housing 2021–2023 is real, and 2022 includes a $70.0M
+#   non-cash transfer to Homeward Trust. `docs/FINDINGS_spending_jumps_2026-10-10.md`.
 
 # %%
 FUNCS = ["police", "transit", "fcss", "housing"]

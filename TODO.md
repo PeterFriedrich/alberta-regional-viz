@@ -78,14 +78,13 @@ symptom and re-measure the stated cause before acting on it.
   Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
   must be on the same basis as the series around it, or the chart says so.
 
-- [ ] **Calgary FCSS swings year to year.** Schedule C 01400 is $233M (2022), $185M (2023),
-  $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
-  the FCSS chart ships: a reclassification would be a basis break, not spending.
-
-- [ ] **Unexplained jumps in the spending series** (seen in `notebooks/01_first_look`,
-  2026-10-10): Calgary-core housing dips in 2016 and 2022, Edmonton-core housing spikes
-  2021–2023, Edmonton-core FCSS more than doubles over 2005–2007. Same check as the
-  Calgary FCSS item before any of them is quoted.
+- [ ] **PETER'S CALL — what to do with the classification-unstable spending series.**
+  (`docs/FINDINGS_spending_jumps_2026-10-10.md` §"Options".) Calgary moves amounts between
+  its FCSS, housing, economic development, planning and land & housing rentals lines in
+  FIR: 2016, 2020, 2022 and probably 2025. Edmonton FCSS before 2007 is probably on another
+  basis, and Edmonton housing 2022 includes a $70.0M non-cash transfer to Homeward Trust.
+  A: drop Calgary-core FCSS and housing from charts (recommended); B: combine FCSS + housing
+  from 2009 with gaps; C: keep and mark.
 
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
@@ -112,6 +111,9 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Calgary FCSS swings year to year.** — 2026-10-10 · `docs/TODO_archive.md`
+- [x] **Unexplained jumps in the spending series** — 2026-10-10 · `docs/TODO_archive.md`
 
 - [x] **PETER'S CALL — per-capita population on each year's boundaries?** — DECIDED 2026-10-03 · `docs/TODO_archive.md`
 
