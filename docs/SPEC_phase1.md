@@ -172,6 +172,18 @@ capital purchases. Schedule E reports amortization by function from 2009.
   chart names who is excluded. Two single-year zeros are reclassifications and
   are excluded for that year: Cochrane 2022 booked police under bylaw
   enforcement, and Devon 2021 booked all protective services as "other".
+- **Series not built: classification-unstable lines** (decided 2026-10-10,
+  `docs/FINDINGS_spending_jumps_2026-10-10.md`). Calgary moves amounts between its
+  FCSS, housing, economic development, planning and land & housing rentals lines from
+  one FIR return to the next (2016, 2020, 2022, probably 2025), so its FCSS and housing
+  series are not comparable year to year. Edmonton's FCSS line doubles in 2007 while the
+  City's own "Community and family" spending grows 9%. `NOT_COMPARABLE` in
+  `src/build_spending.py` builds no row for a unit containing Calgary (FCSS, housing,
+  every year) or Edmonton (FCSS before 2007). The Calgary core-vs-ring comparison is
+  therefore police and transit only; each ring keeps its FCSS and housing rows.
+  Edmonton housing 2021–2023 is real (affordable-housing grants, the federal Rapid
+  Housing Initiative), and its 2022 rows name a one-time non-cash transfer to Homeward
+  Trust of about $70.0M in `basis_note` (`ONE_OFF`).
 - **Caveats the charts carry:**
   - Public housing depends on how each city is organized. Calgary Housing
     Company is in Calgary's books ($102–128M in 2008–09). Edmonton's housing

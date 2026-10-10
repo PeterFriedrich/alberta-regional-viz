@@ -26,6 +26,12 @@ POLICE_ZERO_YEARS, which are unexplained single-year zeros. Both drop out of
 the numerator and the population, and the row's `excluded` names them. Any
 other member-year with no police spending fails the run.
 
+Some members code a function inconsistently in FIR from year to year, moving
+amounts between it and neighbouring lines (docs/FINDINGS_spending_jumps_2026-10-10.md).
+NOT_COMPARABLE lists them, and no row is built for a unit containing the member in
+those years: Calgary FCSS and housing in every year, Edmonton FCSS before 2007.
+The other members of the same side keep their rows.
+
 Usage:
     python src/build_spending.py [--fir ...] [--population ...] [--out data/processed/spending_per_capita.csv]
 """
@@ -52,6 +58,16 @@ POLICE_EXCLUDED = {"foothills", "parkland", "rocky_view", "sturgeon"}
 # booked police under bylaw enforcement, Devon 2021 all protective services as "other".
 POLICE_ZERO_YEARS = {(2022, "cochrane"), (2021, "devon")}
 FIRST_YEAR = {"housing": ACCRUAL}
+# (function, muni_id): first comparable year, or None for none. Calgary moves amounts
+# between FCSS, housing, economic development, planning and land & housing rentals
+# (2016, 2020, 2022, 2025); Edmonton's FCSS line doubles in 2007 while the City's own
+# "Community and family" spending grows 9% (Peter, 2026-10-10, option A).
+NOT_COMPARABLE = {("fcss", "calgary"): None, ("housing", "calgary"): None,
+                  ("fcss", "edmonton"): 2007}
+# Real but one-time items a chart must caption, named in the basis_note of every row
+# whose unit contains the member.
+ONE_OFF = {(2022, "edmonton", "housing"): "includes a one-time non-cash transfer of land and "
+           "buildings to Homeward Trust, about $70.0M (City of Edmonton 2022 annual report)"}
 BASIS_NOTE = ("nominal dollars; gross operating cost = FIR Schedule C operating expenditure "
               "to 2008, Schedule C expense - Schedule E amortization from 2009 (accrual "
               "switch); net = gross - Schedule E sales and user charges; population StatCan "
@@ -86,6 +102,15 @@ def negative_note(year, munis, fn, gross) -> str:
     return f"; negative gross kept as printed (amortization above expense): {', '.join(neg)}" if neg else ""
 
 
+def comparable(year: int, munis, fn: str) -> bool:
+    for m in munis:
+        if (fn, m) in NOT_COMPARABLE:
+            first = NOT_COMPARABLE[(fn, m)]
+            if first is None or year < first:
+                return False
+    return True
+
+
 def police_excluded(year: int, muni: str) -> bool:
     return muni in POLICE_EXCLUDED or (year, muni) in POLICE_ZERO_YEARS
 
@@ -112,7 +137,7 @@ def build(fir_rows, pop_rows) -> list[dict]:
     out = []
     for (region, level, unit, role), munis in sorted(units.items()):
         for fn in FUNCTIONS:
-            for y in (y for y in years if y >= FIRST_YEAR.get(fn, 0)):
+            for y in (y for y in years if y >= FIRST_YEAR.get(fn, 0) and comparable(y, munis, fn)):
                 left_out = [m for m in munis if fn == "police" and police_excluded(y, m)]
                 kept = [m for m in munis if m not in left_out]
                 g = sum(gross[(y, m, fn)] for m in kept)
@@ -124,7 +149,8 @@ def build(fir_rows, pop_rows) -> list[dict]:
                             "gross_per_capita": round(g / p, 2) if p else "",
                             "net_per_capita": round((g - uc) / p, 2) if p else "",
                             "excluded": "|".join(left_out),
-                            "basis_note": BASIS_NOTE + negative_note(y, kept, fn, gross)})
+                            "basis_note": BASIS_NOTE + negative_note(y, kept, fn, gross)
+                            + "".join(f"; {ONE_OFF[(y, m, fn)]}" for m in kept if (y, m, fn) in ONE_OFF)})
     return out
 
 
@@ -143,7 +169,8 @@ def main(argv=None):
         w.writerows(rows)
     event(log, "wrote spending per capita", path=str(args.out), rows=len(rows),
           years=[rows[0]["year"], rows[-1]["year"]],
-          police_excluded_member_years=sum(1 for r in rows if r["level"] == "member" and r["excluded"]))
+          police_excluded_member_years=sum(1 for r in rows if r["level"] == "member" and r["excluded"]),
+          not_comparable=sorted(f"{fn}:{m}<{first or 'all'}" for (fn, m), first in NOT_COMPARABLE.items()))
     return 0
 
 

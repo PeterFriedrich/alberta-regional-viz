@@ -78,14 +78,6 @@ symptom and re-measure the stated cause before acting on it.
   Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
   must be on the same basis as the series around it, or the chart says so.
 
-- [ ] **PETER'S CALL — what to do with the classification-unstable spending series.**
-  (`docs/FINDINGS_spending_jumps_2026-10-10.md` §"Options".) Calgary moves amounts between
-  its FCSS, housing, economic development, planning and land & housing rentals lines in
-  FIR: 2016, 2020, 2022 and probably 2025. Edmonton FCSS before 2007 is probably on another
-  basis, and Edmonton housing 2022 includes a $70.0M non-cash transfer to Homeward Trust.
-  A: drop Calgary-core FCSS and housing from charts (recommended); B: combine FCSS + housing
-  from 2009 with gaps; C: keep and mark.
-
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
   the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?)
@@ -111,6 +103,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **PETER'S CALL — what to do with the classification-unstable spending series.** — DECIDED 2026-10-10 · `docs/TODO_archive.md`
 
 - [x] **Calgary FCSS swings year to year.** — 2026-10-10 · `docs/TODO_archive.md`
 - [x] **Unexplained jumps in the spending series** — 2026-10-10 · `docs/TODO_archive.md`

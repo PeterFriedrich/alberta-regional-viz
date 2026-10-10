@@ -8,6 +8,15 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **PETER'S CALL — what to do with the classification-unstable spending series.** — DECIDED A and BUILT 2026-10-10: `NOT_COMPARABLE`/`ONE_OFF` in `src/build_spending.py`, DECISIONS row.
+  (`docs/FINDINGS_spending_jumps_2026-10-10.md` §"Options".) Calgary moves amounts between
+  its FCSS, housing, economic development, planning and land & housing rentals lines in
+  FIR: 2016, 2020, 2022 and probably 2025. Edmonton FCSS before 2007 is probably on another
+  basis, and Edmonton housing 2022 includes a $70.0M non-cash transfer to Homeward Trust.
+  A: drop Calgary-core FCSS and housing from charts (recommended); B: combine FCSS + housing
+  from 2009 with gaps; C: keep and mark.
+
+
 - [x] **Calgary FCSS swings year to year.** — CHECKED 2026-10-10: mostly FIR classification, see `docs/FINDINGS_spending_jumps_2026-10-10.md`. Schedule C 01400 is $233M (2022), $185M (2023),
   $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
   the FCSS chart ships: a reclassification would be a basis break, not spending.
