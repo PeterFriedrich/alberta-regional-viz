@@ -34,6 +34,10 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - pdfplumber==0.11.10
 - openpyxl==3.1.5
 - xlrd==2.0.2
+- matplotlib==3.10.9
+- jupytext==1.19.5
+- nbconvert==7.17.1
+- ipykernel==7.2.0
 
 ## Locked decisions
 
@@ -69,6 +73,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **Explain the systematic FIR-vs-PDF gap before using FIR as a source.** The same report year matches exactly on 68% of member values, but where the two differ FIR is usually 0.1–5% *lower* (402 lower vs 82 higher). Find out why (a later revision? a different inclusion rule?) …
 - **FIR could fill report years 2008–2010** (the scanned-PDF gap, which holds Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler must be on the same basis as the series around it, or the chart says so.
 - **Calgary FCSS swings year to year.** Schedule C 01400 is $233M (2022), $185M (2023), $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before the FCSS chart ships: a reclassification would be a basis break, not spending.
+- **Unexplained jumps in the spending series** (seen in `notebooks/01_first_look`, 2026-10-10): Calgary-core housing dips in 2016 and 2022, Edmonton-core housing spikes 2021–2023, Edmonton-core FCSS more than doubles over 2005–2007. Same check as the Calgary FCSS item before any …
 - **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?) at the chart …
 - **Population 1997–2000.** 17-10-0155 starts in 2001, so `per_capita_5yr` starts in 2005, although FIR transfers go back to 1994. Look for an older StatCan CSD estimate series. Otherwise, propose linking the 1996 census count to the 2001 estimate by each member's 2001 …
 - **Phase 4 architecture pass: propose "no runtime third-party dependency"** as a DECISIONS row — every file the browser needs is static in the repo (no third-party APIs or tile CDNs), guarded by a test that scans built pages for external URLs. Include the attribution line …
@@ -100,6 +105,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - `docs/WEB_CACHE_BUSTING.md` — **read when the project first ships a web page**, or before touching the build step that stamps asset URLs
 - `docs/CLAUDE_WEB.md` — **read before a Claude web research chat**: the generated brief (`scripts/make_brief.py`), claude.ai Project sync, the reply format
 - `docs/COPIER.md` — **read before pulling template changes** (`copier update`) or starting a project from the template
+- `notebooks/` — internal report notebooks, paired `.py` (edit this) + executed `.ipynb`
 - `session-summary/` — session handoff notes
 
 ## Reply format
