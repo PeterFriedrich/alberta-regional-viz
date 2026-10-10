@@ -6,3 +6,8 @@ pdfplumber==0.11.10
 # data/fir_schema.json, so CI does not need these.
 openpyxl==3.1.5
 xlrd==2.0.2
+# Notebooks only (notebooks/); CI does not execute them.
+matplotlib==3.10.9
+jupytext==1.19.5
+nbconvert==7.17.1
+ipykernel==7.2.0

@@ -82,6 +82,11 @@ symptom and re-measure the stated cause before acting on it.
   $136M (2024) and $245M (2025), as printed. Check against Calgary's annual reports before
   the FCSS chart ships: a reclassification would be a basis break, not spending.
 
+- [ ] **Unexplained jumps in the spending series** (seen in `notebooks/01_first_look`,
+  2026-10-10): Calgary-core housing dips in 2016 and 2022, Edmonton-core housing spikes
+  2021–2023, Edmonton-core FCSS more than doubles over 2005–2007. Same check as the
+  Calgary FCSS item before any of them is quoted.
+
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
   the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?)
