@@ -26,6 +26,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - `docs/WEB_CACHE_BUSTING.md` — **read when the project first ships a web page**, or before touching the build step that stamps asset URLs.
 - `docs/CLAUDE_WEB.md` — **read before a Claude web research chat**: the generated brief (`scripts/make_brief.py`), claude.ai Project sync, the reply format. `docs/SCOPE.md` is its one hand-kept input. **A PR that changes a synced file (`docs/BRIEF.md`, `docs/SPEC_*.md`, `docs/ARCHITECTURE.md`, `docs/SCOPE_candidates.md`, `data/DATA.md`) opens its description with "After merge: press Sync in the claude.ai Project."** — the web side cannot notice it is stale.
 - `docs/COPIER.md` — **read before pulling template changes** (`copier update`) or starting a project from the template.
+- `notebooks/` — internal report notebooks, paired `.py` (edit this) + executed `.ipynb`. `01_first_look` charts the three committed outputs with their bases. Rebuild steps are in its first cell.
 - `session-summary/` — session handoff notes. Read the latest before starting work; older ones live in `session-summary/archive/` (don't bulk-read them).
 
 ## Token Efficiency
