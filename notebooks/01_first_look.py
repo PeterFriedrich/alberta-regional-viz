@@ -158,11 +158,13 @@ fig.tight_layout()
 # - **Police ring excludes** members that report no police spending (rural RCMP costs
 #   aren't in that line): Parkland and Sturgeon (Edmonton), Foothills and Rocky View
 #   (Calgary), every year; plus the unexplained zeros Devon 2021 and Cochrane 2022.
-# - **Calgary-core FCSS and housing are not comparable year to year**: Calgary moves amounts
-#   between FIR function lines (2016, 2020, 2022, probably 2025). The 2022 housing dip and
-#   FCSS spike are one move, not spending. Edmonton-core FCSS before 2007 is probably on
-#   another basis. Edmonton-core housing 2021–2023 is real, and 2022 includes a $70.0M
-#   non-cash transfer to Homeward Trust. `docs/FINDINGS_spending_jumps_2026-10-10.md`.
+# - **Not built (decided 2026-10-10):** Calgary-core FCSS and housing, and Edmonton-core FCSS
+#   before 2007. Calgary moves amounts between FIR function lines from year to year (2016,
+#   2020, 2022, probably 2025), and Edmonton's FCSS line doubles in 2007 while its own
+#   "Community and family" spending grows 9%. So Calgary's core-vs-ring comparison is police
+#   and transit. Edmonton-core housing 2021–2023 is real, and 2022 includes a one-time
+#   non-cash transfer to Homeward Trust of about $70.0M (marked).
+#   `docs/FINDINGS_spending_jumps_2026-10-10.md`.
 
 # %%
 FUNCS = ["police", "transit", "fcss", "housing"]
@@ -175,6 +177,11 @@ for i, func in enumerate(FUNCS):
         for role, color in [("core", CORE), ("ring", RING)]:
             s = d[d.role == role].set_index("year").gross_per_capita
             ax.plot(s.index, s, color=color, label=role)
+        if d[d.role == "core"].empty:
+            ax.text(0.02, 0.88, "core not built: FIR line not comparable year to year",
+                    transform=ax.transAxes, fontsize=8, color=MUTED, va="center")
+        if (func, region) == ("housing", "edmonton"):
+            mark(ax, 2022, "Homeward Trust\ntransfer (non-cash)", y=0.98)
         mark(ax, 2008.5, "2009 accrual")
         ax.set_title(f"{func.upper() if func == 'fcss' else func.title()} — {TITLE[region]}",
                      loc="left", color=INK, fontsize=9)

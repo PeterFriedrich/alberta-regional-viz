@@ -42,6 +42,25 @@ def test_police_exclusions_pinned():
     assert bs.POLICE_ZERO_YEARS == {(2022, "cochrane"), (2021, "devon")}
 
 
+def test_classification_unstable_series_are_not_built():
+    """docs/FINDINGS_spending_jumps_2026-10-10.md, option A (Peter, 2026-10-10)."""
+    assert bs.NOT_COMPARABLE == {("fcss", "calgary"): None, ("housing", "calgary"): None,
+                                 ("fcss", "edmonton"): 2007}
+    built = {(r["region"], r["unit"], r["function"]): set() for r in OUT}
+    for r in OUT:
+        built[(r["region"], r["unit"], r["function"])].add(int(r["year"]))
+    for unit in ("calgary", "core"):
+        assert ("calgary", unit, "fcss") not in built and ("calgary", unit, "housing") not in built
+        assert min(built[("edmonton", "edmonton" if unit == "calgary" else "core", "fcss")]) == 2007
+    # The ring and the other functions keep every year.
+    assert min(built[("calgary", "ring", "fcss")]) == min(built[("edmonton", "ring", "fcss")]) == 2001
+    assert min(built[("calgary", "ring", "housing")]) == 2009
+    assert min(built[("calgary", "core", "police")]) == 2001
+    # The Homeward Trust transfer is captioned where Edmonton is counted, and only there.
+    noted = {(r["unit"], int(r["year"])) for r in OUT if "Homeward Trust" in r["basis_note"]}
+    assert noted == {("edmonton", 2022), ("core", 2022)}
+
+
 def test_values_pinned_against_the_spec_table():
     """SPEC_phase1.md §"Phase 2b basis": Edmonton police 243.4M (2008 operating),
     249.9M (2009 expense - amortization)."""
@@ -79,7 +98,9 @@ def test_shape_and_basis():
     years = {int(r["year"]) for r in OUT}
     assert years == set(range(2001, max(years) + 1)) and max(years) >= 2025
     assert {r["unit"] for r in OUT if r["level"] == "member"} == members
-    assert len(OUT) == (len(members) + 4) * (3 * len(years) + len([y for y in years if y >= 2009]))
+    # Less the NOT_COMPARABLE series, each on its member row and its core row.
+    dropped = 2 * (len(years) + len([y for y in years if y >= 2009]) + (2007 - 2001))
+    assert len(OUT) == (len(members) + 4) * (3 * len(years) + len([y for y in years if y >= 2009])) - dropped
     assert min(int(r["year"]) for r in OUT if r["function"] == "housing") == 2009
     assert all(r["basis_note"].startswith("nominal dollars; gross operating cost") for r in OUT)
     assert ROW[("edmonton", "side", "ring", "police", 2015)]["excluded"] == "parkland|sturgeon"

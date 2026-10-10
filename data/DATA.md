@@ -170,8 +170,10 @@ per_capita, per_capita_5yr, basis_note`. Nominal dollars.
 - **No blank transfer values** in any member-year.
 
 #### Spending per capita (built 2026-10-02): `src/build_spending.py` → `data/processed/spending_per_capita.csv`
-Committed, 2,300 rows: 21 members plus core and ring for each region, × police,
-transit and FCSS for 2001–2025, and housing for 2009–2025. Columns: `region, level,
+Committed, 2,204 rows: 21 members plus core and ring for each region, × police,
+transit and FCSS for 2001–2025, and housing for 2009–2025, less the
+classification-unstable series (Calgary member and core: FCSS and housing, every year;
+Edmonton member and core: FCSS 2001–2006; 96 rows, `NOT_COMPARABLE`, decided 2026-10-10). Columns: `region, level,
 unit, role, function, year, gross, user_charges, net, population, gross_per_capita,
 net_per_capita, excluded, basis_note`. Nominal dollars. Basis: `docs/SPEC_phase1.md`
 §"Phase 2b basis" and §"The 2009 accrual switch, measured".

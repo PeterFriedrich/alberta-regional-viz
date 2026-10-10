@@ -37,7 +37,10 @@ same books.
   comparable jumps in the notebook. Ring lines are small; the same kind of
   classification noise would be smaller in dollars but not ruled out.
 
-## Options (Peter's call; nothing changed in `src/` yet)
+## Options
+
+**Decided 2026-10-10: A** (Peter). Built as `NOT_COMPARABLE` and `ONE_OFF` in
+`src/build_spending.py`; guard `tests/test_build_spending.py::test_classification_unstable_series_are_not_built`.
 
 - **A. Drop the Calgary-core FCSS and housing series from charts.** The
   split-screen comparison uses police and transit for Calgary. Edmonton FCSS starts in
