@@ -35,6 +35,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - openpyxl==3.1.5
 - xlrd==2.0.2
 - matplotlib==3.10.9
+- pandas==3.0.6
 - jupytext==1.19.5
 - nbconvert==7.17.1
 - ipykernel==7.2.0
@@ -97,7 +98,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - `docs/SCOPE_candidates.md` — the two data tracks (Track A per-parcel peers, dropped by decision 1; Track B province-wide aggregates) and the reasoning behind the locked decisions; also distils the 2026-09-26 core-vs-ring timeline brief (Calgary, map app, timeline mode, mandate register)
 - `docs/SPIKE_regional_lens.md` — **history (Track A, dropped by decision 1)**: the 2026-07-17 per-parcel feasibility spike on St. Albert and Strathcona County
 - `docs/DECISIONS.md` — append-only index of locked decisions: one row + pointer to the doc holding the full reasoning
-- `docs/TOKEN_EFFICIENCY.md` — context/token hygiene (what NOT to read raw, session-summary archiving)
+- `docs/TOKEN_EFFICIENCY.md` — context/token hygiene (what NOT to read raw, session-summary archiving) and disk use (scratch intermediates, `df -h /` before a big build)
 - `docs/DATA_ISSUES.md` — register of defects in data we DON'T control: evidence, what it breaks here, and **whether the publisher has been told**
 - `docs/AUDIT_LEDGER.md` — coverage map of executed audit runs
 - `data/DATA.md` — data source details, column names, known quirks
