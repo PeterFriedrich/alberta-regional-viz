@@ -35,6 +35,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - openpyxl==3.1.5
 - xlrd==2.0.2
 - matplotlib==3.10.9
+- pandas==3.0.6
 - jupytext==1.19.5
 - nbconvert==7.17.1
 - ipykernel==7.2.0
