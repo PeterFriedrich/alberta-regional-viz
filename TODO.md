@@ -68,15 +68,11 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **FIR could fill report years 2008–2010** (the scanned-PDF gap, which holds
-  Edmonton's 72% anchor year). **Peter's call on the basis** (gap explained
-  2026-10-17: FIR is a revised vintage). The options:
-  - (a) fill the gap from FIR, with a `basis_note` naming the vintage. Next to
-    the gap, the FIR share is within 0.27 pp of the PDF on `nr`, 2005–2012 (Edmonton −0.21
-    in 2006, −0.16 in 2011).
-  - (b) leave the gap and have the chart show it.
-  - (c) a second, all-FIR series for 1997–2025, which is one vintage
-    throughout. FIR's Calgary 2001 NR is wrong, so 2001 needs handling.
+- [ ] **Fill report years 2008–2010 from FIR** (the scanned-PDF gap, which holds
+  Edmonton's 72% anchor year). **Decided 2026-10-17 (Peter): option (a)**, with
+  a `basis_note` naming the revised FIR vintage. The size estimate is
+  `docs/ASSUMPTIONS.md` A4. This is an output-schema change, so propose the plan
+  before building. Add the DECISIONS row together with its guard.
 
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
