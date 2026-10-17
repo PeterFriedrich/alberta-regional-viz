@@ -20,6 +20,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - `docs/DECISIONS.md` — append-only index of locked decisions: one row + pointer to the doc holding the full reasoning. **Add a row whenever a decision locks.** Check it before re-opening anything that feels "already settled".
 - `docs/TOKEN_EFFICIENCY.md` — context/token hygiene (what NOT to read raw, session-summary archiving) and disk use (scratch intermediates, `df -h /` before a big build). **Read before bulk-reading data or summaries.**
 - `docs/DATA_ISSUES.md` — register of defects in data we DON'T control: evidence, what it breaks here, and **whether the publisher has been told**. A finding that never leaves the repo is the standing failure mode; "the artifact exists" is not sent.
+- `docs/ASSUMPTIONS.md` — assumptions log: every premise a number rests on that no guard proves, with status, size if wrong, and how to test it. **Add an entry when a number starts depending on something unproven; check it before scoping an audit.**
 - `docs/AUDIT_LEDGER.md` — coverage map of executed audit runs. **Add a row when an audit executes; check it before scoping a new one.**
 - `data/DATA.md` — data source details, column names, known quirks. **Read before touching any data files. Update if you discover anything new.**
 - `docs/REMOTE_VM.md` — **read FIRST in a Claude Code web/remote VM session**: network-policy constraints, environment setup.

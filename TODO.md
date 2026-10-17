@@ -68,15 +68,11 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.**
-  The same report year matches exactly on 68% of member values, but where the
-  two differ FIR is usually 0.1–5% *lower* (402 lower vs 82 higher). Find out
-  why (a later revision? a different inclusion rule?) from the
-  EA manual or a publisher question. This blocks the next item.
-
-- [ ] **FIR could fill report years 2008–2010** (the scanned-PDF gap, which holds
-  Edmonton's 72% anchor year). It is blocked on the item above: a gap-filler
-  must be on the same basis as the series around it, or the chart says so.
+- [ ] **Fill report years 2008–2010 from FIR** (the scanned-PDF gap, which holds
+  Edmonton's 72% anchor year). **Decided 2026-10-17 (Peter): option (a)**, with
+  a `basis_note` naming the revised FIR vintage. The size estimate is
+  `docs/ASSUMPTIONS.md` A4. This is an output-schema change, so propose the plan
+  before building. Add the DECISIONS row together with its guard.
 
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
@@ -103,6 +99,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.** — 2026-10-17 · `docs/TODO_archive.md`
 
 - [x] **PETER'S CALL — what to do with the classification-unstable spending series.** — DECIDED 2026-10-10 · `docs/TODO_archive.md`
 
