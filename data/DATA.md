@@ -138,7 +138,9 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
   - The province's **"Updated equalized assessment"** report (open.alberta.ca
     package `c41ae976-…`, published for 2024–2026 only) states that it reflects
     "assessment changes … reported by municipalities to the province up to
-    February 28" of the next year.
+    February 28" of the next year. Its footnote ties report year 2024 to "the
+    2022 assessment year". Alberta taxes that in 2023, which supports
+    `taxation_year = report_year − 1`.
   - For report year 2025 it equals FIR on 101 of 104 member-class values; the
     PDF equals FIR on 81 of 104.
   - FIR 2024 matches neither exactly, so FIR is a database extract taken at
