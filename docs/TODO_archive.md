@@ -8,6 +8,11 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.**
+  Explained 2026-10-17: FIR's EA is a later, revised vintage of the PDF
+  figures. See `data/DATA.md` §"Parsed (2026-10-02)".
+
+
 - [x] **PETER'S CALL — what to do with the classification-unstable spending series.** — DECIDED A and BUILT 2026-10-10: `NOT_COMPARABLE`/`ONE_OFF` in `src/build_spending.py`, DECISIONS row.
   (`docs/FINDINGS_spending_jumps_2026-10-10.md` §"Options".) Calgary moves amounts between
   its FCSS, housing, economic development, planning and land & housing rentals lines in

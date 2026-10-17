@@ -131,9 +131,31 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
   of 1,532 values at that offset, and on ≤ 12 one year either side
   (`test_fir_year_is_the_equalized_report_year`).
 - **FIR vs PDF, same report year:** 68% exact, 89% within 1%, 98% within 5%.
-  Where they differ, FIR is usually *lower* (402 lower vs 82 higher). The cause
-  is unknown (a later revision? a different inclusion rule?). It is TODO, and
-  it matters because FIR could fill the PDF gap (below).
+  Where they differ, FIR is usually *lower* (402 lower vs 82 higher).
+  **Cause (2026-10-17): FIR's EA is a later vintage, revised for assessment
+  changes municipalities reported after the original report.** It is not a
+  different inclusion rule. The evidence:
+  - The province's **"Updated equalized assessment"** report (open.alberta.ca
+    package `c41ae976-…`, published for 2024–2026 only) states that it reflects
+    "assessment changes … reported by municipalities to the province up to
+    February 28" of the next year.
+  - For report year 2025 it equals FIR on 101 of 104 member-class values; the
+    PDF equals FIR on 81 of 104.
+  - FIR 2024 matches neither exactly, so FIR is a database extract taken at
+    FIR publication time, not a copy of either report.
+  - The differences sit in the market classes, which are the ones appealed:
+    NR and residential differ on about half of member-years. Province-assessed
+    linear, M&E and railway mostly match.
+  - Edmonton and Calgary NR and residential never match, in any year.
+  - Reductions dominate, and they peak in the 2016 downturn year (Edmonton NR
+    −$2.04B, −4.9%).
+
+  **Effect on the core share** (FIR-built minus committed, Calgary 2001 excluded):
+  - From 2005: Calgary within 0.28 pp. Edmonton's median is about −0.08 pp,
+    with −0.84 pp (`nr`) in 2016 and +0.70 pp (`nr_all`) in 2024.
+  - 2000–2003: Edmonton up to −1.5 pp.
+
+  The research folder is `/home/opc/research/alberta-regional-viz/fir_pdf_gap_2026-10-17/`.
 - **FIR covers report years 2008–2010**, which is the scanned-PDF gap that holds
   Edmonton's 72% anchor year. This is not used yet (TODO).
 - **The four kept-as-printed anomalies:** in each case FIR's row adds up to its
