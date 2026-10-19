@@ -2,10 +2,11 @@
 
 Joins the parsed long table to data/regions.csv (fixed 2025 board membership,
 decision 8) and writes one row per (region, report_year, basis). Every member
-must be found in every year, exactly once, or the build fails.
+must be found in every year, exactly once, or the build fails. Report years
+2008-2010 (scanned PDFs) come from FIR's EA schedule; `source` says which.
 
 Usage:
-    python src/build_share_series.py [--long ...] [--regions ...] [--out-dir data/processed]
+    python src/build_share_series.py [--long ...] [--fir ...] [--regions ...] [--out-dir data/processed]
 """
 import argparse
 import csv
@@ -47,7 +48,14 @@ MIN_SHARE_PP = 0.25
 # docs/DATA_ISSUES.md). A key here must still fire, or the build fails. Empty
 # since 2026-10-02: the three it held are corrected from FIR (data/corrections.csv).
 KNOWN_ANOMALIES: set = set()
+# Report years whose PDF is image-only are filled from FIR's EA schedule, a later
+# extract revised for assessment changes (Peter, 2026-10-17; docs/ASSUMPTIONS.md A4,
+# data/DATA.md §"Parsed (2026-10-02)"). Railway and co-gen M&E blanks count as 0.
+FIR_FILL = {2008, 2009, 2010}
+FIR_CLASSES = {"08275": "nr", "08265": "nr_linear", "08290": "nr_railway", "08295": "nr_cogen_me",
+               "08270": "me", "08280": "residential", "08285": "farmland"}
 BASIS_NOTE = "equalized assessment; 2025 board membership applied to all years"
+FIR_NOTE = "; from FIR EA schedule (revised vintage; the report is a scanned PDF)"
 OLD_NR_NOTE = "; NR includes railway (1998-2004 reports print them together)"
 
 
@@ -130,6 +138,30 @@ def apply_corrections(found, corrections):
     return printed
 
 
+def fill_from_fir(found, years, fir_rows, regions):
+    """Add the FIR_FILL report years to `found` from FIR's EA lines (absorbed
+    villages are already filed under their member). Fails if a fill year also has
+    PDF data, a member is missing, or any year in the span has neither source."""
+    if FIR_FILL & set(years):
+        raise BuildError(f"report years {sorted(FIR_FILL & set(years))} have PDF data; drop them from FIR_FILL")
+    mids = {r["muni_id"] for r in regions}
+    for row in fir_rows:
+        y = int(row["fir_year"])
+        if (y in FIR_FILL and row["schedule"] == "EA" and row["muni_id"] in mids
+                and row["line_code"] in FIR_CLASSES and row["value"]):
+            vals = found[(y, row["muni_id"])]
+            cls = FIR_CLASSES[row["line_code"]]
+            vals[cls] = vals.get(cls, 0) + round(float(row["value"]))
+    missing = [(y, m) for y in sorted(FIR_FILL) for m in sorted(mids) if (y, m) not in found]
+    if missing:
+        raise BuildError(f"members not in FIR EA: {missing}")
+    filled = sorted(set(years) | FIR_FILL)
+    gaps = sorted(set(range(filled[0], filled[-1] + 1)) - set(filled))
+    if gaps:
+        raise BuildError(f"report years in neither the PDFs nor FIR_FILL: {gaps}")
+    return filled
+
+
 def basis_values(found, y, mids, basis):
     classes = (OLD_BASES if "nr_incl_railway" in found[(y, mids[0])] else BASES)[basis]
     return {m: sum(found[(y, m)].get(c, 0) for c in classes) for m in mids}
@@ -200,10 +232,12 @@ def shares(found, years, regions, printed=None):
                                and m in val)
                 ring_v = sum(v for m, v in val.items() if m != core[0])
                 out.append({"region": region, "report_year": y, "taxation_year": y - 1,
+                            "source": "fir_ea" if y in FIR_FILL else "pdf",
                             "basis": basis, "core_value": core_v, "ring_value": ring_v,
                             "core_share": round(core_v / (core_v + ring_v), 6),
                             "n_members_found": len(val), "n_members_expected": len(members),
                             "basis_note": BASIS_NOTE + (OLD_NR_NOTE if old[0] and basis == "nr" else "")
+                            + (FIR_NOTE if y in FIR_FILL else "")
                             + (f"; corrected from FIR EA: {', '.join(fixed)}" if fixed else "")})
     return out
 
@@ -211,6 +245,7 @@ def shares(found, years, regions, printed=None):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--long", type=Path, default=REPO / "data/processed/equalized_long.csv")
+    ap.add_argument("--fir", type=Path, default=REPO / "data/processed/fir_long.csv")
     ap.add_argument("--regions", type=Path, default=REPO / "data/regions.csv")
     ap.add_argument("--corrections", type=Path, default=REPO / "data/corrections.csv")
     ap.add_argument("--out-dir", type=Path, default=REPO / "data/processed")
@@ -220,6 +255,8 @@ def main(argv=None):
     with args.long.open() as f:
         long_rows = list(csv.DictReader(f))
     found, years = member_values(long_rows, regions)
+    with args.fir.open() as f:
+        years = fill_from_fir(found, years, csv.DictReader(f), regions)
     with args.corrections.open() as f:
         printed = apply_corrections(found, list(csv.DictReader(f)))
     check_continuity(found, years, regions)
@@ -233,12 +270,13 @@ def main(argv=None):
     region_of = {r["muni_id"]: r for r in regions}
     with (args.out_dir / "member_assessment.csv").open("w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["region", "muni_id", "role", "report_year", "taxation_year", "class", "value",
-                    "printed_value"])
+        w.writerow(["region", "muni_id", "role", "report_year", "taxation_year", "source", "class",
+                    "value", "printed_value"])
         for (y, mid), vals in sorted(found.items()):
             r = region_of[mid]
             for c, v in sorted(vals.items()):
-                w.writerow([r["region"], mid, r["role"], y, y - 1, c, v, printed.get((y, mid, c), "")])
+                w.writerow([r["region"], mid, r["role"], y, y - 1, "fir_ea" if y in FIR_FILL else "pdf",
+                            c, v, printed.get((y, mid, c), "")])
     event(log, "wrote series", rows=len(series), years=years)
     return 0
 
