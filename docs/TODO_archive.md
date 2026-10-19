@@ -8,6 +8,15 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Find a second external anchor at another year** for the share series. Done
+  2026-10-19: UPE01548's 72% (2008) is in the FIR-filled years, and both anchors
+  fit only as assessment years (`docs/DECISIONS.md` 2026-10-19).
+
+
+- [x] **Fill report years 2008–2010 from FIR.** Built 2026-10-19
+  (`docs/SPEC_phase1.md` §"Phase 1c").
+
+
 - [x] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.**
   Explained 2026-10-17: FIR's EA is a later, revised vintage of the PDF
   figures. See `data/DATA.md` §"Parsed (2026-10-02)".

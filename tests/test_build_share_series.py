@@ -125,15 +125,111 @@ def test_fetch_duplicate_year_and_vanished_year():
 SERIES = REPO / "data/processed/core_ring_share.csv"
 
 
-def test_reproduces_upe01548():
-    """City of Edmonton UPE01548 (2024-06-19, p. 5): Edmonton's share of the
-    region's non-residential assessment fell from 72% (2008) to 60% (2022),
-    13 EMRB members. Fits the NR + linear basis (docs/SCOPE_candidates.md §"Spike")."""
+def _series():
     with SERIES.open() as f:
-        s = {(r["region"], int(r["taxation_year"]), r["basis"]): float(r["core_share"])
-             for r in csv.DictReader(f)}
-    assert abs(s[("edmonton", 2022, "nr_linear")] - 0.60) <= 0.01
-    assert s[("edmonton", 2010, "nr_linear")] <= 0.72
+        return {(r["region"], int(r["report_year"]), r["basis"]): r for r in csv.DictReader(f)}
+
+
+def _fir_shares():
+    """{(region, report_year, basis): core share} built from the committed fir_long.csv
+    the way fill_from_fir does, for any year FIR covers."""
+    v = {}
+    for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
+        if r["schedule"] == "EA" and r["line_code"] in bss.FIR_CLASSES and r["value"]:
+            k = (int(r["fir_year"]), r["muni_id"], bss.FIR_CLASSES[r["line_code"]])
+            v[k] = v.get(k, 0) + round(float(r["value"]))
+    reg = list(csv.DictReader(open(REPO / "data/regions.csv", newline="")))
+    out = {}
+    for y in {k[0] for k in v}:
+        for region in {r["region"] for r in reg}:
+            members = [r for r in reg if r["region"] == region]
+            core = next(r["muni_id"] for r in members if r["role"] == "core")
+            for basis, classes in bss.BASES.items():
+                val = {r["muni_id"]: sum(v.get((y, r["muni_id"], c), 0) for c in classes)
+                       for r in members}
+                out[(region, y, basis)] = val[core] / sum(val.values())
+    return out
+
+
+def test_reproduces_upe01548():
+    """City of Edmonton UPE01548 (2024-06-19, p. 5): Edmonton's share of the region's
+    non-residential assessment fell from 72% (2008) to 60% (2022), 13 EMRB members,
+    on the NR + linear basis (docs/SCOPE_candidates.md §"Spike").
+
+    The City's years fit as ASSESSMENT years (report year - 2, the province's own
+    wording: "2024 equalized assessment" <- "2022 assessment year"). Worst error over
+    both anchors: +1 (taxation year) 3.8 pp, +2 0.48 pp, +3 1.0 pp. The 72% point is
+    report 2010, filled from FIR (docs/ASSUMPTIONS.md A4), hence the 0.6 pp tolerance:
+    0.5 for the City's rounding plus FIR's revised vintage."""
+    s = _series()
+
+    def worst(offset):
+        return max(abs(float(s[("edmonton", label + offset, "nr_linear")]["core_share"]) - anchor)
+                   for label, anchor in ((2008, 0.72), (2022, 0.60)))
+
+    errors = {k: worst(k) for k in (1, 2, 3)}
+    assert min(errors, key=errors.get) == 2, errors
+    assert errors[2] <= 0.006, errors
+
+
+def test_only_the_scanned_years_are_filled_from_fir():
+    """Report years 2008-2010 come from FIR's EA schedule and say so; every other
+    year is the PDF. A filled row's values are FIR's own."""
+    s = _series()
+    fir_years = {y for (_, y, _), r in s.items() if r["source"] == "fir_ea"}
+    assert fir_years == bss.FIR_FILL == {2008, 2009, 2010}
+    assert {r["source"] for r in s.values()} == {"pdf", "fir_ea"}
+    fir = _fir_shares()
+    for (region, y, basis), r in s.items():
+        assert ("FIR EA schedule" in r["basis_note"]) == (y in bss.FIR_FILL)
+        if y in bss.FIR_FILL:
+            assert abs(float(r["core_share"]) - fir[(region, y, basis)]) < 1e-6
+
+
+def test_fir_fill_is_within_the_accepted_seam_gap():
+    """docs/ASSUMPTIONS.md A4: FIR is a revised vintage, accepted for 2008-2010 because
+    next to the gap it sits within 0.3 pp of the PDF series on every basis (max
+    0.21 pp, Edmonton nr_all 2011, measured 2026-10-19)."""
+    s, fir = _series(), _fir_shares()
+    for y in (min(bss.FIR_FILL) - 1, max(bss.FIR_FILL) + 1):
+        for region in ("edmonton", "calgary"):
+            for basis in bss.BASES:
+                assert s[(region, y, basis)]["source"] == "pdf"
+                gap = abs(fir[(region, y, basis)] - float(s[(region, y, basis)]["core_share"]))
+                assert gap <= 0.003, (region, y, basis, gap)
+
+
+def _fir_row(year, muni, line, value):
+    return {"fir_year": str(year), "muni_id": muni, "schedule": "EA", "line_code": line,
+            "value": str(value)}
+
+
+def test_fill_from_fir_adds_the_fill_years_and_sums_absorbed_rows(tmp_path):
+    reg = regions(tmp_path, REGION)
+    found, years = bss.member_values(long(2007, "Core City", nr=10) + long(2011, "Core City", nr=10)
+                                     + long(2007, "Ring County", nr=5) + long(2011, "Ring County", nr=5),
+                                     reg)
+    rows = [_fir_row(y, m, "08275", 7) for y in (2008, 2009, 2010) for m in ("core", "ring")]
+    rows += [_fir_row(2009, "ring", "08275", 2), _fir_row(2009, "ring", "08290", ""),
+             {**_fir_row(2009, "ring", "08275", 99), "schedule": "D"}]
+    assert bss.fill_from_fir(found, years, rows, reg) == list(range(2007, 2012))
+    assert found[(2009, "ring")] == {"nr": 9}
+    out = bss.shares(found, list(range(2007, 2012)), reg)
+    assert {r["report_year"] for r in out if r["source"] == "fir_ea"} == {2008, 2009, 2010}
+
+
+def test_fill_from_fir_refuses_overlap_missing_members_and_gaps(tmp_path):
+    reg = regions(tmp_path, REGION)
+    both = [_fir_row(y, m, "08275", 7) for y in (2008, 2009, 2010) for m in ("core", "ring")]
+    found, years = bss.member_values(long(2008, "Core City", nr=1) + long(2008, "Ring County", nr=1), reg)
+    with pytest.raises(bss.BuildError, match="have PDF data"):
+        bss.fill_from_fir(found, years, both, reg)
+    found, years = bss.member_values(long(2007, "Core City", nr=1) + long(2007, "Ring County", nr=1), reg)
+    with pytest.raises(bss.BuildError, match="members not in FIR EA"):
+        bss.fill_from_fir(found, years, [r for r in both if r["muni_id"] == "core"], reg)
+    found, years = bss.member_values(long(2005, "Core City", nr=1) + long(2005, "Ring County", nr=1), reg)
+    with pytest.raises(bss.BuildError, match=r"neither the PDFs nor FIR_FILL: \[2006, 2007\]"):
+        bss.fill_from_fir(found, years, both, reg)
 
 
 def test_fir_corrections_are_in_the_committed_series():

@@ -22,10 +22,10 @@ Status values:
 
 | ID | Assumption | Status | If wrong (rough size) | Evidence and test |
 |----|------------|--------|-----------------------|-------------------|
-| A1 | `taxation_year = report_year − 1` | SUPPORTED | Every point shifts one year | `data/DATA.md` §"Parsed (2026-10-02)" (FIR vs PDF bullet); `docs/AUDIT_LEDGER.md` 2026-09-28 #3 row; test: TODO "second external anchor" |
+| A1 | `taxation_year = report_year − 1` | SUPPORTED | Every point shifts one year | `data/DATA.md` §"Parsed (2026-10-02)" (FIR vs PDF bullet). The City's two anchors fit only as assessment years (report − 2), which agrees with A1 if the City labels by assessment year: `tests/test_build_share_series.py::test_reproduces_upe01548`, `docs/DECISIONS.md` 2026-10-19 |
 | A2 | Equalized assessment has one basis across 1998–2026 (the 1997–1999 reports are printed "capped") | UNVERIFIED | Unmeasured; matters only if capping hit core and ring unevenly | `docs/FINDINGS_quick_audits_2026-09-28.md` §#4; test: `docs/AUDIT_LEDGER.md` "Never audited" #2 |
 | A3 | The PDFs are the original equalized assessment; FIR `EA` is a later, revised extract | SUPPORTED (2025 only) | A4's estimate fails with it | `data/DATA.md` §"Parsed (2026-10-02)"; test: `/home/opc/research/alberta-regional-viz/fir_pdf_gap_2026-10-17/join.py` on the next updated year |
-| A4 | FIR is close enough to fill report years 2008–2010 | ACCEPTED (Peter, 2026-10-17; not built) | About 0.1–0.3 pp; up to about 1 pp in a downturn year | `data/DATA.md` §"Parsed (2026-10-02)"; `TODO.md` "Fill report years 2008–2010"; test: text-layer 2008–2010 reports (`docs/DATA_ISSUES.md`) |
+| A4 | FIR is close enough to fill report years 2008–2010 | ACCEPTED (Peter, 2026-10-17; built 2026-10-19) | About 0.1–0.3 pp; up to about 1 pp in a downturn year | `docs/SPEC_phase1.md` §"Phase 1c"; seam guard `tests/test_build_share_series.py::test_fir_fill_is_within_the_accepted_seam_gap`; still open: text-layer 2008–2010 reports (`docs/DATA_ISSUES.md`) |
 | A5 | Railway inside NR in 1998–2004 moves the share by ≤0.1 pp | UNVERIFIED for those years | The `nr` headline steps at 2005 | `docs/DECISIONS.md` 2026-09-28 railway row; test: FIR line 08290 for 1998–2004 |
 | A6 | FIR 2001's NR column includes railway | SUPPORTED | 2001 FIR-vs-PDF comparisons are off by the railway amount | `data/DATA.md` §"Parsed (2026-10-02)" |
 | A7 | Spruce Grove's negative 2015 conditional transfers are a reversal | UNVERIFIED | The `basis_note` text only | `data/DATA.md` §"Transfers per capita"; test: Spruce Grove's 2015 audited statements |

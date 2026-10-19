@@ -1,157 +1,175 @@
-region,report_year,taxation_year,basis,core_value,ring_value,core_share,n_members_found,n_members_expected,basis_note
-calgary,1998,1997,nr,10334797775,553127439,0.949198,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,1998,1997,nr_linear,11253745518,1163193559,0.906322,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1998,1997,nr_all,11468732438,1540791196,0.881564,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1999,1998,nr,11344686304,612368730,0.948786,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,1999,1998,nr_linear,12278313362,1233564857,0.908705,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1999,1998,nr_all,12495092003,1633469487,0.884385,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2000,1999,nr,16338037304,709905452,0.958358,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,2000,1999,nr_linear,17306469884,1326634832,0.928802,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2000,1999,nr_all,17510344994,1779009752,0.907772,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2001,2000,nr,16560193827,772889214,0.95541,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,2001,2000,nr_linear,17507110137,1424264864,0.924767,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2001,2000,nr_all,17708847807,1917281364,0.90231,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2002,2001,nr,17461075200,891143740,0.951442,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,2002,2001,nr_linear,18463618710,1564480320,0.921886,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2002,2001,nr_all,18665387000,2068077190,0.900254,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2003,2002,nr,19055977797,992252732,0.950507,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,2003,2002,nr_linear,20127655937,1719345272,0.921301,8,8,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: calgary nr_linear (printed 1,860,234,990)"
-calgary,2003,2002,nr_all,20329481687,2229177582,0.901183,8,8,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: calgary nr_linear (printed 1,860,234,990)"
-calgary,2004,2003,nr,19012246937,1075387778,0.946465,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,2004,2003,nr_linear,20154202947,1876278298,0.914833,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2004,2003,nr_all,20356070577,2404133478,0.894371,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2005,2004,nr,19828957673,1212672219,0.942368,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2005,2004,nr_linear,21330934743,2101265949,0.910326,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2005,2004,nr_all,21330934743,2629170089,0.890269,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2006,2005,nr,22124989568,1334967256,0.943096,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2006,2005,nr_linear,23724522418,2328169356,0.910636,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2006,2005,nr_all,23724522418,2906716426,0.890853,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2007,2006,nr,26520934194,1616975245,0.942534,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2007,2006,nr_linear,28209147124,2753850615,0.91106,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2007,2006,nr_all,28209147124,3364246405,0.893447,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2011,2010,nr,49702862091,3610731805,0.932274,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2011,2010,nr_linear,51648476854,5142752305,0.909445,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2011,2010,nr_all,51944130974,5904693495,0.897929,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2012,2011,nr,47488859693,3975828885,0.922746,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2012,2011,nr_linear,49478004686,5579831835,0.898655,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2012,2011,nr_all,49773658806,6331058625,0.887156,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2013,2012,nr,49243025694,4213404546,0.921181,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2013,2012,nr_linear,51265707667,5868719196,0.897282,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2013,2012,nr_all,51566091847,6579206656,0.886849,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2014,2013,nr,60030409202,4691231465,0.927517,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2014,2013,nr_linear,62064870355,6393510105,0.906607,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2014,2013,nr_all,62374494655,7116419345,0.897592,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2015,2014,nr,67053888216,5128296226,0.928953,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2015,2014,nr_linear,69118191779,6915109236,0.909052,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2015,2014,nr_all,69432436079,7662962786,0.900604,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2016,2015,nr,73140437729,5792761648,0.926612,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2016,2015,nr_linear,75298617392,7706704868,0.907154,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2016,2015,nr_all,75631711692,8471509948,0.899272,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2017,2016,nr,71008604115,6281158120,0.918732,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
-calgary,2017,2016,nr_linear,73856329808,8190022630,0.900178,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
-calgary,2017,2016,nr_all,74196334808,8932701540,0.892544,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
-calgary,2018,2017,nr,67339376830,6623312151,0.910451,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2018,2017,nr_linear,70205858783,8482087431,0.892206,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2018,2017,nr_all,70555863783,9186335601,0.8848,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2019,2018,nr,64159226848,6991106974,0.901742,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2019,2018,nr_linear,67094676503,8808873384,0.883946,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2019,2018,nr_all,67449531431,9684383874,0.874447,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2020,2019,nr,56735638132,7321737654,0.8857,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2020,2019,nr_linear,59511088412,9200722644,0.866097,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2020,2019,nr_all,59865943332,10059949404,0.856134,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2021,2020,nr,59152531013,7526426104,0.887124,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2021,2020,nr_linear,62032069633,9303854894,0.869577,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2021,2020,nr_all,62394014553,9998041464,0.86189,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2022,2021,nr,56571715774,7629264500,0.881166,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2022,2021,nr_linear,59523833224,9415906340,0.863418,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2022,2021,nr_all,59889398144,10187601430,0.854623,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2023,2022,nr,53304878817,8062380979,0.868621,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2023,2022,nr_linear,56309167957,9861138689,0.850973,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2023,2022,nr_all,56683867957,10719347889,0.840967,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2024,2023,nr,56078974716,9553815230,0.854435,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2024,2023,nr_linear,59255502116,11425524480,0.838351,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2024,2023,nr_all,59637692116,12334065590,0.828626,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2025,2024,nr,58711131291,11265387040,0.839012,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2025,2024,nr_linear,62750656391,13212166400,0.826071,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2025,2024,nr_all,63143926391,14153115520,0.8169,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2026,2025,nr,61845108245,12716107240,0.829454,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2026,2025,nr_linear,66068913925,14970197420,0.815272,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,2026,2025,nr_all,66473973925,15994319070,0.806055,8,8,equalized assessment; 2025 board membership applied to all years
-edmonton,1998,1997,nr,7334447179,2189964061,0.770068,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,1998,1997,nr_linear,8337771379,4321082956,0.658651,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,1998,1997,nr_all,8960144409,6947940462,0.563245,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,1999,1998,nr,7281643026,2352821577,0.755791,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); corrected from FIR EA: devon nr_incl_railway (printed 99,815,242)"
-edmonton,1999,1998,nr_linear,8278045608,4446830910,0.65054,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
-edmonton,1999,1998,nr_all,8915828638,7094578843,0.556877,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon me (printed 4,682,174), devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
-edmonton,2000,1999,nr,8717757040,2565544102,0.772625,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,2000,1999,nr_linear,9726792450,4635795822,0.677231,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2000,1999,nr_all,10290405340,7564056142,0.576349,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2001,2000,nr,8414713342,2656109874,0.76008,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
-edmonton,2001,2000,nr_linear,9338033082,4711981934,0.664628,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
-edmonton,2001,2000,nr_all,10123625962,7775914484,0.56558,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
-edmonton,2002,2001,nr,9617199291,2868259897,0.770272,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,2002,2001,nr_linear,10546381311,5156022877,0.671641,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2002,2001,nr_all,11314149441,8413196427,0.573526,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2003,2002,nr,10072875475,3146521841,0.761977,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,2003,2002,nr_linear,11031670735,5435082211,0.669936,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2003,2002,nr_all,11820521159,8815767923,0.572803,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2004,2003,nr,10947916773,3418418674,0.762054,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,2004,2003,nr_linear,11948554053,5704921204,0.676839,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2004,2003,nr_all,12722468587,9159807634,0.581405,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2005,2004,nr,11018983086,3720409957,0.747587,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2005,2004,nr_linear,12103711681,6068297167,0.666063,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2005,2004,nr_all,12800443233,10984013177,0.538185,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2006,2005,nr,12552629343,4097854729,0.75389,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2006,2005,nr_linear,13717573945,6583895179,0.675694,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2006,2005,nr_all,14420639400,11956502539,0.54671,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2007,2006,nr,14521653976,4800604737,0.751551,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2007,2006,nr_linear,15751643538,7757697507,0.670016,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2007,2006,nr_all,16566248557,13526185087,0.550512,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2011,2010,nr,31121956103,9751187577,0.761428,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2011,2010,nr_linear,32638691975,13321207857,0.710156,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2011,2010,nr_all,33599273155,22063413317,0.603623,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2012,2011,nr,32450697063,10458012429,0.756273,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2012,2011,nr_linear,34101634601,14029916719,0.708509,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2012,2011,nr_all,35012589816,22770102329,0.605936,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2013,2012,nr,32830444961,11613005202,0.738702,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2013,2012,nr_linear,34550548717,16028192532,0.683104,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2013,2012,nr_all,35511906615,27417468472,0.564314,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2014,2013,nr,36214974092,13003758232,0.735797,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2014,2013,nr_linear,37958822349,17410721702,0.685554,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2014,2013,nr_all,38923475726,29103881102,0.572174,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2015,2014,nr,39441227543,14867203690,0.726245,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2015,2014,nr_linear,41232419405,19430597860,0.679696,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2015,2014,nr_all,42151326005,31481793880,0.572451,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2016,2015,nr,41412161225,17094178502,0.707823,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2016,2015,nr_linear,43273599342,21841735862,0.664568,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2016,2015,nr_all,44146610574,33914733182,0.565537,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2017,2016,nr,42099286091,18812210138,0.691155,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2017,2016,nr_linear,43949616477,23633830058,0.650301,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2017,2016,nr_all,44799022193,36257514298,0.552689,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2018,2017,nr,40413232411,19040945809,0.679737,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2018,2017,nr_linear,42210890441,24010647219,0.637419,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2018,2017,nr_all,43070501408,37067794389,0.537452,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2019,2018,nr,40694074934,19463115073,0.676462,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2019,2018,nr_linear,42522305289,24474859683,0.634688,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2019,2018,nr_all,43367895923,37969184163,0.533187,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2020,2019,nr,41105248987,19949926350,0.673248,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2020,2019,nr_linear,43011545847,25124252120,0.631262,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2020,2019,nr_all,43833738463,38709622200,0.531039,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2021,2020,nr,40549602023,20754665149,0.661448,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2021,2020,nr_linear,42464843353,25900478089,0.621146,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2021,2020,nr_all,43334933333,39510214349,0.523084,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2022,2021,nr,37373229594,20592210124,0.64475,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2022,2021,nr_linear,39333798664,25664138754,0.605155,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2022,2021,nr_all,40197038452,42053982854,0.488712,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2023,2022,nr,36220924846,21012640447,0.632862,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2023,2022,nr_linear,38273057756,25974123407,0.595716,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2023,2022,nr_all,39136206644,42101651387,0.481748,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2024,2023,nr,38716648097,22183139920,0.635744,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2024,2023,nr_linear,40883637167,27027300480,0.602018,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2024,2023,nr_all,41754489481,45455700670,0.47878,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2025,2024,nr,39034724437,23604766519,0.623165,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2025,2024,nr_linear,41316277687,28502158389,0.591767,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2025,2024,nr_all,42225940923,48785059709,0.463965,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2026,2025,nr,38812697402,24937956534,0.60882,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2026,2025,nr_linear,41246740332,30457661394,0.575233,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,2026,2025,nr_all,42258821244,51363549004,0.451375,13,13,equalized assessment; 2025 board membership applied to all years
+region,report_year,taxation_year,source,basis,core_value,ring_value,core_share,n_members_found,n_members_expected,basis_note
+calgary,1998,1997,pdf,nr,10334797775,553127439,0.949198,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,1998,1997,pdf,nr_linear,11253745518,1163193559,0.906322,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,1998,1997,pdf,nr_all,11468732438,1540791196,0.881564,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,1999,1998,pdf,nr,11344686304,612368730,0.948786,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,1999,1998,pdf,nr_linear,12278313362,1233564857,0.908705,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,1999,1998,pdf,nr_all,12495092003,1633469487,0.884385,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2000,1999,pdf,nr,16338037304,709905452,0.958358,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,2000,1999,pdf,nr_linear,17306469884,1326634832,0.928802,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2000,1999,pdf,nr_all,17510344994,1779009752,0.907772,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2001,2000,pdf,nr,16560193827,772889214,0.95541,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,2001,2000,pdf,nr_linear,17507110137,1424264864,0.924767,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2001,2000,pdf,nr_all,17708847807,1917281364,0.90231,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2002,2001,pdf,nr,17461075200,891143740,0.951442,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,2002,2001,pdf,nr_linear,18463618710,1564480320,0.921886,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2002,2001,pdf,nr_all,18665387000,2068077190,0.900254,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2003,2002,pdf,nr,19055977797,992252732,0.950507,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,2003,2002,pdf,nr_linear,20127655937,1719345272,0.921301,8,8,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: calgary nr_linear (printed 1,860,234,990)"
+calgary,2003,2002,pdf,nr_all,20329481687,2229177582,0.901183,8,8,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: calgary nr_linear (printed 1,860,234,990)"
+calgary,2004,2003,pdf,nr,19012246937,1075387778,0.946465,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+calgary,2004,2003,pdf,nr_linear,20154202947,1876278298,0.914833,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2004,2003,pdf,nr_all,20356070577,2404133478,0.894371,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2005,2004,pdf,nr,19828957673,1212672219,0.942368,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2005,2004,pdf,nr_linear,21330934743,2101265949,0.910326,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2005,2004,pdf,nr_all,21330934743,2629170089,0.890269,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2006,2005,pdf,nr,22124989568,1334967256,0.943096,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2006,2005,pdf,nr_linear,23724522418,2328169356,0.910636,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2006,2005,pdf,nr_all,23724522418,2906716426,0.890853,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2007,2006,pdf,nr,26520934194,1616975245,0.942534,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2007,2006,pdf,nr_linear,28209147124,2753850615,0.91106,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2007,2006,pdf,nr_all,28209147124,3364246405,0.893447,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2008,2007,fir_ea,nr,37544468459,2088576720,0.947302,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2008,2007,fir_ea,nr_linear,39533940879,3415380270,0.920479,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2008,2007,fir_ea,nr_all,39767591379,4132192330,0.905872,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2009,2008,fir_ea,nr,49300854138,2902004248,0.944409,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2009,2008,fir_ea,nr_linear,51374261308,4408628298,0.920968,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2009,2008,fir_ea,nr_all,51619600238,5200463358,0.908475,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2010,2009,fir_ea,nr,53476560676,3448868572,0.939414,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2010,2009,fir_ea,nr_linear,55490341499,5075276732,0.916202,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2010,2009,fir_ea,nr_all,55772414619,5868269572,0.904799,8,8,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+calgary,2011,2010,pdf,nr,49702862091,3610731805,0.932274,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2011,2010,pdf,nr_linear,51648476854,5142752305,0.909445,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2011,2010,pdf,nr_all,51944130974,5904693495,0.897929,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2012,2011,pdf,nr,47488859693,3975828885,0.922746,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2012,2011,pdf,nr_linear,49478004686,5579831835,0.898655,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2012,2011,pdf,nr_all,49773658806,6331058625,0.887156,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2013,2012,pdf,nr,49243025694,4213404546,0.921181,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2013,2012,pdf,nr_linear,51265707667,5868719196,0.897282,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2013,2012,pdf,nr_all,51566091847,6579206656,0.886849,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2014,2013,pdf,nr,60030409202,4691231465,0.927517,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2014,2013,pdf,nr_linear,62064870355,6393510105,0.906607,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2014,2013,pdf,nr_all,62374494655,7116419345,0.897592,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2015,2014,pdf,nr,67053888216,5128296226,0.928953,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2015,2014,pdf,nr_linear,69118191779,6915109236,0.909052,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2015,2014,pdf,nr_all,69432436079,7662962786,0.900604,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2016,2015,pdf,nr,73140437729,5792761648,0.926612,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2016,2015,pdf,nr_linear,75298617392,7706704868,0.907154,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2016,2015,pdf,nr_all,75631711692,8471509948,0.899272,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2017,2016,pdf,nr,71008604115,6281158120,0.918732,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
+calgary,2017,2016,pdf,nr_linear,73856329808,8190022630,0.900178,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
+calgary,2017,2016,pdf,nr_all,74196334808,8932701540,0.892544,8,8,equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: airdrie nr (printed 0)
+calgary,2018,2017,pdf,nr,67339376830,6623312151,0.910451,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2018,2017,pdf,nr_linear,70205858783,8482087431,0.892206,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2018,2017,pdf,nr_all,70555863783,9186335601,0.8848,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2019,2018,pdf,nr,64159226848,6991106974,0.901742,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2019,2018,pdf,nr_linear,67094676503,8808873384,0.883946,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2019,2018,pdf,nr_all,67449531431,9684383874,0.874447,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2020,2019,pdf,nr,56735638132,7321737654,0.8857,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2020,2019,pdf,nr_linear,59511088412,9200722644,0.866097,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2020,2019,pdf,nr_all,59865943332,10059949404,0.856134,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2021,2020,pdf,nr,59152531013,7526426104,0.887124,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2021,2020,pdf,nr_linear,62032069633,9303854894,0.869577,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2021,2020,pdf,nr_all,62394014553,9998041464,0.86189,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2022,2021,pdf,nr,56571715774,7629264500,0.881166,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2022,2021,pdf,nr_linear,59523833224,9415906340,0.863418,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2022,2021,pdf,nr_all,59889398144,10187601430,0.854623,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2023,2022,pdf,nr,53304878817,8062380979,0.868621,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2023,2022,pdf,nr_linear,56309167957,9861138689,0.850973,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2023,2022,pdf,nr_all,56683867957,10719347889,0.840967,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2024,2023,pdf,nr,56078974716,9553815230,0.854435,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2024,2023,pdf,nr_linear,59255502116,11425524480,0.838351,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2024,2023,pdf,nr_all,59637692116,12334065590,0.828626,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2025,2024,pdf,nr,58711131291,11265387040,0.839012,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2025,2024,pdf,nr_linear,62750656391,13212166400,0.826071,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2025,2024,pdf,nr_all,63143926391,14153115520,0.8169,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2026,2025,pdf,nr,61845108245,12716107240,0.829454,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2026,2025,pdf,nr_linear,66068913925,14970197420,0.815272,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,2026,2025,pdf,nr_all,66473973925,15994319070,0.806055,8,8,equalized assessment; 2025 board membership applied to all years
+edmonton,1998,1997,pdf,nr,7334447179,2189964061,0.770068,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+edmonton,1998,1997,pdf,nr_linear,8337771379,4321082956,0.658651,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,1998,1997,pdf,nr_all,8960144409,6947940462,0.563245,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,1999,1998,pdf,nr,7281643026,2352821577,0.755791,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); corrected from FIR EA: devon nr_incl_railway (printed 99,815,242)"
+edmonton,1999,1998,pdf,nr_linear,8278045608,4446830910,0.65054,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
+edmonton,1999,1998,pdf,nr_all,8915828638,7094578843,0.556877,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon me (printed 4,682,174), devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
+edmonton,2000,1999,pdf,nr,8717757040,2565544102,0.772625,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+edmonton,2000,1999,pdf,nr_linear,9726792450,4635795822,0.677231,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2000,1999,pdf,nr_all,10290405340,7564056142,0.576349,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2001,2000,pdf,nr,8414713342,2656109874,0.76008,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
+edmonton,2001,2000,pdf,nr_linear,9338033082,4711981934,0.664628,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
+edmonton,2001,2000,pdf,nr_all,10123625962,7775914484,0.56558,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: sturgeon nr_incl_railway (printed 647,603,090)"
+edmonton,2002,2001,pdf,nr,9617199291,2868259897,0.770272,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+edmonton,2002,2001,pdf,nr_linear,10546381311,5156022877,0.671641,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2002,2001,pdf,nr_all,11314149441,8413196427,0.573526,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2003,2002,pdf,nr,10072875475,3146521841,0.761977,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+edmonton,2003,2002,pdf,nr_linear,11031670735,5435082211,0.669936,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2003,2002,pdf,nr_all,11820521159,8815767923,0.572803,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2004,2003,pdf,nr,10947916773,3418418674,0.762054,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
+edmonton,2004,2003,pdf,nr_linear,11948554053,5704921204,0.676839,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2004,2003,pdf,nr_all,12722468587,9159807634,0.581405,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2005,2004,pdf,nr,11018983086,3720409957,0.747587,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2005,2004,pdf,nr_linear,12103711681,6068297167,0.666063,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2005,2004,pdf,nr_all,12800443233,10984013177,0.538185,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2006,2005,pdf,nr,12552629343,4097854729,0.75389,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2006,2005,pdf,nr_linear,13717573945,6583895179,0.675694,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2006,2005,pdf,nr_all,14420639400,11956502539,0.54671,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2007,2006,pdf,nr,14521653976,4800604737,0.751551,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2007,2006,pdf,nr_linear,15751643538,7757697507,0.670016,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2007,2006,pdf,nr_all,16566248557,13526185087,0.550512,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2008,2007,fir_ea,nr,17279395111,6075863923,0.73985,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2008,2007,fir_ea,nr_linear,18673842659,9375590633,0.665748,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2008,2007,fir_ea,nr_all,19564349356,16269178213,0.545979,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2009,2008,fir_ea,nr,24670964912,8551638765,0.742596,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2009,2008,fir_ea,nr_linear,26079079629,12154420045,0.6821,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2009,2008,fir_ea,nr_all,27002039843,19963030812,0.574939,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2010,2009,fir_ea,nr,33034158557,9975714370,0.76806,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2010,2009,fir_ea,nr_linear,34560315840,13762476350,0.715197,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2010,2009,fir_ea,nr_all,35477708214,22868770880,0.608052,13,13,equalized assessment; 2025 board membership applied to all years; from FIR EA schedule (revised vintage; the report is a scanned PDF)
+edmonton,2011,2010,pdf,nr,31121956103,9751187577,0.761428,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2011,2010,pdf,nr_linear,32638691975,13321207857,0.710156,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2011,2010,pdf,nr_all,33599273155,22063413317,0.603623,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2012,2011,pdf,nr,32450697063,10458012429,0.756273,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2012,2011,pdf,nr_linear,34101634601,14029916719,0.708509,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2012,2011,pdf,nr_all,35012589816,22770102329,0.605936,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2013,2012,pdf,nr,32830444961,11613005202,0.738702,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2013,2012,pdf,nr_linear,34550548717,16028192532,0.683104,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2013,2012,pdf,nr_all,35511906615,27417468472,0.564314,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2014,2013,pdf,nr,36214974092,13003758232,0.735797,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2014,2013,pdf,nr_linear,37958822349,17410721702,0.685554,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2014,2013,pdf,nr_all,38923475726,29103881102,0.572174,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2015,2014,pdf,nr,39441227543,14867203690,0.726245,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2015,2014,pdf,nr_linear,41232419405,19430597860,0.679696,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2015,2014,pdf,nr_all,42151326005,31481793880,0.572451,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2016,2015,pdf,nr,41412161225,17094178502,0.707823,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2016,2015,pdf,nr_linear,43273599342,21841735862,0.664568,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2016,2015,pdf,nr_all,44146610574,33914733182,0.565537,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2017,2016,pdf,nr,42099286091,18812210138,0.691155,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2017,2016,pdf,nr_linear,43949616477,23633830058,0.650301,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2017,2016,pdf,nr_all,44799022193,36257514298,0.552689,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2018,2017,pdf,nr,40413232411,19040945809,0.679737,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2018,2017,pdf,nr_linear,42210890441,24010647219,0.637419,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2018,2017,pdf,nr_all,43070501408,37067794389,0.537452,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2019,2018,pdf,nr,40694074934,19463115073,0.676462,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2019,2018,pdf,nr_linear,42522305289,24474859683,0.634688,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2019,2018,pdf,nr_all,43367895923,37969184163,0.533187,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2020,2019,pdf,nr,41105248987,19949926350,0.673248,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2020,2019,pdf,nr_linear,43011545847,25124252120,0.631262,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2020,2019,pdf,nr_all,43833738463,38709622200,0.531039,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2021,2020,pdf,nr,40549602023,20754665149,0.661448,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2021,2020,pdf,nr_linear,42464843353,25900478089,0.621146,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2021,2020,pdf,nr_all,43334933333,39510214349,0.523084,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2022,2021,pdf,nr,37373229594,20592210124,0.64475,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2022,2021,pdf,nr_linear,39333798664,25664138754,0.605155,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2022,2021,pdf,nr_all,40197038452,42053982854,0.488712,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2023,2022,pdf,nr,36220924846,21012640447,0.632862,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2023,2022,pdf,nr_linear,38273057756,25974123407,0.595716,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2023,2022,pdf,nr_all,39136206644,42101651387,0.481748,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2024,2023,pdf,nr,38716648097,22183139920,0.635744,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2024,2023,pdf,nr_linear,40883637167,27027300480,0.602018,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2024,2023,pdf,nr_all,41754489481,45455700670,0.47878,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2025,2024,pdf,nr,39034724437,23604766519,0.623165,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2025,2024,pdf,nr_linear,41316277687,28502158389,0.591767,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2025,2024,pdf,nr_all,42225940923,48785059709,0.463965,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2026,2025,pdf,nr,38812697402,24937956534,0.60882,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2026,2025,pdf,nr_linear,41246740332,30457661394,0.575233,13,13,equalized assessment; 2025 board membership applied to all years
+edmonton,2026,2025,pdf,nr_all,42258821244,51363549004,0.451375,13,13,equalized assessment; 2025 board membership applied to all years
