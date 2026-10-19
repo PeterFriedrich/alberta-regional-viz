@@ -83,10 +83,11 @@ def mark_core_annexations(ax, region, y=0.10):
 #
 # Headline basis `nr` (non-residential; 1998–2004 reports print railway inside it).
 # `nr_linear` adds regulated linear property; `nr_all` adds machinery & equipment too.
-# x-axis is **taxation year** (= report year − 1). Taxation years 2007–2009 are missing:
-# those reports are scanned PDFs. Across that gap Edmonton's `nr_linear` rises while `nr`
-# barely moves — a composition effect (market NR more than doubled, regulated linear
-# grew ~25%), not a data break (TODO: caption it in Phase 4).
+# x-axis is **taxation year** (= report year − 1). Taxation years 2007–2009 (scanned
+# PDFs) come from FIR's EA schedule, a revised vintage within ~0.2 pp of the PDFs at the
+# seams (`source == "fir_ea"`; shaded and marked). Across those years Edmonton's
+# `nr_linear` rises while `nr` barely moves — a composition effect (market NR more than
+# doubled, regulated linear grew ~25%), not a data break (TODO: caption it in Phase 4).
 
 # %%
 STYLE = {"nr": ("-", 2.0, "nr (headline)"), "nr_linear": ("--", 1.4, "nr + linear"),
@@ -97,8 +98,10 @@ for ax, region in zip(axes, REGIONS):
     for basis, (ls, lw, label) in STYLE.items():
         s = d[d.basis == basis].set_index("taxation_year").core_share.reindex(range(1997, 2026))
         ax.plot(s.index, s * 100, color=CORE, ls=ls, lw=lw, label=label)
-    ax.axvspan(2006.5, 2009.5, color=GRID, alpha=0.6, lw=0)
-    ax.text(2008, 0.5, "no data (scanned PDFs)", transform=ax.get_xaxis_transform(),
+    fir = d[(d.source == "fir_ea") & (d.basis == "nr")]
+    ax.axvspan(fir.taxation_year.min() - 0.5, fir.taxation_year.max() + 0.5, color=GRID, alpha=0.6, lw=0)
+    ax.plot(fir.taxation_year, fir.core_share * 100, "o", ms=3, color=CORE)
+    ax.text(fir.taxation_year.mean(), 0.5, "from FIR (scanned PDFs)", transform=ax.get_xaxis_transform(),
             fontsize=7, color=MUTED, ha="center", va="center", rotation=90)
     mark_core_annexations(ax, region)
     ax.set_title(TITLE[region], loc="left", color=INK, fontsize=10)
@@ -109,7 +112,7 @@ fig.suptitle("Core city's share of the region's equalized non-residential assess
              x=0.01, ha="left", color=INK, fontsize=11)
 fig.text(0.01, -0.04, "Basis: equalized assessment (Municipal Affairs reports); 2025 board "
          "membership applied to all years; six printed values corrected from FIR EA "
-         "(DECISIONS 2026-10-02).", fontsize=7, color=MUTED)
+         "(DECISIONS 2026-10-02); 2007–2009 from FIR EA, revised vintage (DECISIONS 2026-10-19).", fontsize=7, color=MUTED)
 fig.tight_layout()
 
 # %%

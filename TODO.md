@@ -38,10 +38,6 @@ symptom and re-measure the stated cause before acting on it.
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
 
-- [ ] **Find a second external anchor at another year** for the share series. The
-  UPE01548 test passes for any of taxation years 2021–2024, so it doesn't pin
-  `taxation_year = report_year − 1`.
-
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
   (which would close the gap holding the City's 2008 anchor). Mention the 1999
@@ -68,12 +64,6 @@ symptom and re-measure the stated cause before acting on it.
   strict dedup $21.3 B (slightly under). A build-time data task, independent
   of licensing — and a `DATA_ISSUES.md` row whether or not Track A proceeds.
 
-- [ ] **Fill report years 2008–2010 from FIR** (the scanned-PDF gap, which holds
-  Edmonton's 72% anchor year). **Decided 2026-10-17 (Peter): option (a)**, with
-  a `basis_note` naming the revised FIR vintage. The size estimate is
-  `docs/ASSUMPTIONS.md` A4. This is an output-schema change, so propose the plan
-  before building. Add the DECISIONS row together with its guard.
-
 - [ ] **Inflation adjustment for the transfers timeline.** `transfers_per_capita.csv` is
   in nominal dollars (Peter, 2026-10-02). That doesn't matter for comparing core and ring in
   the same year, but a 25-year line overstates growth. Decide on a deflator (Alberta CPI?)
@@ -99,6 +89,9 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Find a second external anchor at another year** — DONE 2026-10-19 · `docs/TODO_archive.md`
+- [x] **Fill report years 2008–2010 from FIR.** — BUILT 2026-10-19 · `docs/TODO_archive.md`
 
 - [x] **Explain the systematic FIR-vs-PDF gap before using FIR as a source.** — 2026-10-17 · `docs/TODO_archive.md`
 

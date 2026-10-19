@@ -388,7 +388,8 @@ paths from arguments with repo defaults.
    `test_reproduces_upe01548`): Edmonton `nr_linear` is within ±1.0 percentage
    point of 60% for taxation year 2022 (report 2023). The spike gave 59.6%.
    Taxation year 2010 (report 2011; the spike gave 71.1%) must be ≤ 72%,
-   consistent with the City's decline from its 2008 anchor.
+   consistent with the City's decline from its 2008 anchor. *Replaced
+   2026-10-19 by the assessment-year fit in §"Phase 1c".*
 3. **Year semantics** are carried as the `taxation_year` column (see §"Year
    semantics").
 4. Unit tests run on synthetic fixtures only, offline (CI installs nothing
@@ -447,11 +448,33 @@ reports 2008–2010 are image-only.
   `equalized_long.csv` byte-identical, which was checked against a pre-change
   copy. The committed `core_ring_share.csv` only gained rows.
 
+## Phase 1c (built 2026-10-19): the 2008–2010 gap filled from FIR
+
+- `build_share_series.py --fir data/processed/fir_long.csv` fills the report
+  years in `FIR_FILL = {2008, 2009, 2010}` from FIR's EA lines:
+  - 08275 → `nr`, 08265 → `nr_linear`, 08290 → `nr_railway`;
+  - 08295 → `nr_cogen_me`, 08270 → `me`;
+  - 08280 and 08285 → residential and farmland.
+  - Blank railway and co-gen values count as 0.
+- The build fails if:
+  - a fill year also has PDF data;
+  - a member is missing from FIR;
+  - any year in the span has neither source.
+- Both outputs gain a `source` column (`pdf` | `fir_ea`). Filled rows add
+  "from FIR EA schedule (revised vintage …)" to `basis_note`.
+- **Basis:** FIR is the revised vintage, not the original report. Next to the
+  gap it is within 0.21 pp of the PDF series, and the guard's bound is 0.3 pp
+  (`docs/ASSUMPTIONS.md` A4).
+- **The City anchor, now testable:** UPE01548's 72% (2008) and 60% (2022) fit
+  as **assessment years**, report year − 2:
+  - Edmonton `nr_linear` is 71.5% at report 2010 and 60.2% at report 2024.
+  - The other offsets are worse: label + 1 is 3.8 pp off, label + 3 is 1.0 pp.
+  - See `test_reproduces_upe01548` and `docs/DECISIONS.md` 2026-10-19.
+
 ## Out of scope for Phase 1
 
 - OCR of reports 2008–2010 (taxation years 2007–2009): all three are scanned
-  images. The City's 72% anchor (taxation year 2008) is in this gap, and the
-  chart says so until OCR fills it.
+  images. They are filled from FIR instead (§"Phase 1c").
 - The CMA variant (decision 8). It goes in Phase 2 alongside the StatCan work.
 - Any web output.
 

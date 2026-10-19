@@ -159,7 +159,8 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 
   The research folder is `/home/opc/research/alberta-regional-viz/fir_pdf_gap_2026-10-17/`.
 - **FIR covers report years 2008–2010**, which is the scanned-PDF gap that holds
-  Edmonton's 72% anchor year. This is not used yet (TODO).
+  Edmonton's 72% anchor year. **It fills that gap from 2026-10-19**
+  (`docs/SPEC_phase1.md` §"Phase 1c"). The rows carry `source = fir_ea`.
 - **The four kept-as-printed anomalies:** in each case FIR's row adds up to its
   own total and sits within 25% of its neighbours' midpoint. The printed value
   is ≥ 40% off. Airdrie 2017 is the clearest: the PDF total omits NR, while
