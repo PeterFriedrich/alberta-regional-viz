@@ -63,6 +63,7 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - **2026-10-10** — **Classification-unstable spending series are not built** (Peter, 2026-10-10, option A). … Rejected: B, combining FCSS and housing from 2009 (still breaks in 2016 and 2025, so needs hand-picked gaps); C, keeping and marking the years (charts would still show swings that aren't spending).
 - **2026-10-19** — **Report years 2008–2010 are filled from FIR's EA schedule** (Peter, 2026-10-17, option a). … Rejected: (b) leaving the gap, which hides the City's 72% anchor year; (c) a second all-FIR series, which is a second vintage to explain throughout, and FIR's Calgary 2001 is wrong.
 - **2026-10-19** — **The City's UPE01548 years are read as assessment years (report year − 2)** (Peter, 2026-10-19).
+- **2026-10-21** — **`master` requires the `test` check before a PR merges** (Peter, 2026-10-21; the template's new-project recipe, retrofitted here after its audit found this public repo had none).
 
 ## Open work
 
