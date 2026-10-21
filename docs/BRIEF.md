@@ -97,9 +97,10 @@ The Phase 1 pipeline (`src/fetch_equalized.py` → `parse_equalized.py` →
 - `docs/SCOPE_candidates.md` — the two data tracks (Track A per-parcel peers, dropped by decision 1; Track B province-wide aggregates) and the reasoning behind the locked decisions; also distils the 2026-09-26 core-vs-ring timeline brief (Calgary, map app, timeline mode, mandate register)
 - `docs/SPIKE_regional_lens.md` — **history (Track A, dropped by decision 1)**: the 2026-07-17 per-parcel feasibility spike on St. Albert and Strathcona County
 - `docs/DECISIONS.md` — append-only index of locked decisions: one row + pointer to the doc holding the full reasoning
+- `docs/CHANGE_PIPELINE.md` — the path a change takes, in order: before the PR, the PR, merging, after the merge, and when to stop and ask
 - `docs/TOKEN_EFFICIENCY.md` — context/token hygiene (what NOT to read raw, session-summary archiving) and disk use (scratch intermediates, `df -h /` before a big build)
 - `docs/DATA_ISSUES.md` — register of defects in data we DON'T control: evidence, what it breaks here, and **whether the publisher has been told**
-- `docs/ASSUMPTIONS.md` — assumptions log: every premise a number rests on that no guard proves, with status, size if wrong, and how to test it
+- `docs/ASSUMPTIONS.md` — index of the premises a published number rests on that no guard proves: status, rough size if wrong, pointer to the evidence
 - `docs/AUDIT_LEDGER.md` — coverage map of executed audit runs
 - `data/DATA.md` — data source details, column names, known quirks
 - `docs/REMOTE_VM.md` — **read FIRST in a Claude Code web/remote VM session**: network-policy constraints, environment setup
