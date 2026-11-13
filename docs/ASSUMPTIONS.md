@@ -33,3 +33,4 @@ Status values:
 | A9 | Calgary's 2025 FCSS/housing move is another reclassification | UNVERIFIED (2025) | None while the series is unbuilt | `docs/FINDINGS_spending_jumps_2026-10-10.md`; `docs/DECISIONS.md` 2026-10-10 row |
 | A10 | Nominal dollars are acceptable for core-vs-ring comparisons within a year | ACCEPTED (Peter, 2026-10-02) | Growth across years is overstated | `docs/SPEC_phase1.md` (Dollars); `TODO.md` "Inflation adjustment" |
 | A11 | The brief's history and fiscal figures | UNVERIFIED (one already found wrong) | Phase 3 captions | `TODO.md` "Phase 3 gate" |
+| A12 | A fall in the core's `nr` share reflects non-residential base locating in the ring, not revaluation of existing property | UNVERIFIED (the share cannot separate them) | Most of the 2015–2025 fall, which is most of the 28-year fall in both regions | `docs/FINDINGS_headline_share_2026-11-13.md` §L0; test: a quantity series (new construction vs revaluation) for core and ring |
