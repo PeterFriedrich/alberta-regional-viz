@@ -37,7 +37,19 @@ symptom and re-measure the stated cause before acting on it.
 - [ ] **Pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
-  **Briefed 2026-11-13, queued in the ledger:** #1 `docs/AUDIT_headline_share.md` first, then #2 `docs/AUDIT_equalization_basis.md`.
+  #1 ran 2026-11-13 (`docs/FINDINGS_headline_share_2026-11-13.md`).
+  **Next, briefed and queued in the ledger:** #2 `docs/AUDIT_equalization_basis.md`.
+
+- [ ] **Headline share: Peter's call on the remedy** (audit #1, 2026-11-13, L0 CONDITIONAL;
+  `docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation). Most of the fall in the core
+  `nr` share came 2015–2025, while each core's NR assessment fell in nominal dollars. Proposed:
+  a caveat on every share chart (wording drafted), a companion chart of core and ring levels,
+  and a per-member contribution chart. Follow-ups, none blocking:
+  - a quantity series (new construction vs revaluation) to settle L0 (A12);
+  - a City source for Edmonton's 2021–2022 core drop; Rocky View's 2023–2025 rise against the
+    county's assessment reports;
+  - **the CMA variant of decision 8 was never built** and nothing tracked it: build it, or
+    amend the decision (adding former board members moves the fall by ≤0.17 pp).
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports

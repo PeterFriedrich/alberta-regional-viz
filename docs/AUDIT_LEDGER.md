@@ -16,6 +16,7 @@ top-down, fundamental decisions first.
 
 | Date | Target / scope | Instrument | Output | Verdict (one line) | Outstanding |
 |------|----------------|------------|--------|--------------------|-------------|
+| 2026-11-13 | #1: does the fall in the core `nr` share measure base moving to the ring? Both regions, taxation 1997–2025 | `docs/AUDIT_headline_share.md`: criteria fixed first, then an exact per-member split of the share change, hold-one-side tests (nominal and constant-dollar), FIR Schedule ST permit values as a quantity proxy, former board members added back | `docs/FINDINGS_headline_share_2026-11-13.md`; scripts in `/home/opc/research/alberta-regional-viz/headline_share_2026-11-13/` | L0 CONDITIONAL: the Heartland is not the story on `nr` (3 members = 20.5% of Edmonton's fall; it is on `nr_all`), but 61% (Edmonton) and 81% (Calgary) of the fall came 2015–2025 while each core's NR assessment fell in nominal dollars, and permits don't account for it. L1 SOUND, L2 CONDITIONAL (no source splits NR), L3 CONDITIONAL (Rocky View 75%), L4 SOUND (≤0.17 pp on the fall) | Peter's call on the remedy (caveat wording, core-and-ring levels chart, per-member chart); a quantity series to settle L0; the CMA variant of decision 8 was never built; Rocky View 2023–2025 and Edmonton's 2021–2022 core drop unsourced |
 | 2026-10-17 | Cause of the FIR-vs-PDF EA gap, every member, report years 1998–2025 | Three-way join: FIR `EA`, parsed PDFs and the province's "Updated equalized assessment" xlsx (2024–2026, retrieved 2026-10-17); core share rebuilt from FIR | `data/DATA.md` §"Parsed (2026-10-02)"; sources in `/home/opc/research/alberta-regional-viz/fir_pdf_gap_2026-10-17/` | EXPLAINED: FIR is a later, revised vintage (2025: updated report = FIR on 101/104, PDF = FIR on 81/104); gaps sit in the market classes; core share within 0.28 pp from 2005 except Edmonton 2016 (−0.84 pp `nr`) and 2024 (+0.70 pp `nr_all`) | Peter's call on filling 2008–2010 from FIR (TODO options a/b/c) |
 | 2026-10-10 | Spending-series jumps seen in `notebooks/01_first_look`: Calgary-core FCSS 2022–25 and housing 2016/2022, Edmonton-core housing 2021–23 and FCSS 2005–07 | Every Schedule C line of the city that year (offsetting moves), and the cities' audited annual reports (totals tie to FIR 01580) | `docs/FINDINGS_spending_jumps_2026-10-10.md`; sources in `/home/opc/research/alberta-regional-viz/spending_jumps_2026-10-10/` | Calgary FCSS/housing: FIR classification (2016, 2020, 2022, probably 2025), not spending; Edmonton housing: real (AHIP, RHI, $70.0M non-cash Homeward transfer in 2022); Edmonton FCSS 2007: likely classification | Peter's call on the charting remedy (A/B/C); ring members, police and transit not checked; Calgary FCSS + housing +15%/−13% in 2023/2024 unexplained |
 | 2026-10-03 | Q1: per-capita numerators (FIR, each year's boundaries) vs denominators (17-10-0155, 2021 boundaries), every member, 2001–2025 | 92F0009X change lists 2001–2025 (29 annexations that moved people), reconciled to census adjusted counts in all four windows and to 17-10-0142 vs 0155 in 2011 | `docs/FINDINGS_per_capita_boundaries_2026-10-03.md`; sources in `/home/opc/research/alberta-regional-viz/q1_boundary_audit_2026-10-03/` | FAIL vs the brief's bar: 58/525 member-years beyond 1% (Chestermere −8.2%, Rocky View +7.0%, Leduc County +5.1% for 18 years); Calgary police ring −2.6% (2001) via annexations out of the police-excluded counties; Calgary ring +0.75%; Edmonton core/ring ≤0.21% PASS | Peter's call on the remedy (A: as-of-year population from the event table, recommended; B: drop/caveat); 1997–2000 inherits the choice |
@@ -29,7 +30,7 @@ top-down, fundamental decisions first.
 ## Queued — briefed, not yet run
 
 **Queued 2026-11-13 (S14), run in this order, one per session:**
-1. **#1 headline share**: does the core NR share's fall measure base moving to the ring, or Heartland industrial growth? Brief: `docs/AUDIT_headline_share.md`.
+1. *(Run 2026-11-13, see Executed. The brief stays as the instrument.)* **#1 headline share**: does the core NR share's fall measure base moving to the ring, or Heartland industrial growth? Brief: `docs/AUDIT_headline_share.md`.
 2. **#2 / A2 equalization basis**: the pre-2000 "capped" totals and any other method change inside 1997–2025. Brief: `docs/AUDIT_equalization_basis.md`.
 
 *(Run 2026-10-03, see Executed. The brief stays as the instrument.)* **Q1 (queued 2026-10-03, S8): do per-capita numerators and denominators cover the same people?**
@@ -68,7 +69,7 @@ data under it, then the project's shape. Each entry is a question, not a finding
 
 **A. The metric**
 
-1. **Does the headline measure what the argument claims?** The core share of the
+1. *(Run 2026-11-13, see Executed.)* **Does the headline measure what the argument claims?** The core share of the
    region's NR (fixed 2025 membership) falls 76% → 61%.
    - Question: is that "base moving to the ring", or industrial growth in
      Strathcona and Sturgeon (Industrial Heartland) that was never going to be
