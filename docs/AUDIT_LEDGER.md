@@ -28,6 +28,10 @@ top-down, fundamental decisions first.
 
 ## Queued — briefed, not yet run
 
+**Queued 2026-11-13 (S14), run in this order, one per session:**
+1. **#1 headline share**: does the core NR share's fall measure base moving to the ring, or Heartland industrial growth? Brief: `docs/AUDIT_headline_share.md`.
+2. **#2 / A2 equalization basis**: the pre-2000 "capped" totals and any other method change inside 1997–2025. Brief: `docs/AUDIT_equalization_basis.md`.
+
 *(Run 2026-10-03, see Executed. The brief stays as the instrument.)* **Q1 (queued 2026-10-03, S8): do per-capita numerators and denominators cover the same people?**
 Every Phase 2/2b per-capita value divides FIR dollars by StatCan population.
 - **The mismatch:** FIR dollars are reported on each year's own boundaries, but

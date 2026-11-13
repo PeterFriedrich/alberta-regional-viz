@@ -37,6 +37,7 @@ symptom and re-measure the stated cause before acting on it.
 - [ ] **Pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
   #2 now has a concrete lead: the pre-2000 reports are "capped".
+  **Briefed 2026-11-13, queued in the ledger:** #1 `docs/AUDIT_headline_share.md` first, then #2 `docs/AUDIT_equalization_basis.md`.
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
