@@ -113,8 +113,10 @@ join is ecological inference that must be flagged on the output itself.
    figures that exist only in PDFs: Calgary EC2026-0284 ($1.05 B downloaded
    2016–2026); Edmonton FCS02218's five categories, which deliberately give no
    total; and LGFF/MSI allocations, with the 2023→2024 MSI→LGFF program break
-   annotated. Edmonton's eScribe portal blocks bots, so documents are
-   downloaded by hand.
+   annotated. Edmonton's eScribe listings and agenda pages are fetchable, but
+   its PDFs sit behind a Cloudflare challenge, so documents are downloaded by
+   hand, or come from `civic-docs-index` if it gets an acquisition route
+   working.
 5. **More sources:**
    - Police Funding Model XLSX (per municipality, 2020-21 → 2024-25)
    - Alberta Regional Dashboard
