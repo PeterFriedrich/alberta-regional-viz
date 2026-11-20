@@ -36,9 +36,16 @@ symptom and re-measure the stated cause before acting on it.
 
 - [ ] **Pick an audit** from `docs/AUDIT_LEDGER.md` §"Never audited".
   Candidates #3, #4, #6 and #7 ran on 2026-09-28 (`docs/FINDINGS_quick_audits_2026-09-28.md`).
-  #2 now has a concrete lead: the pre-2000 reports are "capped".
-  #1 ran 2026-11-13 (`docs/FINDINGS_headline_share_2026-11-13.md`).
-  **Next, briefed and queued in the ledger:** #2 `docs/AUDIT_equalization_basis.md`.
+  #1 ran 2026-11-13 (`docs/FINDINGS_headline_share_2026-11-13.md`), #2 ran 2026-11-20
+  (`docs/FINDINGS_equalization_basis_2026-11-20.md`). Nothing else is briefed; the next
+  pick is the top of "Never audited".
+
+- [ ] **Capped 1997–1998: Peter's call on the remedy** (audit #2, 2026-11-20, FAIL for the
+  1998–1999 reports; `docs/FINDINGS_equalization_basis_2026-11-20.md` §4). Those two points
+  understate the core against the ring. Options: A (recommended) start the headline at taxation
+  1999, keep 1997–1998 in the CSV with a "capped" `basis_note` and a marked break; B keep 1997
+  with a caption; C drop them. A and C change `core_ring_share.csv`. Decide together with the
+  headline-share remedy below, since both set the caption.
 
 - [ ] **Headline share: Peter's call on the remedy** (audit #1, 2026-11-13, L0 CONDITIONAL;
   `docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation). Most of the fall in the core
