@@ -44,7 +44,7 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - **Publisher / URL:** open.alberta.ca publication `2368-657x` (list the resources via CKAN `package_show?id=2368-657x`). One PDF per report year, 2009–2026.
 - **Licence:** OGL-Alberta.
 - **Verified:** 2026-09-26 (spike: `docs/SCOPE_candidates.md` §"Spike").
-- **Columns:** Municipality Type, Municipality, Residential, Farmland, Non Residential (Non regulated), NR Linear Property, NR Railway (present through the 2019 report, absent from 2020), NR Co-generating M&E, Machinery and Equipment, Grand Total. Type subtotal rows are unlabelled.
+- **Columns:** Municipality Type, Municipality, Residential, Farmland, Non Residential (Non regulated), NR Linear Property, NR Railway (present through the 2019 report, absent from 2020, when it moved into NR Linear Property: railway-heavy members' linear rises by about their old railway amount, e.g. Banff 16.9M → 36.9M; measured 2026-11-20), NR Co-generating M&E, Machinery and Equipment, Grand Total. Type subtotal rows are unlabelled.
 - **Quirks:**
   - **2009 and 2010 are scanned images with no text layer.** 2011+ extract with `pypdf`.
   - Names are mixed case up to about 2019 and upper case after. Old names differ: "Foothills No. 31, M.D. Of" (→ FOOTHILLS COUNTY); Rocky View is "Rocky View County" as early as 2011.
@@ -64,7 +64,7 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
       - One page of the 2000 report is shifted about 7 pt, and two 1998 rows by 3 pt; the parser anchors each row on its own total.
       - Some reports have a by-type summary page (1999 p11, 2000 p10) that is skipped.
         These pages tie to the parsed rows by class, to the dollar (audited 2026-09-28).
-      - **"Capped" before 2000:** the 2000 report's history table marks the 1997–1999 totals "capped" and 2000 "uncapped" (+18.25%), and its preface says "the 2000 equalized assessment is not capped". Taxation years 1997–1998 may be on a different footing. Not yet investigated (`docs/AUDIT_LEDGER.md` #2).
+      - **"Capped" before 2000:** the 2000 report's history table marks the 1997–1999 totals "capped" and 2000 "uncapped" (+18.25%), and its preface says "the 2000 equalized assessment is not capped". **Measured 2026-11-20:** taxation 1997–1998 are on a different footing. Across the boundary each core's NR grew about twice its ring's or more (Edmonton +19.7% vs +9.0%, Calgary +44.0% vs +15.9%), and FIR's EA for those years is capped too. From 2000 the report is uncapped, and the 2000 requisition averaging and caps (5% residential, 10% NR) sit in a separate variance regulation. The pre-2000 rule itself is unsourced (`docs/FINDINGS_equalization_basis_2026-11-20.md`).
     - **Names:** 1998 uses "City of Edmonton", "M.D. of Rocky View No. 44" and similar. 2001–2004 print "Airdire", and 2001 prints "Foothills No. 32" for No. 31. The 1998 report has a second Calgary row, "City of Calgary (Part II)", with no explanation in the report.
     - **Publisher rounding** (`docs/DATA_ISSUES.md`):
       - In 1999, six subtotals are off by 1–5 in the residential and grand-total columns.

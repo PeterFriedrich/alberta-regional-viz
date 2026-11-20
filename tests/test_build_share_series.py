@@ -199,6 +199,20 @@ def test_fir_fill_is_within_the_accepted_seam_gap():
                 assert gap <= 0.003, (region, y, basis, gap)
 
 
+def test_capped_reports_understate_the_core():
+    """docs/ASSUMPTIONS.md A2: the 1998-1999 reports are printed "capped" and the
+    2000 report is not. Across that boundary each core's NR grew far faster than its
+    ring (Edmonton 19.7% vs 9.0%, Calgary 44.0% vs 15.9%, measured 2026-11-20,
+    docs/FINDINGS_equalization_basis_2026-11-20.md), so the capped years are not on
+    the later basis. Red here means the 1998-1999 values changed: re-run the audit."""
+    s = _series()
+    for region in ("edmonton", "calgary"):
+        a, b = s[(region, 1999, "nr")], s[(region, 2000, "nr")]
+        core = int(b["core_value"]) / int(a["core_value"]) - 1
+        ring = int(b["ring_value"]) / int(a["ring_value"]) - 1
+        assert core - ring >= 0.08, (region, core, ring)
+
+
 def _fir_row(year, muni, line, value):
     return {"fir_year": str(year), "muni_id": muni, "schedule": "EA", "line_code": line,
             "value": str(value)}
