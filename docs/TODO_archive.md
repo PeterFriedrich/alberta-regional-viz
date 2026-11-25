@@ -8,6 +8,20 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Headline share: Peter's call on the remedy** (audit #1, 2026-11-13, L0 CONDITIONAL;
+  `docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation). Most of the fall in the core
+  `nr` share came 2015–2025, while each core's NR assessment fell in nominal dollars. Proposed:
+  a caveat on every share chart (wording drafted), a companion chart of core and ring levels,
+  and a per-member contribution chart. Follow-ups, none blocking:
+  - a quantity series (new construction vs revaluation) to settle L0 (A12);
+  - a City source for Edmonton's 2021–2022 core drop; Rocky View's 2023–2025 rise against the
+    county's assessment reports;
+  - **the CMA variant of decision 8 was never built** and nothing tracked it: build it, or
+    amend the decision (adding former board members moves the fall by ≤0.17 pp).
+  **Closed 2026-11-25: full set** (`docs/SPEC_phase1.md` §"Chart text for the core share",
+  notebook 01 §1–1c). Follow-ups carried to the two items below.
+
+
 - [x] **Capped 1997–1998: Peter's call on the remedy** (audit #2, 2026-11-20, FAIL for the
   1998–1999 reports; `docs/FINDINGS_equalization_basis_2026-11-20.md` §4). Those two points
   understate the core against the ring. Options: A (recommended) start the headline at taxation
