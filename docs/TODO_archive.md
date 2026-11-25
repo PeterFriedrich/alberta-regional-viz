@@ -8,6 +8,15 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Capped 1997–1998: Peter's call on the remedy** (audit #2, 2026-11-20, FAIL for the
+  1998–1999 reports; `docs/FINDINGS_equalization_basis_2026-11-20.md` §4). Those two points
+  understate the core against the ring. Options: A (recommended) start the headline at taxation
+  1999, keep 1997–1998 in the CSV with a "capped" `basis_note` and a marked break; B keep 1997
+  with a caption; C drop them. A and C change `core_ring_share.csv`. Decide together with the
+  headline-share remedy below, since both set the caption.
+  **Closed 2026-11-25: option A** (DECISIONS 2026-11-25), rows marked in `basis_note`.
+
+
 - [x] **Find a second external anchor at another year** for the share series. Done
   2026-10-19: UPE01548's 72% (2008) is in the FIR-filled years, and both anchors
   fit only as assessment years (`docs/DECISIONS.md` 2026-10-19).
