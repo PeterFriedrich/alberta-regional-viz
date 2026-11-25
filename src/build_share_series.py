@@ -57,6 +57,12 @@ FIR_CLASSES = {"08275": "nr", "08265": "nr_linear", "08290": "nr_railway", "0829
 BASIS_NOTE = "equalized assessment; 2025 board membership applied to all years"
 FIR_NOTE = "; from FIR EA schedule (revised vintage; the report is a scanned PDF)"
 OLD_NR_NOTE = "; NR includes railway (1998-2004 reports print them together)"
+# Reports printed "capped", not on the 2000+ basis; they understate the core against
+# the ring (docs/ASSUMPTIONS.md A2, docs/FINDINGS_equalization_basis_2026-11-20.md).
+# Kept in the series; the headline starts at taxation 1999 (Peter, 2026-11-25).
+CAPPED = {1998, 1999}
+CAPPED_NOTE = ("; capped (1998-1999 reports): not on the 2000+ basis, understates the core; "
+               "headline starts at taxation 1999")
 
 
 class BuildError(Exception):
@@ -238,6 +244,7 @@ def shares(found, years, regions, printed=None):
                             "n_members_found": len(val), "n_members_expected": len(members),
                             "basis_note": BASIS_NOTE + (OLD_NR_NOTE if old[0] and basis == "nr" else "")
                             + (FIR_NOTE if y in FIR_FILL else "")
+                            + (CAPPED_NOTE if y in CAPPED else "")
                             + (f"; corrected from FIR EA: {', '.join(fixed)}" if fixed else "")})
     return out
 

@@ -1,10 +1,10 @@
 region,report_year,taxation_year,source,basis,core_value,ring_value,core_share,n_members_found,n_members_expected,basis_note
-calgary,1998,1997,pdf,nr,10334797775,553127439,0.949198,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,1998,1997,pdf,nr_linear,11253745518,1163193559,0.906322,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1998,1997,pdf,nr_all,11468732438,1540791196,0.881564,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1999,1998,pdf,nr,11344686304,612368730,0.948786,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-calgary,1999,1998,pdf,nr_linear,12278313362,1233564857,0.908705,8,8,equalized assessment; 2025 board membership applied to all years
-calgary,1999,1998,pdf,nr_all,12495092003,1633469487,0.884385,8,8,equalized assessment; 2025 board membership applied to all years
+calgary,1998,1997,pdf,nr,10334797775,553127439,0.949198,8,8,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+calgary,1998,1997,pdf,nr_linear,11253745518,1163193559,0.906322,8,8,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+calgary,1998,1997,pdf,nr_all,11468732438,1540791196,0.881564,8,8,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+calgary,1999,1998,pdf,nr,11344686304,612368730,0.948786,8,8,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+calgary,1999,1998,pdf,nr_linear,12278313362,1233564857,0.908705,8,8,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+calgary,1999,1998,pdf,nr_all,12495092003,1633469487,0.884385,8,8,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
 calgary,2000,1999,pdf,nr,16338037304,709905452,0.958358,8,8,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
 calgary,2000,1999,pdf,nr_linear,17306469884,1326634832,0.928802,8,8,equalized assessment; 2025 board membership applied to all years
 calgary,2000,1999,pdf,nr_all,17510344994,1779009752,0.907772,8,8,equalized assessment; 2025 board membership applied to all years
@@ -86,12 +86,12 @@ calgary,2025,2024,pdf,nr_all,63143926391,14153115520,0.8169,8,8,equalized assess
 calgary,2026,2025,pdf,nr,61845108245,12716107240,0.829454,8,8,equalized assessment; 2025 board membership applied to all years
 calgary,2026,2025,pdf,nr_linear,66068913925,14970197420,0.815272,8,8,equalized assessment; 2025 board membership applied to all years
 calgary,2026,2025,pdf,nr_all,66473973925,15994319070,0.806055,8,8,equalized assessment; 2025 board membership applied to all years
-edmonton,1998,1997,pdf,nr,7334447179,2189964061,0.770068,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
-edmonton,1998,1997,pdf,nr_linear,8337771379,4321082956,0.658651,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,1998,1997,pdf,nr_all,8960144409,6947940462,0.563245,13,13,equalized assessment; 2025 board membership applied to all years
-edmonton,1999,1998,pdf,nr,7281643026,2352821577,0.755791,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); corrected from FIR EA: devon nr_incl_railway (printed 99,815,242)"
-edmonton,1999,1998,pdf,nr_linear,8278045608,4446830910,0.65054,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
-edmonton,1999,1998,pdf,nr_all,8915828638,7094578843,0.556877,13,13,"equalized assessment; 2025 board membership applied to all years; corrected from FIR EA: devon me (printed 4,682,174), devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
+edmonton,1998,1997,pdf,nr,7334447179,2189964061,0.770068,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+edmonton,1998,1997,pdf,nr_linear,8337771379,4321082956,0.658651,13,13,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+edmonton,1998,1997,pdf,nr_all,8960144409,6947940462,0.563245,13,13,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999"
+edmonton,1999,1998,pdf,nr,7281643026,2352821577,0.755791,13,13,"equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together); capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999; corrected from FIR EA: devon nr_incl_railway (printed 99,815,242)"
+edmonton,1999,1998,pdf,nr_linear,8278045608,4446830910,0.65054,13,13,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999; corrected from FIR EA: devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
+edmonton,1999,1998,pdf,nr_all,8915828638,7094578843,0.556877,13,13,"equalized assessment; 2025 board membership applied to all years; capped (1998-1999 reports): not on the 2000+ basis, understates the core; headline starts at taxation 1999; corrected from FIR EA: devon me (printed 4,682,174), devon nr_incl_railway (printed 99,815,242), devon nr_linear (printed 17,430,343)"
 edmonton,2000,1999,pdf,nr,8717757040,2565544102,0.772625,13,13,equalized assessment; 2025 board membership applied to all years; NR includes railway (1998-2004 reports print them together)
 edmonton,2000,1999,pdf,nr_linear,9726792450,4635795822,0.677231,13,13,equalized assessment; 2025 board membership applied to all years
 edmonton,2000,1999,pdf,nr_all,10290405340,7564056142,0.576349,13,13,equalized assessment; 2025 board membership applied to all years

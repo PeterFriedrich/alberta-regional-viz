@@ -335,6 +335,11 @@ step 2 is the guard for placement.
    2026-10-02). It fails if a listed printed value is no longer what the report
    gives. `member_assessment.csv` keeps the printed value in `printed_value`, and
    `core_ring_share.csv` names each corrected cell in `basis_note`. Sizing: `docs/FINDINGS_quick_audits_2026-09-28.md` §#4.
+   Rows from the capped 1998–1999 reports (taxation 1997–1998; `CAPPED`) stay in the
+   file and add "capped (1998-1999 reports) …" to `basis_note`. They are not on the
+   2000+ basis and understate the core, so **the headline series starts at taxation
+   1999**: a chart filters `taxation_year >= 1999` and may show the two capped years
+   only as marked, separated points (DECISIONS 2026-11-25; `docs/ASSUMPTIONS.md` A2).
 
 Phase 2 (FIR):
 

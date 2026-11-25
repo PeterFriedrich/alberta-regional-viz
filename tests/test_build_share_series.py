@@ -213,6 +213,16 @@ def test_capped_reports_understate_the_core():
         assert core - ring >= 0.08, (region, core, ring)
 
 
+def test_capped_years_say_so_in_basis_note():
+    """Decision 2026-11-25: the capped 1998-1999 reports stay in the series, and every
+    row of theirs (both regions, every basis) says it is capped; no other row does."""
+    s = _series()
+    capped = {k for k, r in s.items() if "capped (1998-1999 reports)" in r["basis_note"]}
+    want = {k for k in s if k[1] in (1998, 1999)}
+    assert len(want) == 2 * 2 * len(bss.BASES)
+    assert capped == want
+
+
 def _fir_row(year, muni, line, value):
     return {"fir_year": str(year), "muni_id": muni, "schedule": "EA", "line_code": line,
             "value": str(value)}
