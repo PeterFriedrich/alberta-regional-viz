@@ -40,6 +40,7 @@ import pandas as pd
 ROOT = Path.cwd().parent if Path.cwd().name == "notebooks" else Path.cwd()
 PROC = ROOT / "data" / "processed"
 share = pd.read_csv(PROC / "core_ring_share.csv")
+members = pd.read_csv(PROC / "member_assessment.csv")  # gitignored: rebuild with src/ first
 transfers = pd.read_csv(PROC / "transfers_per_capita.csv")
 spending = pd.read_csv(PROC / "spending_per_capita.csv")
 annex = pd.read_csv(ROOT / "data" / "annexations.csv", parse_dates=["effective"])
@@ -82,6 +83,9 @@ def mark_core_annexations(ax, region, y=0.10):
 # ## 1. The tax-base split: core share of equalized non-residential assessment
 #
 # Headline basis `nr` (non-residential; 1998–2004 reports print railway inside it).
+# **The headline starts at taxation 1999** (DECISIONS 2026-11-25): taxation 1997–1998
+# come from reports printed "capped", which understate the core against the ring
+# (`docs/ASSUMPTIONS.md` A2). They are drawn as hollow points left of a break line.
 # `nr_linear` adds regulated linear property; `nr_all` adds machinery & equipment too.
 # x-axis is **taxation year** (= report year − 1). Taxation years 2007–2009 (scanned
 # PDFs) come from FIR's EA schedule, a revised vintage within ~0.2 pp of the PDFs at the
@@ -90,6 +94,20 @@ def mark_core_annexations(ax, region, y=0.10):
 # doubled, regulated linear grew ~25%), not a data break (TODO: caption it in Phase 4).
 
 # %%
+# The capped years must be exactly the ones before the headline start.
+HEAD = 1999
+capped = share[share.basis_note.str.contains("capped (1998-1999 reports)", regex=False)]
+assert set(capped.taxation_year) == set(range(1997, HEAD)), sorted(set(capped.taxation_year))
+# Share-chart caveat (audit #1, docs/FINDINGS_headline_share_2026-11-13.md §Recommendation;
+# wording recorded in docs/SPEC_phase1.md §"Chart text"). Its figures are computed here.
+lv = share[share.basis == "nr"].set_index(["region", "taxation_year"])
+chg = {r: f"{lv.loc[(r, 2025), 'core_value'] / lv.loc[(r, 2015), 'core_value'] - 1:+.0%}".replace("-", "−")
+       for r in REGIONS}
+CAVEAT = ("Share of assessed value, not of buildings or businesses. It falls when ring property "
+          "gains value faster than core property, through new construction or through revaluation. "
+          "Most of the fall came after 2015, when the core's non-residential assessment fell in "
+          f"dollar terms in both cities (Edmonton {chg['edmonton']}, Calgary "
+          f"{chg['calgary']}, 2015–2025) while the ring's rose.")
 STYLE = {"nr": ("-", 2.0, "nr (headline)"), "nr_linear": ("--", 1.4, "nr + linear"),
          "nr_all": (":", 1.4, "nr + linear + M&E")}
 fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), sharey=True)
@@ -97,7 +115,12 @@ for ax, region in zip(axes, REGIONS):
     d = share[share.region == region]
     for basis, (ls, lw, label) in STYLE.items():
         s = d[d.basis == basis].set_index("taxation_year").core_share.reindex(range(1997, 2026))
-        ax.plot(s.index, s * 100, color=CORE, ls=ls, lw=lw, label=label)
+        ax.plot(s.loc[HEAD:].index, s.loc[HEAD:] * 100, color=CORE, ls=ls, lw=lw, label=label)
+        ax.plot(s.loc[:HEAD - 1].index, s.loc[:HEAD - 1] * 100, "o", ms=3.5, mfc="white",
+                mec=CORE, alpha=0.7)
+    ax.axvline(HEAD - 0.5, color=MUTED, lw=1, zorder=1)
+    ax.text(HEAD - 0.6, 0.02, "capped ", transform=ax.get_xaxis_transform(), fontsize=7,
+            color=MUTED, ha="right", va="bottom")
     fir = d[(d.source == "fir_ea") & (d.basis == "nr")]
     ax.axvspan(fir.taxation_year.min() - 0.5, fir.taxation_year.max() + 0.5, color=GRID, alpha=0.6, lw=0)
     ax.plot(fir.taxation_year, fir.core_share * 100, "o", ms=3, color=CORE)
@@ -108,11 +131,75 @@ for ax, region in zip(axes, REGIONS):
     ax.set_xlim(1996, 2026)
 axes[0].set_ylabel("core share of regional base (%)")
 axes[1].legend(loc="center left", fontsize=8, title="core share on basis", title_fontsize=8)
-fig.suptitle("Core city's share of the region's equalized non-residential assessment, 1997–2025",
+fig.suptitle(f"Core city's share of the region's equalized non-residential assessment, {HEAD}–2025",
              x=0.01, ha="left", color=INK, fontsize=11)
 fig.text(0.01, -0.04, "Basis: equalized assessment (Municipal Affairs reports); 2025 board "
          "membership applied to all years; six printed values corrected from FIR EA "
-         "(DECISIONS 2026-10-02); 2007–2009 from FIR EA, revised vintage (DECISIONS 2026-10-19).", fontsize=7, color=MUTED)
+         "(DECISIONS 2026-10-02); 2007–2009 from FIR EA, revised vintage (DECISIONS 2026-10-19); "
+         "1997–1998 capped, not on the later basis (DECISIONS 2026-11-25).", fontsize=7, color=MUTED)
+fig.text(0.01, -0.09, CAVEAT, fontsize=7, color=MUTED, wrap=True)
+fig.text(0.01, -0.17, "nr + linear + M&E: the Industrial Heartland's Strathcona and Sturgeon "
+         "carry most of Edmonton's fall on this basis (section 1c).", fontsize=7, color=MUTED)
+fig.tight_layout()
+
+# %% [markdown]
+# ## 1b. Which side moved: core and ring levels
+#
+# The share hides whether the core shrank or the ring grew. Core and ring `nr` value,
+# indexed to taxation 1999 = 100. **Nominal dollars** (no deflator chosen yet — TODO
+# "Inflation adjustment"), so the index includes inflation on both sides.
+
+# %%
+fig, axes = plt.subplots(1, 2, figsize=(10, 3.4), sharey=True)
+for ax, region in zip(axes, REGIONS):
+    d = share[(share.region == region) & (share.basis == "nr")].set_index("taxation_year").loc[HEAD:]
+    for col, color, label in [("core_value", CORE, "core"), ("ring_value", RING, "ring")]:
+        ax.plot(d.index, d[col] / d[col].iloc[0] * 100, color=color, label=label)
+    ax.axhline(100, color=MUTED, lw=0.8)
+    ax.set_title(TITLE[region], loc="left", color=INK, fontsize=10)
+    ax.set_xlim(HEAD - 1, 2026)
+    ax.legend(loc="upper left", fontsize=8)
+axes[0].set_ylabel(f"nr value, index ({HEAD} = 100)")
+fig.suptitle(f"Equalized non-residential assessment, core and ring, indexed to {HEAD} (nominal)",
+             x=0.01, ha="left", color=INK, fontsize=11)
+fig.text(0.01, -0.04, "Basis: equalized assessment, nr; nominal dollars; 2025 board membership "
+         "applied to all years; 2007–2009 from FIR EA.", fontsize=7, color=MUTED)
+fig.tight_layout()
+
+# %% [markdown]
+# ## 1c. Where the fall came from: per-member contribution
+#
+# A member's contribution is the change in its share of the regional total,
+# 1999 → 2025, in percentage points; the ring members' contributions sum to the fall
+# in the core share. Replaces the Industrial Heartland guess with the measured split
+# (`docs/FINDINGS_headline_share_2026-11-13.md` §L1, which measured from 1997).
+
+# %%
+MEMBER_BASES = {"nr": ["nr", "nr_incl_railway"],
+                "nr_all": ["nr", "nr_incl_railway", "nr_linear", "nr_railway", "nr_cogen_me", "me"]}
+fig, axes = plt.subplots(2, 2, figsize=(10, 7))
+for i, (basis, classes) in enumerate(MEMBER_BASES.items()):
+    v = members[members["class"].isin(classes)].groupby(["region", "muni_id", "taxation_year"]).value.sum()
+    for j, region in enumerate(REGIONS):
+        x = v.loc[region].unstack()[[HEAD, 2025]]
+        pp = (x / x.sum()).diff(axis=1)[2025] * 100
+        fall = -pp[region]
+        ref = share[(share.region == region) & (share.basis == basis)].set_index("taxation_year").core_share
+        assert abs(fall - (ref[HEAD] - ref[2025]) * 100) < 1e-3  # core_share is rounded to 6 dp, (region, basis, fall)
+        ring = pp.drop(region).sort_values()
+        ax = axes[i, j]
+        ax.barh([m.replace("_", " ").title() for m in ring.index], ring,
+                color=[RING if c >= 0 else MUTED for c in ring])
+        ax.axvline(0, color=MUTED, lw=0.8)
+        ax.set_title(f"{TITLE[region]} — {basis}: core fell {fall:.1f} pp", loc="left",
+                     color=INK, fontsize=9)
+        ax.tick_params(axis="y", labelsize=7)
+    axes[i, 0].set_xlabel("contribution to the core's fall (pp)")
+fig.suptitle(f"Change in each ring member's share of the regional total, {HEAD}–2025",
+             x=0.01, ha="left", color=INK, fontsize=11)
+fig.text(0.01, -0.02, "Basis: equalized assessment; 2025 board membership applied to all years; "
+         "nr_all = nr + linear + railway + co-gen M&E + M&E. Grey bars: grew slower than the region.",
+         fontsize=7, color=MUTED)
 fig.tight_layout()
 
 # %%
