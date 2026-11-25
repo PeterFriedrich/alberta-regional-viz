@@ -419,6 +419,29 @@ and every later chart label states:
 
 A share with no basis is a wrong number that looks right.
 
+## Chart text for the core share (decided 2026-11-25)
+
+Audit #1's remedy (`docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation),
+chosen in full by Peter. Drawn first in `notebooks/01_first_look.py` §1–1c; the
+Phase 4 app reuses the same text.
+
+- **Every chart of the share** carries this caveat, figures computed from
+  `core_ring_share.csv` (core `nr` value, taxation 2015 → 2025):
+  > Share of assessed value, not of buildings or businesses. It falls when
+  > ring property gains value faster than core property, through new
+  > construction or through revaluation. Most of the fall came after 2015,
+  > when the core's non-residential assessment fell in dollar terms in both
+  > cities (Edmonton −6%, Calgary −15%, 2015–2025) while the ring's rose.
+- **The headline starts at taxation 1999**; 1997–1998 appear only as marked,
+  separated "capped" points (DECISIONS 2026-11-25).
+- **Companion views:** core and ring `nr` value indexed to 1999 (nominal until a
+  deflator is chosen), and each ring member's change in share of the regional
+  total, 1999 → 2025, which sums to the core's fall.
+- **Any `nr_all` chart** says the Industrial Heartland's Strathcona and
+  Sturgeon carry most of Edmonton's fall on that basis (about 95% from 1999).
+- **Not built:** a series "excluding the Heartland members" (it moves the `nr`
+  fall by 3.5%).
+
 ## Phase 1b (built 2026-09-28)
 
 The 1998–2007 reports (publication `1844032`) extend the series back to
