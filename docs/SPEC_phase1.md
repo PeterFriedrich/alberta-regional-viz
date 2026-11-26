@@ -499,6 +499,44 @@ reports 2008–2010 are image-only.
   - The other offsets are worse: label + 1 is 3.8 pp off, label + 3 is 1.0 pp.
   - See `test_reproduces_upe01548` and `docs/DECISIONS.md` 2026-10-19.
 
+## Phase 2c: core-vs-ring property tax rates (built 2026-11-26)
+
+What each side charges on its base (DECISIONS 2026-11-26). `src/build_tax_rates.py`
+reads FIR Schedule MR from `fir_long.csv` and writes `data/processed/tax_rates.csv`:
+one row per (region, level, unit, taxation_year, class) with `mill_rate, weight,
+weight_basis, n_codes, basis_note`. Levels: `member` (the member's own FIR code),
+`side` (core, ring) and `region`.
+
+- **Rate:** the municipal general rate only, education excluded. Mills. Levy at
+  bylaw time (no supplementary tax).
+- **Classes:** `nr` = MR "Non-Residential (including linear)" (1998–2008 the NR
+  sheet's 05800); `residential` = MR Residential (1998–2008 the Residential or
+  Farmland sheet's 05800). Not built: M&E (its rate column is blank for every
+  member 2009–2022, and Calgary prints an M&E rate on a zero taxable base), farmland,
+  the "Other" column (Edmonton's apartments; elsewhere annexed, vacant or minimum
+  tax), and the small-business NR rate (Beaumont and Devon, 2025–26, noted).
+- **Pooled rate** = Σ(rate × base) ÷ Σ base: the single rate raising the same levy
+  on the combined base. Absorbed municipalities pool with their own rate and base;
+  an all-zero placeholder row is skipped; Entwistle 2000 (no base in the next
+  report) pools at Parkland's rate, logged.
+- **Base:** FIR equalized assessment for the same taxation year, i.e. report T + 1
+  (§"Year semantics"; confirmed 2026-11-26: MR's taxable assessment for year T sits
+  a median 2% from equalized report T + 1 and 6% from report T), lines
+  08275+08265+08290 for `nr` and 08280 for `residential`, through taxation 2024.
+  2025–2026 use MR's taxable assessment (`weight_basis = taxable`). In 2024 the two
+  bases give pooled rates within 0.13 mills of each other.
+- **Calgary 2001 FIR NR** (1.62B, a dropped digit) is replaced by its own total minus
+  its other components (16.23B; the PDF prints 16,560M).
+- **Years:** 1998–2026 without 2001 (FIR has no 2001 Schedule MR). The headline
+  starts at 1999, as for the share (DECISIONS 2026-11-25).
+- **Checks:** FIR's NR rate matches the Regional Dashboard for every member-year
+  except the dashboard's summed-rate years and Foothills 2024
+  (`tests/test_parse_fir.py`); levy = rate × assessment 2023–2026; the output
+  reproduces from `fir_long.csv`; the weight switch; the Calgary 2001 residual
+  (`tests/test_build_tax_rates.py`).
+- **Not in this phase:** a forward projection of the pooled rate, and any revenue-sharing
+  agreement that a pooled rate would misstate (annexation compensation, ICFs).
+
 ## Out of scope for Phase 1
 
 - OCR of reports 2008–2010 (taxation years 2007–2009): all three are scanned

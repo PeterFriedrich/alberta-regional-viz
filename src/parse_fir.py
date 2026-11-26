@@ -6,7 +6,13 @@ assessment subtotals (1997 onward), Schedule POPL population, and the Phase
 2b spending lines (SPEC_phase1.md §"Phase 2b basis") for police, transit, FCSS
 and public housing: Schedule C operating expenditure through 2008 (C_OP),
 Schedule C accrual expense from 2009 (C), Schedule E amortization from 2009
-(E_AMORT), and Schedule E sales and user charges (E_UC).
+(E_AMORT), and Schedule E sales and user charges (E_UC). Phase 2c (tax rates):
+Schedule MR's municipal tax rates, 1998-2008 from the non-residential (MR_NR) and
+residential-or-farmland (MR_RES) sheets, 2009 on from the mill-rate sheet
+(MR_RATE), plus the levy (MR_LEVY, 2017 on) and assessment (MR_ASSESS, 2023 on)
+sheets. 2026 comes from the package's `2026_Tax_Rates.xlsx`. FIR has no 2001 MR:
+the 2001 folder's MR files hold 2002's rows in per-dollar units under a different
+title ("Tax Rate Information"), so no MR pattern matches them.
 
 Columns are found by FIR item code, never by position; 2001's files have no
 code row, so their headers are mapped by name (NAME_TO_CODE). Rows are matched
@@ -35,6 +41,9 @@ log = get_logger("parse_fir")
 
 REPO = Path(__file__).resolve().parent.parent
 FIRST, LAST = 1994, 2025
+# The package's YYYY_Tax_Rates.xlsx carries the newest year's Schedule MR ahead of
+# its financial-year workbook (fingerprint_fir labels it "tax_rates").
+TAX_RATES_YEAR = 2026
 EA_FIRST = 1997
 
 TRANSFERS_OLD = {"01910", "01920"}  # provincial unconditional / conditional, through 2022
@@ -54,6 +63,16 @@ FUNCTION_NAMES = {"Police": ("01210", "02250"), "Public Transit": ("01310", "023
                   "Family and Community Support": ("01400", "02440"),
                   "Public Housing Operations": ("01480", "02520")}
 
+# Schedule MR. 1998-2008: one sheet per class group, the municipal rate under 05800.
+# 2009 on: one sheet per measure, a column per class (codes as printed from 2009).
+MR_OLD_FIRST, MR_OLD_LAST, MR_NEW_FIRST = 1998, 2008, 2009
+MR_MISSING = {2001}
+MR_OLD_LINES = {"05800"}  # Municipal Tax Rate
+MR_LINES = {"10030": "residential", "10032": "farmland", "10034": "nr (including linear)",
+            "10036": "nr small business", "10038": "m&e", "10040": "other"}
+MR_LEVY_FIRST, MR_ASSESS_FIRST = 2017, 2023
+MR_SCHEDULES = {"MR_NR", "MR_RES", "MR_RATE", "MR_LEVY", "MR_ASSESS"}
+
 # Schedule picked by the sheet's title rows (fingerprint_fir records them).
 SCHEDULES = {
     "D": re.compile(r"Schedule D \| Financial Activities by Type/Object - Total$", re.I),
@@ -67,6 +86,11 @@ SCHEDULES = {
                           r"Annual Amortization Expense$", re.I),
     "E_UC": re.compile(r"Schedule E \| (Operating Fund|Revenue And Expense) Supplementary Detail - "
                        r"(Operating Revenue - )?Sales and User Charges$", re.I),
+    "MR_NR": re.compile(r"Schedule MR \| Tax Rate Data - Non-Residential$", re.I),
+    "MR_RES": re.compile(r"Schedule MR \| Tax Rate Data - Residential or Farmland$", re.I),
+    "MR_RATE": re.compile(r"Schedule MR \| Tax Rate Data - MILL RATE$"),
+    "MR_LEVY": re.compile(r"Schedule MR \| Tax Rate Data - TAX LEVY$"),
+    "MR_ASSESS": re.compile(r"Schedule MR \| Tax Rate Data - ASSESSMENT$"),
 }
 # The electric (-E) and gas (-G) function supplements reuse Schedule D's title
 # in the per-schedule eras; they are a utility's slice, not the municipality.
@@ -108,7 +132,18 @@ def wanted(schedule: str, year: int) -> set[str]:
         return FUNCTION_E if year >= ACCRUAL else set()
     if schedule == "E_UC":
         return FUNCTION_E
+    if schedule in MR_SCHEDULES:
+        return mr_wanted(schedule, year)
     return {POPL}
+
+
+def mr_wanted(schedule: str, year: int) -> set[str]:
+    if year in MR_MISSING or year > TAX_RATES_YEAR:
+        return set()
+    if schedule in ("MR_NR", "MR_RES"):
+        return MR_OLD_LINES if MR_OLD_FIRST <= year <= MR_OLD_LAST else set()
+    first = {"MR_RATE": MR_NEW_FIRST, "MR_LEVY": MR_LEVY_FIRST, "MR_ASSESS": MR_ASSESS_FIRST}[schedule]
+    return set(MR_LINES) if year >= first else set()
 
 
 def read_sheet(rows, year: int, schedule: str):
@@ -154,12 +189,16 @@ def parse(raw: Path, regions: list[dict]):
     manifest = json.loads((raw / "manifest.json").read_text())
     out, stray = {}, set()
     for year, source, name, body in members(raw, manifest):
-        if not isinstance(year, int) or not FIRST <= year <= LAST or SUPPLEMENT.search(name):
+        mr_only = year == "tax_rates"
+        if mr_only:
+            year = TAX_RATES_YEAR
+        if not isinstance(year, int) or not FIRST <= year <= (TAX_RATES_YEAR if mr_only else LAST) \
+                or SUPPLEMENT.search(name):
             continue
         for sheet, rows in _sheets_safe(name, body):
             title, rows = _title(rows)
             schedule = next((s for s, pat in SCHEDULES.items() if pat.search(title)), None)
-            if schedule is None or not wanted(schedule, year):
+            if schedule is None or not wanted(schedule, year) or (mr_only and schedule not in MR_SCHEDULES):
                 continue
             for row_year, code, fir_name, cols in read_sheet(rows, year, schedule):
                 if row_year != str(year):
@@ -225,7 +264,8 @@ def check_complete(out: dict, regions: list[dict]):
     schedule with a non-zero value. Its EA rows run past its D rows (FIR year Y
     carries report year Y), and EA keeps all-zero placeholder rows for some
     years after dissolution (Blackie, Entwistle to 2004)."""
-    spans = [(r["muni_id"], r["fir_code"], dict.fromkeys(SCHEDULES, LAST)) for r in regions]
+    last_year = {s: TAX_RATES_YEAR if s in MR_SCHEDULES else LAST for s in SCHEDULES}
+    spans = [(r["muni_id"], r["fir_code"], dict(last_year)) for r in regions]
     for code, r in absorbed(regions).items():
         last = {}
         for (y, c, sch, line), rec in out.items():

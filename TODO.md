@@ -10,6 +10,13 @@ symptom and re-measure the stated cause before acting on it.
 
 ## Open work
 
+### Waiting on the owner
+
+- [ ] **Owner runs:** `merge PR #51 (Recover #50: headline remedy charts)` — the headline share charts (capped years hollow, levels, per-member contribution) aren't on master until it lands; it changes notebooks, so no self-merge · confirm: `gh pr view 51 --json state -q .state` prints MERGED · medium · since 2026-11-26
+- [ ] **Owner runs:** `press Sync in the claude.ai Project for data/DATA.md, docs/BRIEF.md, docs/SPEC_phase1.md` — #49, #52 and #53 changed them, and the web side can't tell its copies are stale · confirm: the Project's file list shows each path's update time after 2026-11-26 · low (before the next Claude web chat) · since 2026-11-26
+
+### Backlog
+
 - [ ] **Re-verify every live figure in `docs/SPIKE_regional_lens.md` and
   `docs/SCOPE_candidates.md` before building on it.** Both are dated 2026-07;
   the St. Albert service names embed the year and will have rolled; Strathcona
@@ -48,6 +55,12 @@ symptom and re-measure the stated cause before acting on it.
 - [ ] **CMA variant of decision 8: build it or amend the decision.** Never built, and nothing
   tracked it until audit #1. Adding former board members moves the fall by ≤0.17 pp
   (`docs/FINDINGS_headline_share_2026-11-13.md`).
+
+- [ ] **Phase 2c tax rates: notebook section (PR 3).** `tax_rates.csv` is built
+  (DECISIONS 2026-11-26). Chart core vs ring vs pooled `nr` and `residential` from 1999,
+  both regions, with the `weight_basis` switch at 2025 marked; and the dollar gap on a
+  $1M non-res property. Open: Foothills 2024 (FIR vs dashboard; needs its 2024 bylaw).
+  A forward projection is a separate proposal.
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports

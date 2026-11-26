@@ -170,8 +170,10 @@ def test_absorbed_municipalities_are_read_under_their_member():
 def test_an_absorbed_municipality_with_a_gap_fails():
     regions = [{"muni_id": "m", "fir_code": "0001", "absorbed_fir_codes": "0002"}]
     out = {}
-    for y in range(pf.FIRST, pf.LAST + 1):
+    for y in range(pf.FIRST, pf.TAX_RATES_YEAR + 1):  # Schedule MR runs a year past LAST
         for sch in pf.SCHEDULES:
+            if y > pf.LAST and sch not in pf.MR_SCHEDULES:
+                continue
             for line in pf.wanted(sch, y):
                 out[(y, "0001", sch, line)] = {"value": 1.0}
                 if y <= 2000:
@@ -180,3 +182,87 @@ def test_an_absorbed_municipality_with_a_gap_fails():
     del out[(1996, "0002", "D", "01910")]
     with pytest.raises(pf.ParseError, match=r"m<0002>"):
         pf.check_complete(out, regions)
+
+
+# --- Schedule MR (Phase 2c) ---------------------------------------------------
+
+def _mr_own():
+    """{(muni_id, year, schedule, line): value} for each member's OWN fir_code, and
+    {(muni_id, year): [nr rates of every code read under the member]}."""
+    own_code = {r["muni_id"]: r["fir_code"] for r in REGIONS}
+    own, nr_all = {}, defaultdict(list)
+    for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
+        if not r["schedule"].startswith("MR") or r["value"] == "":
+            continue
+        y, v = int(r["fir_year"]), float(r["value"])
+        if r["fir_code"] == own_code[r["muni_id"]]:
+            own[(r["muni_id"], y, r["schedule"], r["line_code"])] = v
+        if (r["schedule"], r["line_code"]) in (("MR_NR", "05800"), ("MR_RATE", "10034")):
+            nr_all[(r["muni_id"], y)].append(v)
+    return own, nr_all
+
+
+def _nr_rate(own, muni, y):
+    return own.get((muni, y, "MR_NR", "05800"), own.get((muni, y, "MR_RATE", "10034")))
+
+
+def test_mr_schedule_titles_and_years():
+    assert pf.SCHEDULES["MR_NR"].search("Schedule MR | Schedule MR | Tax Rate Data - Non-Residential")
+    assert pf.SCHEDULES["MR_RES"].search("MR Residential or Farmland | Schedule MR | Tax Rate Data - Residential or Farmland")
+    assert pf.SCHEDULES["MR_RATE"].search("<< Index | Schedule MR | Tax Rate Data - MILL RATE")
+    # 2001's folder holds 2002's rows in per-dollar units under another title: never read.
+    assert not any(p.search("Mr_col2 | Schedule Mr | Tax Rate Information - Non-Residential")
+                   for s, p in pf.SCHEDULES.items() if s in pf.MR_SCHEDULES)
+    years = defaultdict(set)
+    for r in csv.DictReader(open(REPO / "data/processed/fir_long.csv", newline="")):
+        if r["schedule"].startswith("MR"):
+            years[r["schedule"]].add(int(r["fir_year"]))
+    old = set(range(1998, 2009)) - {2001}
+    assert years == {"MR_NR": old, "MR_RES": old, "MR_RATE": set(range(2009, 2027)),
+                     "MR_LEVY": set(range(2017, 2027)), "MR_ASSESS": set(range(2023, 2027))}
+
+
+def test_mr_levy_is_rate_times_assessment():
+    """MR(1) = MR(2) x MR(3) / 1000 for every member, year and class with an
+    assessment, 2023 on (edmonton-tax-viz found the same for Edmonton)."""
+    own, _ = _mr_own()
+    checked = 0
+    for (muni, y, sch, line), assess in own.items():
+        if sch != "MR_ASSESS" or assess <= 0 or line not in ("10030", "10034", "10038"):
+            continue
+        levy, rate = own.get((muni, y, "MR_LEVY", line)), own.get((muni, y, "MR_RATE", line))
+        assert levy is not None and rate is not None, (muni, y, line)
+        assert abs(levy - assess * rate / 1000) <= 1e-4 * levy + 1, (muni, y, line, levy, assess, rate)
+        checked += 1
+    assert checked >= 21 * 4 * 2
+
+
+# Dashboard rows for a CSD that absorbed municipalities are the SUM of their mill
+# rates (data/DATA.md §"Regional Dashboard"). Measured 2026-11-26.
+ABSORBED_SUM = {("leduc_county", y) for y in range(1998, 2011) if y != 2001} | \
+               {("parkland", y) for y in range(1998, 2021) if y != 2001}
+# FIR's levy/assessment reproduce 13.74, but the residential levy doubles that year
+# and falls back in 2025; the dashboard's 8.86 fits the trend. Needs the 2024 bylaw.
+UNRESOLVED = {("foothills", 2024)}
+
+
+def test_fir_nr_rate_matches_the_regional_dashboard():
+    """The independent check on Schedule MR: every member-year agrees with the
+    Regional Dashboard, except the explained and the logged sets, which must still
+    disagree (a fix upstream should be noticed)."""
+    own, nr_all = _mr_own()
+    dash = {(r["muni_id"], int(r["year"])): float(r["nr_mill_rate"])
+            for r in csv.DictReader(open(REPO / "data/processed/dashboard_nr_rates.csv", newline=""))}
+    summed, unresolved, fir_missing = set(), set(), set()
+    for (muni, y), d in dash.items():
+        fir = _nr_rate(own, muni, y)
+        if fir is None:
+            fir_missing.add(y)
+        elif abs(fir - d) > 5e-4:
+            if len(nr_all[(muni, y)]) > 1 and abs(sum(nr_all[(muni, y)]) - d) <= 5e-4:
+                summed.add((muni, y))
+            else:
+                unresolved.add((muni, y))
+    assert fir_missing == {2001}
+    assert summed == ABSORBED_SUM
+    assert unresolved == UNRESOLVED
