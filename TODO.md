@@ -47,16 +47,14 @@ symptom and re-measure the stated cause before acting on it.
   (`docs/FINDINGS_equalization_basis_2026-11-20.md`). Nothing else is briefed; the next
   pick is the top of "Never audited".
 
-- [ ] **Headline share: Peter's call on the remedy** (audit #1, 2026-11-13, L0 CONDITIONAL;
-  `docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation). Most of the fall in the core
-  `nr` share came 2015–2025, while each core's NR assessment fell in nominal dollars. Proposed:
-  a caveat on every share chart (wording drafted), a companion chart of core and ring levels,
-  and a per-member contribution chart. Follow-ups, none blocking:
+- [ ] **Headline share follow-ups** (audit #1; none blocking):
   - a quantity series (new construction vs revaluation) to settle L0 (A12);
   - a City source for Edmonton's 2021–2022 core drop; Rocky View's 2023–2025 rise against the
-    county's assessment reports;
-  - **the CMA variant of decision 8 was never built** and nothing tracked it: build it, or
-    amend the decision (adding former board members moves the fall by ≤0.17 pp).
+    county's assessment reports.
+
+- [ ] **CMA variant of decision 8: build it or amend the decision.** Never built, and nothing
+  tracked it until audit #1. Adding former board members moves the fall by ≤0.17 pp
+  (`docs/FINDINGS_headline_share_2026-11-13.md`).
 
 - [ ] **Phase 2c tax rates: notebook section (PR 3).** `tax_rates.csv` is built
   (DECISIONS 2026-11-26). Chart core vs ring vs pooled `nr` and `residential` from 1999,
@@ -115,6 +113,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Headline share: Peter's call on the remedy** — 2026-11-13 · `docs/TODO_archive.md`
 
 - [x] **Capped 1997–1998: Peter's call on the remedy** — 2026-11-20 · `docs/TODO_archive.md`
 
