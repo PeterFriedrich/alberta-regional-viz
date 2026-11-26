@@ -10,6 +10,13 @@ symptom and re-measure the stated cause before acting on it.
 
 ## Open work
 
+### Waiting on the owner
+
+- [ ] **Owner runs:** `merge PR #51 (Recover #50: headline remedy charts)` — the headline share charts (capped years hollow, levels, per-member contribution) aren't on master until it lands; it changes notebooks, so no self-merge · confirm: `gh pr view 51 --json state -q .state` prints MERGED · medium · since 2026-11-26
+- [ ] **Owner runs:** `press Sync in the claude.ai Project for data/DATA.md, docs/BRIEF.md, docs/SPEC_phase1.md` — #49, #52 and #53 changed them, and the web side can't tell its copies are stale · confirm: the Project's file list shows each path's update time after 2026-11-26 · low (before the next Claude web chat) · since 2026-11-26
+
+### Backlog
+
 - [ ] **Re-verify every live figure in `docs/SPIKE_regional_lens.md` and
   `docs/SCOPE_candidates.md` before building on it.** Both are dated 2026-07;
   the St. Albert service names embed the year and will have rolled; Strathcona
