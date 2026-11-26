@@ -181,7 +181,7 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
   railway). They are written empty, not as 0.
 
 #### Schedule MR, tax rates (parsed 2026-11-26): same module → `fir_long.csv` (Phase 2c)
-- **Schedules:** `MR_NR` / `MR_RES` 1998–2008 (one sheet per class group; the municipal rate is item 05800 in each); `MR_RATE` (mill rate) 2009–2026, `MR_LEVY` 2017–2026, `MR_ASSESS` 2023–2026, one column per class: 10030 residential, 10032 farmland, 10034 non-residential **including linear**, 10036 NR small business, 10038 M&E, 10040 other. 2026 is read from the package's `2026_Tax_Rates.xlsx`, which carries the newest year ahead of its financial-year workbook.
+- **Schedules:** `MR_NR` / `MR_RES` 1998–2008 (one sheet per class group; the municipal rate is item 05800 in each); `MR_RATE` (mill rate) 2009–2026, `MR_LEVY` 2017–2026 (**blank for every member 2017–2022**; values from 2023), `MR_ASSESS` 2023–2026, one column per class: 10030 residential, 10032 farmland, 10034 non-residential **including linear**, 10036 NR small business, 10038 M&E (**blank for every member 2009–2022**; Edmonton's is 0 from 2023), 10040 other. 2026 is read from the package's `2026_Tax_Rates.xlsx`, which carries the newest year ahead of its financial-year workbook.
 - **Units:** mills ($ per $1,000). Municipal and education rates sit side by side; only the municipal general rates are read.
 - **No 2001:** the 2001 folder's `Mr_col1/2.XLS` hold 2002's rows, in $ per $1 of assessment, under the title "Tax Rate Information". They are not read.
 - **Absorbed municipalities** (decision 8) have their own MR rows under the member's `muni_id`, distinguished by `fir_code`. A member's rate is its OWN code's row; never sum rates.
@@ -202,6 +202,11 @@ per_capita, per_capita_5yr, basis_note`. Nominal dollars.
   $20.1M in 2014. This looks like a reversal of grant revenue recognised the year
   before. It is kept as printed and named in `basis_note` (member and ring rows).
 - **No blank transfer values** in any member-year.
+
+#### Tax rates (built 2026-11-26): `src/build_tax_rates.py` → `data/processed/tax_rates.csv`
+- **Columns:** `region, level, unit, role, taxation_year, class, mill_rate, weight, weight_basis, n_codes, basis_note`. Mills, municipal only. Spec: `docs/SPEC_phase1.md` §"Phase 2c". Committed for the merge gate.
+- **Shape:** 1,512 rows: 21 members + 2 sides + region per region, classes `nr` and `residential`, 1998–2026 without 2001.
+- **Quirk:** `weight_basis` is `equalized` through 2024 and `taxable` for 2025–2026; a pooled rate can step by up to ~0.13 mills at the switch.
 
 #### Spending per capita (built 2026-10-02): `src/build_spending.py` → `data/processed/spending_per_capita.csv`
 Committed, 2,204 rows: 21 members plus core and ring for each region, × police,
