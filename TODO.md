@@ -51,6 +51,12 @@ symptom and re-measure the stated cause before acting on it.
   - **the CMA variant of decision 8 was never built** and nothing tracked it: build it, or
     amend the decision (adding former board members moves the fall by ≤0.17 pp).
 
+- [ ] **Phase 2c tax rates: notebook section (PR 3).** `tax_rates.csv` is built
+  (DECISIONS 2026-11-26). Chart core vs ring vs pooled `nr` and `residential` from 1999,
+  both regions, with the `weight_basis` switch at 2025 marked; and the dollar gap on a
+  $1M non-res property. Open: Foothills 2024 (FIR vs dashboard; needs its 2024 bylaw).
+  A forward projection is a separate proposal.
+
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
   (which would close the gap holding the City's 2008 anchor). Mention the 1999

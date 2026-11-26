@@ -203,6 +203,11 @@ per_capita, per_capita_5yr, basis_note`. Nominal dollars.
   before. It is kept as printed and named in `basis_note` (member and ring rows).
 - **No blank transfer values** in any member-year.
 
+#### Tax rates (built 2026-11-26): `src/build_tax_rates.py` → `data/processed/tax_rates.csv`
+- **Columns:** `region, level, unit, role, taxation_year, class, mill_rate, weight, weight_basis, n_codes, basis_note`. Mills, municipal only. Spec: `docs/SPEC_phase1.md` §"Phase 2c". Committed for the merge gate.
+- **Shape:** 1,512 rows: 21 members + 2 sides + region per region, classes `nr` and `residential`, 1998–2026 without 2001.
+- **Quirk:** `weight_basis` is `equalized` through 2024 and `taxable` for 2025–2026; a pooled rate can step by up to ~0.13 mills at the switch.
+
 #### Spending per capita (built 2026-10-02): `src/build_spending.py` → `data/processed/spending_per_capita.csv`
 Committed, 2,204 rows: 21 members plus core and ring for each region, × police,
 transit and FCSS for 2001–2025, and housing for 2009–2025, less the
