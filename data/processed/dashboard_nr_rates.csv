@@ -1,0 +1,610 @@
+muni_id,csd_uid,csd_name,year,nr_mill_rate
+airdrie,4806021,Airdrie,1998,11.994
+airdrie,4806021,Airdrie,1999,11.415
+airdrie,4806021,Airdrie,2000,10.578
+airdrie,4806021,Airdrie,2001,10.039
+airdrie,4806021,Airdrie,2002,10.039
+airdrie,4806021,Airdrie,2003,10.64679
+airdrie,4806021,Airdrie,2004,10.5664
+airdrie,4806021,Airdrie,2005,10.2005
+airdrie,4806021,Airdrie,2006,9.9961
+airdrie,4806021,Airdrie,2007,8.2386
+airdrie,4806021,Airdrie,2008,6.9559
+airdrie,4806021,Airdrie,2009,6.7429
+airdrie,4806021,Airdrie,2010,7.4509
+airdrie,4806021,Airdrie,2011,7.61104
+airdrie,4806021,Airdrie,2012,7.9993
+airdrie,4806021,Airdrie,2013,8.0333
+airdrie,4806021,Airdrie,2014,7.88704
+airdrie,4806021,Airdrie,2015,7.35276
+airdrie,4806021,Airdrie,2016,7.5075
+airdrie,4806021,Airdrie,2017,7.9822
+airdrie,4806021,Airdrie,2018,8.61095
+airdrie,4806021,Airdrie,2019,9.56572
+airdrie,4806021,Airdrie,2020,10.04809
+airdrie,4806021,Airdrie,2021,10.17585
+airdrie,4806021,Airdrie,2022,9.92508
+airdrie,4806021,Airdrie,2023,9.41019
+airdrie,4806021,Airdrie,2024,8.96365
+airdrie,4806021,Airdrie,2025,8.50739
+airdrie,4806021,Airdrie,2026,8.6971
+beaumont,4811013,Beaumont,1998,8.732
+beaumont,4811013,Beaumont,1999,9.095
+beaumont,4811013,Beaumont,2000,9.104
+beaumont,4811013,Beaumont,2001,9.105
+beaumont,4811013,Beaumont,2002,9.105
+beaumont,4811013,Beaumont,2003,9.043
+beaumont,4811013,Beaumont,2004,9.078
+beaumont,4811013,Beaumont,2005,9.081
+beaumont,4811013,Beaumont,2006,9.632
+beaumont,4811013,Beaumont,2007,9.103
+beaumont,4811013,Beaumont,2008,8.118
+beaumont,4811013,Beaumont,2009,7.9171
+beaumont,4811013,Beaumont,2010,8.4796
+beaumont,4811013,Beaumont,2011,8.0738
+beaumont,4811013,Beaumont,2012,8.2049
+beaumont,4811013,Beaumont,2013,8.2985
+beaumont,4811013,Beaumont,2014,8.2476
+beaumont,4811013,Beaumont,2015,8.4509
+beaumont,4811013,Beaumont,2016,8.36214
+beaumont,4811013,Beaumont,2017,8.7533
+beaumont,4811013,Beaumont,2018,9.06909
+beaumont,4811013,Beaumont,2019,9.27596
+beaumont,4811013,Beaumont,2020,9.71417
+beaumont,4811013,Beaumont,2021,9.94854
+beaumont,4811013,Beaumont,2022,9.6858
+beaumont,4811013,Beaumont,2023,9.5023
+beaumont,4811013,Beaumont,2024,9.59791
+beaumont,4811013,Beaumont,2025,9.6298
+beaumont,4811013,Beaumont,2026,9.4628
+calgary,4806016,Calgary,1998,18.7863
+calgary,4806016,Calgary,1999,12.9398
+calgary,4806016,Calgary,2000,13.3359
+calgary,4806016,Calgary,2001,13.7995
+calgary,4806016,Calgary,2002,13.7995
+calgary,4806016,Calgary,2003,14.4991
+calgary,4806016,Calgary,2004,15.2085
+calgary,4806016,Calgary,2005,14.3736
+calgary,4806016,Calgary,2006,13.6266
+calgary,4806016,Calgary,2007,9.923
+calgary,4806016,Calgary,2008,8.0929
+calgary,4806016,Calgary,2009,8.2132
+calgary,4806016,Calgary,2010,9.9087
+calgary,4806016,Calgary,2011,11.5099
+calgary,4806016,Calgary,2012,12.3112
+calgary,4806016,Calgary,2013,10.9913
+calgary,4806016,Calgary,2014,10.6938
+calgary,4806016,Calgary,2015,10.7367
+calgary,4806016,Calgary,2016,12.1545
+calgary,4806016,Calgary,2017,13.8819
+calgary,4806016,Calgary,2018,15.3234
+calgary,4806016,Calgary,2019,17.775
+calgary,4806016,Calgary,2020,15.8278
+calgary,4806016,Calgary,2021,16.513
+calgary,4806016,Calgary,2022,17.8843
+calgary,4806016,Calgary,2023,18.4334
+calgary,4806016,Calgary,2024,18.3629
+calgary,4806016,Calgary,2025,17.9731
+calgary,4806016,Calgary,2026,17.9986
+chestermere,4806017,Chestermere,1998,2.7
+chestermere,4806017,Chestermere,1999,2.619
+chestermere,4806017,Chestermere,2000,2.619
+chestermere,4806017,Chestermere,2001,3.62
+chestermere,4806017,Chestermere,2002,3.62
+chestermere,4806017,Chestermere,2003,3.44
+chestermere,4806017,Chestermere,2004,3.8
+chestermere,4806017,Chestermere,2005,4.5778
+chestermere,4806017,Chestermere,2006,5.3635
+chestermere,4806017,Chestermere,2007,5.7032
+chestermere,4806017,Chestermere,2008,6.2952
+chestermere,4806017,Chestermere,2009,6.8288
+chestermere,4806017,Chestermere,2010,6.3751
+chestermere,4806017,Chestermere,2011,7.079
+chestermere,4806017,Chestermere,2012,7.0602
+chestermere,4806017,Chestermere,2013,7.1841
+chestermere,4806017,Chestermere,2014,7.46628
+chestermere,4806017,Chestermere,2015,7.75793
+chestermere,4806017,Chestermere,2016,7.75793
+chestermere,4806017,Chestermere,2017,7.75793
+chestermere,4806017,Chestermere,2018,15.3562
+chestermere,4806017,Chestermere,2019,7.69661
+chestermere,4806017,Chestermere,2020,17.92031
+chestermere,4806017,Chestermere,2021,7.2388
+chestermere,4806017,Chestermere,2022,7.2388
+chestermere,4806017,Chestermere,2023,7.2388
+chestermere,4806017,Chestermere,2024,7.2388
+chestermere,4806017,Chestermere,2025,7.2388
+chestermere,4806017,Chestermere,2026,7.96268
+cochrane,4806019,Cochrane,1998,7.5
+cochrane,4806019,Cochrane,1999,7.5
+cochrane,4806019,Cochrane,2000,7.73
+cochrane,4806019,Cochrane,2001,8.03
+cochrane,4806019,Cochrane,2002,8.03
+cochrane,4806019,Cochrane,2003,8.43
+cochrane,4806019,Cochrane,2004,8.8
+cochrane,4806019,Cochrane,2005,8.54
+cochrane,4806019,Cochrane,2006,8.7
+cochrane,4806019,Cochrane,2007,8.2
+cochrane,4806019,Cochrane,2008,7.27
+cochrane,4806019,Cochrane,2009,6.34
+cochrane,4806019,Cochrane,2010,6.3
+cochrane,4806019,Cochrane,2011,6.5
+cochrane,4806019,Cochrane,2012,7.08
+cochrane,4806019,Cochrane,2013,7.11
+cochrane,4806019,Cochrane,2014,6.44
+cochrane,4806019,Cochrane,2015,6.44
+cochrane,4806019,Cochrane,2016,6.25
+cochrane,4806019,Cochrane,2017,6.29
+cochrane,4806019,Cochrane,2018,6.29
+cochrane,4806019,Cochrane,2019,6.6426
+cochrane,4806019,Cochrane,2020,6.6109
+cochrane,4806019,Cochrane,2021,6.71136
+cochrane,4806019,Cochrane,2022,7.5498
+cochrane,4806019,Cochrane,2023,7.5315
+cochrane,4806019,Cochrane,2024,7.6701
+cochrane,4806019,Cochrane,2025,7.6966
+cochrane,4806019,Cochrane,2026,7.5668
+devon,4811018,Devon,1998,11.9556
+devon,4811018,Devon,1999,11.9556
+devon,4811018,Devon,2000,11.667
+devon,4811018,Devon,2001,11.0243
+devon,4811018,Devon,2002,11.0243
+devon,4811018,Devon,2003,10.4689
+devon,4811018,Devon,2004,9.8616
+devon,4811018,Devon,2005,9.0914
+devon,4811018,Devon,2006,8.3631
+devon,4811018,Devon,2007,7.19
+devon,4811018,Devon,2008,6.6945
+devon,4811018,Devon,2009,7.222
+devon,4811018,Devon,2010,8.4285
+devon,4811018,Devon,2011,8.6025
+devon,4811018,Devon,2012,8.8896
+devon,4811018,Devon,2013,8.7
+devon,4811018,Devon,2014,8.5485
+devon,4811018,Devon,2015,8.0425
+devon,4811018,Devon,2016,8.29452
+devon,4811018,Devon,2017,8.3811
+devon,4811018,Devon,2018,8.415
+devon,4811018,Devon,2019,8.5176
+devon,4811018,Devon,2020,8.6205
+devon,4811018,Devon,2021,8.9402
+devon,4811018,Devon,2022,9.0724
+devon,4811018,Devon,2023,9.5868
+devon,4811018,Devon,2024,10.0891
+devon,4811018,Devon,2025,10.2074
+devon,4811018,Devon,2026,9.8273
+edmonton,4811061,Edmonton,1998,16.7061
+edmonton,4811061,Edmonton,1999,15.7211
+edmonton,4811061,Edmonton,2000,16.0185
+edmonton,4811061,Edmonton,2001,15.3792
+edmonton,4811061,Edmonton,2002,15.3792
+edmonton,4811061,Edmonton,2003,15.4271
+edmonton,4811061,Edmonton,2004,15.3656
+edmonton,4811061,Edmonton,2005,14.7451
+edmonton,4811061,Edmonton,2006,13.6577
+edmonton,4811061,Edmonton,2007,12.4496
+edmonton,4811061,Edmonton,2008,11.298
+edmonton,4811061,Edmonton,2009,10.4512
+edmonton,4811061,Edmonton,2010,12.4654
+edmonton,4811061,Edmonton,2011,14.0594
+edmonton,4811061,Edmonton,2012,15.1587
+edmonton,4811061,Edmonton,2013,14.5573
+edmonton,4811061,Edmonton,2014,14.7009
+edmonton,4811061,Edmonton,2015,15.5435
+edmonton,4811061,Edmonton,2016,15.5435
+edmonton,4811061,Edmonton,2017,16.8561
+edmonton,4811061,Edmonton,2018,17.4354
+edmonton,4811061,Edmonton,2019,17.8311
+edmonton,4811061,Edmonton,2020,18.5037
+edmonton,4811061,Edmonton,2021,19.9792
+edmonton,4811061,Edmonton,2022,21.0786
+edmonton,4811061,Edmonton,2023,20.8591
+edmonton,4811061,Edmonton,2024,22.6627
+edmonton,4811061,Edmonton,2025,24.2229
+edmonton,4811061,Edmonton,2026,25.2216
+foothills,4806001,Foothills County,1998,5.5257
+foothills,4806001,Foothills County,1999,5.6211
+foothills,4806001,Foothills County,2000,5.4654
+foothills,4806001,Foothills County,2001,6.2747
+foothills,4806001,Foothills County,2002,6.2747
+foothills,4806001,Foothills County,2003,6.1395
+foothills,4806001,Foothills County,2004,6.6629
+foothills,4806001,Foothills County,2005,6.5703
+foothills,4806001,Foothills County,2006,6.4667
+foothills,4806001,Foothills County,2007,5.9024
+foothills,4806001,Foothills County,2008,5.258
+foothills,4806001,Foothills County,2009,5.215
+foothills,4806001,Foothills County,2010,5.826
+foothills,4806001,Foothills County,2011,6.1643
+foothills,4806001,Foothills County,2012,6.7249
+foothills,4806001,Foothills County,2013,7.1125
+foothills,4806001,Foothills County,2014,7.3426
+foothills,4806001,Foothills County,2015,7.65663
+foothills,4806001,Foothills County,2016,8.038
+foothills,4806001,Foothills County,2017,7.8741
+foothills,4806001,Foothills County,2018,8.36257
+foothills,4806001,Foothills County,2019,8.52325
+foothills,4806001,Foothills County,2020,8.81856
+foothills,4806001,Foothills County,2021,8.41926
+foothills,4806001,Foothills County,2022,8.76497
+foothills,4806001,Foothills County,2023,8.73303
+foothills,4806001,Foothills County,2024,8.85966
+foothills,4806001,Foothills County,2025,10.29082
+foothills,4806001,Foothills County,2026,9.39259
+fort_saskatchewan,4811056,Fort Saskatchewan,1998,6.5343
+fort_saskatchewan,4811056,Fort Saskatchewan,1999,6.5343
+fort_saskatchewan,4811056,Fort Saskatchewan,2000,6.7662
+fort_saskatchewan,4811056,Fort Saskatchewan,2001,7.1576
+fort_saskatchewan,4811056,Fort Saskatchewan,2002,7.1576
+fort_saskatchewan,4811056,Fort Saskatchewan,2003,7.2417
+fort_saskatchewan,4811056,Fort Saskatchewan,2004,7.6194
+fort_saskatchewan,4811056,Fort Saskatchewan,2005,7.3422
+fort_saskatchewan,4811056,Fort Saskatchewan,2006,7.2049
+fort_saskatchewan,4811056,Fort Saskatchewan,2007,7.3585
+fort_saskatchewan,4811056,Fort Saskatchewan,2008,6.6388
+fort_saskatchewan,4811056,Fort Saskatchewan,2009,6.9169
+fort_saskatchewan,4811056,Fort Saskatchewan,2010,7.3427
+fort_saskatchewan,4811056,Fort Saskatchewan,2011,7.7524
+fort_saskatchewan,4811056,Fort Saskatchewan,2012,8.2077
+fort_saskatchewan,4811056,Fort Saskatchewan,2013,8.7829
+fort_saskatchewan,4811056,Fort Saskatchewan,2014,9.00454
+fort_saskatchewan,4811056,Fort Saskatchewan,2015,9.38288
+fort_saskatchewan,4811056,Fort Saskatchewan,2016,9.5117
+fort_saskatchewan,4811056,Fort Saskatchewan,2017,8.90545
+fort_saskatchewan,4811056,Fort Saskatchewan,2018,9.03798
+fort_saskatchewan,4811056,Fort Saskatchewan,2019,9.47551
+fort_saskatchewan,4811056,Fort Saskatchewan,2020,9.65679
+fort_saskatchewan,4811056,Fort Saskatchewan,2021,9.92232
+fort_saskatchewan,4811056,Fort Saskatchewan,2022,10.09477
+fort_saskatchewan,4811056,Fort Saskatchewan,2023,9.85292
+fort_saskatchewan,4811056,Fort Saskatchewan,2024,9.85257
+fort_saskatchewan,4811056,Fort Saskatchewan,2025,9.9269
+fort_saskatchewan,4811056,Fort Saskatchewan,2026,10.4124
+high_river,4806006,High River,1998,9.068
+high_river,4806006,High River,1999,8.0912
+high_river,4806006,High River,2000,7.2151
+high_river,4806006,High River,2001,5.9338
+high_river,4806006,High River,2002,5.9338
+high_river,4806006,High River,2003,5.7734
+high_river,4806006,High River,2004,6.316
+high_river,4806006,High River,2005,6.43
+high_river,4806006,High River,2006,6.5279
+high_river,4806006,High River,2007,5.4725
+high_river,4806006,High River,2008,4.2302
+high_river,4806006,High River,2009,4.4124
+high_river,4806006,High River,2010,4.8152
+high_river,4806006,High River,2011,4.8068
+high_river,4806006,High River,2012,5.1729
+high_river,4806006,High River,2013,5.6166
+high_river,4806006,High River,2014,5.7351
+high_river,4806006,High River,2015,7.119
+high_river,4806006,High River,2016,7.2541
+high_river,4806006,High River,2017,7.707
+high_river,4806006,High River,2018,8.2536
+high_river,4806006,High River,2019,8.696
+high_river,4806006,High River,2020,8.8611
+high_river,4806006,High River,2021,8.8433
+high_river,4806006,High River,2022,8.3976
+high_river,4806006,High River,2023,8.0427
+high_river,4806006,High River,2024,7.399
+high_river,4806006,High River,2025,6.7061
+high_river,4806006,High River,2026,6.92223
+leduc_city,4811016,Leduc,1998,15.36
+leduc_city,4811016,Leduc,1999,15.644
+leduc_city,4811016,Leduc,2000,15.503
+leduc_city,4811016,Leduc,2001,17.153
+leduc_city,4811016,Leduc,2002,17.153
+leduc_city,4811016,Leduc,2003,15.264
+leduc_city,4811016,Leduc,2004,16.201
+leduc_city,4811016,Leduc,2005,15.521
+leduc_city,4811016,Leduc,2006,14.031
+leduc_city,4811016,Leduc,2007,13.301
+leduc_city,4811016,Leduc,2008,10.977
+leduc_city,4811016,Leduc,2009,10.389
+leduc_city,4811016,Leduc,2010,9.973
+leduc_city,4811016,Leduc,2011,10.438
+leduc_city,4811016,Leduc,2012,9.825
+leduc_city,4811016,Leduc,2013,9.015
+leduc_city,4811016,Leduc,2014,8.335
+leduc_city,4811016,Leduc,2015,8.193
+leduc_city,4811016,Leduc,2016,7.974
+leduc_city,4811016,Leduc,2017,8.06
+leduc_city,4811016,Leduc,2018,8.568
+leduc_city,4811016,Leduc,2019,8.517
+leduc_city,4811016,Leduc,2020,8.792
+leduc_city,4811016,Leduc,2021,8.541
+leduc_city,4811016,Leduc,2022,9.38
+leduc_city,4811016,Leduc,2023,9.6152
+leduc_city,4811016,Leduc,2024,9.4819
+leduc_city,4811016,Leduc,2025,9.764
+leduc_city,4811016,Leduc,2026,10.1367
+leduc_county,4811012,Leduc County,1998,30.138
+leduc_county,4811012,Leduc County,1999,27.006
+leduc_county,4811012,Leduc County,2000,26.916
+leduc_county,4811012,Leduc County,2001,25.29
+leduc_county,4811012,Leduc County,2002,25.29
+leduc_county,4811012,Leduc County,2003,24.44
+leduc_county,4811012,Leduc County,2004,24.45
+leduc_county,4811012,Leduc County,2005,21.81
+leduc_county,4811012,Leduc County,2006,21.0
+leduc_county,4811012,Leduc County,2007,20.02
+leduc_county,4811012,Leduc County,2008,16.907
+leduc_county,4811012,Leduc County,2009,16.79
+leduc_county,4811012,Leduc County,2010,17.14
+leduc_county,4811012,Leduc County,2011,7.25
+leduc_county,4811012,Leduc County,2012,7.43
+leduc_county,4811012,Leduc County,2013,7.33
+leduc_county,4811012,Leduc County,2014,7.11
+leduc_county,4811012,Leduc County,2015,6.75
+leduc_county,4811012,Leduc County,2016,6.66
+leduc_county,4811012,Leduc County,2017,6.79
+leduc_county,4811012,Leduc County,2018,6.87
+leduc_county,4811012,Leduc County,2019,6.95
+leduc_county,4811012,Leduc County,2020,6.4635
+leduc_county,4811012,Leduc County,2021,6.37
+leduc_county,4811012,Leduc County,2022,6.5
+leduc_county,4811012,Leduc County,2023,6.7
+leduc_county,4811012,Leduc County,2024,6.7
+leduc_county,4811012,Leduc County,2025,6.7
+leduc_county,4811012,Leduc County,2026,6.87
+morinville,4811068,Morinville,1998,12.4739
+morinville,4811068,Morinville,1999,12.176
+morinville,4811068,Morinville,2000,12.0167
+morinville,4811068,Morinville,2001,10.593
+morinville,4811068,Morinville,2002,10.593
+morinville,4811068,Morinville,2003,9.1994
+morinville,4811068,Morinville,2004,8.6295
+morinville,4811068,Morinville,2005,8.3221
+morinville,4811068,Morinville,2006,7.9209
+morinville,4811068,Morinville,2007,7.9209
+morinville,4811068,Morinville,2008,8.161
+morinville,4811068,Morinville,2009,7.0869
+morinville,4811068,Morinville,2010,7.5859
+morinville,4811068,Morinville,2011,6.3933
+morinville,4811068,Morinville,2012,6.5109
+morinville,4811068,Morinville,2013,6.59456
+morinville,4811068,Morinville,2014,6.5489
+morinville,4811068,Morinville,2015,6.6096
+morinville,4811068,Morinville,2016,6.67062
+morinville,4811068,Morinville,2017,6.89673
+morinville,4811068,Morinville,2018,6.97244
+morinville,4811068,Morinville,2019,8.05185
+morinville,4811068,Morinville,2020,8.26391
+morinville,4811068,Morinville,2021,11.85101
+morinville,4811068,Morinville,2022,8.76654
+morinville,4811068,Morinville,2023,9.4858
+morinville,4811068,Morinville,2024,11.3411
+morinville,4811068,Morinville,2025,12.9651
+morinville,4811068,Morinville,2026,13.09472
+okotoks,4806012,Okotoks,1998,7.39
+okotoks,4806012,Okotoks,1999,7.39
+okotoks,4806012,Okotoks,2000,7.07
+okotoks,4806012,Okotoks,2001,7.39
+okotoks,4806012,Okotoks,2002,7.39
+okotoks,4806012,Okotoks,2003,7.75
+okotoks,4806012,Okotoks,2004,7.36
+okotoks,4806012,Okotoks,2005,7.303
+okotoks,4806012,Okotoks,2006,6.9888
+okotoks,4806012,Okotoks,2007,5.66
+okotoks,4806012,Okotoks,2008,4.37
+okotoks,4806012,Okotoks,2009,4.638
+okotoks,4806012,Okotoks,2010,5.608
+okotoks,4806012,Okotoks,2011,5.513
+okotoks,4806012,Okotoks,2012,6.124
+okotoks,4806012,Okotoks,2013,6.363
+okotoks,4806012,Okotoks,2014,6.861
+okotoks,4806012,Okotoks,2015,7.063
+okotoks,4806012,Okotoks,2016,7.001
+okotoks,4806012,Okotoks,2017,7.394
+okotoks,4806012,Okotoks,2018,7.764
+okotoks,4806012,Okotoks,2019,7.917
+okotoks,4806012,Okotoks,2020,8.018
+okotoks,4806012,Okotoks,2021,8.246
+okotoks,4806012,Okotoks,2022,8.194
+okotoks,4806012,Okotoks,2023,8.571
+okotoks,4806012,Okotoks,2024,7.8132
+okotoks,4806012,Okotoks,2025,7.6391
+okotoks,4806012,Okotoks,2026,7.7031
+parkland,4811034,Parkland County,1998,53.505
+parkland,4811034,Parkland County,1999,53.884
+parkland,4811034,Parkland County,2000,57.37
+parkland,4811034,Parkland County,2001,20.6762
+parkland,4811034,Parkland County,2002,20.6762
+parkland,4811034,Parkland County,2003,21.2041
+parkland,4811034,Parkland County,2004,20.4383
+parkland,4811034,Parkland County,2005,20.8662
+parkland,4811034,Parkland County,2006,21.0327
+parkland,4811034,Parkland County,2007,21.1044
+parkland,4811034,Parkland County,2008,19.3234
+parkland,4811034,Parkland County,2009,20.3256
+parkland,4811034,Parkland County,2010,22.5033
+parkland,4811034,Parkland County,2011,23.9342
+parkland,4811034,Parkland County,2012,23.6869
+parkland,4811034,Parkland County,2013,23.828
+parkland,4811034,Parkland County,2014,24.1037
+parkland,4811034,Parkland County,2015,23.2038
+parkland,4811034,Parkland County,2016,23.3914
+parkland,4811034,Parkland County,2017,23.5886
+parkland,4811034,Parkland County,2018,23.94805
+parkland,4811034,Parkland County,2019,24.1888
+parkland,4811034,Parkland County,2020,24.3835
+parkland,4811034,Parkland County,2021,8.4455
+parkland,4811034,Parkland County,2022,8.4266
+parkland,4811034,Parkland County,2023,8.6185
+parkland,4811034,Parkland County,2024,8.9763
+parkland,4811034,Parkland County,2025,9.2772
+parkland,4811034,Parkland County,2026,9.5318
+rocky_view,4806014,Rocky View County,1998,3.178
+rocky_view,4806014,Rocky View County,1999,3.1546
+rocky_view,4806014,Rocky View County,2000,3.18
+rocky_view,4806014,Rocky View County,2001,3.3435
+rocky_view,4806014,Rocky View County,2002,3.3435
+rocky_view,4806014,Rocky View County,2003,3.4245
+rocky_view,4806014,Rocky View County,2004,4.2806
+rocky_view,4806014,Rocky View County,2005,4.2806
+rocky_view,4806014,Rocky View County,2006,4.7176
+rocky_view,4806014,Rocky View County,2007,5.3974
+rocky_view,4806014,Rocky View County,2008,6.3295
+rocky_view,4806014,Rocky View County,2009,6.7377
+rocky_view,4806014,Rocky View County,2010,6.9603
+rocky_view,4806014,Rocky View County,2011,7.0813
+rocky_view,4806014,Rocky View County,2012,7.2187
+rocky_view,4806014,Rocky View County,2013,7.2417
+rocky_view,4806014,Rocky View County,2014,7.2922
+rocky_view,4806014,Rocky View County,2015,7.4266
+rocky_view,4806014,Rocky View County,2016,7.326
+rocky_view,4806014,Rocky View County,2017,7.4355
+rocky_view,4806014,Rocky View County,2018,7.542
+rocky_view,4806014,Rocky View County,2019,7.6221
+rocky_view,4806014,Rocky View County,2020,7.5284
+rocky_view,4806014,Rocky View County,2021,7.6535
+rocky_view,4806014,Rocky View County,2022,7.5967
+rocky_view,4806014,Rocky View County,2023,7.332
+rocky_view,4806014,Rocky View County,2024,7.6205
+rocky_view,4806014,Rocky View County,2025,7.3718
+rocky_view,4806014,Rocky View County,2026,7.4711
+spruce_grove,4811049,Spruce Grove,1998,15.423
+spruce_grove,4811049,Spruce Grove,1999,14.533
+spruce_grove,4811049,Spruce Grove,2000,13.422
+spruce_grove,4811049,Spruce Grove,2001,12.908
+spruce_grove,4811049,Spruce Grove,2002,12.908
+spruce_grove,4811049,Spruce Grove,2003,14.333
+spruce_grove,4811049,Spruce Grove,2004,11.997
+spruce_grove,4811049,Spruce Grove,2005,12.403
+spruce_grove,4811049,Spruce Grove,2006,12.222
+spruce_grove,4811049,Spruce Grove,2007,10.5455
+spruce_grove,4811049,Spruce Grove,2008,8.9228
+spruce_grove,4811049,Spruce Grove,2009,8.0252
+spruce_grove,4811049,Spruce Grove,2010,8.9098
+spruce_grove,4811049,Spruce Grove,2011,8.869
+spruce_grove,4811049,Spruce Grove,2012,9.2127
+spruce_grove,4811049,Spruce Grove,2013,8.8908
+spruce_grove,4811049,Spruce Grove,2014,8.6713
+spruce_grove,4811049,Spruce Grove,2015,8.0458
+spruce_grove,4811049,Spruce Grove,2016,8.065
+spruce_grove,4811049,Spruce Grove,2017,8.4886
+spruce_grove,4811049,Spruce Grove,2018,8.5253
+spruce_grove,4811049,Spruce Grove,2019,8.9008
+spruce_grove,4811049,Spruce Grove,2020,8.7179
+spruce_grove,4811049,Spruce Grove,2021,9.4487
+spruce_grove,4811049,Spruce Grove,2022,9.6214
+spruce_grove,4811049,Spruce Grove,2023,9.8658
+spruce_grove,4811049,Spruce Grove,2024,10.4643
+spruce_grove,4811049,Spruce Grove,2025,10.7486
+spruce_grove,4811049,Spruce Grove,2026,10.8623
+st_albert,4811062,St. Albert,1998,11.259
+st_albert,4811062,St. Albert,1999,11.12
+st_albert,4811062,St. Albert,2000,10.972
+st_albert,4811062,St. Albert,2001,13.605
+st_albert,4811062,St. Albert,2002,13.605
+st_albert,4811062,St. Albert,2003,13.839
+st_albert,4811062,St. Albert,2004,14.095
+st_albert,4811062,St. Albert,2005,15.002
+st_albert,4811062,St. Albert,2006,14.529
+st_albert,4811062,St. Albert,2007,13.405
+st_albert,4811062,St. Albert,2008,10.7396
+st_albert,4811062,St. Albert,2009,10.9599
+st_albert,4811062,St. Albert,2010,12.0633
+st_albert,4811062,St. Albert,2011,12.2957
+st_albert,4811062,St. Albert,2012,11.8803
+st_albert,4811062,St. Albert,2013,11.3566
+st_albert,4811062,St. Albert,2014,10.8929
+st_albert,4811062,St. Albert,2015,10.5301
+st_albert,4811062,St. Albert,2016,10.4702
+st_albert,4811062,St. Albert,2017,10.769
+st_albert,4811062,St. Albert,2018,11.0082
+st_albert,4811062,St. Albert,2019,11.0141
+st_albert,4811062,St. Albert,2020,10.8801
+st_albert,4811062,St. Albert,2021,11.55768
+st_albert,4811062,St. Albert,2022,12.07518
+st_albert,4811062,St. Albert,2023,12.77496
+st_albert,4811062,St. Albert,2024,12.9874
+st_albert,4811062,St. Albert,2025,13.13623
+st_albert,4811062,St. Albert,2026,13.39412
+stony_plain,4811048,Stony Plain,1998,14.738
+stony_plain,4811048,Stony Plain,1999,13.35
+stony_plain,4811048,Stony Plain,2000,12.887
+stony_plain,4811048,Stony Plain,2001,12.039
+stony_plain,4811048,Stony Plain,2002,12.039
+stony_plain,4811048,Stony Plain,2003,11.774
+stony_plain,4811048,Stony Plain,2004,11.499
+stony_plain,4811048,Stony Plain,2005,10.8
+stony_plain,4811048,Stony Plain,2006,9.869
+stony_plain,4811048,Stony Plain,2007,9.054
+stony_plain,4811048,Stony Plain,2008,7.505
+stony_plain,4811048,Stony Plain,2009,7.292
+stony_plain,4811048,Stony Plain,2010,7.167
+stony_plain,4811048,Stony Plain,2011,7.185
+stony_plain,4811048,Stony Plain,2012,6.511
+stony_plain,4811048,Stony Plain,2013,6.96
+stony_plain,4811048,Stony Plain,2014,7.87
+stony_plain,4811048,Stony Plain,2015,7.767
+stony_plain,4811048,Stony Plain,2016,7.905
+stony_plain,4811048,Stony Plain,2017,8.137
+stony_plain,4811048,Stony Plain,2018,7.95
+stony_plain,4811048,Stony Plain,2019,7.655
+stony_plain,4811048,Stony Plain,2020,7.443
+stony_plain,4811048,Stony Plain,2021,7.802
+stony_plain,4811048,Stony Plain,2022,8.1564
+stony_plain,4811048,Stony Plain,2023,5.47211
+stony_plain,4811048,Stony Plain,2024,9.0933
+stony_plain,4811048,Stony Plain,2025,9.5486
+stony_plain,4811048,Stony Plain,2026,9.7103
+strathcona,4811052,Strathcona County,1998,8.0615
+strathcona,4811052,Strathcona County,1999,8.3517
+strathcona,4811052,Strathcona County,2000,8.5159
+strathcona,4811052,Strathcona County,2001,8.5965
+strathcona,4811052,Strathcona County,2002,8.5965
+strathcona,4811052,Strathcona County,2003,8.9235
+strathcona,4811052,Strathcona County,2004,9.0251
+strathcona,4811052,Strathcona County,2005,8.8716
+strathcona,4811052,Strathcona County,2006,8.5217
+strathcona,4811052,Strathcona County,2007,8.0539
+strathcona,4811052,Strathcona County,2008,7.7848
+strathcona,4811052,Strathcona County,2009,7.7898
+strathcona,4811052,Strathcona County,2010,8.1856
+strathcona,4811052,Strathcona County,2011,8.5093
+strathcona,4811052,Strathcona County,2012,8.8198
+strathcona,4811052,Strathcona County,2013,8.7581
+strathcona,4811052,Strathcona County,2014,8.8116
+strathcona,4811052,Strathcona County,2015,8.5373
+strathcona,4811052,Strathcona County,2016,8.6593
+strathcona,4811052,Strathcona County,2017,8.6258
+strathcona,4811052,Strathcona County,2018,8.9383
+strathcona,4811052,Strathcona County,2019,9.2023
+strathcona,4811052,Strathcona County,2020,9.363
+strathcona,4811052,Strathcona County,2021,9.6494
+strathcona,4811052,Strathcona County,2022,10.1088
+strathcona,4811052,Strathcona County,2023,10.1139
+strathcona,4811052,Strathcona County,2024,10.52
+strathcona,4811052,Strathcona County,2025,10.6435
+strathcona,4811052,Strathcona County,2026,10.9933
+sturgeon,4811059,Sturgeon County,1998,4.703
+sturgeon,4811059,Sturgeon County,1999,5.165
+sturgeon,4811059,Sturgeon County,2000,5.73
+sturgeon,4811059,Sturgeon County,2001,7.052
+sturgeon,4811059,Sturgeon County,2002,7.052
+sturgeon,4811059,Sturgeon County,2003,7.454
+sturgeon,4811059,Sturgeon County,2004,8.0815
+sturgeon,4811059,Sturgeon County,2005,8.1494
+sturgeon,4811059,Sturgeon County,2006,8.3888
+sturgeon,4811059,Sturgeon County,2007,8.3422
+sturgeon,4811059,Sturgeon County,2008,7.6933
+sturgeon,4811059,Sturgeon County,2009,7.693
+sturgeon,4811059,Sturgeon County,2010,8.5079
+sturgeon,4811059,Sturgeon County,2011,9.009
+sturgeon,4811059,Sturgeon County,2012,9.491
+sturgeon,4811059,Sturgeon County,2013,9.6773
+sturgeon,4811059,Sturgeon County,2014,9.7187
+sturgeon,4811059,Sturgeon County,2015,10.4778
+sturgeon,4811059,Sturgeon County,2016,10.6372
+sturgeon,4811059,Sturgeon County,2017,10.4986
+sturgeon,4811059,Sturgeon County,2018,10.382
+sturgeon,4811059,Sturgeon County,2019,10.2808
+sturgeon,4811059,Sturgeon County,2020,10.2808
+sturgeon,4811059,Sturgeon County,2021,10.2808
+sturgeon,4811059,Sturgeon County,2022,10.4659
+sturgeon,4811059,Sturgeon County,2023,10.7694
+sturgeon,4811059,Sturgeon County,2024,10.917
+sturgeon,4811059,Sturgeon County,2025,10.917
+sturgeon,4811059,Sturgeon County,2026,11.3062

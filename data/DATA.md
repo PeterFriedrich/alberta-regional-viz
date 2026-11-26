@@ -180,6 +180,15 @@ FIR workbooks), it was verified in the Edmonton repo on the dates shown and
 - **Blank ≠ 0:** 640 member-line values are empty cells (mostly co-gen M&E and
   railway). They are written empty, not as 0.
 
+#### Schedule MR, tax rates (parsed 2026-11-26): same module → `fir_long.csv` (Phase 2c)
+- **Schedules:** `MR_NR` / `MR_RES` 1998–2008 (one sheet per class group; the municipal rate is item 05800 in each); `MR_RATE` (mill rate) 2009–2026, `MR_LEVY` 2017–2026, `MR_ASSESS` 2023–2026, one column per class: 10030 residential, 10032 farmland, 10034 non-residential **including linear**, 10036 NR small business, 10038 M&E, 10040 other. 2026 is read from the package's `2026_Tax_Rates.xlsx`, which carries the newest year ahead of its financial-year workbook.
+- **Units:** mills ($ per $1,000). Municipal and education rates sit side by side; only the municipal general rates are read.
+- **No 2001:** the 2001 folder's `Mr_col1/2.XLS` hold 2002's rows, in $ per $1 of assessment, under the title "Tax Rate Information". They are not read.
+- **Absorbed municipalities** (decision 8) have their own MR rows under the member's `muni_id`, distinguished by `fir_code`. A member's rate is its OWN code's row; never sum rates.
+- **"Other" (10040) is not one class.** For Edmonton it holds Other Residential, i.e. apartments (per `edmonton-tax-viz`, from the implied rate); elsewhere it can hold annexed, vacant or total-minimum-tax rows. Edmonton's legacy annexed properties, taxed at Leduc County's rates under OIC 359/2018, probably sit here (unchecked).
+- **Levy at bylaw time,** not collections: supplementary tax is not in MR(1).
+- **Checked:** MR(1) = MR(2) × MR(3) ÷ 1000 for every member, class and year 2023–2026 (`test_mr_levy_is_rate_times_assessment`). Edmonton matches `pwis-wc4c` (2016, 2024, 2025) and the City's 2026 rates exactly. Every member-year's NR rate matches the Regional Dashboard except the explained and logged sets (`test_fir_nr_rate_matches_the_regional_dashboard`; next section).
+
 #### Transfers per capita (built 2026-10-02): `src/build_transfers.py` → `data/processed/transfers_per_capita.csv`
 Committed, 625 rows: 21 members plus core and ring for each region, × 2001–2025.
 Columns: `region, level (member|side), unit, role, year, transfers, population,
@@ -312,6 +321,14 @@ value on that year's boundaries (below), and it is what the per-capita builds di
     intercensal years carry revisions between the two vintages, e.g. Calgary +667 in
     2001 with no annexation.
 - Replaces the inactive 17-10-0142 (2016 boundaries).
+
+### Alberta Regional Dashboard — non-residential mill rates (fetched 2026-11-26): `src/fetch_dashboard_rates.py` → `data/processed/dashboard_nr_rates.csv`
+- **Publisher / URL:** open.alberta.ca "Non-residential mill rates by municipality" (`c8a1e097-0081-4249-babb-164d3e709c0b`); the CSV is served from `https://regionaldashboard.alberta.ca/export/opendata/Municipal%20Tax%20Rates/csvs`. Its CKAN resource dates say 2017, but the data runs to the current year.
+- **Licence:** OGL-Alberta.
+- **Shape:** 9,534 rows, 331 CSDs, 1998–2026, one row per CSD and year: `CSDUID, CSD, Period, IndicatorSummaryDescription, Tax Rate Type, UnitOfMeasure, OriginalValue`. **Non-residential only, municipal only.** 2026 is partial province-wide (313 CSDs) but complete for our 21 members.
+- **Use:** an independent check on FIR Schedule MR, never a source for a published number. Joined through `data/csd_crosswalk.csv` (2021 rows). Raw file and manifest (sha256, retrieval time) in `data/raw/dashboard/`, not committed; the member extract is committed for the merge gate.
+- **Quirk (defect, `docs/DATA_ISSUES.md`):** a CSD that absorbed municipalities carries the **sum** of their mill rates for the years before the merger: Leduc County + New Sarepta to 2010, Parkland + Entwistle + Wabamun to 2020 (e.g. Parkland 1998: 8.353 + 33.152 + 12.000 = 53.505).
+- **Has 2001,** which FIR lacks. Its 2001 values differ from its 2002 values for 20 of 21 members, so they are not the mislabelled 2002 file. Their source is unknown.
 
 ### Candidate sources — UNVERIFIED, not yet used
 Carried over from the retired claude.ai spec (2026-10-01). None has been fetched
