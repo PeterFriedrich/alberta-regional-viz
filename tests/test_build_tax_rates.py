@@ -77,3 +77,24 @@ def test_weight_basis_switches_after_the_last_fir_ea_year():
     basis = {int(r["taxation_year"]): r["weight_basis"] for r in OUT}
     assert {y for y, b in basis.items() if b == "taxable"} == {2025, 2026}
     assert btr.EQ_LAST == 2024
+
+
+def test_foothills_2024_uses_the_replacement_rates_not_schedule_mr():
+    # FIR MR's 2024 Foothills rates imply a levy 1.6x (NR) / 2.0x (residential) what
+    # K(1) says was levied (docs/DATA_ISSUES.md 2026-11-26).
+    got = {r["class"]: float(r["mill_rate"]) for r in OUT
+           if r["unit"] == "foothills" and r["taxation_year"] == "2024"}
+    dash = next(float(r["nr_mill_rate"]) for r in csv.DictReader(
+        open(REPO / "data/processed/dashboard_nr_rates.csv", newline=""))
+        if r["muni_id"] == "foothills" and r["year"] == "2024")
+    assert abs(got["nr"] - dash) < 5e-4
+    mr = {(int(r["fir_year"]), r["line_code"]): float(r["value"]) for r in FIR_ROWS
+          if r["fir_code"] == "0111" and r["schedule"] == "MR_RATE" and r["value"]}
+    # Residential sits with its neighbours, not at MR's doubled 7.23 mills.
+    lo, hi = sorted((mr[(2023, "10030")], mr[(2025, "10030")]))
+    assert lo * 0.9 < got["residential"] < hi * 1.1, (got, lo, hi)
+    assert mr[(2024, "10030")] > 2 * hi * 0.9  # MR still wrong upstream; drop the fix if not
+    notes = [r for r in OUT if "Foothills 2024 rate replaced" in r["basis_note"]]
+    assert {(r["unit"], r["class"]) for r in notes} == {
+        (u, c) for u in ("foothills", "ring", "region") for c in btr.CLASSES}
+    assert all(r["region"] == "calgary" and r["taxation_year"] == "2024" for r in notes)
