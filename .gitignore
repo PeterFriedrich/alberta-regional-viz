@@ -25,6 +25,8 @@ data/processed/*
 !data/processed/dashboard_nr_rates.csv
 # Committed so the merge gate runs tests/test_build_tax_rates.py
 !data/processed/tax_rates.csv
+# Committed so the merge gate runs tests/test_project_tax_rates.py
+!data/processed/tax_rate_scenario.csv
 # Committed so the merge gate runs tests/test_population.py
 !data/processed/population.csv
 # Committed so the merge gate runs tests/test_build_transfers.py
