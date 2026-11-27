@@ -55,11 +55,10 @@ symptom and re-measure the stated cause before acting on it.
   tracked it until audit #1. Adding former board members moves the fall by ≤0.17 pp
   (`docs/FINDINGS_headline_share_2026-11-13.md`).
 
-- [ ] **Phase 2c tax rates: notebook section (PR 3).** `tax_rates.csv` is built
-  (DECISIONS 2026-11-26). Chart core vs ring vs pooled `nr` and `residential` from 1999,
-  both regions, with the `weight_basis` switch at 2025 marked; and the dollar gap on a
-  $1M non-res property. Open: Foothills 2024 (FIR vs dashboard; needs its 2024 bylaw).
-  A forward projection is a separate proposal.
+- [ ] **Phase 2c follow-ups.** Foothills 2024 NR rate: FIR and the Regional Dashboard
+  disagree (`UNRESOLVED` in `tests/test_parse_fir.py`); settle it from the 2024 bylaw.
+  Calgary-region residential rates have no second source. A forward projection of the
+  pooled rate is a separate proposal (plan first).
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
@@ -112,6 +111,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Phase 2c tax rates: notebook section (PR 3).** — BUILT 2026-11-27 · `docs/TODO_archive.md`
 
 - [x] **Owner runs:** — 2026-11-26 · `docs/TODO_archive.md`
 
