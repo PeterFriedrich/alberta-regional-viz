@@ -12,7 +12,6 @@ symptom and re-measure the stated cause before acting on it.
 
 ### Waiting on the owner
 
-- [ ] **Owner runs:** `merge PR #51 (Recover #50: headline remedy charts)` — the headline share charts (capped years hollow, levels, per-member contribution) aren't on master until it lands; it changes notebooks, so no self-merge · confirm: `gh pr view 51 --json state -q .state` prints MERGED · medium · since 2026-11-26
 - [ ] **Owner runs:** `press Sync in the claude.ai Project for data/DATA.md, docs/BRIEF.md, docs/SPEC_phase1.md` — #49, #52 and #53 changed them, and the web side can't tell its copies are stale · confirm: the Project's file list shows each path's update time after 2026-11-26 · low (before the next Claude web chat) · since 2026-11-26
 
 ### Backlog
@@ -113,6 +112,8 @@ symptom and re-measure the stated cause before acting on it.
 ## Done
 
 Closed items moved out of `## Open work` live in **`docs/TODO_archive.md`** — one line each below, reasoning there.
+
+- [x] **Owner runs:** — 2026-11-26 · `docs/TODO_archive.md`
 
 - [x] **Headline share: Peter's call on the remedy** — 2026-11-13 · `docs/TODO_archive.md`
 

@@ -8,6 +8,8 @@ Items are verbatim as they were closed, newest-moved first in the order they app
 
 ---
 
+- [x] **Owner runs:** `merge PR #51 (Recover #50: headline remedy charts)` — the headline share charts (capped years hollow, levels, per-member contribution) aren't on master until it lands; it changes notebooks, so no self-merge · confirm: `gh pr view 51 --json state -q .state` prints MERGED · medium · since 2026-11-26
+
 - [x] **Headline share: Peter's call on the remedy** (audit #1, 2026-11-13, L0 CONDITIONAL;
   `docs/FINDINGS_headline_share_2026-11-13.md` §Recommendation). Most of the fall in the core
   `nr` share came 2015–2025, while each core's NR assessment fell in nominal dollars. Proposed:
