@@ -16,7 +16,7 @@
 # %% [markdown]
 # # First look: core vs ring, Edmonton and Calgary regions
 #
-# **Internal working notebook — not for publication.** It charts the three committed
+# **Internal working notebook — not for publication.** It charts the committed
 # outputs as they stand, so we can see the shapes before any Phase 4 chart text is
 # written. Several figures here are still under open TODO items (noted at each chart).
 #
@@ -24,6 +24,7 @@
 # - **Region = 2025 board membership applied to all years** (13 EMRB members, 8 CMRB
 #   members; decision 8). Core = the city; ring = the other members.
 # - **Equalized assessment** for the tax-base split, never raw FIR assessment.
+# - **Tax rates** (§5) are the municipal general rate only, education excluded.
 # - **Nominal dollars** for per-capita series (no deflator yet — TODO).
 # - **Per-capita population** = StatCan 17-10-0155 July 1 estimates moved onto each
 #   year's boundaries (`population_asof`, decision 2026-10-03).
@@ -308,3 +309,81 @@ display(t.round({"core": 0, "ring": 0, "core / ring": 1}).assign(
     **{"core / ring": lambda d: d["core / ring"].where(d.ring >= 1)}))
 print(f"Provincial transfers $ per capita, 5-year average ending {last} (nominal)")
 display(tr.round({"core": 0, "ring": 0, "core / ring": 2}))
+
+# %% [markdown]
+# ## 5. What each side charges: municipal tax rates, core vs ring
+#
+# `tax_rates.csv` (Phase 2c, DECISIONS 2026-11-26). **Municipal general rate only**
+# (education excluded), in **mills** ($ per $1,000 of assessment), levy at bylaw time.
+# Ring and region are **pooled**: Σ(rate × base) ÷ Σ base, the one rate that raises
+# the same levy on the combined base. The base is **equalized** assessment through
+# taxation 2024 and **taxable** assessment for 2025–2026 (`weight_basis`; the switch
+# moves a pooled rate by ≤ 0.13 mills in 2024). FIR has no 2001 Schedule MR, so the
+# lines break there. The core is one municipality, so its rate is its own.
+
+# %%
+rates = pd.read_csv(PROC / "tax_rates.csv")
+pooled = rates[rates.level != "member"].pivot_table(
+    index=["region", "class", "taxation_year"], columns="unit", values="mill_rate")
+# The pooled region rate is a weighted mean of core and ring, so it must sit between them.
+lo, hi = pooled[["core", "ring"]].min(axis=1), pooled[["core", "ring"]].max(axis=1)
+assert ((pooled.region >= lo - 1e-9) & (pooled.region <= hi + 1e-9)).all()
+switch = rates[rates.weight_basis == "taxable"].taxation_year.min()
+assert switch == 2025, switch
+YEARS = range(HEAD, int(rates.taxation_year.max()) + 1)  # reindex so 2001 is a gap, not a join
+
+CLASS = {"nr": "non-residential (incl. linear)", "residential": "residential"}
+fig, axes = plt.subplots(2, 2, figsize=(10, 6.2), sharex=True, sharey="row")
+for row, cls in enumerate(CLASS):
+    for ax, region in zip(axes[row], REGIONS):
+        d = pooled.loc[(region, cls)].reindex(YEARS)
+        ax.plot(d.index, d.core, color=CORE, label="core")
+        ax.plot(d.index, d.ring, color=RING, label="ring (pooled)")
+        ax.plot(d.index, d.region, color=MUTED, ls="--", lw=1.4, label="region (pooled)")
+        mark(ax, switch - 0.5, "taxable base →", y=0.20)
+        ax.set_title(f"{TITLE[region]}: {CLASS[cls]}", loc="left", color=INK, fontsize=10)
+        ax.set_ylim(bottom=0)
+        ax.set_xlim(HEAD - 1, 2027)
+    axes[row, 0].set_ylabel("mills")
+axes[0, 0].legend(loc="lower left", fontsize=8)
+fig.suptitle(f"Municipal property tax rate, core vs ring, {HEAD}–{max(YEARS)}",
+             x=0.01, ha="left", color=INK, fontsize=11)
+fig.text(0.01, -0.02, "Basis: municipal general rate only (education excluded); mills; levy at "
+         "bylaw time; pooled on equalized assessment to 2024, taxable 2025–2026; 2025 board "
+         "membership applied to all years; no 2001 (FIR has no Schedule MR).",
+         fontsize=7, color=MUTED, wrap=True)
+fig.tight_layout()
+
+# %% [markdown]
+# ### 5b. The gap in dollars: a $1M non-residential property
+#
+# Municipal tax on $1,000,000 of non-residential assessment at the core rate minus the
+# ring's pooled rate (mills × 1,000). It is the average ring rate, not any one ring
+# member's; a property in a low-rate member would see a wider gap. Nominal dollars.
+
+# %%
+fig, axes = plt.subplots(1, 2, figsize=(10, 3.4), sharey=True)
+gap = {}
+for ax, region in zip(axes, REGIONS):
+    d = pooled.loc[(region, "nr")].reindex(YEARS)
+    gap[region] = (d.core - d.ring) * 1000
+    ax.plot(gap[region].index, gap[region], color=CORE)
+    last_year = gap[region].last_valid_index()
+    ax.annotate(f"${gap[region][last_year]:,.0f}", (last_year, gap[region][last_year]),
+                xytext=(4, 0), textcoords="offset points", fontsize=8, color=INK, va="center")
+    mark(ax, switch - 0.5, "taxable base →", y=0.20)
+    ax.set_title(TITLE[region], loc="left", color=INK, fontsize=10)
+    ax.set_ylim(bottom=0)
+    ax.set_xlim(HEAD - 1, 2028)
+axes[0].set_ylabel("$ per year (core − ring)")
+axes[0].yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v:,.0f}"))
+fig.suptitle("Extra municipal tax on a $1M non-residential property in the core vs the ring "
+             "average (nominal)", x=0.01, ha="left", color=INK, fontsize=11)
+fig.text(0.01, -0.04, "Basis: municipal general rate only; core rate minus ring pooled rate × "
+         "$1M ÷ 1,000; pooled on equalized assessment to 2024, taxable 2025–2026; nominal dollars.",
+         fontsize=7, color=MUTED)
+fig.tight_layout()
+
+t = pd.DataFrame({r: gap[r].loc[[HEAD, 2024, max(YEARS)]] for r in REGIONS}).round(0)
+print("Core − ring pooled NR rate × $1M (municipal only, nominal $)")
+display(t)
