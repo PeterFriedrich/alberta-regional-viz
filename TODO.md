@@ -65,8 +65,9 @@ the lines that pass.
 
 - [ ] **Phase 2c follow-ups.** Foothills 2024 NR rate: FIR and the Regional Dashboard
   disagree (`UNRESOLVED` in `tests/test_parse_fir.py`); settle it from the 2024 bylaw.
-  Calgary-region residential rates have no second source. A forward projection of the
-  pooled rate is a separate proposal (plan first).
+  Calgary-region residential rates have no second source. Whether Edmonton's 2019
+  Leduc-annexed "legacy" properties pay Leduc County rates (OIC 359/2018), which would
+  overstate the core rate on that base: asked `civic-docs-index` 2026-11-27.
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports

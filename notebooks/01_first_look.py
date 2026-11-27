@@ -387,3 +387,47 @@ fig.tight_layout()
 t = pd.DataFrame({r: gap[r].loc[[HEAD, 2024, max(YEARS)]] for r in REGIONS}).round(0)
 print("Core − ring pooled NR rate × $1M (municipal only, nominal $)")
 display(t)
+
+# %% [markdown]
+# ### 5c. Scenario: the region's NR rate if the base keeps shifting
+#
+# **A scenario, not a forecast** (`tax_rate_scenario.csv`, SPEC §"Phase 2c scenario").
+# Every member keeps its 2026 rate; the core's share of the region's equalized `nr` base
+# follows its linear trend, fitted over 2015–2024 and over 2020–2024 (after every core
+# annexation). The region's pooled rate = share × core rate + (1 − share) × ring rate, so
+# it falls toward the ring's with no member cutting anything. The band spans the two
+# fits. Residential is not shown: its core and ring rates are close, so it moves ≤ 0.05
+# mills to 2035.
+
+# %%
+scen = pd.read_csv(PROC / "tax_rate_scenario.csv")
+fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), sharey=True)
+for ax, region in zip(axes, REGIONS):
+    d = pooled.loc[(region, "nr")].reindex(YEARS)
+    ax.plot(d.index, d.core, color=CORE, label="core")
+    ax.plot(d.index, d.ring, color=RING, label="ring (pooled)")
+    ax.plot(d.index, d.region, color=MUTED, lw=1.4, ls="--", label="region (pooled)")
+    s = scen[scen.region == region].pivot(index="year", columns="fit_window", values="region_rate")
+    ax.fill_between(s.index, s.min(axis=1), s.max(axis=1), color=MUTED, alpha=0.4, lw=0,
+                    label="region, scenario band")
+    held = scen[scen.region == region].iloc[0]
+    ax.hlines([held.core_rate, held.ring_rate], 2026, 2035, colors=[CORE, RING], lw=1, ls=":")
+    end = s.loc[2035]
+    ax.annotate(f"{end.min():.1f}–{end.max():.1f}", (2035, end.mean()), xytext=(4, 0),
+                textcoords="offset points", fontsize=8, color=INK, va="center")
+    mark(ax, 2026.5, "scenario →", y=0.20)
+    ax.set_title(TITLE[region], loc="left", color=INK, fontsize=10)
+    ax.set_ylim(bottom=0)
+    ax.set_xlim(HEAD - 1, 2039)
+axes[0].set_ylabel("mills")
+axes[0].legend(loc="lower left", fontsize=8)
+fig.suptitle("Non-residential municipal tax rate to 2035 if rates hold and the base keeps "
+             "shifting to the ring (scenario)", x=0.01, ha="left", color=INK, fontsize=11)
+fig.text(0.01, -0.04, "Scenario, not forecast: 2026 core and ring rates held (dotted), ring mix "
+         "frozen; core share of equalized nr base on its 2015–2024 and 2020–2024 linear trends. "
+         "Municipal general rate only; mills.", fontsize=7, color=MUTED, wrap=True)
+fig.tight_layout()
+
+t = scen[scen.year.isin([2026, 2030, 2035])].pivot_table(
+    index=["region", "year"], columns="fit_window", values=["core_share", "region_rate"])
+display(t.round(3))

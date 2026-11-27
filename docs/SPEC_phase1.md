@@ -534,8 +534,30 @@ weight_basis, n_codes, basis_note`. Levels: `member` (the member's own FIR code)
   (`tests/test_parse_fir.py`); levy = rate × assessment 2023–2026; the output
   reproduces from `fir_long.csv`; the weight switch; the Calgary 2001 residual
   (`tests/test_build_tax_rates.py`).
-- **Not in this phase:** a forward projection of the pooled rate, and any revenue-sharing
+- **Not in this phase:** a forecast of the pooled rate (the scenario below holds rates), and any revenue-sharing
   agreement that a pooled rate would misstate (annexation compensation, ICFs).
+
+## Phase 2c scenario: the pooled NR rate under base shift (built 2026-11-27)
+
+What happens to the region's pooled non-residential rate if every member keeps its
+2026 rate and the base keeps moving from core to ring at its recent pace
+(DECISIONS 2026-11-27). `src/project_tax_rates.py` reads `tax_rates.csv` and writes
+`data/processed/tax_rate_scenario.csv`. A scenario, not a forecast: rates are held.
+
+- **Model:** region = s × core + (1 − s) × ring, the two-block form of the pooled
+  rate (exact for every built year, `tests/test_project_tax_rates.py`). Core and
+  ring rates are the 2026 pooled rates; the ring's member mix is frozen at 2026.
+- **s** = the core's share of equalized `nr` assessment (`weight`), taxation years
+  through 2024 only: taxable weights don't compare across municipalities. An OLS
+  line over each fit window (2015–2024; 2020–2024, after every core annexation);
+  the projection reads off the fitted line for 2026–2035. Inflation cancels.
+- **Check:** the fitted 2026 rate sits within 0.16 mills of the built 2026 rate
+  (which uses taxable weights), both regions, both windows.
+- **Rejected:** projecting each member's base at its own growth rate. Over 11 years
+  the fastest-growing members dominate (Calgary's core share 0.83 → 0.63 in the
+  2020 window), and Rocky View's 2023–2025 rise is still unchecked (TODO).
+- **Not projected:** residential. Core and ring rates are close, so the region's
+  rate moves ≤ 0.05 mills to 2035 in every window.
 
 ## Out of scope for Phase 1
 
