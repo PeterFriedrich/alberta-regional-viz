@@ -207,6 +207,7 @@ per_capita, per_capita_5yr, basis_note`. Nominal dollars.
 - **Columns:** `region, level, unit, role, taxation_year, class, mill_rate, weight, weight_basis, n_codes, basis_note`. Mills, municipal only. Spec: `docs/SPEC_phase1.md` §"Phase 2c". Committed for the merge gate.
 - **Shape:** 1,512 rows: 21 members + 2 sides + region per region, classes `nr` and `residential`, 1998–2026 without 2001.
 - **Quirk:** `weight_basis` is `equalized` through 2024 and `taxable` for 2025–2026; a pooled rate can step by up to ~0.13 mills at the switch.
+- **Quirk:** Foothills 2024 does not use FIR Schedule MR (its levy is 1.56× / 1.99× what Schedule K(1) "Property Taxes" says was levied): NR = Regional Dashboard, residential = K(1) levy ÷ MR assessment (`RATE_FIX`; `docs/DATA_ISSUES.md` 2026-11-26). K(1) is in `data/raw/fir/fir_year_*.xlsx` but not parsed into `fir_long.csv`.
 #### Tax rate scenario (built 2026-11-27): `src/project_tax_rates.py` → `data/processed/tax_rate_scenario.csv`
 - **A scenario, not data.** Derived from `tax_rates.csv` only. Spec: `docs/SPEC_phase1.md` §"Phase 2c scenario". Committed for the merge gate.
 - **Columns:** `region, class, fit_window, year, core_share, core_rate, ring_rate, region_rate, slope_pp_per_year, basis_note`. `nr` only; 2 regions × 2 fit windows × 2026–2035 = 40 rows.

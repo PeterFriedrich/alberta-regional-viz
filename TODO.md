@@ -63,9 +63,8 @@ the lines that pass.
   tracked it until audit #1. Adding former board members moves the fall by ≤0.17 pp
   (`docs/FINDINGS_headline_share_2026-11-13.md`).
 
-- [ ] **Phase 2c follow-ups.** Foothills 2024 NR rate: FIR and the Regional Dashboard
-  disagree (`UNRESOLVED` in `tests/test_parse_fir.py`); settle it from the 2024 bylaw.
-  Calgary-region residential rates have no second source. Whether Edmonton's 2019
+- [ ] **Phase 2c follow-ups.** Calgary-region residential rates have no second source
+  (FIR K(1) levy ÷ MR assessment is a candidate check: it caught Foothills 2024). Whether Edmonton's 2019
   Leduc-annexed "legacy" properties pay Leduc County rates (OIC 359/2018), which would
   overstate the core rate on that base: asked `civic-docs-index` 2026-11-27.
 
@@ -73,7 +72,8 @@ the lines that pass.
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
   (which would close the gap holding the City's 2008 anchor). Mention the 1999
   subtotal rounding and the 2006 row totals (rows added 2026-09-28) in the same
-  message; they aren't worth a message of their own. Status stays NOT SENT until
+  message; they aren't worth a message of their own. Add the FIR 2024 Foothills
+  Schedule MR rates (confirmed wrong against Schedule K(1), 2026-11-27). Status stays NOT SENT until
   one is actually sent.
 
 - [ ] **Caption the NR+linear rise across the 2007–2009 gap.** Edmonton's `nr_linear`

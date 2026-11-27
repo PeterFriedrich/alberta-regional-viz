@@ -49,6 +49,19 @@ WEIGHT_SWITCH_TOL = 0.15
 EA_RESIDUAL = {("0046", 2001, "08275")}
 EA_PARTS = ("08265", "08270", "08275", "08280", "08285", "08290", "08295")
 
+# FIR MR rates that its own Schedule K(1) (property taxes actually levied) contradicts
+# (docs/DATA_ISSUES.md 2026-11-26; Peter's decision 2026-11-27). Foothills 2024: MR's
+# levy is 1.56x (NR) and 1.99x (residential) K(1)'s, while 2023 and 2025 agree within
+# 0.5%. NR takes the Regional Dashboard's rate (it equals MR's in every other
+# member-year); residential takes K(1) levy / MR assessment (no second rate source;
+# that ratio is within 0.1% of MR's rate in 2023 and 2025).
+K1_FOOTHILLS_2024_RES = 32291692       # FIR 2024 K(1) Residential Land and Improvements
+RATE_FIX = {
+    ("0111", 2024, "nr"): (8.85966, "Regional Dashboard rate"),
+    ("0111", 2024, "residential"): (None, "FIR K(1) levy / MR assessment"),
+}
+FIX_NOTE = "; Foothills 2024 rate replaced ({}): FIR Schedule MR overstates it"
+
 # class -> (old rate (schedule, line), new rate line, equalized base lines, taxable base line)
 CLASSES = {
     "nr": (("MR_NR", "05800"), "10034", ("08275", "08265", "08290"), "10034"),
@@ -90,6 +103,10 @@ def rate_and_base(val, code, year, cls):
         rate = val.get((code, year, *old)) if old else None
     else:
         rate = val.get((code, year, "MR_RATE", new))
+    if (code, year, cls) in RATE_FIX:
+        rate = RATE_FIX[(code, year, cls)][0]
+        if rate is None:
+            rate = K1_FOOTHILLS_2024_RES / val[(code, year, "MR_ASSESS", tax_line)] * 1000
     if rate is None:
         return None
     if year <= EQ_LAST:
@@ -99,6 +116,11 @@ def rate_and_base(val, code, year, cls):
     else:
         base, basis = val.get((code, year, "MR_ASSESS", tax_line)), "taxable"
     return rate, base, basis
+
+
+def fix_note(code, year, cls):
+    fix = RATE_FIX.get((code, year, cls))
+    return FIX_NOTE.format(fix[1]) if fix else ""
 
 
 def build(fir_rows, regions):
@@ -119,7 +141,8 @@ def build(fir_rows, regions):
                 out.append({"region": r["region"], "level": "member", "unit": r["muni_id"],
                             "role": r["role"], "taxation_year": year, "class": cls,
                             "mill_rate": round(rate, 6), "weight": "" if base is None else round(base),
-                            "weight_basis": basis, "n_codes": 1, "basis_note": BASIS_NOTE})
+                            "weight_basis": basis, "n_codes": 1,
+                            "basis_note": BASIS_NOTE + fix_note(r["fir_code"], year, cls)})
                 for code in codes_of[r["muni_id"]]:
                     got = rate_and_base(val, code, year, cls)
                     if got is None:
@@ -141,6 +164,9 @@ def build(fir_rows, regions):
                 if len(bases) != 1 or den <= 0:
                     raise BuildError(f"{region} {unit} {year} {cls}: bases {bases}, weight {den}")
                 note = BASIS_NOTE + "; pooled = sum(rate x base) / sum(base)"
+                if unit != "core":
+                    note += "".join(fix_note(r["fir_code"], year, cls) for r in regions
+                                    if r["region"] == region)
                 if year > EQ_LAST:
                     note += "; base is taxable assessment, not equalized (up to ~0.13 mill step from 2024)"
                 if cls == "nr" and year >= 2025 and region == "edmonton" and unit in ("ring", "region"):

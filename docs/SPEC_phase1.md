@@ -527,11 +527,16 @@ weight_basis, n_codes, basis_note`. Levels: `member` (the member's own FIR code)
   bases give pooled rates within 0.13 mills of each other.
 - **Calgary 2001 FIR NR** (1.62B, a dropped digit) is replaced by its own total minus
   its other components (16.23B; the PDF prints 16,560M).
+- **Foothills 2024 MR rates are replaced** (DECISIONS 2026-11-27): MR's levy is 1.56×
+  (NR) and 1.99× (residential) what FIR Schedule K(1) says was levied, while 2023
+  and 2025 agree within 0.5%. NR takes the Regional Dashboard's 8.86 mills;
+  residential takes K(1) levy ÷ MR assessment (3.63). The Calgary ring's 2024 NR rate
+  moves from 8.38 to 7.96 mills. The affected rows say so in `basis_note`.
 - **Years:** 1998–2026 without 2001 (FIR has no 2001 Schedule MR). The headline
   starts at 1999, as for the share (DECISIONS 2026-11-25).
 - **Checks:** FIR's NR rate matches the Regional Dashboard for every member-year
-  except the dashboard's summed-rate years and Foothills 2024
-  (`tests/test_parse_fir.py`); levy = rate × assessment 2023–2026; the output
+  except the dashboard's summed-rate years and Foothills 2024, where MR is wrong
+  (`tests/test_parse_fir.py`); the Foothills 2024 replacement; levy = rate × assessment 2023–2026; the output
   reproduces from `fir_long.csv`; the weight switch; the Calgary 2001 residual
   (`tests/test_build_tax_rates.py`).
 - **Not in this phase:** a forecast of the pooled rate (the scenario below holds rates), and any revenue-sharing

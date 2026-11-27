@@ -241,8 +241,8 @@ def test_mr_levy_is_rate_times_assessment():
 # rates (data/DATA.md §"Regional Dashboard"). Measured 2026-11-26.
 ABSORBED_SUM = {("leduc_county", y) for y in range(1998, 2011) if y != 2001} | \
                {("parkland", y) for y in range(1998, 2021) if y != 2001}
-# FIR's levy/assessment reproduce 13.74, but the residential levy doubles that year
-# and falls back in 2025; the dashboard's 8.86 fits the trend. Needs the 2024 bylaw.
+# Foothills 2024: FIR MR is wrong (its levy is 1.6x what FIR K(1) says was levied);
+# build_tax_rates.RATE_FIX replaces it. Kept here so an upstream fix is noticed.
 UNRESOLVED = {("foothills", 2024)}
 
 
