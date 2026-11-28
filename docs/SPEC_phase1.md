@@ -539,6 +539,11 @@ weight_basis, n_codes, basis_note`. Levels: `member` (the member's own FIR code)
   (`tests/test_parse_fir.py`); the Foothills 2024 replacement; levy = rate × assessment 2023–2026; the output
   reproduces from `fir_long.csv`; the weight switch; the Calgary 2001 residual
   (`tests/test_build_tax_rates.py`).
+- **Leduc-annexed parcels (A15):** land Edmonton annexed from Leduc County in 2019 is
+  taxed at the lower of the two municipalities' rates for 50 years (City reports
+  FCS00021rev, FCS00406). The core rate is applied to the whole core base anyway:
+  Leduc County's NR base shows no drop at the annexation (5.37B → 5.47B, 2018 → 2019),
+  so the annexed NR base is at most ~0.2B, which moves the core rate by ≤ 0.08 mills.
 - **Not in this phase:** a forecast of the pooled rate (the scenario below holds rates), and any revenue-sharing
   agreement that a pooled rate would misstate (annexation compensation, ICFs).
 

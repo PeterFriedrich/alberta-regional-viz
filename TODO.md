@@ -64,9 +64,7 @@ the lines that pass.
   (`docs/FINDINGS_headline_share_2026-11-13.md`).
 
 - [ ] **Phase 2c follow-ups.** Calgary-region residential rates have no second source
-  (FIR K(1) levy ÷ MR assessment is a candidate check: it caught Foothills 2024). Whether Edmonton's 2019
-  Leduc-annexed "legacy" properties pay Leduc County rates (OIC 359/2018), which would
-  overstate the core rate on that base: asked `civic-docs-index` 2026-11-27.
+  (FIR K(1) levy ÷ MR assessment is a candidate check: it caught Foothills 2024).
 
 - [ ] **Send the `docs/DATA_ISSUES.md` rows to Municipal Affairs**: the 2026
   subtotal typo, and a request for text-layer versions of the 2008–2010 reports
